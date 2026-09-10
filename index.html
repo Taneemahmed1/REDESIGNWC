@@ -8539,6 +8539,855 @@
                 font-size: 13px;
             }
         }
+
+        /* ==========================================================================
+           PRE-FOOTER SUBSCRIBERS SHOWCASE (FIXED STRUCTURE & MODERN PILL INPUT)
+           ========================================================================== */
+        .wc-subscribers-section {
+            background-color: #040813;
+            position: relative;
+            padding: 85px 24px 75px;
+            overflow: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            border-top: 1px solid rgba(26, 98, 255, 0.18);
+            border-bottom: 1px solid rgba(26, 98, 255, 0.15);
+        }
+
+        /* Ambient glowing backdrop aura */
+        .wc-subscribers-section::before {
+            content: "";
+            position: absolute;
+            top: -120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 360px;
+            background: radial-gradient(ellipse at center, rgba(26, 98, 255, 0.22) 0%, rgba(26, 98, 255, 0.05) 50%, transparent 75%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wc-subscribers-card {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, rgba(11, 20, 42, 0.85) 0%, rgba(5, 9, 20, 0.95) 100%);
+            border: 1px solid rgba(26, 98, 255, 0.3);
+            border-radius: 28px;
+            padding: 52px 58px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.75), 0 0 45px -10px rgba(26, 98, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .wc-sub-content {
+            flex: 1 1 500px;
+            max-width: 600px;
+        }
+
+        .wc-sub-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(26, 98, 255, 0.14);
+            border: 1px solid rgba(26, 98, 255, 0.38);
+            color: #60A5FA;
+            padding: 7px 16px;
+            border-radius: 50px;
+            font-size: 11.5px;
+            font-weight: 750;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .wc-sub-pulse {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #38BDF8;
+            box-shadow: 0 0 10px #38BDF8;
+            animation: subPulse 1.8s infinite ease-in-out;
+        }
+
+        @keyframes subPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.6; }
+        }
+
+        .wc-sub-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(28px, 3.4vw, 42px);
+            font-weight: 800;
+            color: #FFFFFF;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            margin: 0 0 14px 0;
+        }
+
+        .wc-sub-blue {
+            color: #1A62FF;
+            text-shadow: 0 0 28px rgba(26, 98, 255, 0.55);
+            font-weight: 850;
+        }
+
+        .wc-sub-desc {
+            color: #94A3B8;
+            font-size: 16px;
+            line-height: 1.65;
+            margin: 0;
+            max-width: 520px;
+        }
+
+        .wc-sub-action {
+            flex: 1 1 450px;
+            max-width: 520px;
+            width: 100%;
+        }
+
+        .wc-sub-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .wc-sub-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(3, 7, 16, 0.92);
+            border: 1.5px solid rgba(26, 98, 255, 0.35);
+            border-radius: 60px;
+            padding: 6px 8px 6px 22px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .wc-sub-input-wrap:focus-within {
+            border-color: #1A62FF;
+            box-shadow: 0 0 30px rgba(26, 98, 255, 0.45), inset 0 2px 4px rgba(0, 0, 0, 0.4);
+            background: rgba(4, 10, 24, 0.96);
+        }
+
+        .wc-sub-mail-icon {
+            color: #1A62FF;
+            font-size: 20px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .wc-sub-input-wrap input[type="email"] {
+            flex: 1;
+            min-width: 0;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #FFFFFF;
+            font-size: 15px;
+            font-family: inherit;
+            padding: 10px 8px 10px 0;
+        }
+
+        .wc-sub-input-wrap input[type="email"]::placeholder {
+            color: #64748B;
+            font-size: 14.5px;
+        }
+
+        .wc-sub-submit-btn {
+            background: linear-gradient(135deg, #1A62FF 0%, #004BD6 100%);
+            color: #FFFFFF;
+            border: none;
+            outline: none;
+            font-weight: 750;
+            font-size: 15px;
+            border-radius: 50px;
+            padding: 13px 30px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 18px rgba(26, 98, 255, 0.45);
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .wc-sub-submit-btn i {
+            font-size: 20px;
+            transition: transform 0.25s ease;
+        }
+
+        .wc-sub-submit-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #2B73FF 0%, #0B53E4 100%);
+            box-shadow: 0 8px 25px rgba(26, 98, 255, 0.65);
+        }
+
+        .wc-sub-submit-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        .wc-sub-submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .wc-sub-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748B;
+            font-size: 12.5px;
+            padding-left: 14px;
+            margin-top: 4px;
+        }
+
+        .wc-sub-meta i {
+            color: #38BDF8;
+            font-size: 13px;
+        }
+
+        /* Responsive Pre-Footer */
+        @media (max-width: 991px) {
+            .wc-subscribers-section {
+                padding: 65px 20px 55px;
+            }
+            .wc-subscribers-card {
+                padding: 40px 32px;
+                gap: 36px;
+            }
+            .wc-sub-content {
+                max-width: 100%;
+            }
+            .wc-sub-action {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wc-subscribers-card {
+                padding: 32px 20px;
+                border-radius: 20px;
+            }
+            .wc-sub-input-wrap {
+                flex-direction: column;
+                border-radius: 20px;
+                padding: 14px 16px;
+                gap: 12px;
+                align-items: stretch;
+            }
+            .wc-sub-input-wrap input[type="email"] {
+                width: 100%;
+                padding: 6px 0;
+            }
+            .wc-sub-submit-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 13px 20px;
+            }
+            .wc-sub-meta {
+                padding-left: 4px;
+            }
+        }
+
+        /* ==========================================================================
+           FOOTER REDESIGN: COMBINATION OF BLUE & BLACK LUXURY THEME
+           ========================================================================== */
+        footer.footer {
+            background: radial-gradient(130% 90% at 50% -10%, #081639 0%, #04091A 35%, #010309 100%) !important;
+            border-top: 1px solid rgba(26, 98, 255, 0.3) !important;
+            color: #E2E8F0 !important;
+            position: relative !important;
+            padding: 65px 32px 28px !important;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            overflow: hidden !important;
+        }
+
+        /* Ambient Glowing Boundary Line at Top of Footer */
+        footer.footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #1A62FF 35%, #38BDF8 50%, #1A62FF 65%, transparent 100%);
+            box-shadow: 0 0 20px #1A62FF, 0 0 35px rgba(56, 189, 248, 0.6);
+            z-index: 10;
+        }
+
+        .footer .footer-inner {
+            max-width: 1440px !important;
+            margin: 0 auto !important;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CTA BANNER (Combined Blue & Black Glass Card) */
+        .footer .cta-banner {
+            background: linear-gradient(135deg, rgba(13, 26, 60, 0.92) 0%, rgba(6, 11, 26, 0.96) 100%) !important;
+            border: 1px solid rgba(26, 98, 255, 0.38) !important;
+            border-radius: 22px !important;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(26, 98, 255, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+            padding: 30px 40px !important;
+            margin-bottom: 50px !important;
+            backdrop-filter: blur(15px) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 24px !important;
+            flex-wrap: wrap !important;
+        }
+
+        .footer .cta-icon {
+            background: radial-gradient(circle at 30% 30%, #1A62FF 0%, #0A2C7A 100%) !important;
+            border: 1px solid rgba(26, 98, 255, 0.5) !important;
+            box-shadow: 0 0 22px rgba(26, 98, 255, 0.6) !important;
+            width: 58px !important;
+            height: 58px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 26px !important;
+            flex-shrink: 0 !important;
+        }
+
+        .footer .cta-left h2 {
+            color: #FFFFFF !important;
+            font-size: 24px !important;
+            font-weight: 800 !important;
+            letter-spacing: -0.015em !important;
+            margin: 0 0 6px !important;
+        }
+
+        .footer .cta-left p {
+            color: #94A3B8 !important;
+            font-size: 15px !important;
+            margin: 0 !important;
+        }
+
+        .footer .cta-actions {
+            display: flex !important;
+            gap: 14px !important;
+            flex-wrap: wrap !important;
+        }
+
+        .footer .cta-actions .btn-primary {
+            background: linear-gradient(135deg, #1A62FF 0%, #004BD6 100%) !important;
+            border: none !important;
+            color: #FFFFFF !important;
+            font-weight: 750 !important;
+            font-size: 14.5px !important;
+            border-radius: 50px !important;
+            padding: 13px 26px !important;
+            box-shadow: 0 4px 20px rgba(26, 98, 255, 0.45) !important;
+            transition: all 0.25s ease !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+
+        .footer .cta-actions .btn-primary:hover {
+            transform: translateY(-2px) !important;
+            background: linear-gradient(135deg, #2B73FF 0%, #0B53E4 100%) !important;
+            box-shadow: 0 8px 28px rgba(26, 98, 255, 0.65) !important;
+            color: #FFFFFF !important;
+        }
+
+        .footer .cta-actions .btn-outline {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid rgba(255, 255, 255, 0.22) !important;
+            color: #FFFFFF !important;
+            font-weight: 650 !important;
+            font-size: 14.5px !important;
+            border-radius: 50px !important;
+            padding: 13px 24px !important;
+            backdrop-filter: blur(8px) !important;
+            transition: all 0.25s ease !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+        }
+
+        .footer .cta-actions .btn-outline:hover {
+            background: rgba(26, 98, 255, 0.15) !important;
+            border-color: #1A62FF !important;
+            color: #38BDF8 !important;
+            transform: translateY(-2px) !important;
+        }
+
+        /* BRAND & TOP ROW */
+        .footer .top-row {
+            display: flex !important;
+            gap: 48px !important;
+            padding: 10px 0 40px !important;
+            border-bottom: 1px solid rgba(26, 98, 255, 0.18) !important;
+            flex-wrap: wrap !important;
+        }
+
+        .footer .brand-col {
+            flex: 1 1 320px !important;
+            min-width: 280px !important;
+            border-right: 1px solid rgba(26, 98, 255, 0.18) !important;
+            padding-right: 36px !important;
+        }
+
+        .footer .brand-desc {
+            color: #94A3B8 !important;
+            font-size: 14.5px !important;
+            line-height: 1.65 !important;
+            max-width: 420px !important;
+            margin: 14px 0 0 !important;
+        }
+
+        .footer .news-col {
+            flex: 1.4 1 420px !important;
+            min-width: 300px !important;
+        }
+
+        .footer .news-col h3 {
+            color: #FFFFFF !important;
+            font-size: 19px !important;
+            font-weight: 750 !important;
+            margin-bottom: 16px !important;
+        }
+
+        .footer .subscribe-form {
+            display: flex !important;
+            background: rgba(8, 14, 30, 0.92) !important;
+            border: 1.5px solid rgba(26, 98, 255, 0.35) !important;
+            border-radius: 50px !important;
+            padding: 5px 6px 5px 20px !important;
+            max-width: 580px !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .footer .subscribe-form:focus-within {
+            border-color: #1A62FF !important;
+            box-shadow: 0 0 25px rgba(26, 98, 255, 0.4) !important;
+        }
+
+        .footer .subscribe-form input {
+            background: transparent !important;
+            border: none !important;
+            outline: none !important;
+            color: #FFFFFF !important;
+            font-size: 14.5px !important;
+            flex: 1 !important;
+            padding: 10px 8px 10px 0 !important;
+        }
+
+        .footer .subscribe-form input::placeholder {
+            color: #64748B !important;
+        }
+
+        .footer .subscribe-form button {
+            background: linear-gradient(135deg, #1A62FF 0%, #004BD6 100%) !important;
+            border: none !important;
+            color: #FFFFFF !important;
+            font-weight: 750 !important;
+            font-size: 14px !important;
+            border-radius: 50px !important;
+            padding: 10px 24px !important;
+            cursor: pointer !important;
+            transition: all 0.25s ease !important;
+            box-shadow: 0 4px 15px rgba(26, 98, 255, 0.4) !important;
+        }
+
+        .footer .subscribe-form button:hover {
+            background: linear-gradient(135deg, #2B73FF 0%, #0B53E4 100%) !important;
+            box-shadow: 0 6px 20px rgba(26, 98, 255, 0.6) !important;
+        }
+
+        .footer .news-note {
+            color: #94A3B8 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            margin-top: 14px !important;
+            font-size: 13px !important;
+        }
+
+        .footer .check-dot {
+            background: #1A62FF !important;
+            color: #FFFFFF !important;
+            width: 20px !important;
+            height: 20px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 11px !important;
+            box-shadow: 0 0 10px rgba(26, 98, 255, 0.6) !important;
+            flex-shrink: 0 !important;
+        }
+
+        /* NAVIGATION LINK COLUMNS */
+        .footer .links-row {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 28px !important;
+            padding: 44px 0 !important;
+            border-bottom: 1px solid rgba(26, 98, 255, 0.18) !important;
+        }
+
+        .footer .link-col h4 {
+            color: #FFFFFF !important;
+            font-size: 16px !important;
+            font-weight: 750 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            margin: 0 0 18px !important;
+            letter-spacing: -0.01em !important;
+        }
+
+        .footer .link-col h4 .ic {
+            color: #1A62FF !important;
+            font-size: 16px !important;
+        }
+
+        .footer .link-col ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+        }
+
+        .footer .link-col ul li a {
+            color: #94A3B8 !important;
+            font-size: 14.5px !important;
+            text-decoration: none !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            transition: all 0.22s ease !important;
+        }
+
+        .footer .link-col ul li a::before {
+            content: "›" !important;
+            color: #1A62FF !important;
+            font-size: 16px !important;
+            line-height: 1 !important;
+            transition: transform 0.2s ease !important;
+        }
+
+        .footer .link-col ul li a:hover {
+            color: #38BDF8 !important;
+            transform: translateX(4px) !important;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.35) !important;
+        }
+
+        .footer .link-col ul li a:hover::before {
+            transform: translateX(2px) !important;
+            color: #38BDF8 !important;
+        }
+
+        /* GLOBAL OFFICES (Blue & Black Cards) */
+        .footer .offices-row {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 24px !important;
+            padding: 44px 0 24px !important;
+        }
+
+        .footer .office-card {
+            flex: 1 1 calc(25% - 24px) !important;
+            min-width: 250px !important;
+            background: linear-gradient(180deg, rgba(12, 20, 42, 0.8) 0%, rgba(6, 10, 22, 0.95) 100%) !important;
+            border: 1px solid rgba(26, 98, 255, 0.24) !important;
+            border-radius: 18px !important;
+            padding: 26px !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+            backdrop-filter: blur(10px) !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .footer .office-card:hover {
+            border-color: #1A62FF !important;
+            transform: translateY(-5px) !important;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 28px rgba(26, 98, 255, 0.28) !important;
+            background: linear-gradient(180deg, rgba(16, 26, 56, 0.9) 0%, rgba(8, 14, 28, 0.98) 100%) !important;
+        }
+
+        .footer .office-head {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            margin-bottom: 16px !important;
+        }
+
+        .footer .office-title {
+            color: #FFFFFF !important;
+            font-size: 17px !important;
+            font-weight: 750 !important;
+        }
+
+        .footer .office-card h5 {
+            color: #38BDF8 !important;
+            font-size: 15px !important;
+            font-weight: 650 !important;
+            margin: 0 0 14px !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .footer .office-card a:hover h5 {
+            color: #60A5FA !important;
+            text-decoration: underline !important;
+        }
+
+        .footer .office-line {
+            color: #94A3B8 !important;
+            font-size: 13.5px !important;
+            line-height: 1.6 !important;
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 10px !important;
+            margin-bottom: 12px !important;
+        }
+
+        .footer .office-line .ic {
+            color: #1A62FF !important;
+            font-size: 16px !important;
+            flex-shrink: 0 !important;
+        }
+
+        .footer .office-line .ic i {
+            color: #1A62FF !important;
+        }
+
+        .footer .office-email {
+            margin-top: auto !important;
+        }
+
+        .footer .office-email a {
+            color: #E2E8F0 !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .footer .office-email a:hover {
+            color: #38BDF8 !important;
+            text-decoration: underline !important;
+        }
+
+        .footer .remote-list {
+            padding-left: 18px !important;
+            margin: 0 0 12px !important;
+            color: #94A3B8 !important;
+            font-size: 13.5px !important;
+        }
+
+        .footer .remote-list li {
+            margin-bottom: 4px !important;
+        }
+
+        /* CERTIFICATIONS ROW */
+        .footer .certs-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-around !important;
+            flex-wrap: wrap !important;
+            gap: 24px !important;
+            background: rgba(8, 14, 30, 0.65) !important;
+            border: 1px solid rgba(26, 98, 255, 0.2) !important;
+            border-radius: 18px !important;
+            padding: 22px 32px !important;
+            margin: 18px 0 36px !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .footer .cert-item img {
+            max-height: 48px !important;
+            width: auto !important;
+            filter: brightness(0.95) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5)) !important;
+            transition: all 0.25s ease !important;
+        }
+
+        .footer .cert-item:hover img {
+            filter: brightness(1.15) drop-shadow(0 0 12px rgba(26, 98, 255, 0.5)) !important;
+            transform: scale(1.05) !important;
+        }
+
+        /* BOTTOM CONTACTS & SOCIALS */
+        .footer .bottom-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 24px !important;
+            flex-wrap: wrap !important;
+            padding: 28px 0 !important;
+            border-top: 1px solid rgba(26, 98, 255, 0.18) !important;
+        }
+
+        .footer .bottom-contacts {
+            display: flex !important;
+            gap: 28px !important;
+            flex-wrap: wrap !important;
+        }
+
+        .footer .bottom-contact {
+            display: flex !important;
+            align-items: center !important;
+            gap: 14px !important;
+        }
+
+        .footer .bottom-contact .ic-box {
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 12px !important;
+            background: rgba(26, 98, 255, 0.14) !important;
+            border: 1px solid rgba(26, 98, 255, 0.32) !important;
+            color: #38BDF8 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 19px !important;
+            box-shadow: 0 0 14px rgba(26, 98, 255, 0.25) !important;
+        }
+
+        .footer .bottom-contact .label {
+            color: #64748B !important;
+            font-size: 12px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            margin-bottom: 2px !important;
+        }
+
+        .footer .bottom-contact .value a {
+            color: #FFFFFF !important;
+            font-weight: 650 !important;
+            font-size: 14.5px !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .footer .bottom-contact .value a:hover {
+            color: #38BDF8 !important;
+            text-decoration: underline !important;
+        }
+
+        .footer .hire-on-logo img {
+            max-height: 42px !important;
+            border-radius: 8px !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        }
+
+        .footer .socials {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+        }
+
+        .footer .socials span {
+            color: #94A3B8 !important;
+            font-size: 13.5px !important;
+            margin-right: 6px !important;
+        }
+
+        .footer .social-ic {
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 50% !important;
+            background: rgba(14, 22, 46, 0.9) !important;
+            border: 1px solid rgba(26, 98, 255, 0.3) !important;
+            color: #FFFFFF !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 14px !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .footer .social-ic:hover {
+            background: #1A62FF !important;
+            border-color: #1A62FF !important;
+            color: #FFFFFF !important;
+            transform: translateY(-3px) !important;
+            box-shadow: 0 0 18px rgba(26, 98, 255, 0.75) !important;
+        }
+
+        /* COPYRIGHT ROW */
+        .footer .copyright-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 20px !important;
+            flex-wrap: wrap !important;
+            padding: 24px 0 8px !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+            color: #64748B !important;
+            font-size: 13.5px !important;
+        }
+
+        .footer .copyright-row b {
+            color: #CBD5E1 !important;
+        }
+
+        .footer .legal-links {
+            display: flex !important;
+            gap: 20px !important;
+        }
+
+        .footer .legal-links a {
+            color: #94A3B8 !important;
+            text-decoration: none !important;
+            transition: color 0.2s ease !important;
+        }
+
+        .footer .legal-links a:hover {
+            color: #38BDF8 !important;
+            text-decoration: underline !important;
+        }
+
+        @media (max-width: 1024px) {
+            .footer .links-row {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            .footer .office-card {
+                flex: 1 1 calc(50% - 24px) !important;
+            }
+            .footer .brand-col {
+                border-right: none !important;
+            }
+        }
+
+        @media (max-width: 680px) {
+            footer.footer {
+                padding: 45px 18px 20px !important;
+            }
+            .footer .cta-banner {
+                padding: 24px 20px !important;
+            }
+            .footer .links-row {
+                grid-template-columns: 1fr !important;
+                gap: 32px !important;
+            }
+            .footer .office-card {
+                flex: 1 1 100% !important;
+            }
+            .footer .bottom-row {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            .footer .copyright-row {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 12px !important;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -10302,27 +11151,42 @@
             </div>
         </div>
     </section>
-    <div class="lt_s">
-        <h2>Join <span class="c_primary">10,000+</span> Subscribers</h2>
-    </div>
-    <div class="rt_s m_h">
-        <p>Get the weekly updates on the newest brand stories, business models and technology right in your inbox.
-        </p>
-        <!-- Subscriber Box -->
-        <form class="form v2 max-width" id="thank_you_subscription_form" novalidate>
-            <div class="form_control">
-                <input type="email" placeholder="Enter Your Email" name="emailaddress" id="emailaddress" required>
+
+    <!-- ============================================================ -->
+    <!-- PRE-FOOTER NEWSLETTER SUBSCRIBERS SHOWCASE                    -->
+    <!-- ============================================================ -->
+    <section class="wc-subscribers-section" id="newsletter-subscription">
+        <div class="wc-subscribers-card">
+            <div class="wc-sub-content">
+                <div class="wc-sub-badge">
+                    <span class="wc-sub-pulse"></span>
+                    <span>WEEKLY INTELLIGENCE</span>
+                </div>
+                <h2 class="wc-sub-title">Join <span class="wc-sub-blue">10,000+</span> Subscribers</h2>
+                <p class="wc-sub-desc">Get the weekly updates on the newest brand stories, business models and technology right in your inbox.</p>
             </div>
-            <div class="form_btn">
-                <input type="submit" name="common_submit" id="common_submit" class="next btn btn-info" value="Submit">
-                <input type="hidden" name="form_name" value="Webconvoy Subscription">
-                <input type="hidden" name="referal_url" id="referal_url" value="https://www.webconvoy.com/"
-                    class="refferal_page_check">
-                <input type="hidden" name="visitor_ip" value="139.5.242.250">
+            <div class="wc-sub-action">
+                <form class="wc-sub-form" id="thank_you_subscription_form" novalidate>
+                    <div class="wc-sub-input-wrap">
+                        <i class="bi bi-envelope wc-sub-mail-icon"></i>
+                        <input type="email" placeholder="Enter Your Email Address..." name="emailaddress" id="emailaddress" required autocomplete="email">
+                        <button type="submit" name="common_submit" id="common_submit" class="wc-sub-submit-btn">
+                            <span>Submit</span>
+                            <i class="bi bi-arrow-right-short"></i>
+                        </button>
+                    </div>
+                    <input type="hidden" name="form_name" value="Webconvoy Subscription">
+                    <input type="hidden" name="referal_url" id="referal_url" value="https://www.webconvoy.com/" class="refferal_page_check">
+                    <input type="hidden" name="visitor_ip" value="139.5.242.250">
+                    <div class="wc-sub-meta">
+                        <i class="bi bi-shield-check"></i>
+                        <span>No spam ever. Unsubscribe at any time with 1-click.</span>
+                    </div>
+                </form>
+                <div class="sub_msg" id="subscription_message"></div>
             </div>
-        </form>
-        <div class="sub_msg" id="subscription_message"></div>
-    </div>
+        </div>
+    </section>
 
 
 
@@ -10362,19 +11226,20 @@
                 </div>
                 <div class="news-col">
                     <h3>Stay Updated with Technology Insights</h3>
-                    <form class="subscribe-form" id="thank_you_subscription_form" novalidate>
-                        <input type="email" name="emailaddress" id="emailaddress" placeholder="Enter your work email"
-                            required>
-                        <button type="submit" name="common_submit" id="common_submit">
-                            Subscribe ➤
+                    <form class="subscribe-form" id="footer_quick_subscribe_form" novalidate>
+                        <input type="email" name="emailaddress" id="footer_emailaddress" placeholder="Enter your work email..."
+                            required autocomplete="email">
+                        <button type="submit" name="common_submit" id="footer_common_submit">
+                            <span>Subscribe</span>
+                            <i class="bi bi-arrow-right-short" style="font-size: 18px; line-height: 1;"></i>
                         </button>
                         <!-- Hidden Fields -->
                         <input type="hidden" name="form_name" value="Webconvoy Subscription">
-                        <input type="hidden" name="referal_url" id="referal_url" value="https://www.webconvoy.com/"
+                        <input type="hidden" name="referal_url" id="footer_referal_url" value="https://www.webconvoy.com/"
                             class="refferal_page_check">
                         <input type="hidden" name="visitor_ip" value="210.89.37.246">
                     </form>
-                    <div class="sub_msg" id="subscription_message"></div>
+                    <div class="sub_msg" id="footer_subscription_message"></div>
                     <div class="news-note">
                         <span class="check-dot">✓</span>
                         Receive latest technology trends, hiring updates &amp; case studies.
@@ -10595,15 +11460,21 @@
 
     <script>
         $(document).ready(function () {
-            $('#thank_you_subscription_form').on('submit', function (e) {
+            $('#thank_you_subscription_form, #footer_quick_subscribe_form').on('submit', function (e) {
                 e.preventDefault();
 
                 var form = $(this);
-                var submitBtn = form.find('#common_submit');
-                var messageContainer = $('#subscription_message');
+                var submitBtn = form.find('button[type="submit"], input[type="submit"]');
+                var originalText = submitBtn.is('input') ? submitBtn.val() : submitBtn.html();
+                var messageContainer = form.attr('id') === 'thank_you_subscription_form' ? $('#subscription_message') : $('#footer_subscription_message');
 
                 // Disable submit button to prevent multiple submissions
-                submitBtn.prop('disabled', true).val('Submitting...');
+                submitBtn.prop('disabled', true);
+                if (submitBtn.is('input')) {
+                    submitBtn.val('Submitting...');
+                } else {
+                    submitBtn.html('<span>Submitting...</span>');
+                }
                 messageContainer.html('').removeClass('alert-success alert-danger alert-info');
 
                 $.ajax({
@@ -10613,30 +11484,30 @@
                     dataType: 'json',
                     success: function (response) {
                         if (response.status === 'success') {
-                            messageContainer.html('<div class="alert alert-success">' + response.message + '</div>');
+                            messageContainer.html('<div class="alert alert-success" style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10B981; color: #34D399; padding: 12px 16px; border-radius: 12px; margin-top: 10px;">' + response.message + '</div>');
                             form[0].reset();
                         } else if (response.status === 'info') {
-                            messageContainer.html('<div class="alert alert-info">' + response.message + '</div>');
+                            messageContainer.html('<div class="alert alert-info" style="background: rgba(59, 130, 246, 0.15); border: 1px solid #3B82F6; color: #60A5FA; padding: 12px 16px; border-radius: 12px; margin-top: 10px;">' + response.message + '</div>');
                         } else {
-                            messageContainer.html('<div class="alert alert-danger">' + response.message + '</div>');
+                            messageContainer.html('<div class="alert alert-danger" style="background: rgba(239, 68, 68, 0.15); border: 1px solid #EF4444; color: #F87171; padding: 12px 16px; border-radius: 12px; margin-top: 10px;">' + response.message + '</div>');
                         }
                     },
                     error: function () {
-                        messageContainer.html('<div class="alert alert-danger">An error occurred. Please try again later.</div>');
+                        messageContainer.html('<div class="alert alert-danger" style="background: rgba(239, 68, 68, 0.15); border: 1px solid #EF4444; color: #F87171; padding: 12px 16px; border-radius: 12px; margin-top: 10px;">An error occurred. Please try again later.</div>');
                     },
                     complete: function () {
-                        submitBtn.prop('disabled', false).val('Submit');
-
-                        // Scroll to message
-                        $('html, body').animate({
-                            scrollTop: messageContainer.offset().top - 100
-                        }, 500);
+                        submitBtn.prop('disabled', false);
+                        if (submitBtn.is('input')) {
+                            submitBtn.val(originalText);
+                        } else {
+                            submitBtn.html(originalText);
+                        }
                     }
                 });
             });
 
             // Set referral URL dynamically
-            $('#referal_url').val(window.location.href);
+            $('#referal_url, #footer_referal_url').val(window.location.href);
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
