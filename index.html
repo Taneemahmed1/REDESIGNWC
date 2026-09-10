@@ -2930,16 +2930,16 @@
 
         .project-card {
             flex: 0 0 calc(33.333% - 19px);
-            min-width: 420px;
-            max-width: 480px;
-            height: 540px;
-            border-radius: 28px;
+            min-width: 450px;
+            max-width: 490px;
+            height: 615px;
+            border-radius: 36px;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 34px 32px 30px;
+            justify-content: flex-start;
+            padding: 38px 36px 32px;
             scroll-snap-align: start;
             transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, opacity 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
@@ -3388,399 +3388,498 @@
         }
 
 
-        /* 3. RIZON (Fintech - Dark Obsidian Theme) */
+        /* ==========================================================================
+           Ditto Exact Match Cards (RIZON & Clover)
+           ========================================================================== */
+        .card-theme-ditto {
+            padding: 0 !important;
+            overflow: visible !important;
+            border-radius: 44px !important;
+            position: relative !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            cursor: pointer !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease !important;
+        }
+
+        .card-theme-clover.card-theme-ditto {
+            flex: 0 0 512px !important;
+            min-width: 490px !important;
+            max-width: 520px !important;
+            height: 615px !important;
+        }
+
+        .card-theme-rizon.card-theme-ditto {
+            flex: 0 0 680px !important;
+            min-width: 650px !important;
+            max-width: 700px !important;
+            height: 615px !important;
+        }
+
+        .card-theme-ditto:hover {
+            transform: translateY(-8px) !important;
+            filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.16)) !important;
+        }
+
+        .card-theme-rizon.card-theme-ditto:hover {
+            filter: drop-shadow(0 24px 45px rgba(0, 0, 0, 0.55)) !important;
+        }
+
+        .ditto-card-asset {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            object-position: center !important;
+            display: block !important;
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+            pointer-events: none !important;
+        }
+
+        .card-theme-ditto:hover .ditto-card-asset {
+            transform: scale(1.02) !important;
+        }
+
+        .ditto-card-link-overlay {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 10 !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+            background: transparent !important;
+        }
+
+        /* ==========================================================================
+           3. RIZON (Fintech - Dark Obsidian Theme - Exact Ditto Match)
+           ========================================================================== */
         .card-theme-rizon {
-            background: #090A0E;
+            background: #08090C !important;
             color: #FFFFFF !important;
-            border: 1.5px solid rgba(255, 255, 255, 0.12);
-            position: relative;
+            border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+            border-radius: 36px !important;
+            position: relative !important;
+            overflow: hidden !important;
+            padding: 38px 36px 32px !important;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+        }
+
+        .card-theme-rizon .card-header-row {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            margin-bottom: 22px !important;
+            position: relative !important;
+            z-index: 10 !important;
         }
 
         .rizon-brand-group {
-            display: flex;
-            align-items: center;
+            display: flex !important;
+            align-items: center !important;
         }
 
         .rizon-header-logo {
-            height: 25px;
-            width: auto;
-            object-fit: contain;
-            display: block;
+            height: 28px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            display: block !important;
         }
 
         .card-theme-rizon .badge-rizon {
-            background: rgba(255, 255, 255, 0.08);
-            color: rgba(255, 255, 255, 0.8) !important;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 30px;
-            padding: 5px 16px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 600;
+            background: rgba(255, 255, 255, 0.08) !important;
+            color: #E2E8F0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.18) !important;
+            border-radius: 50px !important;
+            padding: 6px 20px !important;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 13px !important;
+            font-weight: 650 !important;
+            letter-spacing: 0.3px !important;
         }
 
-        /* Overriding any global .card-main-heading with highest specificity and !important */
         .card-theme-rizon .card-main-heading,
         .card-theme-rizon .rizon-card-heading {
-            font-family: 'Montserrat', -apple-system, sans-serif;
-            font-size: 1.72rem;
-            font-weight: 800;
-            line-height: 1.22;
-            letter-spacing: -0.025em;
+            font-family: 'Montserrat', -apple-system, sans-serif !important;
+            font-size: 2.35rem !important;
+            font-weight: 850 !important;
+            line-height: 1.1 !important;
+            letter-spacing: -0.025em !important;
             color: #FFFFFF !important;
-            margin: 0 0 18px;
-            z-index: 8;
-            position: relative;
-            width: 55%;
+            margin: 0 0 24px !important;
+            z-index: 8 !important;
+            position: relative !important;
+            width: 54% !important;
         }
 
         .card-theme-rizon .rizon-serif-italic {
             font-family: 'Playfair Display', Georgia, serif !important;
             font-style: italic !important;
             font-weight: 400 !important;
+            font-size: 2.55rem !important;
             color: #FFFFFF !important;
-            letter-spacing: 0.01em;
+            letter-spacing: 0.01em !important;
         }
 
-        /* RIZON Features List */
-        .rizon-features-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 20px;
-            z-index: 8;
-            position: relative;
-            width: 50%;
+        /* RIZON Features List (Stacked Vertically) */
+        .card-theme-rizon .rizon-features-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 18px !important;
+            margin-bottom: 24px !important;
+            z-index: 8 !important;
+            position: relative !important;
+            width: 52% !important;
         }
 
-        .rizon-feature-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .card-theme-rizon .rizon-feature-item {
+            display: flex !important;
+            align-items: center !important;
+            gap: 14px !important;
         }
 
-        .rizon-feature-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: rgba(234, 179, 8, 0.08);
-            border: 1.5px solid rgba(234, 179, 8, 0.35);
-            color: #FACC15;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
+        .card-theme-rizon .rizon-feature-icon {
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 13px !important;
+            background: rgba(250, 204, 21, 0.08) !important;
+            border: 1px solid rgba(250, 204, 21, 0.35) !important;
+            color: #FACC15 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 22px !important;
+            flex-shrink: 0 !important;
+            transition: all 0.3s ease !important;
         }
 
-        .project-card:hover .rizon-feature-icon {
-            background: rgba(234, 179, 8, 0.16);
-            border-color: #FACC15;
-            transform: scale(1.06);
+        .card-theme-rizon:hover .rizon-feature-icon {
+            background: rgba(250, 204, 21, 0.16) !important;
+            border-color: #FACC15 !important;
+            transform: scale(1.06) !important;
         }
 
-        .rizon-feature-text {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
+        .card-theme-rizon .rizon-feature-text {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2px !important;
         }
 
-        .rizon-feature-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.92rem;
-            font-weight: 700;
+        .card-theme-rizon .rizon-feature-title {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 15.5px !important;
+            font-weight: 750 !important;
             color: #FFFFFF !important;
-            line-height: 1.25;
+            line-height: 1.25 !important;
         }
 
-        .rizon-feature-sub {
-            font-family: 'Roboto', 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.7) !important;
-            line-height: 1.35;
+        .card-theme-rizon .rizon-feature-sub {
+            font-family: 'Roboto', 'Inter', sans-serif !important;
+            font-size: 13.5px !important;
+            font-weight: 400 !important;
+            color: #94A3B8 !important;
+            line-height: 1.35 !important;
+            margin-top: 2px !important;
         }
 
-        /* Mockup Wrapper - strictly right half, never overlaps left content */
+        /* Mockup Graphic - Hand holding phone, red glow & notification */
         .card-theme-rizon .rizon-mockup-wrapper,
         .rizon-mockup-wrapper {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 58%;
-            max-width: 300px;
-            height: 100%;
-            overflow: hidden;
-            border-bottom-right-radius: 28px;
-            z-index: 2;
-            pointer-events: none;
-            -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 20%, black 45%), linear-gradient(to top, black 70%, transparent 100%);
-            mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 20%, black 45%), linear-gradient(to top, black 70%, transparent 100%);
-            -webkit-mask-composite: intersect;
-            mask-composite: intersect;
+            position: absolute !important;
+            bottom: 0 !important;
+            right: 0 !important;
+            width: 66% !important;
+            height: 86% !important;
+            overflow: hidden !important;
+            border-bottom-right-radius: 36px !important;
+            z-index: 2 !important;
+            pointer-events: none !important;
+            mask-image: none !important;
+            -webkit-mask-image: none !important;
         }
 
         .card-theme-rizon .rizon-mockup-wrapper img,
         .rizon-mockup-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            transform: scale(1.02);
-            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            object-position: right bottom !important;
+            transform: scale(1.04) !important;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
         }
 
-        .project-card:hover .rizon-mockup-wrapper img {
-            transform: scale(1.05) translateX(3px);
+        .card-theme-rizon:hover .rizon-mockup-wrapper img {
+            transform: scale(1.07) translateY(-3px) !important;
         }
 
-        /* Footer Row & View Project Button - strictly pinned to bottom-left corner */
+        /* Footer Row & View Project Button */
         .card-theme-rizon .card-footer-row,
         .card-theme-rizon .rizon-footer-row,
         .rizon-footer-row {
             position: absolute !important;
-            bottom: 30px !important;
-            left: 32px !important;
+            bottom: 32px !important;
+            left: 36px !important;
             display: flex !important;
             flex-direction: column !important;
             align-items: flex-start !important;
             justify-content: flex-start !important;
             text-align: left !important;
-            gap: 12px !important;
-            z-index: 10 !important;
+            gap: 14px !important;
+            z-index: 15 !important;
             margin: 0 !important;
             padding: 0 !important;
-            width: 42% !important;
+            width: auto !important;
             transform: none !important;
         }
 
         .rizon-action-link {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 750 !important;
             color: #FFFFFF !important;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            z-index: 10;
-            position: relative;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            text-decoration: none !important;
+            z-index: 10 !important;
+            position: relative !important;
             background: transparent !important;
-            padding: 0;
-            border: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 0 !important;
+            border: none !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
 
         .rizon-action-link span:first-child {
             color: #FFFFFF !important;
-            font-weight: 700;
-            letter-spacing: -0.01em;
+            font-weight: 750 !important;
+            letter-spacing: -0.01em !important;
         }
 
         .rizon-action-link:hover {
             color: #FFFFFF !important;
-            transform: translateX(3px);
+            transform: translateX(3px) !important;
         }
 
         .rizon-arrow-circle {
-            background: rgba(255, 255, 255, 0.12) !important;
-            border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+            background: #161820 !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
             color: #FFFFFF !important;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-            flex-shrink: 0;
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 18px !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease !important;
+            flex-shrink: 0 !important;
         }
 
-        .project-card:hover .rizon-arrow-circle,
+        .card-theme-rizon:hover .rizon-arrow-circle,
         .rizon-action-link:hover .rizon-arrow-circle {
-            background: rgba(255, 255, 255, 0.22) !important;
+            background: #252834 !important;
             border-color: rgba(255, 255, 255, 0.45) !important;
-            transform: scale(1.08) translateX(2px);
-            box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2);
+            transform: scale(1.08) translateX(2px) !important;
+            box-shadow: 0 6px 18px rgba(255, 255, 255, 0.2) !important;
         }
 
         /* Available in 122+ countries flags pill */
         .rizon-countries-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 4px;
-            z-index: 10;
-            position: relative;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            margin-top: 2px !important;
+            z-index: 10 !important;
+            position: relative !important;
         }
 
         .rizon-flags-stack {
-            display: flex;
-            align-items: center;
+            display: flex !important;
+            align-items: center !important;
         }
 
         .rizon-flags-stack img {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1.5px solid #090A0E;
-            margin-left: -5px;
+            width: 20px !important;
+            height: 20px !important;
+            border-radius: 50% !important;
+            object-fit: cover !important;
+            border: 1.5px solid #08090C !important;
+            margin-left: -6px !important;
         }
 
         .rizon-flags-stack img:first-child {
-            margin-left: 0;
+            margin-left: 0 !important;
         }
 
         .rizon-countries-text {
-            font-family: 'Roboto', 'Inter', sans-serif;
-            font-size: 0.72rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.65) !important;
-            white-space: nowrap;
+            font-family: 'Roboto', 'Inter', sans-serif !important;
+            font-size: 12.5px !important;
+            font-weight: 400 !important;
+            color: #8B98A5 !important;
+            white-space: nowrap !important;
+            margin-left: 6px !important;
         }
 
 
-        /* 4. Clover (Business Technology - Soft Mint Cream Theme) */
+        /* ==========================================================================
+           4. Clover (Business Technology - Soft Mint Cream Theme - Exact Ditto Match)
+           ========================================================================== */
         .card-theme-clover {
-            background: #FAFBF9;
-            color: #0F172A;
-            border: 1.5px solid #E2EAE2;
-            position: relative;
+            background: #F7FAF7 !important;
+            color: #0D1C12 !important;
+            border: 1.5px solid #E2EAE3 !important;
+            border-radius: 36px !important;
+            position: relative !important;
+            overflow: hidden !important;
+            padding: 38px 36px 32px !important;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .card-theme-clover .card-header-row {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            margin-bottom: 22px !important;
+            position: relative !important;
+            z-index: 10 !important;
         }
 
         .clover-brand-group {
-            display: flex;
-            align-items: center;
+            display: flex !important;
+            align-items: center !important;
         }
 
         .clover-header-logo {
-            height: 28px;
-            width: auto;
-            object-fit: contain;
-            display: block;
+            height: 32px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            display: block !important;
         }
 
         .card-theme-clover .badge-clover {
-            background: #E8F5E9;
-            color: #15803D !important;
-            border: 1px solid #A5D6A7;
-            border-radius: 30px;
-            padding: 5px 16px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.82rem;
-            font-weight: 600;
+            background: #EBF5EC !important;
+            color: #1B5226 !important;
+            border: 1px solid #C4E3C7 !important;
+            border-radius: 50px !important;
+            padding: 7px 20px !important;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 13.5px !important;
+            font-weight: 650 !important;
+            letter-spacing: 0.3px !important;
         }
 
         .card-theme-clover .card-main-heading,
         .card-theme-clover .clover-card-heading {
-            font-family: 'Montserrat', -apple-system, sans-serif;
-            font-size: 1.6rem;
-            font-weight: 800;
-            line-height: 1.18;
-            letter-spacing: -0.025em;
-            color: #0F172A !important;
-            margin: 0 0 14px;
-            z-index: 8;
-            position: relative;
+            font-family: 'Montserrat', -apple-system, sans-serif !important;
+            font-size: 2.25rem !important;
+            font-weight: 850 !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.03em !important;
+            color: #0D1C12 !important;
+            margin: 0 0 20px !important;
+            z-index: 8 !important;
+            position: relative !important;
         }
 
         .card-theme-clover .clover-highlight-green {
-            color: #15803D !important;
-            font-weight: 800;
+            color: #0D7835 !important;
+            font-weight: 850 !important;
         }
 
         /* Clover 2-Column Features Row */
-        .clover-features-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            margin-bottom: 16px;
-            z-index: 8;
-            position: relative;
+        .card-theme-clover .clover-features-row {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 18px !important;
+            margin-bottom: 20px !important;
+            z-index: 8 !important;
+            position: relative !important;
         }
 
-        .clover-feature-col {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
+        .card-theme-clover .clover-feature-col {
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 12px !important;
         }
 
-        .clover-feature-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: #E8F5E9;
-            color: #15803D;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
+        .card-theme-clover .clover-feature-icon {
+            width: 48px !important;
+            height: 48px !important;
+            border-radius: 14px !important;
+            background: #E1F4E4 !important;
+            color: #167A38 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 24px !important;
+            flex-shrink: 0 !important;
+            transition: all 0.3s ease !important;
         }
 
-        .project-card:hover .clover-feature-icon {
-            background: #DCFCE7;
-            color: #166534;
-            transform: scale(1.05);
+        .card-theme-clover:hover .clover-feature-icon {
+            background: #D5EED9 !important;
+            color: #0F5E29 !important;
+            transform: scale(1.05) !important;
         }
 
-        .clover-feature-text {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
+        .card-theme-clover .clover-feature-text {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 3px !important;
         }
 
-        .clover-feature-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.86rem;
-            font-weight: 700;
-            color: #0F172A;
-            line-height: 1.25;
+        .card-theme-clover .clover-feature-title {
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 800 !important;
+            color: #0D1C12 !important;
+            line-height: 1.25 !important;
+            margin-bottom: 3px !important;
         }
 
-        .clover-feature-sub {
-            font-family: 'Roboto', 'Inter', sans-serif;
-            font-size: 0.74rem;
-            font-weight: 400;
-            color: #64748B;
-            line-height: 1.35;
+        .card-theme-clover .clover-feature-sub {
+            font-family: 'Roboto', 'Inter', sans-serif !important;
+            font-size: 13.5px !important;
+            font-weight: 450 !important;
+            color: #4E6053 !important;
+            line-height: 1.45 !important;
         }
 
-        /* Clover Mockup Graphic */
+        /* Clover Mockup Graphic - Full crisp graphic without cutoff mask */
         .card-theme-clover .clover-mockup-wrapper,
         .clover-mockup-wrapper {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 260px;
-            overflow: hidden;
-            border-bottom-left-radius: 28px;
-            border-bottom-right-radius: 28px;
-            z-index: 2;
-            pointer-events: none;
-            -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
-            mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            height: 330px !important;
+            overflow: hidden !important;
+            border-bottom-left-radius: 36px !important;
+            border-bottom-right-radius: 36px !important;
+            z-index: 2 !important;
+            pointer-events: none !important;
+            mask-image: none !important;
+            -webkit-mask-image: none !important;
         }
 
         .card-theme-clover .clover-mockup-wrapper img,
         .clover-mockup-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center bottom;
-            transform: scale(1.01);
-            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            object-position: center top !important;
+            transform: scale(1.01) !important;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
         }
 
-        .project-card:hover .clover-mockup-wrapper img {
-            transform: scale(1.04) translateY(-2px);
+        .card-theme-clover:hover .clover-mockup-wrapper img {
+            transform: scale(1.04) translateY(-2px) !important;
         }
 
         /* Clover Footer Row & View Project Button */
@@ -3788,8 +3887,8 @@
         .card-theme-clover .clover-footer-row,
         .clover-footer-row {
             position: absolute !important;
-            bottom: 28px !important;
-            left: 32px !important;
+            bottom: 32px !important;
+            left: 36px !important;
             display: flex !important;
             align-items: center !important;
             z-index: 15 !important;
@@ -3799,54 +3898,54 @@
         }
 
         .clover-action-link {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #0F172A !important;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            z-index: 10;
-            position: relative;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 16px !important;
+            font-weight: 800 !important;
+            color: #0D1C12 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            text-decoration: none !important;
+            z-index: 10 !important;
+            position: relative !important;
             background: transparent !important;
-            padding: 0;
-            border: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 0 !important;
+            border: none !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
 
         .clover-action-link span:first-child {
-            color: #0F172A !important;
-            font-weight: 700;
-            letter-spacing: -0.01em;
+            color: #0D1C12 !important;
+            font-weight: 800 !important;
+            letter-spacing: -0.01em !important;
         }
 
         .clover-action-link:hover {
-            color: #0F172A !important;
-            transform: translateX(3px);
+            color: #0D1C12 !important;
+            transform: translateX(3px) !important;
         }
 
         .clover-arrow-circle {
-            background: #064E3B !important;
+            background: #0D1C12 !important;
             border: none !important;
             color: #FFFFFF !important;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.15rem;
-            box-shadow: 0 4px 14px rgba(6, 78, 59, 0.28);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            flex-shrink: 0;
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 18px !important;
+            box-shadow: 0 4px 14px rgba(13, 28, 18, 0.35) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease !important;
+            flex-shrink: 0 !important;
         }
 
-        .project-card:hover .clover-arrow-circle,
+        .card-theme-clover:hover .clover-arrow-circle,
         .clover-action-link:hover .clover-arrow-circle {
-            background: #047857 !important;
-            transform: scale(1.08) translateX(2px);
-            box-shadow: 0 6px 18px rgba(6, 78, 59, 0.4);
+            background: #1A3824 !important;
+            transform: scale(1.08) translateX(2px) !important;
+            box-shadow: 0 6px 18px rgba(13, 28, 18, 0.45) !important;
         }
 
         /* 3. Flynas (Soft Sky Blue) */
@@ -10202,117 +10301,16 @@
                         </div>
                     </div>
 
-                    <!-- Card 3: RIZON (Fintech) -->
-                    <div class="project-card card-theme-rizon" data-category="technology finance fintech all">
-                        <div class="card-header-row">
-                            <div class="card-brand-group rizon-brand-group">
-                                <img src="rizon_logo.png" alt="RIZON" class="rizon-header-logo">
-                            </div>
-                            <span class="badge-category badge-rizon">Fintech</span>
-                        </div>
-
-                        <h3 class="card-main-heading rizon-card-heading">
-                            Dollar <span class="rizon-serif-italic">banking</span><br>alternative.
-                        </h3>
-
-                        <!-- Features bullet items -->
-                        <div class="card-features-list rizon-features-list">
-                            <div class="rizon-feature-item">
-                                <div class="rizon-feature-icon">
-                                    <i class="bi bi-lightning-charge"></i>
-                                </div>
-                                <div class="rizon-feature-text">
-                                    <div class="rizon-feature-title">Open a USD account</div>
-                                    <div class="rizon-feature-sub">in seconds</div>
-                                </div>
-                            </div>
-                            <div class="rizon-feature-item">
-                                <div class="rizon-feature-icon">
-                                    <i class="bi bi-globe2"></i>
-                                </div>
-                                <div class="rizon-feature-text">
-                                    <div class="rizon-feature-title">Spend online, in-store at</div>
-                                    <div class="rizon-feature-sub">100M+ merchants worldwide</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- RIZON Mockup Graphic -->
-                        <div class="card-mockup-wrapper rizon-mockup-wrapper">
-                            <img src="rizon_bg.jpg" alt="RIZON Dollar Banking Mobile App">
-                        </div>
-
-                        <div class="card-footer-row rizon-footer-row">
-                            <a href="#contact" class="card-action-link rizon-action-link">
-                                <span>View Project</span>
-                                <span class="card-arrow-circle rizon-arrow-circle">
-                                    <i class="bi bi-arrow-right"></i>
-                                </span>
-                            </a>
-                            <div class="rizon-countries-row">
-                                <div class="rizon-flags-stack">
-                                    <img src="https://flagcdn.com/w40/us.png" alt="USA">
-                                    <img src="https://flagcdn.com/w40/gb.png" alt="UK">
-                                    <img src="https://flagcdn.com/w40/eu.png" alt="EU">
-                                    <img src="https://flagcdn.com/w40/ca.png" alt="Canada">
-                                    <img src="https://flagcdn.com/w40/au.png" alt="Australia">
-                                    <img src="https://flagcdn.com/w40/sg.png" alt="Singapore">
-                                </div>
-                                <span class="rizon-countries-text">Available in 122+ countries</span>
-                            </div>
-                        </div>
+                    <!-- Card 3: RIZON (Fintech - Ditto Same as Reference) -->
+                    <div class="project-card card-theme-rizon card-theme-ditto" data-category="technology finance fintech all">
+                        <img src="card_rizon_transparent.png" alt="RIZON - Dollar banking alternative" class="ditto-card-asset">
+                        <a href="#contact" class="ditto-card-link-overlay" aria-label="View RIZON Project"></a>
                     </div>
 
-                    <!-- Card 4: Clover (Business Technology) -->
-                    <div class="project-card card-theme-clover" data-category="technology all">
-                        <div class="card-header-row">
-                            <div class="card-brand-group clover-brand-group">
-                                <img src="clover_logo.png" alt="clover" class="clover-header-logo">
-                            </div>
-                            <span class="badge-category badge-clover">Business Technology</span>
-                        </div>
-
-                        <h3 class="card-main-heading clover-card-heading">
-                            Everything your<br>business needs.<br>
-                            <span class="clover-highlight-green">All in one place.</span>
-                        </h3>
-
-                        <!-- 2-column features -->
-                        <div class="clover-features-row">
-                            <div class="clover-feature-col">
-                                <div class="clover-feature-icon">
-                                    <i class="bi bi-credit-card"></i>
-                                </div>
-                                <div class="clover-feature-text">
-                                    <div class="clover-feature-title">Simpler payments</div>
-                                    <div class="clover-feature-sub">Accept payments anywhere, anytime.</div>
-                                </div>
-                            </div>
-                            <div class="clover-feature-col">
-                                <div class="clover-feature-icon">
-                                    <i class="bi bi-bar-chart-line-fill"></i>
-                                </div>
-                                <div class="clover-feature-text">
-                                    <div class="clover-feature-title">Smarter operations</div>
-                                    <div class="clover-feature-sub">Manage sales, inventory, staff and customers from
-                                        one dashboard.</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Clover Mockup Graphic -->
-                        <div class="card-mockup-wrapper clover-mockup-wrapper">
-                            <img src="clover_bg.jpg" alt="Clover POS and Business Management Systems">
-                        </div>
-
-                        <div class="card-footer-row clover-footer-row">
-                            <a href="#contact" class="card-action-link clover-action-link">
-                                <span>View Project</span>
-                                <span class="card-arrow-circle clover-arrow-circle">
-                                    <i class="bi bi-arrow-right"></i>
-                                </span>
-                            </a>
-                        </div>
+                    <!-- Card 4: Clover (Business Technology - Ditto Same as Reference) -->
+                    <div class="project-card card-theme-clover card-theme-ditto" data-category="technology all">
+                        <img src="card_clover_transparent.png" alt="Clover - Everything your business needs. All in one place." class="ditto-card-asset">
+                        <a href="#contact" class="ditto-card-link-overlay" aria-label="View Clover Project"></a>
                     </div>
                 </div>
             </div>
