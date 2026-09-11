@@ -1856,6 +1856,192 @@
             flex-shrink: 0 !important;
         }
 
+        /* NEW FULL-WIDTH NEWSLETTER CARD */
+        .wc-nl-banner-card {
+            position: relative !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 48px !important;
+            padding: 48px 56px !important;
+            background: radial-gradient(circle at 12% 25%, rgba(13, 110, 253, 0.16) 0%, rgba(6, 12, 28, 0.95) 55%, #030712 100%) !important;
+            border: 1.5px solid rgba(26, 98, 255, 0.38) !important;
+            border-radius: 26px !important;
+            box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(13, 110, 253, 0.12) !important;
+            margin: 15px 0 45px !important;
+            overflow: hidden !important;
+        }
+
+        .wc-nl-banner-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            height: 1.5px !important;
+            background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.5) 25%, rgba(26, 98, 255, 0.85) 50%, rgba(56, 189, 248, 0.5) 75%, transparent 100%) !important;
+        }
+
+        .wc-nl-content-col {
+            flex: 1 1 480px !important;
+            max-width: 560px !important;
+        }
+
+        .wc-nl-badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            background: rgba(13, 110, 253, 0.14) !important;
+            border: 1px solid rgba(56, 189, 248, 0.32) !important;
+            border-radius: 999px !important;
+            padding: 6px 14px !important;
+            font-size: 11px !important;
+            font-weight: 750 !important;
+            letter-spacing: 1.5px !important;
+            color: #38BDF8 !important;
+            text-transform: uppercase !important;
+            margin-bottom: 18px !important;
+        }
+
+        .wc-nl-badge-dot {
+            width: 7px !important;
+            height: 7px !important;
+            border-radius: 50% !important;
+            background: #00D2FF !important;
+            box-shadow: 0 0 8px #00D2FF, 0 0 14px #00D2FF !important;
+            display: inline-block !important;
+        }
+
+        .wc-nl-title {
+            font-size: 38px !important;
+            font-weight: 800 !important;
+            color: #FFFFFF !important;
+            line-height: 1.18 !important;
+            letter-spacing: -0.02em !important;
+            margin: 0 0 14px 0 !important;
+            font-family: 'Inter', -apple-system, sans-serif !important;
+        }
+
+        .wc-nl-glow-num {
+            color: #1A62FF !important;
+            text-shadow: 0 0 25px rgba(26, 98, 255, 0.85), 0 0 10px rgba(26, 98, 255, 0.5) !important;
+        }
+
+        .wc-nl-desc {
+            font-size: 15px !important;
+            color: #94A3B8 !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+            max-width: 480px !important;
+            font-weight: 400 !important;
+        }
+
+        .wc-nl-action-col {
+            flex: 1 1 420px !important;
+            max-width: 520px !important;
+        }
+
+        .wc-nl-input-bar {
+            display: flex !important;
+            align-items: center !important;
+            background: rgba(4, 9, 22, 0.95) !important;
+            border: 1.5px solid rgba(26, 98, 255, 0.45) !important;
+            border-radius: 999px !important;
+            padding: 5px 6px 5px 20px !important;
+            gap: 12px !important;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.45), 0 0 20px rgba(13, 110, 253, 0.12) !important;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .wc-nl-input-bar:focus-within {
+            border-color: #1A62FF !important;
+            box-shadow: 0 0 30px rgba(26, 98, 255, 0.5) !important;
+            background: rgba(6, 13, 30, 0.98) !important;
+        }
+
+        .wc-nl-mail-icon {
+            flex-shrink: 0 !important;
+        }
+
+        .wc-nl-input-bar input {
+            flex: 1 !important;
+            background: transparent !important;
+            border: none !important;
+            outline: none !important;
+            color: #FFFFFF !important;
+            font-size: 15px !important;
+            padding: 10px 0 !important;
+            min-width: 120px !important;
+        }
+
+        .wc-nl-input-bar input::placeholder {
+            color: #64748B !important;
+        }
+
+        .wc-nl-submit-btn {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            background: #1A62FF !important;
+            color: #FFFFFF !important;
+            border: none !important;
+            border-radius: 999px !important;
+            padding: 13px 26px !important;
+            font-size: 14.5px !important;
+            font-weight: 750 !important;
+            cursor: pointer !important;
+            flex-shrink: 0 !important;
+            transition: all 0.25s ease !important;
+            box-shadow: 0 0 20px rgba(26, 98, 255, 0.55) !important;
+        }
+
+        .wc-nl-submit-btn:hover {
+            background: #0052FF !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 0 28px rgba(26, 98, 255, 0.85) !important;
+        }
+
+        .wc-nl-privacy {
+            display: flex !important;
+            align-items: center !important;
+            gap: 9px !important;
+            color: #64748B !important;
+            font-size: 13px !important;
+            margin-top: 14px !important;
+            padding-left: 10px !important;
+        }
+
+        @media (max-width: 991px) {
+            .wc-nl-banner-card {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 38px 30px !important;
+                gap: 30px !important;
+            }
+            .wc-nl-content-col, .wc-nl-action-col {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .wc-nl-title {
+                font-size: 30px !important;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .wc-nl-input-bar {
+                flex-direction: column !important;
+                border-radius: 20px !important;
+                padding: 14px 16px !important;
+                align-items: stretch !important;
+            }
+            .wc-nl-submit-btn {
+                justify-content: center !important;
+                width: 100% !important;
+                border-radius: 12px !important;
+                margin-top: 8px !important;
+            }
+        }
+
         .footer .links-row {
             display: grid !important;
             grid-template-columns: repeat(4, 1fr) !important;
@@ -3268,32 +3454,46 @@
                 </div>
             </div>
 
-            <!-- BRAND + NEWSLETTER -->
-            <div class="top-row">
-                <div class="brand-col">
-                    <div class="logo">
-                        <img src="https://www.webconvoy.com/public/websitenew/image/logo-footer.png"
-                            alt="WebConvoy Logo" class="img-fluid">
+            <!-- WEEKLY INTELLIGENCE NEWSLETTER CARD -->
+            <div class="wc-nl-banner-card">
+                <div class="wc-nl-content-col">
+                    <div class="wc-nl-badge">
+                        <span class="wc-nl-badge-dot"></span>
+                        <span>WEEKLY INTELLIGENCE</span>
                     </div>
-                    <p class="brand-desc">WebConvoy is a leading IT services and staffing company delivering innovative,
-                        scalable and future-ready digital solutions across the globe.</p>
+                    <h2 class="wc-nl-title">
+                        Join <span class="wc-nl-glow-num">10,000+</span> Subscribers
+                    </h2>
+                    <p class="wc-nl-desc">
+                        Get the weekly updates on the newest brand stories, business models and technology right in your inbox.
+                    </p>
                 </div>
-                <div class="news-col">
-                    <h3>Stay Updated with Technology Insights</h3>
-                    <form class="subscribe-form" id="ai_footer_subscribe_form" novalidate>
-                        <input type="email" name="emailaddress" id="ai_footer_emailaddress" placeholder="Enter your work email..."
-                            required autocomplete="email">
-                        <button type="submit" name="common_submit" id="ai_footer_common_submit">
-                            <span>Subscribe</span>
-                            <i class="bi bi-arrow-right-short" style="font-size: 18px; line-height: 1;"></i>
-                        </button>
+                <div class="wc-nl-action-col">
+                    <form class="wc-nl-form" id="ai_footer_subscribe_form" novalidate>
+                        <div class="wc-nl-input-bar">
+                            <svg class="wc-nl-mail-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A62FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                                <path d="M3 6l9 6 9-6"></path>
+                            </svg>
+                            <input type="email" name="emailaddress" id="ai_footer_emailaddress" placeholder="Enter Your Email Address..." required autocomplete="email">
+                            <button type="submit" name="common_submit" id="ai_footer_common_submit" class="wc-nl-submit-btn">
+                                <span>Submit</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </button>
+                        </div>
                     </form>
                     <div class="sub_msg" id="ai_footer_subscription_message" style="display:none; color: #10b981; margin-top: 10px; font-size: 13px;">
                         ✓ Thank you for subscribing to WebConvoy AI Insights!
                     </div>
-                    <div class="news-note">
-                        <span class="check-dot">✓</span>
-                        Receive latest technology trends, hiring updates &amp; case studies.
+                    <div class="wc-nl-privacy">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                        <span>No spam ever. Unsubscribe at any time with 1-click.</span>
                     </div>
                 </div>
             </div>
