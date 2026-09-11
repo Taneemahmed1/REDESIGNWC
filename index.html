@@ -1453,7 +1453,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 64px;
+            height: 70px;
             z-index: 9999;
             background: #000000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -1463,12 +1463,20 @@
             align-items: center;
         }
 
+        body {
+            padding-top: 70px !important;
+        }
+
+        .hero-section {
+            margin-top: 0 !important;
+        }
+
         .agency-nav.scrolled {
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
-            height: 60px;
+            height: 64px;
         }
 
         .nav-floating-container {
@@ -1506,12 +1514,17 @@
         }
 
         .nav-logo-left img {
-            height: 32px;
+            height: 42px;
             width: auto;
-            max-height: 34px;
+            max-height: 44px;
             object-fit: contain;
             transition: transform 0.25s ease;
             filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+        }
+
+        .agency-nav.scrolled .nav-logo-left img {
+            height: 38px;
+            max-height: 38px;
         }
 
         .nav-logo-left:hover img {
@@ -7073,7 +7086,8 @@
             }
 
             .nav-logo-left img {
-                height: 32px !important;
+                height: 38px !important;
+                max-height: 40px !important;
                 width: auto !important;
             }
 
@@ -10136,7 +10150,7 @@
             <!-- Left: Logo -->
             <div class="nav-logo-left">
                 <a href="https://www.webconvoy.com/">
-                    <img src="NEW LOGO- wc.png" alt="WebConvoy Logo">
+                    <img src="nav_logo_white.png" alt="WebConvoy Logo">
                 </a>
             </div>
 
@@ -10227,7 +10241,7 @@
         <!-- Top Navbar Section -->
         <div class="menu-header">
             <a class="navbar-brand" href="https://www.webconvoy.com/">
-                <img src="NEW LOGO- wc.png" alt="Logo" style="height: 38px; width: auto; object-fit: contain;">
+                <img src="nav_logo_white.png" alt="Logo" style="height: 40px; width: auto; object-fit: contain;">
             </a>
             <button class="menu-close" id="closeMenu"> <img
                     src="https://www.webconvoy.com/public/websitenew/image/icons-close.svg"
@@ -10331,7 +10345,7 @@
     <!-- =======================
        HANGING BANNER
   ======================= -->
-    <div class="hanging-banner" id="hangingBanner">
+    <div class="hanging-banner" id="hangingBanner" style="display: none;">
         <div class="banner-swing">
 
             <!-- Hanging lines -->
@@ -10365,7 +10379,7 @@
         <div class="hero-content position-relative text-white">
             <p class="mb-2 fw-semibold">Design / Develop / Scale</p>
             <h1 class="fw-bold">
-                Elevating Your Brand's<br>With <span>Websites</span>
+                AI-Powered Engineering for<br><span>Digital Business Transformation</span>
             </h1>
             <p class="mt-3 mb-4 fw-semibold">
                 Our commitment to transforming digital experiences and solving challenges
