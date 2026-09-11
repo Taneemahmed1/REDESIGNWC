@@ -1304,8 +1304,27 @@
         .metrics-header h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 3.5rem;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: -1px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 25%, #60a5fa 50%, #1d4ed8 75%, #38bdf8 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: movingDarkBlueGradient 6s ease infinite;
+            display: inline-block;
+        }
+
+        @keyframes movingDarkBlueGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .metrics-grid {
@@ -1323,11 +1342,14 @@
             flex-direction: column;
             height: 520px;
             /* Reduced for square-ish feel */
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .metric-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(37, 99, 235, 0.25);
         }
 
         .metric-top {
@@ -1344,20 +1366,31 @@
             grid-column: 1;
             font-family: 'Montserrat', sans-serif;
             font-size: 3.8rem;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 1;
             letter-spacing: -2px;
-            color: #fff;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 25%, #60a5fa 50%, #1d4ed8 75%, #38bdf8 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: movingDarkBlueGradient 6s ease infinite;
+            display: inline-block;
         }
 
         .stat-label {
             grid-row: 1;
             grid-column: 2;
-            font-size: 0.8rem;
-            font-weight: 700;
+            font-size: 0.82rem;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #fff;
+            letter-spacing: 0.06em;
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 30%, #1d4ed8 60%, #93c5fd 85%, #2563eb 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: movingDarkBlueGradient 6s ease infinite;
             padding-top: 2px;
         }
 
@@ -1365,7 +1398,7 @@
             grid-row: 2;
             grid-column: 1 / span 2;
             font-size: 0.9rem;
-            color: #888;
+            color: #94a3b8;
             line-height: 1.4;
             margin-top: 10px;
         }
