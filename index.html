@@ -51,6 +51,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <style>
+        /* Hero Video Overlay */
+        .hero-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.42);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Hero content above overlay */
+        .hero-content.position-relative,
+        .hero-awards-vertical-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero 3-Line Headline */
+        .hero-headline-3lines {
+            max-width: 560px;
+            line-height: 1.18;
+            white-space: normal;
+            word-break: normal;
+        }
+
         /* Premium Trusted Section Styles */
         #mag-trusted-section {
             background: #ffffff;
@@ -2281,7 +2308,7 @@
             object-fit: contain;
             border-radius: 50%;
             transform-origin: center center;
-            animation: continuousGlobeSpin 25s linear infinite;
+            animation: orbitDiagramFloat 8s ease-in-out infinite alternate;
         }
 
         @keyframes continuousGlobeSpin {
@@ -2301,6 +2328,17 @@
 
             100% {
                 transform: translate(-50%, -50%) translateY(8px);
+            }
+        }
+
+        @keyframes orbitDiagramFloat {
+            0% {
+                transform: scale(1) translateY(0px);
+                filter: drop-shadow(0 8px 24px rgba(26, 115, 232, 0.25));
+            }
+            100% {
+                transform: scale(1.03) translateY(-6px);
+                filter: drop-shadow(0 16px 40px rgba(26, 115, 232, 0.45));
             }
         }
 
@@ -10375,17 +10413,20 @@
             Your browser does not support the video tag.
         </video>
 
+        <!-- 🔹 Black Overlay above video -->
+        <div class="hero-video-overlay"></div>
+
         <!-- 🔹 Foreground Content -->
         <div class="hero-content position-relative text-white">
             <p class="mb-2 fw-semibold">Design / Develop / Scale</p>
-            <h1 class="fw-bold">
-                AI-Powered Engineering for<br><span>Digital Business Transformation</span>
+            <h1 class="fw-bold hero-headline-3lines">
+                AI-Powered Engineering<br>for Digital Business<br><span>Transformation</span>
             </h1>
             <p class="mt-3 mb-4 fw-semibold">
                 Our commitment to transforming digital experiences and solving challenges
             </p>
             <button class="watch-btn" id="watchBtn">
-                Watch Video
+                Let's Connect
                 <img src="https://www.webconvoy.com/public/websitenew/image/button-arrow.svg" alt="arrow-icon"
                     class="btn-icon">
             </button>
@@ -10730,7 +10771,7 @@
 
                         <!-- 3D Digital Globe Core -->
                         <div class="orbit-sphere-core">
-                            <img src="GLOBEWC.png" alt="WebConvoy Digital Globe Core" id="orbitSphereImage">
+                            <img src="orbit_services_diagram.jpg" alt="WebConvoy Digital Engineering Services" id="orbitSphereImage">
                         </div>
                     </div>
                 </div>
@@ -10742,12 +10783,12 @@
                         <!-- Eyebrow tracker -->
                         <div class="orbit-eyebrow-badge">
                             <span class="dot"></span>
-                            <span class="text">Specialized Engineering Services</span>
+                            <span class="text">DIGITAL ENGINEERING SERVICES</span>
                             <span class="orbit-step-counter" id="orbitStepCounter">01 / 05</span>
                         </div>
 
                         <!-- Dynamic Title -->
-                        <h2 class="orbit-main-title" id="orbitServiceTitle">1. Custom Web Engineering & Cloud Apps</h2>
+                        <h2 class="orbit-main-title" id="orbitServiceTitle">1. AI-Powered Web Application Development</h2>
 
                         <!-- Highlight Description Card with Left Connector Badge -->
                         <div class="orbit-service-card">
@@ -10755,9 +10796,7 @@
                                 <i class="bi bi-laptop"></i>
                             </div>
                             <p class="orbit-card-desc" id="orbitServiceDesc">
-                                Modern, lightning-fast web applications crafted with Next.js, React, and scalable
-                                backend microservices. Engineered for high performance, enterprise security, and
-                                frictionless digital customer journeys worldwide.
+                                Build fast, secure, and scalable web applications enhanced with AI. From intelligent search and personalization to AI assistants and automation, we create web experiences that work smarter and deliver more value.
                             </p>
                         </div>
 
@@ -10765,19 +10804,19 @@
                         <div class="orbit-pills-grid" id="orbitPillsGrid">
                             <div class="orbit-pill-badge">
                                 <span class="check-circle"><i class="bi bi-check2"></i></span>
-                                <span class="pill-text">High-Performance Next.js & React</span>
+                                <span class="pill-text">Custom Web Application Development</span>
                             </div>
                             <div class="orbit-pill-badge">
                                 <span class="check-circle"><i class="bi bi-check2"></i></span>
-                                <span class="pill-text">Microservices & Scalable APIs</span>
+                                <span class="pill-text">Responsive Web Development</span>
                             </div>
                             <div class="orbit-pill-badge">
                                 <span class="check-circle"><i class="bi bi-check2"></i></span>
-                                <span class="pill-text">Enterprise Cybersecurity Standards</span>
+                                <span class="pill-text">API &amp; Backend Development</span>
                             </div>
                             <div class="orbit-pill-badge">
                                 <span class="check-circle"><i class="bi bi-check2"></i></span>
-                                <span class="pill-text">Global CDN & Edge Deployment</span>
+                                <span class="pill-text">E-commerce Web Development</span>
                             </div>
                         </div>
 
@@ -10807,115 +10846,336 @@
     <!-- ================================================================= -->
     <!-- AI TESTIMONIALS SECTION (Reference UI Design)                     -->
     <!-- ================================================================= -->
-    <section id="ai-testimonials-section" class="ai-testimonials-section">
-        <div class="ai-testimonials-container">
-            <!-- Header -->
-            <div class="ai-testimonials-header">
-                <h2 class="ai-testimonials-title">Real Words From Real Leaders Who Trusted Our AI Engineering Services
-                </h2>
-                <p class="ai-testimonials-subtitle">Hear directly from the enterprise leaders whose businesses
-                    transformed after trusting our AI engineering services to solve their most complex challenges and
-                    deliver results that truly made a difference..</p>
-            </div>
+    <!-- AI SOLUTIONS & INNOVATIONS BENTO SHOWCASE SECTION            -->
+    <!-- ============================================================ -->
+    <section id="ai-solutions-bento-section">
+        <div class="ai-bento-container">
 
-            <!-- Main Showcase Grid (Active Featured Landscape Card + 3 Portrait Queue Cards) -->
-            <div class="ai-testi-showcase-row">
-                <!-- Active Featured Card (Left) -->
-                <div class="ai-testi-featured-card" id="testiActiveCard">
-                    <div class="ai-testi-featured-img-wrap">
-                        <img id="testiActiveImg" src="testimonial_jun_hui_chan.png" alt="Jun Hui Chan Testimonial"
-                            class="ai-testi-active-img">
-                        <div class="ai-testi-featured-scrim"></div>
+            <!-- TOP ROW: 3 Bento Cards -->
+            <div class="ai-bento-row ai-bento-row-top">
+
+                <!-- Card 1: Hero Bento Card (Transform Your Business with AI) -->
+                <div class="ai-bento-card ai-card-light ai-hero-card">
+                    <!-- Top Right Label -->
+                    <div class="ai-hero-smarter-label">
+                        Smarter<br>Businesses<br>Brighter<br>Tomorrows
                     </div>
 
-                    <!-- Center Glowing Play Button -->
-                    <button class="ai-testi-play-btn-large" id="testiPlayLargeBtn" aria-label="Play Testimonial Video">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z" />
-                        </svg>
-                    </button>
+                    <div class="ai-hero-left-content">
+                        <div>
+                            <!-- Pill Tag -->
+                            <div class="ai-hero-pill">
+                                <span class="ai-hero-pill-dot"></span>
+                                <span class="ai-hero-pill-text">AI SOLUTIONS</span>
+                            </div>
 
-                    <!-- Bottom Quote Overlay -->
-                    <div class="ai-testi-quote-box">
-                        <p class="ai-testi-quote-text" id="testiActiveQuote">
-                            "WebConvoy has shown commendable dedication to our enterprise AI initiatives. The delivery
-                            was seamless, scaling our real-time poker intelligence engine with exceptional precision. I
-                            appreciate all your efforts and hard work. Thanks!"
+                            <!-- Big Headline -->
+                            <h2 class="ai-hero-headline">
+                                Transform<br>Your Business<br><span class="ai-hero-blue-span">with AI</span>
+                            </h2>
+
+                            <!-- Subtext -->
+                            <p class="ai-hero-sub">
+                                We design and build intelligent systems that automate, optimize and unlock new growth
+                                opportunities.
+                            </p>
+                        </div>
+
+                        <div>
+                            <!-- Circular CTA Button -->
+                            <a href="#contact" class="ai-hero-cta-group">
+                                <span class="ai-hero-cta-circle">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </span>
+                                <span class="ai-hero-cta-label">Explore Our AI Services</span>
+                            </a>
+
+                            <!-- Pipeline Breadcrumb -->
+                            <div class="ai-hero-pipeline">
+                                <span>IDEAS</span>
+                                <span>&bull;</span>
+                                <span>&rarr;</span>
+                                <span>AUTOMATION</span>
+                                <span>&bull;</span>
+                                <span>&rarr;</span>
+                                <span>GROWTH</span>
+                                <span>&bull;</span>
+                                <span>&rarr;</span>
+                                <span>REAL IMPACT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side (40% portion) Background Video -->
+                    <div class="ai-hero-video-wrap">
+                        <div class="ai-hero-video-fade"></div>
+                        <video class="ai-hero-bg-video" autoplay loop muted playsinline>
+                            <source src="WhatsApp Video 2026-09-09 at 11.08.29 AM.mp4" type="video/mp4">
+                            <source src="ai_hero_video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Card 2: AI Agents (Cyborg Background & White Text) -->
+                <div class="ai-bento-card ai-card-dark ai-agents-card">
+                    <div>
+                        <div class="ai-card-top-bar">
+                            <div class="ai-title-badge-group">
+                                <div class="ai-title-icon-badge"
+                                    style="background: rgba(26, 98, 255, 0.25); border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <h3 class="ai-card-main-title" style="color: #ffffff;">AI Agents</h3>
+                            </div>
+                            <a href="#contact" class="ai-circle-arrow-btn-dark" aria-label="Explore AI Agents">
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                        <p class="ai-card-subtext" style="color: #E2E8F0;">
+                            Autonomous agents that understand, plan and take action across your tools.
                         </p>
                     </div>
+
+                    <!-- 60% Visual Portion (Cyborg Image on Black Background) -->
+                    <div class="ai-agent-visual-wrap">
+                        <img src="ai_agent_bg.png" alt="AI Agent Cyborg" class="ai-agent-cyborg-img">
+                    </div>
                 </div>
 
-                <!-- Upcoming Queue Cards (Right) -->
-                <div class="ai-testi-queue-col" id="testiQueueCol">
-                    <!-- Populated dynamically by JS -->
+                <!-- Card 3: Generative AI (Dark Obsidian Card) -->
+                <div class="ai-bento-card ai-card-dark ai-gen-card">
+                    <div>
+                        <div class="ai-card-top-bar">
+                            <div class="ai-title-badge-group">
+                                <div class="ai-title-icon-badge badge-dark-code">
+                                    <i class="bi bi-code-slash"></i>
+                                </div>
+                                <h3 class="ai-card-main-title" style="color: #ffffff;">Generative AI</h3>
+                            </div>
+                            <a href="#contact" class="ai-circle-arrow-btn-dark" aria-label="Explore Generative AI">
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                        <p class="ai-card-subtext ai-card-subtext-dark">
+                            From ideas to content, products and experiences powered by generative AI.
+                        </p>
+                    </div>
+
+                    <!-- Center 3D Dark Refractive Crystal Stage -->
+                    <div class="ai-crystal-stage">
+                        <img src="ai_gen_crystal.jpg" alt="Generative AI Dark Crystal" class="ai-crystal-img">
+
+                        <div class="crystal-glow-label">
+                            Ideas<br>Into<br>Reality
+                        </div>
+
+                        <div class="crystal-left-tags">
+                            <span class="crystal-tag-item">TEXT</span>
+                            <span class="crystal-tag-item">IMAGES</span>
+                            <span class="crystal-tag-item">VIDEO</span>
+                            <span class="crystal-tag-item">VOICE</span>
+                            <span class="crystal-tag-item">&amp; MORE</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            <!-- Bottom Row: Speaker Info, Progress Segments, Partner Logos & Navigation Arrows -->
-            <div class="ai-testi-bottom-bar">
-                <div class="ai-testi-author-info">
-                    <h4 class="ai-testi-author-name" id="testiAuthorName">Jun Hui Chan</h4>
-                    <p class="ai-testi-author-role" id="testiAuthorRole">Project Director, Poker</p>
-                    <div class="ai-testi-progress-track" id="testiProgressTrack">
-                        <div class="testi-segment active" data-index="0"></div>
-                        <div class="testi-segment" data-index="1"></div>
-                        <div class="testi-segment" data-index="2"></div>
-                        <div class="testi-segment" data-index="3"></div>
+            <!-- BOTTOM ROW: 3 Bento Cards -->
+            <div class="ai-bento-row ai-bento-row-bottom">
+
+                <!-- Card 4: AI Automation (Robot-Human Touch Background) -->
+                <div class="ai-bento-card ai-card-dark ai-automation-card">
+                    <div>
+                        <div class="ai-card-top-bar">
+                            <div class="ai-title-badge-group">
+                                <div class="ai-title-icon-badge"
+                                    style="background: rgba(26, 98, 255, 0.25); border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">
+                                    <i class="bi bi-gear-fill"></i>
+                                </div>
+                                <h3 class="ai-card-main-title" style="color: #ffffff;">AI Automation</h3>
+                            </div>
+                        </div>
+                        <p class="ai-card-subtext" style="color: #E2E8F0;">
+                            Streamline operations, reduce manual work and scale faster with intelligent automation.
+                        </p>
+                    </div>
+
+                    <div class="ai-automation-body">
+                        <div class="ai-stat-block">
+                            <div class="ai-stat-big">70%</div>
+                            <div class="ai-stat-desc" style="color: #CBD5E1;">Less manual work for faster growth.</div>
+                        </div>
+
+                        <div class="automation-flowchart">
+                            <div class="flow-node">
+                                <i class="bi bi-play-circle text-info"></i>
+                                <span>Trigger</span>
+                            </div>
+                            <div class="flow-line"></div>
+                            <div class="flow-node active-node">
+                                <i class="bi bi-stars"></i>
+                                <span>AI Process</span>
+                            </div>
+                            <div class="flow-line"></div>
+                            <div class="flow-node">
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                                <span>Complete</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="ai-testi-logos-wrap">
-                    <div class="testi-logo-item">
-                        <span class="testi-logo-bancreach">BANC<span class="testi-logo-thin">reach</span><span
-                                class="testi-reach-dot">|</span></span>
+                <!-- Card 5: Data & Insights (Matching Reference Screenshot) -->
+                <div class="ai-bento-card ai-card-dark ai-analytics-card">
+                    <!-- Top Header Row -->
+                    <div class="data-insights-header">
+                        <div class="data-insights-header-left">
+                            <span class="data-insights-tag">DATA &amp; INSIGHTS</span>
+                            <span class="data-insights-divider"></span>
+                        </div>
+                        <span class="data-insights-index">04</span>
                     </div>
-                    <div class="testi-logo-item">
-                        <span class="testi-logo-logibids"><span class="logibids-badge">L</span> LOGIBIDS</span>
-                    </div>
-                    <div class="testi-logo-item">
-                        <span class="testi-logo-hivibe"><i class="bi bi-soundwave testi-vibe-icon"></i> HiVibe</span>
-                    </div>
-                    <div class="testi-logo-item">
-                        <span class="testi-logo-finco"><i class="bi bi-water testi-finco-icon"></i> FINCO</span>
+
+                    <!-- Main Body Row -->
+                    <div class="data-insights-body">
+                        <!-- Big 10x Figure -->
+                        <div class="data-insights-big-stat">
+                            <span class="stat-num-gradient">10</span><span class="stat-glyph-x">&times;</span>
+                        </div>
+
+                        <!-- Center Text Block -->
+                        <div class="data-insights-center-text">
+                            <h4 class="data-insights-heading">Smarter<br>decisions with AI.</h4>
+                            <p class="data-insights-sub">Turn your data into prediction, insight and real business
+                                growth.</p>
+                        </div>
+
+                        <!-- Circular Arrow Button -->
+                        <a href="#contact" class="data-insights-arrow-btn" aria-label="Explore Data &amp; Insights">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="ai-testi-nav-arrows">
-                    <button class="ai-testi-arrow-btn" id="testiPrevBtn" aria-label="Previous Testimonial">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                    </button>
-                    <button class="ai-testi-arrow-btn" id="testiNextBtn" aria-label="Next Testimonial">
-                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                <!-- Card 6: AI Products (3 Tilted Cards Showcase with Scanning Robot Video BG) -->
+                <div class="ai-bento-card ai-card-dark ai-products-card">
+                    <!-- Background Scanning Robot Video -->
+                    <div class="ai-products-video-wrap">
+                        <video class="ai-products-bg-video" autoplay loop muted playsinline>
+                            <source src="Robot_scanning_surroundings_202609091150.mp4" type="video/mp4">
+                            <source src="ai_robot_scanning.mp4" type="video/mp4">
+                        </video>
+                        <div class="ai-products-video-overlay"></div>
+                    </div>
+
+                    <!-- Inner Content (z-index: 3) -->
+                    <div class="ai-products-inner-content">
+                        <div>
+                            <div class="ai-card-top-bar">
+                                <div class="ai-title-badge-group">
+                                    <div class="ai-title-icon-badge badge-dark-code">
+                                        <i class="bi bi-stack" style="color: #38BDF8;"></i>
+                                    </div>
+                                    <h3 class="ai-card-main-title" style="color: #ffffff;">AI Products</h3>
+                                </div>
+                                <a href="#contact" class="ai-circle-arrow-btn-dark" aria-label="Explore AI Products">
+                                    <i class="bi bi-arrow-up-right"></i>
+                                </a>
+                            </div>
+                            <p class="ai-card-subtext ai-card-subtext-dark" style="color: #CBD5E1;">
+                                Future-ready AI products built for real-world impact.
+                            </p>
+                        </div>
+
+                        <!-- Video Viewport Spacer for unobstructed scanning robot display -->
+                        <div class="ai-products-video-spacer"></div>
+
+                        <!-- Bottom Bar: Enhanced Giant Animated AI Button -->
+                        <div class="ai-products-bottom-bar">
+                            <a href="#ai-page" class="btn-card-ai-giant" title="AI Platform &amp; Solutions">
+                                <span class="ai-giant-badge-text">AI</span>
+                                <span class="ai-giant-action-text">Explore AI</span>
+                                <span class="ai-giant-sparkles-wrap">
+                                    <svg class="ai-giant-star-1" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                                    </svg>
+                                    <svg class="ai-giant-star-2" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                                    </svg>
+                                    <svg class="ai-giant-star-3" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                                    </svg>
+                                </span>
+                                <i class="bi bi-arrow-up-right ai-giant-arrow"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-        </div>
 
-        <!-- Video Modal Overlay -->
-        <div class="ai-testi-modal" id="testiVideoModal">
-            <div class="ai-testi-modal-box">
-                <button class="ai-testi-modal-close" id="testiModalClose" aria-label="Close Modal">&times;</button>
-                <div class="ai-testi-modal-media" id="testiModalMedia">
-                    <img id="testiModalThumb" src="testimonial_jun_hui_chan.png" alt="Testimonial Video Preview">
-                    <button class="ai-testi-play-btn-large" style="pointer-events: none;">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
         </div>
     </section>
 
+
     <!-- ============================================================ -->
+    <!-- FULL WIDTH AI SERVICES CTA BANNER (Ideas to Intelligence)    -->
+    <!-- ============================================================ -->
+    <section id="ai-services-cta-banner" class="ai-cta-fullwidth-section">
+        <!-- Content Container aligned with site grid -->
+        <div class="ai-cta-inner-container">
+            <!-- Left Content Area -->
+            <div class="ai-cta-content-col">
+                <!-- Brand Header -->
+                <div class="ai-cta-brand">
+                    <img src="NEW LOGO- wc.png" alt="WebConvoy Logo" class="ai-cta-brand-logo-img">
+                </div>
+
+                <!-- Eyebrow Tag -->
+                <div class="ai-cta-eyebrow">
+                    <span class="ai-cta-eyebrow-text">AI SERVICES</span>
+                    <span class="ai-cta-eyebrow-line"></span>
+                </div>
+
+                <!-- Main Headings (Ideas to Intelligence.) -->
+                <h2 class="ai-cta-heading">
+                    <span class="ai-cta-heading-white">Ideas to</span>
+                    <span class="ai-cta-heading-blue">Intelligence.</span>
+                </h2>
+
+                <!-- Description -->
+                <p class="ai-cta-subtext">
+                    Unlock the power of AI to automate, analyse and accelerate your business.
+                </p>
+
+                <!-- CTA Action Button -->
+                <div class="ai-cta-btn-wrap">
+                    <a href="#contact" class="ai-cta-pill-btn">
+                        <span>Explore AI Services</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Visual (Robotic Hand Cradling Rotating Glowing Brain Video) -->
+        <div class="ai-cta-visual">
+            <video class="ai-cta-bg-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
+                <source src="ai_brain_robotic_hand.mp4" type="video/mp4">
+                <source src="Robotic_hand_cradling_rotating_b…_202609091654.mp4" type="video/mp4">
+            </video>
+            <div class="ai-cta-visual-scrim"></div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Expertise & Solutions Section -->
     <!-- CLIENT PROJECTS SHOWCASE SECTION (100% MATCH TO REFERENCE)   -->
     <!-- ============================================================ -->
     <section id="client-projects-showcase">
@@ -11283,359 +11543,6 @@
     </section>
 
     <!-- Recognizing Our Milestones Section -->
-    <section id="award-showcase-cinematic">
-        <div class="award-content-wrapper">
-            <div class="award-text-container">
-                <h3 id="award-company-name"></h3>
-                <h2 id="award-title-typing"></h2>
-            </div>
-
-            <div class="award-display-zone">
-                <div class="award-badge-container" id="award-badge-stage">
-                    <img src="https://www.webconvoy.com/public/websitenew/image/goodfirms-badge.png" alt="Award"
-                        id="current-award-img">
-                </div>
-            </div>
-
-            <div class="award-controls">
-                <div class="play-btn-pulse">
-                    <i class="bi bi-play-fill"></i>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- AI SOLUTIONS & INNOVATIONS BENTO SHOWCASE SECTION            -->
-    <!-- ============================================================ -->
-    <section id="ai-solutions-bento-section">
-        <div class="ai-bento-container">
-
-            <!-- TOP ROW: 3 Bento Cards -->
-            <div class="ai-bento-row ai-bento-row-top">
-
-                <!-- Card 1: Hero Bento Card (Transform Your Business with AI) -->
-                <div class="ai-bento-card ai-card-light ai-hero-card">
-                    <!-- Top Right Label -->
-                    <div class="ai-hero-smarter-label">
-                        Smarter<br>Businesses<br>Brighter<br>Tomorrows
-                    </div>
-
-                    <div class="ai-hero-left-content">
-                        <div>
-                            <!-- Pill Tag -->
-                            <div class="ai-hero-pill">
-                                <span class="ai-hero-pill-dot"></span>
-                                <span class="ai-hero-pill-text">AI SOLUTIONS</span>
-                            </div>
-
-                            <!-- Big Headline -->
-                            <h2 class="ai-hero-headline">
-                                Transform<br>Your Business<br><span class="ai-hero-blue-span">with AI</span>
-                            </h2>
-
-                            <!-- Subtext -->
-                            <p class="ai-hero-sub">
-                                We design and build intelligent systems that automate, optimize and unlock new growth
-                                opportunities.
-                            </p>
-                        </div>
-
-                        <div>
-                            <!-- Circular CTA Button -->
-                            <a href="#contact" class="ai-hero-cta-group">
-                                <span class="ai-hero-cta-circle">
-                                    <i class="bi bi-arrow-up-right"></i>
-                                </span>
-                                <span class="ai-hero-cta-label">Explore Our AI Services</span>
-                            </a>
-
-                            <!-- Pipeline Breadcrumb -->
-                            <div class="ai-hero-pipeline">
-                                <span>IDEAS</span>
-                                <span>&bull;</span>
-                                <span>&rarr;</span>
-                                <span>AUTOMATION</span>
-                                <span>&bull;</span>
-                                <span>&rarr;</span>
-                                <span>GROWTH</span>
-                                <span>&bull;</span>
-                                <span>&rarr;</span>
-                                <span>REAL IMPACT</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Side (40% portion) Background Video -->
-                    <div class="ai-hero-video-wrap">
-                        <div class="ai-hero-video-fade"></div>
-                        <video class="ai-hero-bg-video" autoplay loop muted playsinline>
-                            <source src="WhatsApp Video 2026-09-09 at 11.08.29 AM.mp4" type="video/mp4">
-                            <source src="ai_hero_video.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-
-                <!-- Card 2: AI Agents (Cyborg Background & White Text) -->
-                <div class="ai-bento-card ai-card-dark ai-agents-card">
-                    <div>
-                        <div class="ai-card-top-bar">
-                            <div class="ai-title-badge-group">
-                                <div class="ai-title-icon-badge"
-                                    style="background: rgba(26, 98, 255, 0.25); border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">
-                                    <i class="bi bi-people-fill"></i>
-                                </div>
-                                <h3 class="ai-card-main-title" style="color: #ffffff;">AI Agents</h3>
-                            </div>
-                            <a href="#contact" class="ai-circle-arrow-btn-dark" aria-label="Explore AI Agents">
-                                <i class="bi bi-arrow-up-right"></i>
-                            </a>
-                        </div>
-                        <p class="ai-card-subtext" style="color: #E2E8F0;">
-                            Autonomous agents that understand, plan and take action across your tools.
-                        </p>
-                    </div>
-
-                    <!-- 60% Visual Portion (Cyborg Image on Black Background) -->
-                    <div class="ai-agent-visual-wrap">
-                        <img src="ai_agent_bg.png" alt="AI Agent Cyborg" class="ai-agent-cyborg-img">
-                    </div>
-                </div>
-
-                <!-- Card 3: Generative AI (Dark Obsidian Card) -->
-                <div class="ai-bento-card ai-card-dark ai-gen-card">
-                    <div>
-                        <div class="ai-card-top-bar">
-                            <div class="ai-title-badge-group">
-                                <div class="ai-title-icon-badge badge-dark-code">
-                                    <i class="bi bi-code-slash"></i>
-                                </div>
-                                <h3 class="ai-card-main-title" style="color: #ffffff;">Generative AI</h3>
-                            </div>
-                            <a href="#contact" class="ai-circle-arrow-btn-dark" aria-label="Explore Generative AI">
-                                <i class="bi bi-arrow-up-right"></i>
-                            </a>
-                        </div>
-                        <p class="ai-card-subtext ai-card-subtext-dark">
-                            From ideas to content, products and experiences powered by generative AI.
-                        </p>
-                    </div>
-
-                    <!-- Center 3D Dark Refractive Crystal Stage -->
-                    <div class="ai-crystal-stage">
-                        <img src="ai_gen_crystal.jpg" alt="Generative AI Dark Crystal" class="ai-crystal-img">
-
-                        <div class="crystal-glow-label">
-                            Ideas<br>Into<br>Reality
-                        </div>
-
-                        <div class="crystal-left-tags">
-                            <span class="crystal-tag-item">TEXT</span>
-                            <span class="crystal-tag-item">IMAGES</span>
-                            <span class="crystal-tag-item">VIDEO</span>
-                            <span class="crystal-tag-item">VOICE</span>
-                            <span class="crystal-tag-item">&amp; MORE</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- BOTTOM ROW: 3 Bento Cards -->
-            <div class="ai-bento-row ai-bento-row-bottom">
-
-                <!-- Card 4: AI Automation (Robot-Human Touch Background) -->
-                <div class="ai-bento-card ai-card-dark ai-automation-card">
-                    <div>
-                        <div class="ai-card-top-bar">
-                            <div class="ai-title-badge-group">
-                                <div class="ai-title-icon-badge"
-                                    style="background: rgba(26, 98, 255, 0.25); border: 1px solid rgba(56, 189, 248, 0.4); color: #38BDF8;">
-                                    <i class="bi bi-gear-fill"></i>
-                                </div>
-                                <h3 class="ai-card-main-title" style="color: #ffffff;">AI Automation</h3>
-                            </div>
-                        </div>
-                        <p class="ai-card-subtext" style="color: #E2E8F0;">
-                            Streamline operations, reduce manual work and scale faster with intelligent automation.
-                        </p>
-                    </div>
-
-                    <div class="ai-automation-body">
-                        <div class="ai-stat-block">
-                            <div class="ai-stat-big">70%</div>
-                            <div class="ai-stat-desc" style="color: #CBD5E1;">Less manual work for faster growth.</div>
-                        </div>
-
-                        <div class="automation-flowchart">
-                            <div class="flow-node">
-                                <i class="bi bi-play-circle text-info"></i>
-                                <span>Trigger</span>
-                            </div>
-                            <div class="flow-line"></div>
-                            <div class="flow-node active-node">
-                                <i class="bi bi-stars"></i>
-                                <span>AI Process</span>
-                            </div>
-                            <div class="flow-line"></div>
-                            <div class="flow-node">
-                                <i class="bi bi-check-circle-fill text-success"></i>
-                                <span>Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5: Data & Insights (Matching Reference Screenshot) -->
-                <div class="ai-bento-card ai-card-dark ai-analytics-card">
-                    <!-- Top Header Row -->
-                    <div class="data-insights-header">
-                        <div class="data-insights-header-left">
-                            <span class="data-insights-tag">DATA &amp; INSIGHTS</span>
-                            <span class="data-insights-divider"></span>
-                        </div>
-                        <span class="data-insights-index">04</span>
-                    </div>
-
-                    <!-- Main Body Row -->
-                    <div class="data-insights-body">
-                        <!-- Big 10x Figure -->
-                        <div class="data-insights-big-stat">
-                            <span class="stat-num-gradient">10</span><span class="stat-glyph-x">&times;</span>
-                        </div>
-
-                        <!-- Center Text Block -->
-                        <div class="data-insights-center-text">
-                            <h4 class="data-insights-heading">Smarter<br>decisions with AI.</h4>
-                            <p class="data-insights-sub">Turn your data into prediction, insight and real business
-                                growth.</p>
-                        </div>
-
-                        <!-- Circular Arrow Button -->
-                        <a href="#contact" class="data-insights-arrow-btn" aria-label="Explore Data &amp; Insights">
-                            <i class="bi bi-arrow-up-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 6: AI Products (3 Tilted Cards Showcase with Scanning Robot Video BG) -->
-                <div class="ai-bento-card ai-card-dark ai-products-card">
-                    <!-- Background Scanning Robot Video -->
-                    <div class="ai-products-video-wrap">
-                        <video class="ai-products-bg-video" autoplay loop muted playsinline>
-                            <source src="Robot_scanning_surroundings_202609091150.mp4" type="video/mp4">
-                            <source src="ai_robot_scanning.mp4" type="video/mp4">
-                        </video>
-                        <div class="ai-products-video-overlay"></div>
-                    </div>
-
-                    <!-- Inner Content (z-index: 3) -->
-                    <div class="ai-products-inner-content">
-                        <div>
-                            <div class="ai-card-top-bar">
-                                <div class="ai-title-badge-group">
-                                    <div class="ai-title-icon-badge badge-dark-code">
-                                        <i class="bi bi-stack" style="color: #38BDF8;"></i>
-                                    </div>
-                                    <h3 class="ai-card-main-title" style="color: #ffffff;">AI Products</h3>
-                                </div>
-                                <a href="#contact" class="ai-circle-arrow-btn-dark" aria-label="Explore AI Products">
-                                    <i class="bi bi-arrow-up-right"></i>
-                                </a>
-                            </div>
-                            <p class="ai-card-subtext ai-card-subtext-dark" style="color: #CBD5E1;">
-                                Future-ready AI products built for real-world impact.
-                            </p>
-                        </div>
-
-                        <!-- Video Viewport Spacer for unobstructed scanning robot display -->
-                        <div class="ai-products-video-spacer"></div>
-
-                        <!-- Bottom Bar: Enhanced Giant Animated AI Button -->
-                        <div class="ai-products-bottom-bar">
-                            <a href="#ai-page" class="btn-card-ai-giant" title="AI Platform &amp; Solutions">
-                                <span class="ai-giant-badge-text">AI</span>
-                                <span class="ai-giant-action-text">Explore AI</span>
-                                <span class="ai-giant-sparkles-wrap">
-                                    <svg class="ai-giant-star-1" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-                                    </svg>
-                                    <svg class="ai-giant-star-2" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-                                    </svg>
-                                    <svg class="ai-giant-star-3" viewBox="0 0 24 24">
-                                        <path
-                                            d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
-                                    </svg>
-                                </span>
-                                <i class="bi bi-arrow-up-right ai-giant-arrow"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- ============================================================ -->
-    <!-- FULL WIDTH AI SERVICES CTA BANNER (Ideas to Intelligence)    -->
-    <!-- ============================================================ -->
-    <section id="ai-services-cta-banner" class="ai-cta-fullwidth-section">
-        <!-- Content Container aligned with site grid -->
-        <div class="ai-cta-inner-container">
-            <!-- Left Content Area -->
-            <div class="ai-cta-content-col">
-                <!-- Brand Header -->
-                <div class="ai-cta-brand">
-                    <img src="NEW LOGO- wc.png" alt="WebConvoy Logo" class="ai-cta-brand-logo-img">
-                </div>
-
-                <!-- Eyebrow Tag -->
-                <div class="ai-cta-eyebrow">
-                    <span class="ai-cta-eyebrow-text">AI SERVICES</span>
-                    <span class="ai-cta-eyebrow-line"></span>
-                </div>
-
-                <!-- Main Headings (Ideas to Intelligence.) -->
-                <h2 class="ai-cta-heading">
-                    <span class="ai-cta-heading-white">Ideas to</span>
-                    <span class="ai-cta-heading-blue">Intelligence.</span>
-                </h2>
-
-                <!-- Description -->
-                <p class="ai-cta-subtext">
-                    Unlock the power of AI to automate, analyse and accelerate your business.
-                </p>
-
-                <!-- CTA Action Button -->
-                <div class="ai-cta-btn-wrap">
-                    <a href="#contact" class="ai-cta-pill-btn">
-                        <span>Explore AI Services</span>
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Visual (Robotic Hand Cradling Rotating Glowing Brain Video) -->
-        <div class="ai-cta-visual">
-            <video class="ai-cta-bg-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
-                <source src="ai_brain_robotic_hand.mp4" type="video/mp4">
-                <source src="Robotic_hand_cradling_rotating_b…_202609091654.mp4" type="video/mp4">
-            </video>
-            <div class="ai-cta-visual-scrim"></div>
-        </div>
-    </section>
-
-
-
-
-    <!-- Expertise & Solutions Section -->
     <section id="expertise-solutions">
         <div class="expertise-container">
             <div class="expertise-header text-center">
@@ -11704,6 +11611,138 @@
 
 
     <!-- Blog Section: Dark Theme -->
+    <section id="ai-testimonials-section" class="ai-testimonials-section">
+        <div class="ai-testimonials-container">
+            <!-- Header -->
+            <div class="ai-testimonials-header">
+                <h2 class="ai-testimonials-title">Real Words From Real Leaders Who Trusted Our AI Engineering Services
+                </h2>
+                <p class="ai-testimonials-subtitle">Hear directly from the enterprise leaders whose businesses
+                    transformed after trusting our AI engineering services to solve their most complex challenges and
+                    deliver results that truly made a difference..</p>
+            </div>
+
+            <!-- Main Showcase Grid (Active Featured Landscape Card + 3 Portrait Queue Cards) -->
+            <div class="ai-testi-showcase-row">
+                <!-- Active Featured Card (Left) -->
+                <div class="ai-testi-featured-card" id="testiActiveCard">
+                    <div class="ai-testi-featured-img-wrap">
+                        <img id="testiActiveImg" src="testimonial_jun_hui_chan.png" alt="Jun Hui Chan Testimonial"
+                            class="ai-testi-active-img">
+                        <div class="ai-testi-featured-scrim"></div>
+                    </div>
+
+                    <!-- Center Glowing Play Button -->
+                    <button class="ai-testi-play-btn-large" id="testiPlayLargeBtn" aria-label="Play Testimonial Video">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </button>
+
+                    <!-- Bottom Quote Overlay -->
+                    <div class="ai-testi-quote-box">
+                        <p class="ai-testi-quote-text" id="testiActiveQuote">
+                            "WebConvoy has shown commendable dedication to our enterprise AI initiatives. The delivery
+                            was seamless, scaling our real-time poker intelligence engine with exceptional precision. I
+                            appreciate all your efforts and hard work. Thanks!"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Upcoming Queue Cards (Right) -->
+                <div class="ai-testi-queue-col" id="testiQueueCol">
+                    <!-- Populated dynamically by JS -->
+                </div>
+            </div>
+
+            <!-- Bottom Row: Speaker Info, Progress Segments, Partner Logos & Navigation Arrows -->
+            <div class="ai-testi-bottom-bar">
+                <div class="ai-testi-author-info">
+                    <h4 class="ai-testi-author-name" id="testiAuthorName">Jun Hui Chan</h4>
+                    <p class="ai-testi-author-role" id="testiAuthorRole">Project Director, Poker</p>
+                    <div class="ai-testi-progress-track" id="testiProgressTrack">
+                        <div class="testi-segment active" data-index="0"></div>
+                        <div class="testi-segment" data-index="1"></div>
+                        <div class="testi-segment" data-index="2"></div>
+                        <div class="testi-segment" data-index="3"></div>
+                    </div>
+                </div>
+
+                <div class="ai-testi-logos-wrap">
+                    <div class="testi-logo-item">
+                        <span class="testi-logo-bancreach">BANC<span class="testi-logo-thin">reach</span><span
+                                class="testi-reach-dot">|</span></span>
+                    </div>
+                    <div class="testi-logo-item">
+                        <span class="testi-logo-logibids"><span class="logibids-badge">L</span> LOGIBIDS</span>
+                    </div>
+                    <div class="testi-logo-item">
+                        <span class="testi-logo-hivibe"><i class="bi bi-soundwave testi-vibe-icon"></i> HiVibe</span>
+                    </div>
+                    <div class="testi-logo-item">
+                        <span class="testi-logo-finco"><i class="bi bi-water testi-finco-icon"></i> FINCO</span>
+                    </div>
+                </div>
+
+                <div class="ai-testi-nav-arrows">
+                    <button class="ai-testi-arrow-btn" id="testiPrevBtn" aria-label="Previous Testimonial">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </button>
+                    <button class="ai-testi-arrow-btn" id="testiNextBtn" aria-label="Next Testimonial">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Modal Overlay -->
+        <div class="ai-testi-modal" id="testiVideoModal">
+            <div class="ai-testi-modal-box">
+                <button class="ai-testi-modal-close" id="testiModalClose" aria-label="Close Modal">&times;</button>
+                <div class="ai-testi-modal-media" id="testiModalMedia">
+                    <img id="testiModalThumb" src="testimonial_jun_hui_chan.png" alt="Testimonial Video Preview">
+                    <button class="ai-testi-play-btn-large" style="pointer-events: none;">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <section id="award-showcase-cinematic">
+        <div class="award-content-wrapper">
+            <div class="award-text-container">
+                <h3 id="award-company-name"></h3>
+                <h2 id="award-title-typing"></h2>
+            </div>
+
+            <div class="award-display-zone">
+                <div class="award-badge-container" id="award-badge-stage">
+                    <img src="https://www.webconvoy.com/public/websitenew/image/goodfirms-badge.png" alt="Award"
+                        id="current-award-img">
+                </div>
+            </div>
+
+            <div class="award-controls">
+                <div class="play-btn-pulse">
+                    <i class="bi bi-play-fill"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="blog-section">
         <div class="container">
             <div class="blog-header text-center">
@@ -12971,62 +13010,62 @@
             const orbitServicesData = [
                 {
                     number: "01 / 05",
-                    title: "1. Custom Web Engineering & Cloud Apps",
+                    title: "1. AI-Powered Web Application Development",
                     icon: "bi-laptop",
-                    desc: "Modern, lightning-fast web applications crafted with Next.js, React, and scalable backend microservices. Engineered for high performance, enterprise security, and frictionless digital customer journeys worldwide.",
+                    desc: "Build fast, secure, and scalable web applications enhanced with AI. From intelligent search and personalization to AI assistants and automation, we create web experiences that work smarter and deliver more value.",
                     pills: [
-                        "High-Performance Next.js & React",
-                        "Microservices & Scalable APIs",
-                        "Enterprise Cybersecurity Standards",
-                        "Global CDN & Edge Deployment"
+                        "Custom Web Application Development",
+                        "Responsive Web Development",
+                        "API & Backend Development",
+                        "E-commerce Web Development"
                     ]
                 },
                 {
                     number: "02 / 05",
-                    title: "2. Native & Cross-Platform Mobile Apps",
+                    title: "2. AI-Powered Mobile App Development",
                     icon: "bi-phone",
-                    desc: "Intuitive iOS and Android mobile experiences engineered with Flutter, React Native, and Swift. Built for offline capability, ultra-smooth 120Hz responsiveness, and scalable to millions of active users.",
+                    desc: "Build intelligent iOS and Android apps with AI-powered features that personalize experiences, automate interactions, and help businesses engage users and grow.",
                     pills: [
-                        "iOS & Android App Ecosystems",
-                        "Flutter & React Native Architecture",
-                        "Real-Time Sync & Offline Caching",
-                        "Automated App Store CI/CD"
+                        "iOS App Development",
+                        "Android App Development",
+                        "Cross-Platform App Development",
+                        "Flutter & React Native Development"
                     ]
                 },
                 {
                     number: "03 / 05",
-                    title: "3. AI, LLMs & Cognitive Automation",
+                    title: "3. AI Development & Solutions",
                     icon: "bi-cpu",
-                    desc: "Proprietary AI workflows and specialized generative models tuned on domain data. We build autonomous AI agents, semantic search systems, and predictive algorithms that amplify operational efficiency.",
+                    desc: "Turn AI into a competitive advantage with intelligent applications, automation, and AI-powered experiences. Use Generative AI, LLMs, and machine learning to work smarter and scale faster.",
                     pills: [
-                        "Fine-Tuned LLMs & Agentic Systems",
-                        "Predictive ML & Decision Engines",
-                        "Intelligent Process Automation",
-                        "Secure Enterprise RAG Frameworks"
+                        "Generative AI & LLM Development",
+                        "AI Agent Development",
+                        "AI Automation Solutions",
+                        "Machine Learning Solutions"
                     ]
                 },
                 {
                     number: "04 / 05",
-                    title: "4. Cloud Architecture & DevOps Excellence",
-                    icon: "bi-cloud-check",
-                    desc: "Resilient, self-healing cloud ecosystems on AWS, Azure, and GCP. Featuring automated Kubernetes clusters, multi-region redundancy, and proactive monitoring with zero unexpected downtime.",
+                    title: "4. Vibe Coding & AI-Assisted Development",
+                    icon: "bi-stars",
+                    desc: "Accelerate software development with AI-powered coding workflows that turn ideas into working products faster. From rapid prototypes to functional applications, we combine AI capabilities with expert engineering oversight.",
                     pills: [
-                        "AWS & Azure Multi-Cloud Infrastructure",
-                        "Kubernetes & Docker Orchestration",
-                        "Automated Zero-Downtime Pipelines",
-                        "99.99% Enterprise Uptime SLAs"
+                        "AI-Assisted Software Development",
+                        "Rapid Prototyping & MVP Development",
+                        "AI-Powered Coding Workflows",
+                        "Expert Code Review & Optimization"
                     ]
                 },
                 {
                     number: "05 / 05",
-                    title: "5. UI/UX Strategy & Immersive Product Design",
-                    icon: "bi-bezier2",
-                    desc: "Design systems and interactive prototypes designed with human-centric empathy and rigorous usability metrics. Transforming complex enterprise software into visually captivating, effortless interfaces.",
+                    title: "5. SaaS Product Development",
+                    icon: "bi-cloud-check",
+                    desc: "Build scalable SaaS products with AI-powered features that automate workflows, personalize experiences, and turn business data into smarter decisions and growth.",
                     pills: [
-                        "Design Systems & Figma Prototyping",
-                        "Human-Centered Usability Research",
-                        "Conversion-Optimized UX Architectures",
-                        "Micro-Interactions & Fluid Motion"
+                        "SaaS MVP Development",
+                        "Multi-Tenant Architecture",
+                        "Cloud-Native Applications",
+                        "Scalable APIs & Integrations"
                     ]
                 }
             ];
@@ -13088,6 +13127,8 @@
                                     <span class="pill-text">${pill}</span>
                                 </div>
                             `).join('');
+                            // Reset pillsGrid opacity so children are visible
+                            gsap.set(pillsGrid, { opacity: 1, y: 0 });
                         }
                         gsap.fromTo([titleEl, descEl],
                             { opacity: 0, y: 15 },
