@@ -8532,6 +8532,43 @@
             margin: 0 auto;
         }
 
+        @keyframes formBackdropGradientFlow {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        @keyframes formAuraPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.82;
+                filter: blur(52px);
+            }
+            50% {
+                transform: scale(1.1) translate(-10px, 15px);
+                opacity: 1;
+                filter: blur(65px);
+            }
+        }
+
+        @keyframes formCardBgShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         /* Glowing Blue Aura behind the card */
         /* Distinct Rounded Gradient Panel Under & Behind the Form (Pipe-style match) */
         .pipe-gradient-backdrop-panel {
@@ -8541,11 +8578,13 @@
             left: -90px;
             right: -28px;
             border-radius: 28px;
-            background: linear-gradient(180deg, #09142b 0%, #113478 30%, #1b4fb5 60%, #2563eb 85%, #3b82f6 100%);
+            background: linear-gradient(135deg, #09142b 0%, #0c2d6b 20%, #1b4fb5 45%, #2563eb 70%, #0ea5e9 88%, #3b82f6 100%);
+            background-size: 240% 240%;
+            animation: formBackdropGradientFlow 8s ease infinite;
             box-shadow: 0 35px 80px -10px rgba(37, 99, 235, 0.45);
             pointer-events: none;
             z-index: 1;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .pipe-card-ambient-aura {
@@ -8554,22 +8593,39 @@
             bottom: -90px;
             left: -105px;
             right: -40px;
-            background: radial-gradient(circle at 40% 75%, rgba(37, 99, 235, 0.65) 0%, rgba(59, 130, 246, 0.32) 50%, transparent 75%);
+            background: radial-gradient(circle at 40% 75%, rgba(37, 99, 235, 0.75) 0%, rgba(14, 165, 233, 0.45) 45%, transparent 75%);
             filter: blur(52px);
             pointer-events: none;
             z-index: 0;
             opacity: 0.85;
+            animation: formAuraPulse 6s ease-in-out infinite;
         }
 
-        /* Pristine White Card */
+        /* Pristine White Card with Animated Gradient Accent & Subtle Ambient Tint */
         .pipe-white-form-card {
-            background: #FFFFFF;
+            background: linear-gradient(145deg, #FFFFFF 0%, #FFFFFF 68%, #F0F7FF 86%, #E0F2FE 100%);
+            background-size: 200% 200%;
+            animation: formCardBgShift 10s ease infinite;
             border-radius: 22px;
             padding: 44px 40px 38px;
             box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.25);
             color: #0F172A;
             position: relative;
             z-index: 3;
+            overflow: hidden;
+        }
+
+        .pipe-white-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563EB, #38BDF8, #818CF8, #2563EB);
+            background-size: 200% 100%;
+            animation: formCardBgShift 4s linear infinite;
+            z-index: 4;
         }
 
         /* Form Labels & Fields */
