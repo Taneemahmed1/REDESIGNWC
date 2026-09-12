@@ -6992,6 +6992,24 @@
             align-items: center;
         }
 
+        @keyframes pulseGrowthBtn {
+            0%, 100% {
+                box-shadow: 0 10px 25px -3px rgba(13, 110, 253, 0.4), 0 0 0 0 rgba(13, 110, 253, 0.45);
+                transform: translateY(0);
+            }
+            50% {
+                box-shadow: 0 16px 32px -4px rgba(13, 110, 253, 0.55), 0 0 0 10px rgba(13, 110, 253, 0);
+                transform: translateY(-2px);
+            }
+        }
+
+        @keyframes phoneRingShake {
+            0%, 100% { transform: rotate(0deg); }
+            10%, 30%, 50% { transform: rotate(-12deg); }
+            20%, 40% { transform: rotate(12deg); }
+            60% { transform: rotate(0deg); }
+        }
+
         .wc-growth-btn {
             display: inline-flex;
             align-items: center;
@@ -7005,13 +7023,19 @@
             text-decoration: none;
             box-shadow: 0 10px 25px -3px rgba(13, 110, 253, 0.35);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: pulseGrowthBtn 2.8s infinite ease-in-out;
+        }
+
+        .wc-growth-btn i {
+            display: inline-block;
+            animation: phoneRingShake 3s infinite ease-in-out;
         }
 
         .wc-growth-btn:hover {
             background: #0056d6;
             color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 16px 32px -4px rgba(13, 110, 253, 0.45);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 20px 36px -4px rgba(13, 110, 253, 0.6);
         }
 
         .wc-growth-visual {
@@ -8174,6 +8198,29 @@
             gap: 10px;
         }
 
+        @keyframes contactDotPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px #38BDF8;
+            }
+            50% {
+                transform: scale(1.35);
+                box-shadow: 0 0 18px #38BDF8, 0 0 28px rgba(56, 189, 248, 0.5);
+            }
+        }
+
+        @keyframes contactTextShimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .pipe-contact-eyebrow::before {
             content: '';
             display: inline-block;
@@ -8182,6 +8229,7 @@
             border-radius: 50%;
             background: #38BDF8;
             box-shadow: 0 0 10px #38BDF8;
+            animation: contactDotPulse 2.2s infinite ease-in-out;
         }
 
         .pipe-contact-title {
@@ -8194,17 +8242,13 @@
             margin-bottom: 22px;
         }
 
-        .pipe-contact-eyebrow {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 12px;
-            font-weight: 400 !important;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        .pipe-contact-title .pipe-contact-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #38BDF8 50%, #818cf8 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            animation: contactTextShimmer 4.5s ease-in-out infinite;
         }
 
         .pipe-contact-desc {
@@ -8213,15 +8257,7 @@
             font-weight: 300 !important;
             line-height: 1.65;
             color: #94A3B8;
-            max-width: 520px;
-            margin-bottom: 28px;
-        }
-
-        .pipe-contact-desc {
-            font-size: 16.5px;
-            line-height: 1.65;
-            color: #94A3B8;
-            max-width: 520px;
+            max-width: 490px;
             margin-bottom: 28px;
         }
 
@@ -10000,6 +10036,10 @@
                             <strong>Blogs</strong>
                             <span>Tech insights, case studies & news</span>
                         </a>
+                        <a href="https://www.webconvoy.com/career" class="mega-menu-item">
+                            <strong>Careers</strong>
+                            <span>Join our team & build the future</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -10059,6 +10099,7 @@
                 <ul class="mobile-dropdown-menu-custom p-2" style="display: none;">
                     <li><a class="dropdown-item-custom" href="https://www.webconvoy.com/about_us">About Us</a></li>
                     <li><a class="dropdown-item-custom" href="https://www.webconvoy.com/blog">Blogs</a></li>
+                    <li><a class="dropdown-item-custom" href="https://www.webconvoy.com/career">Careers</a></li>
                 </ul>
             </li>
             <!-- INDUSTRY MOBILE DROPDOWN -->
@@ -11167,7 +11208,8 @@
                 <!-- Main Headings (Black and Electric Blue split) -->
                 <h2 class="wc-growth-title">
                     <span class="wc-growth-title-black">Built It?</span>
-                    <span class="wc-growth-title-row2">Now Let’s <span class="wc-growth-title-blue">Talk!</span></span>
+                    <span class="wc-growth-title-row2">Now Let’s <span class="wc-growth-title-blue">Market
+                            It!</span></span>
                 </h2>
 
                 <!-- Description -->
@@ -11178,7 +11220,7 @@
 
                 <!-- CTA Action Button -->
                 <div class="wc-growth-action">
-                    <a href="tel:+911203112916" class="wc-growth-btn"><i class="bi bi-telephone-fill me-2"></i>Call Now</a>
+                    <a href="tel:+911203112916" class="wc-growth-btn"><i class="bi bi-telephone-fill me-2"></i>Let’s Talk</a>
                 </div>
             </div>
         </div>
@@ -11213,23 +11255,21 @@
                 <!-- Card 2 -->
                 <div class="expertise-card">
                     <div class="expertise-icon">
-                        <img src="https://www.webconvoy.com/public/websitenew/image/devlopment.svg" alt="Devs">
+                        <img src="https://www.webconvoy.com/public/websitenew/image/devlopment.svg" alt="SaaS Engineering">
                     </div>
                     <h4>SaaS Product <span class="text-blue">Engineer</span></h4>
-                    <p>Skilled software engineers and architects building scalable digital products with hands-on
-                        experience across modern frameworks.</p>
-                    <a href="#" class="expertise-btn">View Engineering</a>
+                    <p>Architecting scalable multi-tenant SaaS products, automated subscription systems, and cloud-native digital platforms built to scale.</p>
+                    <a href="#contact" class="expertise-btn">View SaaS Services</a>
                 </div>
 
                 <!-- Card 3 -->
                 <div class="expertise-card">
                     <div class="expertise-icon">
-                        <img src="https://www.webconvoy.com/public/websitenew/image/ARVR.svg" alt="AR/VR">
+                        <img src="vibe_coding.svg" alt="Vibe Coding">
                     </div>
                     <h4>Vibe Coding <span class="text-blue">Engineer</span></h4>
-                    <p>From virtual simulations to augmented product experiences, we design AR/VR solutions that
-                        redefine digital engagement and innovation.</p>
-                    <a href="#" class="expertise-btn">View AR/VR Solutions</a>
+                    <p>Accelerating software delivery through next-gen AI-assisted vibe coding, LLM prompt engineering, and agile rapid prototyping.</p>
+                    <a href="#contact" class="expertise-btn">View Vibe Coding</a>
                 </div>
 
                 <!-- Card 4 -->
@@ -11239,28 +11279,27 @@
                     </div>
                     <h4>Cloud Architecture & <span class="text-blue">DevOps</span></h4>
                     <p>Architecting resilient cloud ecosystems, automated CI/CD pipelines, and scalable microservices that guarantee high availability and performance.</p>
-                    <a href="#" class="expertise-btn">View Cloud Solutions</a>
+                    <a href="#contact" class="expertise-btn">View Cloud Solutions</a>
                 </div>
 
                 <!-- Card 5 -->
                 <div class="expertise-card">
                     <div class="expertise-icon">
-                        <img src="https://www.webconvoy.com/public/websitenew/image/app-development.svg" alt="Mobility">
+                        <img src="https://www.webconvoy.com/public/websitenew/image/app-development.svg" alt="Mobile Apps">
                     </div>
                     <h4>Mobile Application <span class="text-blue">Engineer</span></h4>
-                    <p>Building high-performing mobile applications that enhance user experience and keep your business
-                        connected in an evolving digital world.</p>
-                    <a href="#" class="expertise-btn">View App Services</a>
+                    <p>Building high-performing native and cross-platform mobile apps for iOS and Android that elevate customer engagement and retention.</p>
+                    <a href="#contact" class="expertise-btn">View Mobile Services</a>
                 </div>
 
                 <!-- Card 6 -->
                 <div class="expertise-card">
                     <div class="expertise-icon">
-                        <img src="https://www.webconvoy.com/public/websitenew/image/console.svg" alt="Gaming">
+                        <img src="web_marketing.svg" alt="Website & Marketing">
                     </div>
                     <h4>Website & Marketing <span class="text-blue">Solution Design</span></h4>
-                    <p>Passionate developers and 3D artists creating immersive interactive entertainment, gamified experiences, and real-time 3D simulations.</p>
-                    <a href="#" class="expertise-btn">View Solution Services</a>
+                    <p>Designing bespoke high-converting websites and performance-driven digital marketing campaigns that maximize brand reach and revenue.</p>
+                    <a href="#contact" class="expertise-btn">View Web & Marketing</a>
                 </div>
             </div>
         </div>
@@ -11435,10 +11474,9 @@
                 <!-- Left Column: Content, Flags, FAQs, and Contact Info -->
                 <div class="col-lg-6 col-12 pipe-contact-left-col">
                     <div class="pipe-contact-eyebrow">CONTACT US</div>
-                    <h2 class="pipe-contact-title">How can we<br>help you?</h2>
+                    <h2 class="pipe-contact-title">How can we<br><span class="pipe-contact-gradient">help you?</span></h2>
                     <p class="pipe-contact-desc">
-                        Our team is here to help you access top-tier engineering talent, scale your software
-                        architecture, and build the future on your terms. Reach out directly through the inquiry form, and our engineering leaders will get in touch with you.
+                        Have a project in mind or need expert engineers? Tell us about your goals, and our team will get back to you within 24 hours.
                     </p>
                 </div>
 
@@ -12490,30 +12528,6 @@
 
 
 
-            // GSAP Expertise Cards Stagger
-            gsap.from(".expertise-card", {
-                scrollTrigger: {
-                    trigger: "#expertise-solutions",
-                    start: "top 70%",
-                },
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.1,
-                ease: "power3.out"
-            });
-
-            // GSAP Expertise Header
-            gsap.from(".animate-expertise-text", {
-                scrollTrigger: {
-                    trigger: "#expertise-solutions",
-                    start: "top 85%",
-                },
-                y: 30,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out"
-            });
 
             // Cinematic Award Showcase Logic
             const awards = [

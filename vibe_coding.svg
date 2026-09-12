@@ -1,0 +1,11 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="50" height="50" rx="10" fill="#EBF5FF"/>
+  <!-- Code brackets -->
+  <path d="M19 20L14 25L19 30" stroke="#1A62FF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31 20L36 25L31 30" stroke="#1A62FF" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26 18L24 32" stroke="#1A62FF" stroke-width="2.1" stroke-linecap="round"/>
+  <!-- AI sparkle star in top right -->
+  <path d="M34 13L35.2 16.8L39 18L35.2 19.2L34 23L32.8 19.2L29 18L32.8 16.8L34 13Z" fill="#1A62FF"/>
+  <!-- Mini sparkle -->
+  <path d="M16 14L16.6 15.9L18.5 16.5L16.6 17.1L16 19L15.4 17.1L13.5 16.5L15.4 15.9L16 14Z" fill="#38BDF8"/>
+</svg>
