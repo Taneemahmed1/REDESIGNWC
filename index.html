@@ -7931,12 +7931,25 @@
         /* Main Heading */
         .ai-cta-heading {
             margin: 0 0 18px 0;
-            font-size: clamp(38px, 4.4vw, 58px);
+            font-size: clamp(32px, 3.8vw, 54px);
             font-weight: 900;
             line-height: 1.1;
             letter-spacing: -0.03em;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: baseline;
+            gap: 14px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .ai-cta-heading {
+                white-space: normal;
+                flex-wrap: wrap;
+                font-size: clamp(28px, 7vw, 38px);
+                gap: 8px;
+            }
         }
 
         .ai-cta-heading-white {
@@ -10383,7 +10396,7 @@
 
                         <!-- 3D Digital Globe Core -->
                         <div class="orbit-sphere-core">
-                            <img src="orbit_services_diagram.jpg" alt="WebConvoy Digital Engineering Services"
+                            <img src="orbit_globe_updated.png" alt="WebConvoy Digital Engineering Services"
                                 id="orbitSphereImage">
                         </div>
                     </div>
@@ -10471,11 +10484,6 @@
 
                 <!-- Card 1: Hero Bento Card (Transform Your Business with AI) -->
                 <div class="ai-bento-card ai-card-light ai-hero-card">
-                    <!-- Top Right Label -->
-                    <div class="ai-hero-smarter-label">
-                        Smarter<br>Businesses<br>Brighter<br>Tomorrows
-                    </div>
-
                     <div class="ai-hero-left-content">
                         <div>
                             <!-- Pill Tag -->
@@ -10747,7 +10755,7 @@
             <div class="ai-cta-content-col">
                 <!-- Brand Header -->
                 <div class="ai-cta-brand">
-                    <img src="webconvoy_official_logo.png" alt="WebConvoy Logo"
+                    <img src="nav_logo_white.png" alt="WebConvoy Logo"
                         class="ai-cta-brand-logo-img">
                 </div>
 
@@ -10757,11 +10765,10 @@
                     <span class="ai-cta-eyebrow-line"></span>
                 </div>
 
-                <!-- Main Headings (Ideas to Intelligence.) -->
-                <h2 class="ai-cta-heading">
-                    <span class="ai-cta-heading-white">Ideas to</span>
-                    <span class="ai-cta-heading-blue">Intelligence.</span>
-                </h2>
+                <!-- Main Headings (Ideas to Intelligence.) in one line -->
+                <h1 class="ai-cta-heading">
+                    <span class="ai-cta-heading-white">Ideas to</span>&nbsp;<span class="ai-cta-heading-blue">Intelligence.</span>
+                </h1>
 
                 <!-- Description -->
                 <p class="ai-cta-subtext">
@@ -11136,16 +11143,10 @@
         <div class="wc-growth-banner-inner">
             <!-- Left Content Area -->
             <div class="wc-growth-content">
-                <!-- Brand Header -->
-                <div class="wc-growth-brand">
-                    <img src="webconvoy_official_logo.png" alt="WebConvoy Logo" class="wc-growth-brand-logo-img">
-                </div>
-
                 <!-- Main Headings (Black and Electric Blue split) -->
                 <h2 class="wc-growth-title">
                     <span class="wc-growth-title-black">Built It?</span>
-                    <span class="wc-growth-title-row2">Now Let’s <span class="wc-growth-title-blue">Market
-                            It!</span></span>
+                    <span class="wc-growth-title-row2">Now Let’s <span class="wc-growth-title-blue">Talk!</span></span>
                 </h2>
 
                 <!-- Description -->
@@ -11156,7 +11157,7 @@
 
                 <!-- CTA Action Button -->
                 <div class="wc-growth-action">
-                    <a href="#contact" class="wc-growth-btn">Complete Your Success Story</a>
+                    <a href="tel:+911203112916" class="wc-growth-btn"><i class="bi bi-telephone-fill me-2"></i>Call Now</a>
                 </div>
             </div>
         </div>
@@ -11193,7 +11194,7 @@
                     <div class="expertise-icon">
                         <img src="https://www.webconvoy.com/public/websitenew/image/devlopment.svg" alt="Devs">
                     </div>
-                    <h4>Digital Product <span class="text-blue">Engineering</span></h4>
+                    <h4>SaaS Product <span class="text-blue">Engineer</span></h4>
                     <p>Skilled software engineers and architects building scalable digital products with hands-on
                         experience across modern frameworks.</p>
                     <a href="#" class="expertise-btn">View Engineering</a>
@@ -11204,7 +11205,7 @@
                     <div class="expertise-icon">
                         <img src="https://www.webconvoy.com/public/websitenew/image/ARVR.svg" alt="AR/VR">
                     </div>
-                    <h4>AR/VR <span class="text-blue">Immersive</span> Experiences</h4>
+                    <h4>Vibe Coding <span class="text-blue">Engineer</span></h4>
                     <p>From virtual simulations to augmented product experiences, we design AR/VR solutions that
                         redefine digital engagement and innovation.</p>
                     <a href="#" class="expertise-btn">View AR/VR Solutions</a>
@@ -11225,10 +11226,10 @@
                     <div class="expertise-icon">
                         <img src="https://www.webconvoy.com/public/websitenew/image/app-development.svg" alt="Mobility">
                     </div>
-                    <h4>Enterprise <span class="text-blue">Mobility</span> Solutions</h4>
+                    <h4>Mobile Application <span class="text-blue">Engineer</span></h4>
                     <p>Building high-performing mobile applications that enhance user experience and keep your business
                         connected in an evolving digital world.</p>
-                    <a href="#" class="expertise-btn">View Mobility</a>
+                    <a href="#" class="expertise-btn">View App Services</a>
                 </div>
 
                 <!-- Card 6 -->
@@ -11236,10 +11237,9 @@
                     <div class="expertise-icon">
                         <img src="https://www.webconvoy.com/public/websitenew/image/console.svg" alt="Gaming">
                     </div>
-                    <h4>Interactive Gaming & <span class="text-blue">3D Design</span></h4>
-                    <p>Passionate developers and 3D artists creating immersive interactive experiences from web games to
-                        high-fidelity virtual environments.</p>
-                    <a href="#" class="expertise-btn">View Gaming</a>
+                    <h4>Website & Marketing <span class="text-blue">Solution Design</span></h4>
+                    <p>Passionate developers and 3D artists creating immersive interactive entertainment, gamified experiences, and real-time 3D simulations.</p>
+                    <a href="#" class="expertise-btn">View Solution Services</a>
                 </div>
             </div>
         </div>
@@ -11417,69 +11417,8 @@
                     <h2 class="pipe-contact-title">How can we<br>help you?</h2>
                     <p class="pipe-contact-desc">
                         Our team is here to help you access top-tier engineering talent, scale your software
-                        architecture, and build the future on your terms. Reach out directly or choose a regional hub
-                        below.
+                        architecture, and build the future on your terms. Reach out directly through the inquiry form, and our engineering leaders will get in touch with you.
                     </p>
-
-                    <!-- Search FAQ's Pill Button (as in reference image) -->
-                    <div class="pipe-faq-action-wrap">
-                        <a href="#faq-section" class="pipe-faq-pill-btn">
-                            <i class="bi bi-search"></i>
-                            <span>Search FAQ's</span>
-                        </a>
-                    </div>
-
-                    <!-- Global Presence & Flags with Interactive Hover Color Change -->
-                    <div class="pipe-presence-block">
-                        <div class="pipe-presence-label">
-                            <i class="bi bi-globe2"></i>
-                            <span>Our Global Hubs</span>
-                        </div>
-                        <div class="presence-flags">
-                            <div class="flag-item active" data-country="India" data-code="in">
-                                <img src="https://flagcdn.com/w40/in.png" alt="India Flag">
-                                <span>India</span>
-                            </div>
-                            <div class="flag-item" data-country="Malaysia" data-code="my">
-                                <img src="https://www.webconvoy.com/public/websitenew/image/malaysia.svg"
-                                    alt="Malaysia Flag">
-                                <span>Malaysia</span>
-                            </div>
-                            <div class="flag-item" data-country="Canada" data-code="ca">
-                                <img src="https://www.webconvoy.com/public/websitenew/image/canada.png"
-                                    alt="Canada Flag">
-                                <span>Canada</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Dynamic Contact Card (Address, Email, Phone with Interactive Hover Color Changes) -->
-                    <div id="address-section" class="pipe-contact-info-card">
-                        <div class="pipe-info-row pipe-address-row">
-                            <div class="pipe-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
-                            <div class="pipe-info-content">
-                                <span class="pipe-info-tag">Headquarters</span>
-                                <p id="address" class="pipe-info-val">H-159, VDS Building, H-Block, Noida Sector 63,
-                                    201301 Uttar Pradesh.</p>
-                            </div>
-                        </div>
-                        <div class="pipe-info-row pipe-email-row">
-                            <div class="pipe-info-icon"><i class="bi bi-envelope-at-fill"></i></div>
-                            <div class="pipe-info-content">
-                                <span class="pipe-info-tag">Direct Inquiries</span>
-                                <a href="mailto:gaurav@webconvoy.com" id="email"
-                                    class="pipe-contact-link">gaurav@webconvoy.com</a>
-                            </div>
-                        </div>
-                        <div class="pipe-info-row pipe-phone-row">
-                            <div class="pipe-info-icon"><i class="bi bi-telephone-outbound-fill"></i></div>
-                            <div class="pipe-info-content">
-                                <span class="pipe-info-tag">Instant Dial</span>
-                                <a href="tel:+911203112916" id="phone-display" class="pipe-contact-link">+91
-                                    1203112916</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Right Column: Elevated Crisp White Card Form with Ambient Glow Aura -->
