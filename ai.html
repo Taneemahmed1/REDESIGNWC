@@ -1461,6 +1461,412 @@
                 font-size: 2.2rem;
             }
         }
+    
+        /* ==========================================================================
+           USER SECTION 1: TRUSTED BY INNOVATIVE COMPANIES (LOGO STRIP BELOW HERO)
+           ========================================================================== */
+        .ai-trusted-innovative-bar {
+            background: #ffffff;
+            padding: 44px 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .innovative-eyebrow {
+            font-family: var(--font-head);
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #64748b;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .innovative-logos-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 36px 48px;
+        }
+
+        .innovative-logo-item {
+            display: inline-flex;
+            align-items: center;
+            opacity: 0.75;
+            transition: all 0.25s ease;
+        }
+
+        .innovative-logo-item:hover {
+            opacity: 1;
+            transform: scale(1.06);
+        }
+
+        .innovative-logo-item img {
+            max-height: 28px;
+            max-width: 120px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(1) contrast(1.2);
+            transition: filter 0.25s ease;
+        }
+
+        .innovative-logo-item:hover img {
+            filter: grayscale(0);
+        }
+
+        /* ==========================================================================
+           USER SECTION 2: END-TO-END AI SERVICES (INTERACTIVE 3-COL TABS)
+           ========================================================================== */
+        .ai-interactive-services-dark {
+            background: #06090e;
+            color: #ffffff;
+            padding: 110px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        .interactive-services-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1.3fr;
+            gap: 36px;
+            align-items: start;
+        }
+
+        .services-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .srv-tab-nav-btn {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px 20px;
+            color: #94a3b8;
+            font-family: var(--font-head);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: left;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .srv-tab-nav-btn:hover {
+            color: #ffffff;
+            background: rgba(20, 30, 52, 0.8);
+            border-color: rgba(56, 189, 248, 0.2);
+        }
+
+        .srv-tab-nav-btn.active {
+            background: rgba(20, 104, 251, 0.18);
+            border-color: #38bdf8;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(20, 104, 251, 0.2);
+        }
+
+        .srv-tab-nav-btn.active i {
+            color: #38bdf8;
+            transform: translateX(3px);
+        }
+
+        .service-tab-content-card {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            border-radius: 20px;
+            padding: 38px 32px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .tab-step-num {
+            font-family: var(--font-head);
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #38bdf8;
+            margin-bottom: 8px;
+        }
+
+        .tab-panel-title {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 14px;
+        }
+
+        .tab-panel-desc {
+            font-size: 0.96rem;
+            color: var(--ai-dark-muted);
+            line-height: 1.65;
+            margin-bottom: 26px;
+        }
+
+        .tab-check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 28px 0;
+        }
+
+        .tab-check-list li {
+            font-family: var(--font-head);
+            font-size: 0.94rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .tab-check-list li i {
+            color: #38bdf8;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 991px) {
+            .interactive-services-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==========================================================================
+           USER SECTION 3: INDUSTRIES WE SERVE (WHITE 12-TILE ICON GRID)
+           ========================================================================== */
+        .ai-industries-serve-white {
+            background: #ffffff;
+            color: #0f172a;
+            padding: 110px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .industries-serve-layout {
+            display: grid;
+            grid-template-columns: 1.1fr 1.9fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .industries-12-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+        }
+
+        .industry-tile-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 22px 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 105px;
+        }
+
+        .industry-tile-card:hover {
+            transform: translateY(-4px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 24px rgba(20, 104, 251, 0.1);
+        }
+
+        .tile-icon {
+            font-size: 1.6rem;
+            color: #1e293b;
+            margin-bottom: 8px;
+            transition: color 0.25s ease;
+        }
+
+        .industry-tile-card:hover .tile-icon {
+            color: var(--ai-primary);
+        }
+
+        .tile-name {
+            font-family: var(--font-head);
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #334155;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 1199px) {
+            .industries-12-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .industries-serve-layout {
+                grid-template-columns: 1fr;
+            }
+            .industries-12-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 575px) {
+            .industries-12-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ==========================================================================
+           USER SECTION 4: REAL-WORLD RESULTS (DARK 3-CARD SHOWCASE)
+           ========================================================================== */
+        .ai-real-results-dark {
+            background: #080d1a;
+            color: #ffffff;
+            padding: 110px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        .real-results-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .results-cards-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .result-impact-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 28px 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .result-impact-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .result-cat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .result-cat-badge i {
+            color: #38bdf8;
+        }
+
+        .result-card-title {
+            font-family: var(--font-head);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .result-card-sub {
+            font-size: 0.85rem;
+            color: var(--ai-dark-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .result-metric-num {
+            font-family: var(--font-head);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #38bdf8;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .result-metric-label {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            font-weight: 600;
+        }
+
+        .result-card-visual {
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #090d16;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result-card-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-nav-arrows {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: flex-end;
+        }
+
+        .nav-circle-arrow {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-circle-arrow:hover {
+            background: rgba(56, 189, 248, 0.2);
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+        @media (max-width: 991px) {
+            .real-results-layout {
+                grid-template-columns: 1fr;
+            }
+            .results-cards-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 
@@ -1569,6 +1975,40 @@
                     <img src="https://www.webconvoy.com/public/websitenew/image/stripe-logo.png" alt="Stripe" class="logo-strip-img">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="logo-strip-img">
                     <img src="intel-logo.svg" alt="Intel" class="logo-strip-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USER SECTION 1: TRUSTED BY INNOVATIVE COMPANIES (LOGO STRIP DIRECTLY BELOW HERO) -->
+    <section class="ai-trusted-innovative-bar" id="trusted-innovative-strip">
+        <div class="container text-center">
+            <div class="innovative-eyebrow">TRUSTED BY INNOVATIVE COMPANIES</div>
+            <div class="innovative-logos-row">
+                <div class="innovative-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe">
+                </div>
+                <div class="innovative-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify">
+                </div>
+                <div class="innovative-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft">
+                </div>
+                <div class="innovative-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+                </div>
+                <div class="innovative-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud">
+                </div>
+                <div class="innovative-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta">
+                </div>
+                <div class="innovative-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" alt="Spotify">
+                </div>
+                <div class="innovative-logo-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" alt="Notion" style="height: 28px; width: auto; margin-right: 6px;">
+                    <span style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem; color: #111;">Notion</span>
                 </div>
             </div>
         </div>
@@ -1736,6 +2176,83 @@
                         <h4 class="sub-card-title">TensorRT & vLLM High Throughput</h4>
                         <p class="sub-card-desc">Quantized FP8/INT4 weights and distributed GPU clusters guarantee sub-20ms inference for mission-critical enterprise applications.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- USER SECTION 2: END-TO-END AI SERVICES (INTERACTIVE 3-COLUMN TABS) -->
+    <section class="ai-interactive-services-dark" id="interactive-services">
+        <div class="container">
+            <div class="interactive-services-layout">
+                <!-- Left: Headline & Explore Link -->
+                <div>
+                    <div style="color: #38bdf8; font-family: var(--font-head); font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;">
+                        &lt;OUR AI SERVICES&gt;
+                    </div>
+                    <h2 style="font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; color: #ffffff; line-height: 1.2; margin-bottom: 18px;">
+                        End-to-end AI services to turn potential into progress.
+                    </h2>
+                    <p style="color: var(--ai-dark-muted); font-size: 0.98rem; line-height: 1.65; margin-bottom: 28px;">
+                        From strategy and consulting to development and deployment, we provide complete AI services that help you innovate, automate and scale.
+                    </p>
+                    <a href="#scoping-consultation" style="color: #38bdf8; font-family: var(--font-head); font-weight: 700; font-size: 14px; text-decoration: none; border-bottom: 1px solid #38bdf8; display: inline-flex; align-items: center; gap: 8px;">
+                        Explore All Services <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Middle: Vertical Navigation Tabs -->
+                <div class="services-nav-list" id="servicesTabNav">
+                    <button class="srv-tab-nav-btn active" data-tab="tab-consulting">
+                        <span>AI Consulting</span>
+                        <i class="bi bi-arrow-right-short fs-4"></i>
+                    </button>
+                    <button class="srv-tab-nav-btn" data-tab="tab-development">
+                        <span>AI Development</span>
+                        <i class="bi bi-arrow-right-short fs-4"></i>
+                    </button>
+                    <button class="srv-tab-nav-btn" data-tab="tab-genai">
+                        <span>Generative AI</span>
+                        <i class="bi bi-arrow-right-short fs-4"></i>
+                    </button>
+                    <button class="srv-tab-nav-btn" data-tab="tab-ml">
+                        <span>Machine Learning</span>
+                        <i class="bi bi-arrow-right-short fs-4"></i>
+                    </button>
+                    <button class="srv-tab-nav-btn" data-tab="tab-agents">
+                        <span>AI Agents</span>
+                        <i class="bi bi-arrow-right-short fs-4"></i>
+                    </button>
+                    <button class="srv-tab-nav-btn" data-tab="tab-analytics">
+                        <span>Data & Analytics</span>
+                        <i class="bi bi-arrow-right-short fs-4"></i>
+                    </button>
+                    <button class="srv-tab-nav-btn" data-tab="tab-mlops">
+                        <span>MLOps & Infrastructure</span>
+                        <i class="bi bi-arrow-right-short fs-4"></i>
+                    </button>
+                </div>
+
+                <!-- Right: Active Tab Detail Card -->
+                <div class="service-tab-content-card" id="serviceTabContent">
+                    <div>
+                        <div class="tab-step-num" id="panelNum">01 .</div>
+                        <h3 class="tab-panel-title" id="panelTitle">AI Consulting</h3>
+                        <p class="tab-panel-desc" id="panelDesc">
+                            Strategic guidance to identify high-impact use cases, build roadmaps, and accelerate AI adoption.
+                        </p>
+                        <ul class="tab-check-list" id="panelChecklist">
+                            <li><i class="bi bi-check2-circle"></i> Custom Roadmaps</li>
+                            <li><i class="bi bi-check2-circle"></i> Use-case Discovery</li>
+                            <li><i class="bi bi-check2-circle"></i> AI Governance & Compliance</li>
+                            <li><i class="bi bi-check2-circle"></i> ROI & Impact Analysis</li>
+                        </ul>
+                    </div>
+                    <a href="#scoping-consultation" class="btn-ai-primary align-self-start" style="padding: 10px 24px; font-size: 13.5px;">
+                        <span>Discuss This Service</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1954,6 +2471,88 @@
         </div>
     </section>
 
+    
+    <!-- USER SECTION 4: REAL-WORLD RESULTS (DARK 3-CARD SHOWCASE) -->
+    <section class="ai-real-results-dark" id="real-world-results">
+        <div class="container">
+            <div class="real-results-layout">
+                <!-- Left: Headline & View Link -->
+                <div>
+                    <div style="color: #38bdf8; font-family: var(--font-head); font-size: 11.5px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;">
+                        &lt;REAL-WORLD RESULTS&gt;
+                    </div>
+                    <h2 style="font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; color: #ffffff; line-height: 1.2; margin-bottom: 18px;">
+                        AI solutions that deliver real impact.
+                    </h2>
+                    <p style="color: var(--ai-dark-muted); font-size: 0.98rem; line-height: 1.65; margin-bottom: 28px;">
+                        Explore how we've helped businesses across industries solve complex challenges with AI.
+                    </p>
+                    <a href="#case-studies" style="color: #38bdf8; font-family: var(--font-head); font-weight: 700; font-size: 14px; text-decoration: none; border-bottom: 1px solid #38bdf8; display: inline-flex; align-items: center; gap: 8px;">
+                        View All Case Studies <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Right: Carousel Navigation + 3 Cards -->
+                <div>
+                    <div class="carousel-nav-arrows">
+                        <button class="nav-circle-arrow" id="prevResultBtn" aria-label="Previous"><i class="bi bi-arrow-left"></i></button>
+                        <button class="nav-circle-arrow" id="nextResultBtn" aria-label="Next"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+
+                    <div class="results-cards-row">
+                        <!-- Card 1: HealthAI -->
+                        <div class="result-impact-card">
+                            <div>
+                                <div class="result-cat-badge">
+                                    <i class="bi bi-heart-pulse"></i> Healthcare
+                                </div>
+                                <h3 class="result-card-title">HealthAI</h3>
+                                <p class="result-card-sub">AI-powered patient assistance platform</p>
+                                <div class="result-metric-num">+60%</div>
+                                <div class="result-metric-label">Patient Engagement</div>
+                            </div>
+                            <div class="result-card-visual">
+                                <img src="product_skintelligent.jpg" alt="HealthAI Platform">
+                            </div>
+                        </div>
+
+                        <!-- Card 2: RetailPro -->
+                        <div class="result-impact-card">
+                            <div>
+                                <div class="result-cat-badge">
+                                    <i class="bi bi-cart3"></i> Retail
+                                </div>
+                                <h3 class="result-card-title">RetailPro</h3>
+                                <p class="result-card-sub">Demand forecasting & inventory optimization</p>
+                                <div class="result-metric-num">35%</div>
+                                <div class="result-metric-label">Lower Inventory Costs</div>
+                            </div>
+                            <div class="result-card-visual">
+                                <img src="card_superior_apple.png" alt="RetailPro Optimization">
+                            </div>
+                        </div>
+
+                        <!-- Card 3: EduNext -->
+                        <div class="result-impact-card">
+                            <div>
+                                <div class="result-cat-badge">
+                                    <i class="bi bi-book"></i> Education
+                                </div>
+                                <h3 class="result-card-title">EduNext</h3>
+                                <p class="result-card-sub">Personalized learning platform</p>
+                                <div class="result-metric-num">2x</div>
+                                <div class="result-metric-label">Higher Course Completion</div>
+                            </div>
+                            <div class="result-card-visual">
+                                <img src="product_jobgenie.jpg" alt="EduNext AI Learning">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ==========================================================================
          8. AI CASE STUDY / PROOF SECTION (DARK)
          ========================================================================== -->
@@ -1994,6 +2593,79 @@
                 <p class="text-white-50 small mb-0">
                     <i class="bi bi-info-circle text-info me-1"></i> Designed for high-frequency financial platforms requiring sub-second decision making and zero data leakage.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- USER SECTION 3: INDUSTRIES WE SERVE (WHITE 12-TILE ICON GRID) -->
+    <section class="ai-industries-serve-white" id="industries-serve">
+        <div class="container">
+            <div class="industries-serve-layout">
+                <!-- Left: Title & Copy -->
+                <div>
+                    <div style="color: #6366f1; font-family: var(--font-head); font-weight: 800; font-size: 11.5px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;">
+                        INDUSTRIES WE SERVE
+                    </div>
+                    <h2 style="font-family: var(--font-head); font-size: clamp(2.2rem, 3.8vw, 3.2rem); font-weight: 800; color: #0f172a; line-height: 1.15; margin-bottom: 18px;">
+                        AI built around<br>your industry's needs.
+                    </h2>
+                    <p style="color: #64748b; font-size: 1.05rem; line-height: 1.65; max-width: 420px; margin-bottom: 0;">
+                        We create industry-specific AI solutions that solve real problems and drive measurable growth.
+                    </p>
+                </div>
+
+                <!-- Right: 12 White Cards Grid -->
+                <div class="industries-12-grid">
+                    <div class="industry-tile-card">
+                        <i class="bi bi-heart-pulse tile-icon"></i>
+                        <h4 class="tile-name">Healthcare</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-shield-check tile-icon"></i>
+                        <h4 class="tile-name">FinTech</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-cart3 tile-icon"></i>
+                        <h4 class="tile-name">Retail</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-building tile-icon"></i>
+                        <h4 class="tile-name">Real Estate</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-book tile-icon"></i>
+                        <h4 class="tile-name">Education</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-truck tile-icon"></i>
+                        <h4 class="tile-name">Logistics</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-gear-wide-connected tile-icon"></i>
+                        <h4 class="tile-name">Manufacturing</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-airplane tile-icon"></i>
+                        <h4 class="tile-name">Travel</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-cloud-check tile-icon"></i>
+                        <h4 class="tile-name">SaaS</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-car-front tile-icon"></i>
+                        <h4 class="tile-name">Automotive</h4>
+                    </div>
+                    <div class="industry-tile-card">
+                        <i class="bi bi-collection-play tile-icon"></i>
+                        <h4 class="tile-name">Media</h4>
+                    </div>
+                    <div class="industry-tile-card" style="background: #f8fafc; border-style: dashed;">
+                        <i class="bi bi-three-dots tile-icon" style="color: #94a3b8;"></i>
+                        <h4 class="tile-name" style="color: #64748b;">and more</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2522,6 +3194,77 @@
                 }
             });
         }
+    
+        // Interactive Vertical Tab Switcher (Section 2)
+        const tabData = {
+            "tab-consulting": {
+                num: "01 .",
+                title: "AI Consulting",
+                desc: "Strategic guidance to identify high-impact use cases, build roadmaps, and accelerate AI adoption.",
+                checks: ["Custom Roadmaps", "Use-case Discovery", "AI Governance & Compliance", "ROI & Impact Analysis"]
+            },
+            "tab-development": {
+                num: "02 .",
+                title: "AI Development",
+                desc: "Turnkey engineering of custom AI applications, neural pipelines, and scalable enterprise architectures.",
+                checks: ["Custom Model Training", "Full-Stack AI Integration", "API & Microservice Development", "Production Deployment"]
+            },
+            "tab-genai": {
+                num: "03 .",
+                title: "Generative AI",
+                desc: "Domain-specific LLM fine-tuning, RAG knowledge retrieval, and multi-modal creative intelligence engines.",
+                checks: ["LLM Fine-Tuning & Quantization", "Enterprise Vector RAG", "Prompt Optimization & Guardrails", "Multi-Modal Generation"]
+            },
+            "tab-ml": {
+                num: "04 .",
+                title: "Machine Learning",
+                desc: "Statistical machine learning models uncovering hidden patterns in structured and unstructured enterprise data.",
+                checks: ["Predictive Scoring Models", "Anomaly & Fraud Detection", "Natural Language Processing", "Recommendation Engines"]
+            },
+            "tab-agents": {
+                num: "05 .",
+                title: "AI Agents",
+                desc: "Autonomous multi-agent swarms equipped with reasoning, vector memory, and automated API tool calling.",
+                checks: ["Goal Decomposition & Planning", "Tool-Calling Workflows", "Multi-Agent Swarm Orchestration", "Supervised Human-in-the-Loop"]
+            },
+            "tab-analytics": {
+                num: "06 .",
+                title: "Data & Analytics",
+                desc: "High-throughput data engineering, automated labeling pipelines, and vector database optimization.",
+                checks: ["ETL Data Pipelines", "Semantic Embeddings Store", "Real-Time Data Streaming", "Telemetry & Dashboards"]
+            },
+            "tab-mlops": {
+                num: "07 .",
+                title: "MLOps & Infrastructure",
+                desc: "Continuous model deployment, automated drift retraining, and sub-20ms Kubernetes inference clusters.",
+                checks: ["Triton & vLLM Acceleration", "Automated Model Drift Monitoring", "Air-Gapped Private VPC Hosting", "24/7 SLA Telemetry"]
+            }
+        };
+
+        const tabButtons = document.querySelectorAll('.srv-tab-nav-btn');
+        const panelNum = document.getElementById('panelNum');
+        const panelTitle = document.getElementById('panelTitle');
+        const panelDesc = document.getElementById('panelDesc');
+        const panelChecklist = document.getElementById('panelChecklist');
+
+        if (tabButtons.length > 0) {
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const tabKey = btn.getAttribute('data-tab');
+                    const data = tabData[tabKey];
+                    if (data && panelNum && panelTitle && panelDesc && panelChecklist) {
+                        panelNum.textContent = data.num;
+                        panelTitle.textContent = data.title;
+                        panelDesc.textContent = data.desc;
+                        panelChecklist.innerHTML = data.checks.map(c => `<li><i class="bi bi-check2-circle"></i> ${c}</li>`).join('');
+                    }
+                });
+            });
+        }
+
     </script>
 </body>
 </html>
