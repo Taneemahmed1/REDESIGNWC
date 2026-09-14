@@ -1493,3 +1493,13 @@
         left: 78px;
     }
 }
+
+
+/* =============================================================
+   HERO H1 REFINED WEIGHT (ALL AI PAGES)
+   ============================================================= */
+.app-hero-title,
+.hero-title {
+    font-weight: 500 !important;
+    letter-spacing: -0.015em !important;
+}
