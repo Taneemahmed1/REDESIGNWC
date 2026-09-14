@@ -1867,6 +1867,266 @@
             }
         }
 
+    
+        
+        /* -------------------------------------------------------------
+           INSPIRATION HERO STYLES (MATCHES USER SCREENSHOT REFERENCE)
+           ------------------------------------------------------------- */
+        .app-hero-section {
+            position: relative;
+            background: #050607;
+            padding: 110px 0 45px 0;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 50% 28%, rgba(18, 107, 255, 0.18) 0%, rgba(5, 6, 7, 0.96) 70%),
+                radial-gradient(circle at 80% 40%, rgba(45, 140, 255, 0.08) 0%, transparent 50%),
+                linear-gradient(to bottom, transparent 0%, #050607 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-bg-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 60px 60px;
+            background-position: center;
+            opacity: 0.55;
+            mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
+        }
+
+        .app-brand-pill {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 22px;
+            border-radius: 999px;
+            background: rgba(18, 107, 255, 0.09);
+            border: 1px solid rgba(45, 140, 255, 0.35);
+            color: #38bdf8;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            box-shadow: 0 0 24px rgba(18, 107, 255, 0.22);
+        }
+
+        .app-hero-title {
+            position: relative;
+            z-index: 2;
+            font-family: var(--font-head);
+            font-size: clamp(2.3rem, 5vw, 4.2rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.14;
+            letter-spacing: -0.028em;
+            margin-bottom: 20px;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sparkle-icon {
+            color: #38bdf8;
+            margin-right: 8px;
+            display: inline-block;
+            font-size: 0.88em;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));
+        }
+
+        .app-hero-subtitle {
+            position: relative;
+            z-index: 2;
+            font-size: clamp(1.02rem, 1.35vw, 1.2rem);
+            color: #9ba4b2;
+            max-width: 860px;
+            margin: 0 auto 34px auto;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .app-hero-cta-btn {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 34px;
+            border-radius: 999px;
+            background: rgba(10, 16, 26, 0.85);
+            border: 1px solid rgba(45, 140, 255, 0.45);
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 14.5px;
+            font-weight: 600;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .app-hero-cta-btn:hover {
+            border-color: #2d8cff;
+            background: rgba(18, 107, 255, 0.25);
+            box-shadow: 0 0 30px rgba(18, 107, 255, 0.5), inset 0 1px 3px rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            color: #ffffff !important;
+        }
+
+        /* Docked "Trusted by" Strip at base of Hero */
+        .hero-trusted-dock {
+            position: relative;
+            z-index: 2;
+            margin-top: 55px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 28px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .hero-trusted-dock::-webkit-scrollbar { display: none; }
+
+        .trusted-by-badge {
+            background: rgba(18, 107, 255, 0.16);
+            border: 1px solid rgba(45, 140, 255, 0.35);
+            color: #38bdf8;
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 6px;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+
+        .trusted-logos-flex {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: nowrap;
+        }
+
+        .trusted-logo-item {
+            display: inline-flex;
+            align-items: center;
+            opacity: 0.65;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .trusted-logo-item:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .trusted-logo-unit {
+            max-height: 24px;
+            max-width: 110px;
+            object-fit: contain;
+            filter: grayscale(1) brightness(1.7) contrast(1.1);
+            transition: filter 0.25s ease;
+        }
+
+        .trusted-logo-item:hover .trusted-logo-unit {
+            filter: grayscale(0) brightness(1);
+        }
+
+        .trusted-logo-text {
+            font-family: var(--font-head);
+            font-size: 12.5px;
+            color: #cbd5e1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+    */
+        .hero-trusted-dock {
+            position: relative;
+            z-index: 2;
+            margin-top: 60px;
+            padding-top: 26px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 28px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .hero-trusted-dock::-webkit-scrollbar { display: none; }
+
+        .trusted-by-badge {
+            background: rgba(18, 107, 255, 0.16);
+            border: 1px solid rgba(45, 140, 255, 0.35);
+            color: #38bdf8;
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 6px;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+
+        .trusted-logos-flex {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: nowrap;
+        }
+
+        .trusted-logo-item {
+            display: inline-flex;
+            align-items: center;
+            opacity: 0.65;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .trusted-logo-item:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .trusted-logo-unit {
+            max-height: 24px;
+            max-width: 110px;
+            object-fit: contain;
+            filter: grayscale(1) brightness(1.7) contrast(1.1);
+            transition: filter 0.25s ease;
+        }
+
+        .trusted-logo-item:hover .trusted-logo-unit {
+            filter: grayscale(0) brightness(1);
+        }
+
+        .trusted-logo-text {
+            font-family: var(--font-head);
+            font-size: 12.5px;
+            color: #cbd5e1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
     </style>
 </head>
 
@@ -1957,40 +2217,77 @@
     <!-- ==========================================================================
          1. HERO SECTION (DARK)
          ========================================================================== -->
-    <section class="ai-hero-section" id="hero">
+        <!-- 01. INSPIRATION HERO SECTION (MATCHING APPTUNIX REFERENCE) -->
+        <!-- 01. INSPIRATION HERO SECTION (MATCHING APPTUNIX REFERENCE) -->
+    <section class="app-hero-section" id="hero">
+        <div class="hero-bg-overlay"></div>
         <div class="container position-relative" style="z-index: 2;">
-            <div class="eyebrow-badge">
-                <i class="bi bi-cpu-fill"></i> AI-POWERED SOLUTIONS
+            <!-- Eyebrow Pill -->
+            <div>
+                <span class="app-brand-pill">
+                    WebConvoy AI
+                </span>
             </div>
-            <h1 class="hero-title">
-                Empowering Autonomous Growth With <span class="text-gradient-ai">Custom Enterprise AI</span> Services
+
+            <!-- Big Sparkle Headline -->
+            <h1 class="app-hero-title">
+                <span class="sparkle-icon">✦✦</span>AI Development Services & Solutions
             </h1>
-            <p class="hero-subtext">
-                We architect and deploy production-grade LLMs, autonomous agentic workflows, and predictive pipelines that turn enterprise operations into revenue-generating intelligence.
+
+            <!-- Subtitle -->
+            <p class="app-hero-subtitle">
+                Enterprise-Grade AI Systems Built for Production, Seamless Integration, and Measurable Business Impact—engineered to optimize complex workflows, make faster intelligent decisions, and drive high-impact growth.
             </p>
-            <div class="hero-cta-group">
-                <a href="#scoping-consultation" class="btn-ai-primary">
-                    <span>Get Free AI Consultation</span>
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-                <a href="#case-studies" class="btn-ai-secondary">
-                    <span>See Our AI Work</span>
-                    <i class="bi bi-eye"></i>
+
+            <!-- Rounded Pill CTA -->
+            <div>
+                <a href="#scoping-consultation" class="app-hero-cta-btn">
+                    Get Your Free AI Consultation <i class="bi bi-chevron-right ms-1"></i>
                 </a>
             </div>
 
-            <!-- Client Logo Strip Directly Under Hero (Apptunix Style) -->
-            <div class="hero-logo-strip">
-                <div class="logo-strip-label">Trusted by Technology Pioneers & Scaled Enterprises</div>
-                <div class="logo-strip-row">
-                    <img src="https://www.webconvoy.com/public/websitenew/image/microsoft.png" alt="Microsoft" class="logo-strip-img">
-                    <img src="https://www.webconvoy.com/public/websitenew/image/amazon.png" alt="Amazon AWS" class="logo-strip-img">
-                    <img src="https://www.webconvoy.com/public/websitenew/image/google.png" alt="Google Cloud" class="logo-strip-img">
-                    <img src="https://www.webconvoy.com/public/websitenew/image/meta.png" alt="Meta" class="logo-strip-img">
-                    <img src="https://www.webconvoy.com/public/websitenew/image/zoom.png" alt="Zoom" class="logo-strip-img">
-                    <img src="https://www.webconvoy.com/public/websitenew/image/stripe-logo.png" alt="Stripe" class="logo-strip-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="logo-strip-img">
-                    <img src="intel-logo.svg" alt="Intel" class="logo-strip-img">
+                        <!-- DOCKED TRUSTED BY LOGO STRIP (MATCHING REFERENCE INSPIRATION) -->
+            <div class="hero-trusted-dock">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="trusted-by-badge">Trusted by</span>
+                </div>
+                <div class="trusted-logos-flex">
+                    <!-- Al Rashid Mall -->
+                    <div class="trusted-logo-item" title="Al Rashid Mall">
+                        <span class="trusted-logo-text"><i class="bi bi-building me-1"></i> AL RASHID MALL</span>
+                    </div>
+                    <!-- Isuzu -->
+                    <div class="trusted-logo-item" title="Isuzu Motors">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Isuzu_logo.svg" alt="Isuzu" class="trusted-logo-unit" style="max-height: 22px;">
+                    </div>
+                    <!-- Expo City Dubai -->
+                    <div class="trusted-logo-item" title="Expo City Dubai">
+                        <span class="trusted-logo-text"><i class="bi bi-sun me-1"></i> EXPO CITY DUBAI</span>
+                    </div>
+                    <!-- Keller Williams (KW) -->
+                    <div class="trusted-logo-item" title="Keller Williams">
+                        <span class="trusted-logo-text fw-bold" style="font-size: 1.25rem; letter-spacing: -1px;">kw</span>
+                    </div>
+                    <!-- Al Tayer -->
+                    <div class="trusted-logo-item" title="Al Tayer Group">
+                        <span class="trusted-logo-text">al tayer <span style="font-family: serif; font-size: 0.9em;">الـطـايـر</span></span>
+                    </div>
+                    <!-- Namshi -->
+                    <div class="trusted-logo-item" title="Namshi">
+                        <span class="trusted-logo-text fw-bold" style="letter-spacing: 2px;">NAMSHI</span>
+                    </div>
+                    <!-- Majid Al Futtaim -->
+                    <div class="trusted-logo-item" title="Majid Al Futtaim">
+                        <span class="trusted-logo-text"><i class="bi bi-shield me-1"></i> MAJID AL FUTTAIM</span>
+                    </div>
+                    <!-- Stripe -->
+                    <div class="trusted-logo-item" title="Stripe">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" class="trusted-logo-unit" style="max-height: 24px;">
+                    </div>
+                    <!-- AWS -->
+                    <div class="trusted-logo-item" title="AWS">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="trusted-logo-unit" style="max-height: 22px;">
+                    </div>
                 </div>
             </div>
         </div>
