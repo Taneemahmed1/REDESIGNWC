@@ -833,88 +833,92 @@
     </section>
 
     <!-- ==========================================================================
-         4-PITFALL ENTERPRISE DIAGNOSIS GRID (OPTICAL CV) - [COMP-3]
+         SECTION 2: PROOF-OF-CONCEPT TO PRODUCTION BRIDGE (MATCHING USER REFERENCE)
          ========================================================================== -->
-    <section class="editorial-diagnosis-section" id="problem-solution">
+    <section class="poc-bridge-section" id="problem-solution">
         <div class="container">
-            <div class="diag-header text-center">
-                <div class="diag-pill">
-                    <i class="bi bi-shield-exclamation me-1"></i> Enterprise AI Audit
+            <!-- Top Bar: Category Pill + Breadcrumbs -->
+            <div class="poc-top-bar">
+                <div class="poc-pill-tag">
+                    <span class="poc-pill-dot"></span> AI CONSULTING
                 </div>
-                <h2 class="diag-title">
-                    Deploying AI, <span style="color: #ff5533;">But Stalled at Proof-of-Concept?</span>
-                </h2>
-                <p class="diag-subtitle mx-auto">
-                    4 critical engineering and strategic bottlenecks that stall 80% of corporate AI initiatives before achieving production ROI.
-                </p>
+                <div class="poc-top-breadcrumbs">
+                    STRATEGY <span>/</span> DATA <span>/</span> GOVERNANCE <span>/</span> SCALE
+                </div>
             </div>
 
-            <div class="diag-grid-wrap">
-                <!-- Left: Computer Vision Optical Tracking Box -->
-                <div class="diag-cv-card">
-                    <div class="diag-cv-viewport">
-                        <div class="diag-cv-corner tl"></div>
-                        <div class="diag-cv-corner tr"></div>
-                        <div class="diag-cv-corner bl"></div>
-                        <div class="diag-cv-corner br"></div>
-                        <div class="diag-cv-laser"></div>
-                        <div class="diag-cv-badge">
-                            <i class="bi bi-crosshair me-1"></i> IN_FOCUS: 99.4%
-                        </div>
-                        <div class="text-center" style="position: relative; z-index: 2;">
-                            <div style="width: 76px; height: 76px; border-radius: 50%; background: radial-gradient(circle, rgba(34, 197, 94, 0.2), transparent 70%); border: 1px dashed #22c55e; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px;">
-                                <i class="bi bi-cpu-fill" style="font-size: 2.2rem; color: #4ade80;"></i>
-                            </div>
-                            <div style="font-family: monospace; font-size: 11px; color: #86efac; font-weight: 700;">
-                                TARGET_NODE // MODEL_PIPELINE
-                            </div>
-                        </div>
-                    </div>
-                    <div class="diag-cv-telemetry">
-                        <div class="d-flex justify-content-between mb-1">
-                            <span>INFERENCE_LATENCY:</span>
-                            <span class="text-white">24.2 ms</span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-1">
-                            <span>CONFIDENCE_THRESHOLD:</span>
-                            <span class="text-success">99.4% PASSED</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span>SECURITY_AUDIT:</span>
-                            <span class="text-info">SOC2 / ZERO_LEAKAGE</span>
-                        </div>
-                    </div>
+            <!-- Main Interactive Grid with 3D Bridge Visual -->
+            <div class="poc-main-grid">
+                <!-- Left Content Column -->
+                <div class="poc-left-content">
+                    <h2 class="poc-hero-title">
+                        Deploying AI,<br>
+                        But Stalled at<br>
+                        <span class="poc-accent-blue">Proof-of-Concept?</span>
+                    </h2>
+                    <p class="poc-hero-desc">
+                        Most AI initiatives don’t fail because the model isn’t capable. They stall when real-world complexity meets the business.
+                    </p>
+                    <a href="#scoping-consultation" class="poc-action-link">
+                        <span class="poc-link-text">FROM PILOT TO PRODUCTION</span>
+                        <span class="poc-link-arrow">──────→</span>
+                    </a>
                 </div>
 
-                <!-- Right: 2x2 Pitfall Diagnosis Cards -->
-                <div class="diag-cards-2x2">
-                    <div class="diag-item-card">
-                        <span class="diag-item-num">[ 01 / PIPELINE DEBT ]</span>
-                        <h4 class="diag-item-title">Fragmented Data & Dirty Embeddings</h4>
-                        <p class="diag-item-desc">
-                            Siloed ERPs and uncurated telemetry poison vector databases, producing hallucinated reasoning that breaks enterprise reliability.
-                        </p>
+                <!-- 3D Bridge Overlay Nodes & Stages -->
+                <div class="poc-overlay-wrap">
+                    <!-- Platform Left: Pilot Card -->
+                    <div class="poc-card-glass poc-card-pilot">
+                        <div class="poc-glass-title">PILOT</div>
+                        <p class="poc-glass-desc">It works in a demo.</p>
                     </div>
-                    <div class="diag-item-card">
-                        <span class="diag-item-num">[ 02 / LATENCY TAX ]</span>
-                        <h4 class="diag-item-title">Zero Latency & Cost Optimization</h4>
-                        <p class="diag-item-desc">
-                            Raw open-source weights produce 3+ second API lag and runaway GPU cloud costs that kill user adoption and project budgets.
-                        </p>
+
+                    <!-- Bridge Node 1: Data -->
+                    <div class="poc-step-node poc-step-data">
+                        <div class="poc-step-icon">
+                            <i class="bi bi-database"></i>
+                        </div>
+                        <div class="poc-step-title">DATA</div>
+                        <p class="poc-step-desc">Not enterprise ready.</p>
                     </div>
-                    <div class="diag-item-card">
-                        <span class="diag-item-num">[ 03 / EVAL BLINDSPOTS ]</span>
-                        <h4 class="diag-item-title">Missing Automated Evaluation Benchmarks</h4>
-                        <p class="diag-item-desc">
-                            Deploying without synthetic test suites or automated regression gates leaves leadership completely blind to model drift.
-                        </p>
+
+                    <!-- Bridge Node 2: Evaluation -->
+                    <div class="poc-step-node poc-step-eval">
+                        <div class="poc-step-icon">
+                            <i class="bi bi-bar-chart-line-fill"></i>
+                        </div>
+                        <div class="poc-step-title">EVALUATION</div>
+                        <p class="poc-step-desc">Unclear performance.</p>
                     </div>
-                    <div class="diag-item-card">
-                        <span class="diag-item-num">[ 04 / GOVERNANCE RISKS ]</span>
-                        <h4 class="diag-item-title">PII Exposure & Security Vulnerabilities</h4>
-                        <p class="diag-item-desc">
-                            Unchecked prompt injections and lack of role-based guardrails stall enterprise InfoSec and compliance sign-offs indefinitely.
-                        </p>
+
+                    <!-- Bridge Node 3: Security -->
+                    <div class="poc-step-node poc-step-security">
+                        <div class="poc-step-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="poc-step-title">SECURITY</div>
+                        <p class="poc-step-desc">Hard to approve.</p>
+                    </div>
+
+                    <!-- Bridge Node 4: Cost -->
+                    <div class="poc-step-node poc-step-cost">
+                        <div class="poc-step-icon">
+                            <i class="bi bi-coin"></i>
+                        </div>
+                        <div class="poc-step-title">COST</div>
+                        <p class="poc-step-desc">Expensive at scale.</p>
+                    </div>
+
+                    <!-- Platform Right: Production Card (Blue Glass, Not Orange) -->
+                    <div class="poc-card-glass poc-card-production">
+                        <div class="poc-glass-title">PRODUCTION</div>
+                        <p class="poc-glass-desc">Real value. At scale.</p>
+                    </div>
+
+                    <!-- Bottom Right Footnote -->
+                    <div class="poc-bottom-execution">
+                        <span>WE CLOSE ──────</span><br>
+                        <strong>THE EXECUTION GAP.</strong>
                     </div>
                 </div>
             </div>
