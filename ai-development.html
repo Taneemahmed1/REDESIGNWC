@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom AI Development & Engineering Services | WebConvoy</title>
+    <meta name="description" content="Architect, build, and deploy production-grade Generative AI applications, fine-tuned LLMs, enterprise RAG, and scalable AI SaaS with WebConvoy.">
+    <link rel="canonical" href="https://www.webconvoy.com/ai-development" />
+    <link rel="icon" href="https://webconvoy.com/public/websitenew/image/faviconion-web.png" type="image/x-icon">
+
+    <!-- Fonts & Bootstrap Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg-dark: #050607;
+            --surface-dark: #0a0d12;
+            --card-dark: #0d1118;
+            --border-dark: #202630;
+            --text-dark: #f5f7fa;
+            --muted-dark: #9ba4b2;
+
+            --bg-light: #f7f8fa;
+            --surface-light: #ffffff;
+            --card-light: #ffffff;
+            --border-light: #e2e8f0;
+            --text-light: #101318;
+            --muted-light: #64748b;
+
+            --primary-blue: #126bff;
+            --electric-blue: #2d8cff;
+            --glow-blue: rgba(18, 107, 255, 0.22);
+            --font-head: 'Geist', 'Inter Tight', 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .hover-white:hover { color: #ffffff !important; }
+
+        /* NAVBAR STYLES */
+        .main-navbar-sticky {
+            background: rgba(8, 9, 12, 0.88) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 14px 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-content-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .nav-links-center { display: flex; align-items: center; gap: 28px; }
+        .nav-link-item {
+            color: #cbd5e1 !important;
+            font-family: var(--font-head);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+        .nav-link-item:hover { color: #ffffff !important; }
+        .nav-cta-right { display: flex; align-items: center; gap: 16px; }
+        .btn-nav-ai {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            height: 40px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #1ea7fd 0%, #0d6efd 50%, #004fe8 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 20px rgba(13, 110, 253, 0.65), inset 0 1.5px 2px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: aiPillPulseGlow 3s infinite ease-in-out;
+        }
+        .btn-nav-ai.active {
+            box-shadow: 0 0 26px rgba(0, 210, 255, 0.8), 0 0 45px rgba(20, 104, 251, 0.6), inset 0 2px 4px #ffffff;
+            border-color: #00d2ff;
+        }
+        @keyframes aiPillPulseGlow {
+            0%, 100% { box-shadow: 0 0 16px rgba(13, 110, 253, 0.6), inset 0 1.5px 2px rgba(255, 255, 255, 0.8); }
+            50% { box-shadow: 0 0 28px rgba(0, 210, 255, 0.9), 0 0 48px rgba(13, 110, 253, 0.5), inset 0 2px 4px #ffffff; }
+        }
+        .ai-sparkles-wrap {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ai-star-main { width: 13px; height: 13px; fill: #ffffff; animation: aiStarTwinkle 2s infinite ease-in-out; }
+        .ai-star-sub { position: absolute; width: 8px; height: 8px; top: 0px; right: 0px; fill: #ffffff; animation: aiStarTwinkle 2s infinite ease-in-out 0.5s; }
+        @keyframes aiStarTwinkle {
+            0%, 100% { transform: scale(0.85); opacity: 0.8; }
+            50% { transform: scale(1.25) rotate(90deg); opacity: 1; }
+        }
+        .btn-appinv-contact {
+            padding: 9px 22px;
+            height: 40px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff !important;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+        .btn-appinv-contact:hover { background: #ffffff; color: #000000 !important; transform: translateY(-2px); }
+        .nav-item-wrap { position: relative; }
+        .dropdown-floating-panel {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: #0f141c;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px;
+            min-width: 270px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+        }
+        .nav-item-wrap:hover .dropdown-floating-panel {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(8px);
+        }
+        .mega-menu-item {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .mega-menu-item:hover { background: rgba(18, 107, 255, 0.15); color: #38bdf8; }
+        .mega-menu-item strong { display: block; font-size: 13.5px; color: #ffffff; }
+        .mega-menu-item span { font-size: 11.5px; color: #94a3b8; }
+
+        /* COMPONENTS & BUTTONS */
+        .service-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--electric-blue);
+            background: rgba(18, 107, 255, 0.08);
+            border: 1px solid rgba(18, 107, 255, 0.25);
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+        .btn-primary-wc {
+            background: var(--primary-blue);
+            color: #ffffff;
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 20px var(--glow-blue);
+            transition: all 0.25s ease;
+        }
+        .btn-primary-wc:hover {
+            background: var(--electric-blue);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(18, 107, 255, 0.4);
+        }
+        .btn-secondary-wc {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border-dark);
+            transition: all 0.25s ease;
+        }
+        .btn-secondary-wc:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .section-dark {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .section-dark-elevated {
+            background: var(--surface-dark);
+            color: var(--text-dark);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .section-white {
+            background: var(--bg-light);
+            color: var(--text-light);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .wc-card-dark {
+            background: var(--card-dark);
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .wc-card-dark:hover {
+            border-color: rgba(18, 107, 255, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+        }
+        .wc-card-white {
+            background: var(--card-light);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .wc-card-white:hover {
+            border-color: rgba(18, 107, 255, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+        }
+
+        .scoping-form-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--card-dark);
+            border: 1px solid var(--border-dark);
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+        .form-control-wc {
+            width: 100%;
+            background: #06090e;
+            border: 1px solid var(--border-dark);
+            border-radius: 10px;
+            padding: 13px 18px;
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .form-control-wc:focus {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 3px rgba(18, 107, 255, 0.2);
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 991px) {
+            .hero-split-grid { grid-template-columns: 1fr !important; }
+            .nav-links-center { display: none !important; }
+            .section-dark, .section-dark-elevated, .section-white { padding: 70px 0; }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ORIGINAL NAVBAR (100% PRESERVED & UNTOUCHED) -->
+    <nav class="main-navbar-sticky">
+        <div class="navbar-content-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="navbar-brand">
+                <img src="NEW LOGO- wc.png" alt="WebConvoy AI Logo" style="height: 40px; width: auto; object-fit: contain;">
+            </a>
+
+            <!-- Central Navigation Links -->
+            <div class="nav-links-center">
+                <div class="nav-item-wrap">
+                    <a href="index.html#services-orbit-section" class="nav-link-item">Services</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="index.html#industries-showcase" class="nav-link-item">Industries</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="index.html#client-projects-showcase" class="nav-link-item">Portfolio</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="ai.html" class="nav-link-item">AI Overview</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="#" class="nav-link-item">AI Services <i class="bi bi-chevron-down ms-1" style="font-size: 11px;"></i></a>
+                    <div class="dropdown-floating-panel">
+                        <a href="ai-consulting.html" class="mega-menu-item">
+                            <strong>AI Consulting</strong>
+                            <span>Strategic mapping, feasibility & enterprise roadmaps</span>
+                        </a>
+                        <a href="ai-development.html" class="mega-menu-item">
+                            <strong>AI Development</strong>
+                            <span>Custom LLMs, RAG & full-stack AI products</span>
+                        </a>
+                        <a href="ai-automation.html" class="mega-menu-item">
+                            <strong>AI Automation</strong>
+                            <span>Cognitive operations & document intelligence</span>
+                        </a>
+                        <a href="ai-agents.html" class="mega-menu-item">
+                            <strong>AI Agent Development</strong>
+                            <span>Autonomous multi-agent orchestration & tool use</span>
+                        </a>
+                        <a href="ai-compiler.html" class="mega-menu-item">
+                            <strong>AI Compiler Engineering</strong>
+                            <span>Inference optimization, TensorRT & CUDA kernels</span>
+                        </a>
+                        <a href="ai-integration.html" class="mega-menu-item">
+                            <strong>AI Integration</strong>
+                            <span>Connecting legacy ERP, CRM & APIs to AI</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right CTAs -->
+            <div class="nav-cta-right">
+                <!-- AI Active Pill Button -->
+                <a href="ai.html" class="btn-nav-ai active" title="Dedicated Enterprise AI Solutions">
+                    <span class="ai-badge-text">AI</span>
+                    <span class="ai-sparkles-wrap">
+                        <svg class="ai-star-main" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                        <svg class="ai-star-sub" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="#scoping-consultation" class="btn-appinv-contact">
+                    <i class="bi bi-calendar-event"></i> Book Discovery
+                </a>
+
+                <!-- Mobile Toggler -->
+                <button class="navbar-toggler d-lg-none" type="button" id="menuToggle" style="border: none; background: transparent;">
+                    <span class="custom-toggler-icon" style="color: #fff; font-size: 26px;">&#9776;</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 01. HERO SECTION (DARK PRODUCT INTERFACE) -->
+    <section class="section-dark" id="hero" style="padding-top: 110px; padding-bottom: 90px; position: relative;">
+        <div class="container">
+            <div class="row align-items-center g-5 hero-split-grid" style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px;">
+                <!-- Left Column -->
+                <div>
+                    <span class="service-badge">AI DEVELOPMENT / 02</span>
+                    <h1 class="display-4 fw-bold text-white mb-4" style="line-height: 1.12; font-size: clamp(2.4rem, 4vw, 3.8rem);">
+                        From AI idea<br>
+                        <span style="color: var(--electric-blue);">to production-ready product.</span>
+                    </h1>
+                    <p class="text-secondary fs-6 mb-4" style="line-height: 1.7; max-width: 520px;">
+                        We architect and build full-stack generative AI applications, fine-tuned domain LLMs, high-throughput RAG systems, and intelligent multi-tenant SaaS products engineered for enterprise SLA uptime.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="#scoping-consultation" class="btn-primary-wc">
+                            Start Building With Us <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="#stack" class="btn-secondary-wc">
+                            View Engineering Stack
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-4 text-secondary small pt-2 border-top border-secondary border-opacity-25">
+                        <div><i class="bi bi-lightning-charge text-primary me-1"></i> Sub-500ms TTFT</div>
+                        <div><i class="bi bi-shield-check text-primary me-1"></i> SOC2 & HIPAA Ready</div>
+                        <div><i class="bi bi-cpu text-primary me-1"></i> Private Cloud / VPC</div>
+                    </div>
+                </div>
+
+                <!-- Right Visual: Authentic AI Product Interface + Layered Architecture -->
+                <div>
+                    <div class="wc-card-dark" style="border-radius: 18px; border-color: rgba(18, 107, 255, 0.35); background: #080c14; padding: 24px; box-shadow: 0 24px 60px rgba(0,0,0,0.6);">
+                        <div class="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom border-secondary border-opacity-25">
+                            <div class="d-flex align-items-center gap-2">
+                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444;"></span>
+                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b;"></span>
+                                <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981;"></span>
+                                <span class="ms-2 small text-secondary font-monospace">production_ai_app_cockpit</span>
+                            </div>
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1 small font-monospace">LATENCY: 342ms</span>
+                        </div>
+
+                        <!-- Split View: UI Left + Architecture Right -->
+                        <div class="row g-3">
+                            <!-- Left: Live AI SaaS Output -->
+                            <div class="col-6">
+                                <div class="p-3 rounded border border-secondary border-opacity-25 h-100" style="background: #05070c;">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <span class="text-secondary small font-monospace">ASSISTANT UI</span>
+                                        <span class="badge bg-primary bg-opacity-10 text-primary small">99.2% MATCH</span>
+                                    </div>
+                                    <div class="small text-white p-2 rounded mb-2 border border-secondary border-opacity-10" style="background: #0e1522; font-size: 11.5px; line-height: 1.5;">
+                                        "Analyzed Q3 risk filings across 4,200 suppliers. 3 high-variance bottlenecks detected in EU shipping."
+                                    </div>
+                                    <div class="d-flex gap-1 flex-wrap mb-2">
+                                        <span class="badge bg-dark border border-secondary border-opacity-25 text-secondary" style="font-size: 9px;">source: doc_109.pdf</span>
+                                        <span class="badge bg-dark border border-secondary border-opacity-25 text-secondary" style="font-size: 9px;">conf: 0.98</span>
+                                    </div>
+                                    <div class="text-primary small font-monospace" style="font-size: 10px;">
+                                        <i class="bi bi-check2-all me-1"></i> Verified by Deterministic Eval
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Inspectable Architecture Layers -->
+                            <div class="col-6">
+                                <div class="p-3 rounded border border-secondary border-opacity-25 h-100 d-flex flex-column justify-content-between" style="background: #05070c;">
+                                    <div class="p-1 px-2 rounded border border-secondary border-opacity-25 text-center small text-white fw-bold" style="background: #111a28; font-size: 10.5px;">
+                                        APPLICATION TIER
+                                    </div>
+                                    <div class="text-center text-primary" style="font-size: 10px;">↓</div>
+                                    <div class="p-1 px-2 rounded border border-primary border-opacity-40 text-center small text-primary fw-bold" style="background: #0e1e36; font-size: 10.5px;">
+                                        AI MODEL ROUTER
+                                    </div>
+                                    <div class="text-center text-primary" style="font-size: 10px;">↓</div>
+                                    <div class="p-1 px-2 rounded border border-secondary border-opacity-25 text-center small text-white fw-bold" style="background: #111a28; font-size: 10.5px;">
+                                        RAG HYBRID RETRIEVER
+                                    </div>
+                                    <div class="text-center text-primary" style="font-size: 10px;">↓</div>
+                                    <div class="p-1 px-2 rounded border border-secondary border-opacity-25 text-center small text-secondary fw-bold" style="background: #0b111a; font-size: 10.5px;">
+                                        ENTERPRISE DATA & VECTOR DB
+                                    </div>
+                                    <div class="text-center text-primary" style="font-size: 10px;">↓</div>
+                                    <div class="p-1 px-2 rounded border border-secondary border-opacity-25 text-center small text-secondary fw-bold" style="background: #0b111a; font-size: 10.5px;">
+                                        SECURE API GATEWAYS
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02. WHAT WE BUILD (DARK ELEVATED #0A0D12) -->
+    <section class="section-dark-elevated" id="what-we-build">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge">CORE OFFERINGS</span>
+                <h2 class="display-5 fw-bold text-white mb-3">What We Engineer & Deploy</h2>
+                <p class="text-secondary fs-6">From proprietary model tuning to production-ready enterprise software, we build resilient AI software systems.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="wc-card-dark h-100 p-4">
+                        <div class="fs-3 text-primary mb-3"><i class="bi bi-sparkles"></i></div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">Generative AI</h4>
+                        <p class="small text-secondary mb-3">Custom generative systems tailored to corporate style, technical documentation, code synthesis, and structured asset generation.</p>
+                        <span class="small font-monospace text-primary">Domain fine-tuning</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="wc-card-dark h-100 p-4">
+                        <div class="fs-3 text-primary mb-3"><i class="bi bi-cpu"></i></div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">LLM Applications</h4>
+                        <p class="small text-secondary mb-3">State-of-the-art applications powered by Llama 3, Claude 3.5, and GPT-4o with semantic caching, guardrails, and deterministic evals.</p>
+                        <span class="small font-monospace text-primary">Sub-second streaming</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="wc-card-dark h-100 p-4">
+                        <div class="fs-3 text-primary mb-3"><i class="bi bi-layers"></i></div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">AI Applications</h4>
+                        <p class="small text-secondary mb-3">High-accuracy document parsing, computer vision quality control, predictive telemetry, and real-time decision intelligence engines.</p>
+                        <span class="small font-monospace text-primary">99.4% Extraction SLA</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="wc-card-dark h-100 p-4">
+                        <div class="fs-3 text-primary mb-3"><i class="bi bi-box-seam"></i></div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">AI-Powered Products</h4>
+                        <p class="small text-secondary mb-3">Full-stack multi-tenant SaaS products architected from zero to commercial launch with subscription billing, telemetry, and RBAC.</p>
+                        <span class="small font-monospace text-primary">Multi-tenant cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03. THE AI APPLICATION STACK (WHITE SECTION #F7F8FA) -->
+    <section class="section-white" id="stack">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge" style="background: rgba(18, 107, 255, 0.08); border-color: rgba(18, 107, 255, 0.2);">SYSTEM ARCHITECTURE</span>
+                <h2 class="display-5 fw-bold text-dark mb-3">The Modern AI Application Stack</h2>
+                <p class="text-muted fs-6">A disciplined, decoupled enterprise stack engineered for low latency, reproducible evaluations, and zero vendor lock-in.</p>
+            </div>
+
+            <div class="wc-card-white p-4 p-md-5" style="max-width: 960px; margin: 0 auto;">
+                <div class="d-flex flex-column gap-3">
+                    <div class="p-3 rounded border border-secondary border-opacity-25 d-flex justify-content-between align-items-center" style="background: #ffffff;">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="badge bg-primary px-3 py-2 font-monospace">LAYER 01</span>
+                            <div>
+                                <h5 class="fs-6 fw-bold text-dark mb-0">ENTERPRISE PRODUCT & UI TIER</h5>
+                                <span class="small text-muted">React, Next.js, WebSockets, streaming markdown, optimistic state & interactive latency telemetry.</span>
+                            </div>
+                        </div>
+                        <i class="bi bi-window-desktop text-muted fs-4"></i>
+                    </div>
+                    <div class="text-center text-primary"><i class="bi bi-arrow-down fs-5"></i></div>
+
+                    <div class="p-3 rounded border border-secondary border-opacity-25 d-flex justify-content-between align-items-center" style="background: #ffffff;">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="badge bg-primary px-3 py-2 font-monospace">LAYER 02</span>
+                            <div>
+                                <h5 class="fs-6 fw-bold text-dark mb-0">AI EXPERIENCE & PROMPT ORCHESTRATION</h5>
+                                <span class="small text-muted">LangChain, LlamaIndex, context compression, hallucination detectors & NeMo guardrails.</span>
+                            </div>
+                        </div>
+                        <i class="bi bi-diagram-2 text-muted fs-4"></i>
+                    </div>
+                    <div class="text-center text-primary"><i class="bi bi-arrow-down fs-5"></i></div>
+
+                    <div class="p-3 rounded border border-primary border-opacity-50 d-flex justify-content-between align-items-center" style="background: rgba(18, 107, 255, 0.04);">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="badge bg-primary px-3 py-2 font-monospace">LAYER 03</span>
+                            <div>
+                                <h5 class="fs-6 fw-bold text-primary mb-0">AGENT ROUTER & MODEL GATEWAY</h5>
+                                <span class="small text-muted">Dynamic model cascade (e.g. Haiku for intent $ightarrow$ Claude 3.5 for synthesis), semantic caching, vLLM.</span>
+                            </div>
+                        </div>
+                        <i class="bi bi-cpu text-primary fs-4"></i>
+                    </div>
+                    <div class="text-center text-primary"><i class="bi bi-arrow-down fs-5"></i></div>
+
+                    <div class="p-3 rounded border border-secondary border-opacity-25 d-flex justify-content-between align-items-center" style="background: #ffffff;">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="badge bg-primary px-3 py-2 font-monospace">LAYER 04</span>
+                            <div>
+                                <h5 class="fs-6 fw-bold text-dark mb-0">RAG & ENTERPRISE KNOWLEDGE ENGINE</h5>
+                                <span class="small text-muted">Hybrid dense/sparse vector search, Milvus, Pinecone, Cohere re-ranking & document chunking.</span>
+                            </div>
+                        </div>
+                        <i class="bi bi-search text-muted fs-4"></i>
+                    </div>
+                    <div class="text-center text-primary"><i class="bi bi-arrow-down fs-5"></i></div>
+
+                    <div class="p-3 rounded border border-secondary border-opacity-25 d-flex justify-content-between align-items-center" style="background: #ffffff;">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="badge bg-primary px-3 py-2 font-monospace">LAYER 05</span>
+                            <div>
+                                <h5 class="fs-6 fw-bold text-dark mb-0">DATA & CLOUD INFRASTRUCTURE</h5>
+                                <span class="small text-muted">PostgreSQL pgvector, Snowflake, AWS Bedrock, Azure OpenAI, NVIDIA TensorRT-LLM GPU nodes.</span>
+                            </div>
+                        </div>
+                        <i class="bi bi-hdd-network text-muted fs-4"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04. DEVELOPMENT CAPABILITIES (DARK #050607) -->
+    <section class="section-dark" id="capabilities">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <span class="service-badge">ENGINEERING EXPERTISE</span>
+                    <h2 class="display-5 fw-bold text-white mb-3">Custom AI Capabilities Built to Scale</h2>
+                    <p class="text-secondary fs-6 mb-4">
+                        We build beyond simple API calls. Our teams handle low-level fine-tuning, latency optimization, custom kernel engineering, and high-concurrency production deployments.
+                    </p>
+                    <a href="#scoping-consultation" class="btn-primary-wc">
+                        Request Architecture Review <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="wc-card-dark p-3">
+                                <h5 class="fs-6 fw-bold text-white mb-1"><i class="bi bi-chat-dots text-primary me-2"></i> LLM Applications</h5>
+                                <p class="small text-secondary mb-0">Production chat, domain extraction, structured JSON emitters, and streaming assistants.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="wc-card-dark p-3">
+                                <h5 class="fs-6 fw-bold text-white mb-1"><i class="bi bi-database-check text-primary me-2"></i> Enterprise RAG</h5>
+                                <p class="small text-secondary mb-0">Contextual search over proprietary schemas, policies, code repos, and legal filings.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="wc-card-dark p-3">
+                                <h5 class="fs-6 fw-bold text-white mb-1"><i class="bi bi-eye text-primary me-2"></i> Multimodal AI</h5>
+                                <p class="small text-secondary mb-0">Audio transcription, visual document understanding, OCR pipelines, and video indexing.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="wc-card-dark p-3">
+                                <h5 class="fs-6 fw-bold text-white mb-1"><i class="bi bi-sliders text-primary me-2"></i> Custom Model Tuning</h5>
+                                <p class="small text-secondary mb-0">LoRA, QLoRA, DPO, and full parameter fine-tuning on proprietary enterprise datasets.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="wc-card-dark p-3">
+                                <h5 class="fs-6 fw-bold text-white mb-1"><i class="bi bi-robot text-primary me-2"></i> AI Copilots</h5>
+                                <p class="small text-secondary mb-0">In-app workflow copilots that automate data entry and provide context-aware suggestions.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="wc-card-dark p-3">
+                                <h5 class="fs-6 fw-bold text-white mb-1"><i class="bi bi-graph-up text-primary me-2"></i> Predictive Intelligence</h5>
+                                <p class="small text-secondary mb-0">Time-series forecasting, customer churn scoring, fraud signals, and anomaly alerts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05. FROM PROTOTYPE -> PRODUCTION (DARK ELEVATED #0A0D12) -->
+    <section class="section-dark-elevated" id="lifecycle">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge">DEPLOYMENT RIGOR</span>
+                <h2 class="display-5 fw-bold text-white mb-3">From Prototype $\rightarrow$ Production</h2>
+                <p class="text-secondary fs-6">A continuous lifecycle ensuring models are validated on quality, cost, speed, and safety before entering customer hands.</p>
+            </div>
+
+            <!-- Horizontal Transformation Pipeline -->
+            <div class="row g-2 text-center font-monospace">
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <span class="text-primary fw-bold">01. IDEA</span>
+                        <p class="text-secondary small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Scoping, unit economics & evaluation criteria.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <span class="text-primary fw-bold">02. PoC</span>
+                        <p class="text-secondary small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Rapid baseline testing against benchmark ground truths.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <span class="text-primary fw-bold">03. BUILD</span>
+                        <p class="text-secondary small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Full-stack development, RAG chunking & UI integration.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <span class="text-primary fw-bold">04. TEST</span>
+                        <p class="text-secondary small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Red-teaming, prompt regression evals & stress testing.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <span class="text-primary fw-bold">05. DEPLOY</span>
+                        <p class="text-secondary small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Kubernetes vLLM cluster with blue/green release.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-primary border-opacity-50" style="background: rgba(18, 107, 255, 0.08);">
+                        <span class="text-electric-blue fw-bold">06. SCALE</span>
+                        <p class="text-secondary small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Real-time drift telemetry & automated fine-tune loops.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06. REAL PRODUCTS (WHITE SECTION #F7F8FA) -->
+    <section class="section-white" id="products">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge" style="background: rgba(18, 107, 255, 0.08); border-color: rgba(18, 107, 255, 0.2);">PORTFOLIO BENCHMARKS</span>
+                <h2 class="display-5 fw-bold text-dark mb-3">Real Production Deployments</h2>
+                <p class="text-muted fs-6">Proven software solutions driving verified revenue, accuracy, and operational acceleration for market leaders.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Case 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-white h-100 d-flex flex-column justify-content-between p-4">
+                        <div>
+                            <span class="badge bg-primary bg-opacity-10 text-primary small mb-3">FINTECH & COMPLIANCE</span>
+                            <h4 class="fs-5 fw-bold text-dark mb-2">Automated Underwriting RAG Engine</h4>
+                            <p class="small text-muted mb-3"><strong>Problem:</strong> Credit analysts spent 14 hours per loan reconciling unstructured bank statements, tax returns, and corporate debt filings.</p>
+                            <p class="small text-muted mb-3"><strong>What We Built:</strong> A private, air-gapped hybrid RAG system with citation tracking and multi-agent compliance audits.</p>
+                        </div>
+                        <div class="pt-3 border-top border-secondary border-opacity-10">
+                            <span class="small font-monospace text-muted d-block">TECH: Llama 3 70B, Milvus, FastAPI, AWS VPC</span>
+                            <span class="small font-monospace text-success fw-bold">OUTCOME: 78% faster loan decisions, zero data leakage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-white h-100 d-flex flex-column justify-content-between p-4">
+                        <div>
+                            <span class="badge bg-primary bg-opacity-10 text-primary small mb-3">GLOBAL LOGISTICS</span>
+                            <h4 class="fs-5 fw-bold text-dark mb-2">Autonomous Dispatch & Customs Copilot</h4>
+                            <p class="small text-muted mb-3"><strong>Problem:</strong> Cross-border supply chain operations faced constant clearance delays due to inconsistent multimodal paperwork.</p>
+                            <p class="small text-muted mb-3"><strong>What We Built:</strong> Real-time document parsing and automated HS-code classification copilot integrated directly into existing ERPs.</p>
+                        </div>
+                        <div class="pt-3 border-top border-secondary border-opacity-10">
+                            <span class="small font-monospace text-muted d-block">TECH: Claude 3.5 Sonnet, Triton Inference, Kafka, SAP</span>
+                            <span class="small font-monospace text-success fw-bold">OUTCOME: 99.4% customs accuracy, -$420k fines avoided</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-white h-100 d-flex flex-column justify-content-between p-4">
+                        <div>
+                            <span class="badge bg-primary bg-opacity-10 text-primary small mb-3">ENTERPRISE SAAS</span>
+                            <h4 class="fs-5 fw-bold text-dark mb-2">AI Developer Platform & Code Generator</h4>
+                            <p class="small text-muted mb-3"><strong>Problem:</strong> Legacy developers spent 40% of their sprints translating business specs into boilerplate microservices.</p>
+                            <p class="small text-muted mb-3"><strong>What We Built:</strong> A proprietary fine-tuned code generator embedded in VS Code and GitHub with deterministic compile checks.</p>
+                        </div>
+                        <div class="pt-3 border-top border-secondary border-opacity-10">
+                            <span class="small font-monospace text-muted d-block">TECH: DeepSeek Coder Fine-tune, Docker, Kubernetes</span>
+                            <span class="small font-monospace text-success fw-bold">OUTCOME: 3.2x faster PR merges, 45% less dev friction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07. ENGINEERING STACK (DARK #050607) -->
+    <section class="section-dark" id="tech-stack">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge">PRODUCTION FOUNDATIONS</span>
+                <h2 class="display-5 fw-bold text-white mb-3">Supported Engineering Stack</h2>
+                <p class="text-secondary fs-6">We deploy on world-class foundation models, open-weight architectures, and cloud inference frameworks.</p>
+            </div>
+
+            <div class="row g-3 text-center">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <h6 class="text-white mb-0 fw-bold">OpenAI</h6>
+                        <span class="small text-secondary" style="font-size: 11px;">GPT-4o & Embeddings</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <h6 class="text-white mb-0 fw-bold">Anthropic</h6>
+                        <span class="small text-secondary" style="font-size: 11px;">Claude 3.5 Sonnet</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <h6 class="text-white mb-0 fw-bold">Google Gemini</h6>
+                        <span class="small text-secondary" style="font-size: 11px;">2.5M Context Windows</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <h6 class="text-white mb-0 fw-bold">Meta Llama 3</h6>
+                        <span class="small text-secondary" style="font-size: 11px;">Private On-Prem Hosting</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <h6 class="text-white mb-0 fw-bold">PyTorch & vLLM</h6>
+                        <span class="small text-secondary" style="font-size: 11px;">Custom Kernel Acceleration</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0d1118;">
+                        <h6 class="text-white mb-0 fw-bold">AWS & Azure</h6>
+                        <span class="small text-secondary" style="font-size: 11px;">Air-Gapped Private VPC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- FINAL CTA BANNER & SCOPING FORM (DARK #050607) -->
+    <section class="section-dark" id="scoping-consultation" style="background: radial-gradient(circle at 50% 30%, #0a1120 0%, #050607 85%);">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge">PRODUCTION SCOPING</span>
+                <h2 class="display-5 fw-bold text-white mb-3">Let's build something intelligent.</h2>
+                <p class="text-secondary fs-6" style="max-width: 650px; margin: 0 auto;">Schedule a technical scoping session with WebConvoy's AI engineers. We'll review your specs, determine feasibility, and structure your build sprints.</p>
+            </div>
+
+            <div class="scoping-form-wrapper">
+                <div id="scopingSuccessMsg" class="alert alert-success d-none mb-4" style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #a7f3d0; border-radius: 12px; padding: 18px;">
+                    <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+                    <strong>Consultation Request Received:</strong> An AI Principal Architect will review your technical requirements and reach out within 2 business hours.
+                </div>
+
+                <form id="aiScopingForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Your Full Name *</label>
+                            <input type="text" class="form-control-wc" placeholder="e.g. Elena Rostova" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Corporate Email Address *</label>
+                            <input type="email" class="form-control-wc" placeholder="elena@enterprise.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Company / Organization *</label>
+                            <input type="text" class="form-control-wc" placeholder="Apex Logistics Corp." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Estimated Project Scope</label>
+                            <select class="form-control-wc">
+                                <option value="immediate">Immediate Pilot / PoC (1-4 weeks)</option>
+                                <option value="enterprise">Full Enterprise Deployment (1-3 months)</option>
+                                <option value="advisory">Strategic Discovery & Feasibility Audit</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="small fw-semibold text-light mb-1">Brief Technical Context or Goal</label>
+                            <textarea class="form-control-wc" rows="4" placeholder="Detail your data environment, workflows to automate or models to build..." required></textarea>
+                        </div>
+                        
+                        <!-- HIGH-CONTRAST SECURITY MATH CAPTCHA -->
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Security Verification</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="background: #0d1624; border: 1px solid #2d8cff; color: #38bdf8; font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; padding: 10px 18px; border-radius: 8px; letter-spacing: 2px;">
+                                    2 * 12 = ?
+                                </div>
+                                <input type="number" id="ai_captchaInput" class="form-control-wc" placeholder="Answer" required style="width: 140px;">
+                            </div>
+                            <div id="aiCaptchaError" class="text-danger small mt-1" style="display: none;">
+                                Incorrect calculation. Please enter 24.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button type="submit" class="btn-primary-wc w-100 justify-content-center py-3">
+                                Talk to Our AI Experts <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CORPORATE FOOTER -->
+    <footer class="appinv-footer" style="background: #04060a; border-top: 1px solid #202630; padding: 70px 0 30px 0; color: #94a3b8;">
+        <div class="container">
+            <div class="row gy-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img src="NEW LOGO- wc.png" alt="WebConvoy" style="height: 38px; width: auto;">
+                    </a>
+                    <p class="small text-muted mb-4" style="line-height: 1.7; max-width: 340px;">
+                        WebConvoy delivers mission-critical software engineering, enterprise AI development, autonomous agent systems, and cloud infrastructure for global industry leaders.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="https://linkedin.com" class="text-white-50 hover-white fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://twitter.com" class="text-white-50 hover-white fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://github.com" class="text-white-50 hover-white fs-5"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">AI Services</h5>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="ai-consulting.html" class="text-secondary text-decoration-none hover-white">AI Consulting</a></li>
+                        <li><a href="ai-development.html" class="text-secondary text-decoration-none hover-white">AI Development</a></li>
+                        <li><a href="ai-automation.html" class="text-secondary text-decoration-none hover-white">AI Automation</a></li>
+                        <li><a href="ai-agents.html" class="text-secondary text-decoration-none hover-white">AI Agents</a></li>
+                        <li><a href="ai-compiler.html" class="text-secondary text-decoration-none hover-white">AI Compilers</a></li>
+                        <li><a href="ai-integration.html" class="text-secondary text-decoration-none hover-white">AI Integration</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Company</h5>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="https://www.webconvoy.com/about-us" class="text-secondary text-decoration-none hover-white">About Us</a></li>
+                        <li><a href="https://www.webconvoy.com/career" class="text-secondary text-decoration-none hover-white">Careers</a></li>
+                        <li><a href="https://www.webconvoy.com/blog" class="text-secondary text-decoration-none hover-white">Engineering Blog</a></li>
+                        <li><a href="ai.html" class="text-secondary text-decoration-none hover-white">Enterprise AI Hub</a></li>
+                        <li><a href="https://www.webconvoy.com/contact-us" class="text-secondary text-decoration-none hover-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Global Headquarters</h5>
+                    <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> Level 14, Tech Boulevard, Sector 62, Noida, India</p>
+                    <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> enterprise@webconvoy.com</p>
+                    <p class="small text-muted mb-0"><i class="bi bi-telephone me-2 text-primary"></i> +91 99901 81414 / +1 (800) 412-9840</p>
+                </div>
+            </div>
+            <div class="border-top border-secondary border-opacity-25 pt-4 text-center small text-white-50">
+                © 2026 WebConvoy Technologies Inc. All rights reserved. Enterprise AI systems engineered with strict deterministic compliance.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form Math Captcha Validation (2 * 12 = 24)
+        const scopingForm = document.getElementById('aiScopingForm');
+        const successAlert = document.getElementById('scopingSuccessMsg');
+        const aiCaptchaInput = document.getElementById('ai_captchaInput');
+        const aiCaptchaError = document.getElementById('aiCaptchaError');
+
+        if (scopingForm) {
+            scopingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (aiCaptchaInput && aiCaptchaError) {
+                    if (parseInt(aiCaptchaInput.value, 10) !== 24) {
+                        aiCaptchaError.style.display = 'block';
+                        return;
+                    } else {
+                        aiCaptchaError.style.display = 'none';
+                    }
+                }
+                if (successAlert) {
+                    successAlert.classList.remove('d-none');
+                    scopingForm.reset();
+                    successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

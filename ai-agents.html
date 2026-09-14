@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous AI Agent Development & Multi-Agent Systems | WebConvoy</title>
+    <meta name="description" content="Build autonomous AI agents that don't just answer—they act. Multi-agent orchestration, tool calling, memory systems, and enterprise safety by WebConvoy.">
+    <link rel="canonical" href="https://www.webconvoy.com/ai-agents" />
+    <link rel="icon" href="https://webconvoy.com/public/websitenew/image/faviconion-web.png" type="image/x-icon">
+
+    <!-- Fonts & Bootstrap Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --bg-dark: #050607;
+            --surface-dark: #0a0d12;
+            --card-dark: #0d1118;
+            --border-dark: #202630;
+            --text-dark: #f5f7fa;
+            --muted-dark: #9ba4b2;
+
+            --bg-light: #f7f8fa;
+            --surface-light: #ffffff;
+            --card-light: #ffffff;
+            --border-light: #e2e8f0;
+            --text-light: #101318;
+            --muted-light: #64748b;
+
+            --primary-blue: #126bff;
+            --electric-blue: #2d8cff;
+            --glow-blue: rgba(18, 107, 255, 0.22);
+            --font-head: 'Geist', 'Inter Tight', 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .hover-white:hover { color: #ffffff !important; }
+
+        /* NAVBAR STYLES */
+        .main-navbar-sticky {
+            background: rgba(8, 9, 12, 0.88) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 14px 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-content-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .nav-links-center { display: flex; align-items: center; gap: 28px; }
+        .nav-link-item {
+            color: #cbd5e1 !important;
+            font-family: var(--font-head);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+        .nav-link-item:hover { color: #ffffff !important; }
+        .nav-cta-right { display: flex; align-items: center; gap: 16px; }
+        .btn-nav-ai {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            height: 40px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #1ea7fd 0%, #0d6efd 50%, #004fe8 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 20px rgba(13, 110, 253, 0.65), inset 0 1.5px 2px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: aiPillPulseGlow 3s infinite ease-in-out;
+        }
+        .btn-nav-ai.active {
+            box-shadow: 0 0 26px rgba(0, 210, 255, 0.8), 0 0 45px rgba(20, 104, 251, 0.6), inset 0 2px 4px #ffffff;
+            border-color: #00d2ff;
+        }
+        @keyframes aiPillPulseGlow {
+            0%, 100% { box-shadow: 0 0 16px rgba(13, 110, 253, 0.6), inset 0 1.5px 2px rgba(255, 255, 255, 0.8); }
+            50% { box-shadow: 0 0 28px rgba(0, 210, 255, 0.9), 0 0 48px rgba(13, 110, 253, 0.5), inset 0 2px 4px #ffffff; }
+        }
+        .ai-sparkles-wrap {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ai-star-main { width: 13px; height: 13px; fill: #ffffff; animation: aiStarTwinkle 2s infinite ease-in-out; }
+        .ai-star-sub { position: absolute; width: 8px; height: 8px; top: 0px; right: 0px; fill: #ffffff; animation: aiStarTwinkle 2s infinite ease-in-out 0.5s; }
+        @keyframes aiStarTwinkle {
+            0%, 100% { transform: scale(0.85); opacity: 0.8; }
+            50% { transform: scale(1.25) rotate(90deg); opacity: 1; }
+        }
+        .btn-appinv-contact {
+            padding: 9px 22px;
+            height: 40px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff !important;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+        .btn-appinv-contact:hover { background: #ffffff; color: #000000 !important; transform: translateY(-2px); }
+        .nav-item-wrap { position: relative; }
+        .dropdown-floating-panel {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: #0f141c;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 12px;
+            min-width: 270px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+        }
+        .nav-item-wrap:hover .dropdown-floating-panel {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(8px);
+        }
+        .mega-menu-item {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .mega-menu-item:hover { background: rgba(18, 107, 255, 0.15); color: #38bdf8; }
+        .mega-menu-item strong { display: block; font-size: 13.5px; color: #ffffff; }
+        .mega-menu-item span { font-size: 11.5px; color: #94a3b8; }
+
+        /* COMPONENTS & BUTTONS */
+        .service-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--electric-blue);
+            background: rgba(18, 107, 255, 0.08);
+            border: 1px solid rgba(18, 107, 255, 0.25);
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+        .btn-primary-wc {
+            background: var(--primary-blue);
+            color: #ffffff;
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 20px var(--glow-blue);
+            transition: all 0.25s ease;
+        }
+        .btn-primary-wc:hover {
+            background: var(--electric-blue);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(18, 107, 255, 0.4);
+        }
+        .btn-secondary-wc {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-family: var(--font-head);
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border-dark);
+            transition: all 0.25s ease;
+        }
+        .btn-secondary-wc:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .section-dark {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .section-dark-elevated {
+            background: var(--surface-dark);
+            color: var(--text-dark);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .section-white {
+            background: var(--bg-light);
+            color: var(--text-light);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .wc-card-dark {
+            background: var(--card-dark);
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .wc-card-dark:hover {
+            border-color: rgba(18, 107, 255, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+        }
+        .wc-card-white {
+            background: var(--card-light);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .wc-card-white:hover {
+            border-color: rgba(18, 107, 255, 0.45);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+        }
+
+        .scoping-form-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--card-dark);
+            border: 1px solid var(--border-dark);
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+        .form-control-wc {
+            width: 100%;
+            background: #06090e;
+            border: 1px solid var(--border-dark);
+            border-radius: 10px;
+            padding: 13px 18px;
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .form-control-wc:focus {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 3px rgba(18, 107, 255, 0.2);
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 991px) {
+            .hero-split-grid { grid-template-columns: 1fr !important; }
+            .nav-links-center { display: none !important; }
+            .section-dark, .section-dark-elevated, .section-white { padding: 70px 0; }
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- ORIGINAL NAVBAR (100% PRESERVED & UNTOUCHED) -->
+    <nav class="main-navbar-sticky">
+        <div class="navbar-content-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="navbar-brand">
+                <img src="NEW LOGO- wc.png" alt="WebConvoy AI Logo" style="height: 40px; width: auto; object-fit: contain;">
+            </a>
+
+            <!-- Central Navigation Links -->
+            <div class="nav-links-center">
+                <div class="nav-item-wrap">
+                    <a href="index.html#services-orbit-section" class="nav-link-item">Services</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="index.html#industries-showcase" class="nav-link-item">Industries</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="index.html#client-projects-showcase" class="nav-link-item">Portfolio</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="ai.html" class="nav-link-item">AI Overview</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="#" class="nav-link-item">AI Services <i class="bi bi-chevron-down ms-1" style="font-size: 11px;"></i></a>
+                    <div class="dropdown-floating-panel">
+                        <a href="ai-consulting.html" class="mega-menu-item">
+                            <strong>AI Consulting</strong>
+                            <span>Strategic mapping, feasibility & enterprise roadmaps</span>
+                        </a>
+                        <a href="ai-development.html" class="mega-menu-item">
+                            <strong>AI Development</strong>
+                            <span>Custom LLMs, RAG & full-stack AI products</span>
+                        </a>
+                        <a href="ai-automation.html" class="mega-menu-item">
+                            <strong>AI Automation</strong>
+                            <span>Cognitive operations & document intelligence</span>
+                        </a>
+                        <a href="ai-agents.html" class="mega-menu-item">
+                            <strong>AI Agent Development</strong>
+                            <span>Autonomous multi-agent orchestration & tool use</span>
+                        </a>
+                        <a href="ai-compiler.html" class="mega-menu-item">
+                            <strong>AI Compiler Engineering</strong>
+                            <span>Inference optimization, TensorRT & CUDA kernels</span>
+                        </a>
+                        <a href="ai-integration.html" class="mega-menu-item">
+                            <strong>AI Integration</strong>
+                            <span>Connecting legacy ERP, CRM & APIs to AI</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right CTAs -->
+            <div class="nav-cta-right">
+                <!-- AI Active Pill Button -->
+                <a href="ai.html" class="btn-nav-ai active" title="Dedicated Enterprise AI Solutions">
+                    <span class="ai-badge-text">AI</span>
+                    <span class="ai-sparkles-wrap">
+                        <svg class="ai-star-main" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                        <svg class="ai-star-sub" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="#scoping-consultation" class="btn-appinv-contact">
+                    <i class="bi bi-calendar-event"></i> Book Discovery
+                </a>
+
+                <!-- Mobile Toggler -->
+                <button class="navbar-toggler d-lg-none" type="button" id="menuToggle" style="border: none; background: transparent;">
+                    <span class="custom-toggler-icon" style="color: #fff; font-size: 26px;">&#9776;</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 01. HERO SECTION (DARK AGENT ORCHESTRATION HUB) -->
+    <section class="section-dark" id="hero" style="padding-top: 110px; padding-bottom: 90px; position: relative;">
+        <div class="container">
+            <div class="row align-items-center g-5 hero-split-grid" style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px;">
+                <!-- Left Column -->
+                <div>
+                    <span class="service-badge">AI AGENT DEVELOPMENT / 04</span>
+                    <h1 class="display-4 fw-bold text-white mb-4" style="line-height: 1.12; font-size: clamp(2.4rem, 4vw, 3.8rem);">
+                        Build AI that<br>
+                        doesn't just answer.<br>
+                        <span style="color: var(--electric-blue);">It acts.</span>
+                    </h1>
+                    <p class="text-secondary fs-6 mb-4" style="line-height: 1.7; max-width: 520px;">
+                        Move beyond passive conversational chatbots. We engineer autonomous, tool-using AI agents that research, reason, plan complex workflows, call external APIs, and execute real-world enterprise tasks with deterministic guardrails.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="#scoping-consultation" class="btn-primary-wc">
+                            Deploy Autonomous Agents <i class="bi bi-arrow-right"></i>
+                        </a>
+                        <a href="#orchestration" class="btn-secondary-wc">
+                            View Multi-Agent Architecture
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center gap-4 text-secondary small pt-2 border-top border-secondary border-opacity-25">
+                        <div><i class="bi bi-cpu text-primary me-1"></i> Multi-Step Planning</div>
+                        <div><i class="bi bi-tools text-primary me-1"></i> API Tool Calling</div>
+                        <div><i class="bi bi-shield-lock text-primary me-1"></i> Sandboxed Safety</div>
+                    </div>
+                </div>
+
+                <!-- Right Visual: Agent Orchestration Interface -->
+                <div>
+                    <div class="wc-card-dark" style="border-radius: 18px; border-color: rgba(18, 107, 255, 0.35); background: #080c14; padding: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.6);">
+                        <div class="d-flex align-items-center justify-content-between pb-3 mb-3 border-bottom border-secondary border-opacity-25">
+                            <span class="small text-secondary font-monospace">agent_orchestrator: autonomous_supervisor_v4</span>
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-2 py-1 small">STATUS: ACTIVE POOL</span>
+                        </div>
+
+                        <!-- Central Node Connecting to External Capabilities -->
+                        <div class="p-3 rounded mb-3 text-center border border-primary border-opacity-50" style="background: rgba(18, 107, 255, 0.08);">
+                            <span class="badge bg-primary px-3 py-1 font-monospace mb-2">AUTONOMOUS AGENT CORE</span>
+                            <h5 class="text-white fs-6 fw-bold mb-1">State Machine & Tool-Calling Runtime</h5>
+                            <span class="small text-secondary font-monospace" style="font-size: 11px;">ReAct Loop · Context Sandbox · Self-Correcting Execution</span>
+                        </div>
+
+                        <!-- Connected Capability Modules Grid -->
+                        <div class="row g-2">
+                            <div class="col-4">
+                                <div class="p-2 rounded border border-secondary border-opacity-25 text-center" style="background: #05070c;">
+                                    <i class="bi bi-browser-chrome text-primary fs-5 d-block mb-1"></i>
+                                    <strong class="text-white d-block small" style="font-size: 11px;">Browser Tool</strong>
+                                    <span class="text-secondary" style="font-size: 9.5px;">DOM Automation</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 rounded border border-secondary border-opacity-25 text-center" style="background: #05070c;">
+                                    <i class="bi bi-database text-info fs-5 d-block mb-1"></i>
+                                    <strong class="text-white d-block small" style="font-size: 11px;">SQL & DB</strong>
+                                    <span class="text-secondary" style="font-size: 9.5px;">Schema & Query</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 rounded border border-secondary border-opacity-25 text-center" style="background: #05070c;">
+                                    <i class="bi bi-briefcase text-warning fs-5 d-block mb-1"></i>
+                                    <strong class="text-white d-block small" style="font-size: 11px;">Enterprise CRM</strong>
+                                    <span class="text-secondary" style="font-size: 9.5px;">Salesforce API</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 rounded border border-secondary border-opacity-25 text-center" style="background: #05070c;">
+                                    <i class="bi bi-envelope text-danger fs-5 d-block mb-1"></i>
+                                    <strong class="text-white d-block small" style="font-size: 11px;">Email / Slack</strong>
+                                    <span class="text-secondary" style="font-size: 9.5px;">Event Dispatch</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 rounded border border-secondary border-opacity-25 text-center" style="background: #05070c;">
+                                    <i class="bi bi-memory text-success fs-5 d-block mb-1"></i>
+                                    <strong class="text-white d-block small" style="font-size: 11px;">Vector Memory</strong>
+                                    <span class="text-secondary" style="font-size: 9.5px;">Long-Term State</span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-2 rounded border border-secondary border-opacity-25 text-center" style="background: #05070c;">
+                                    <i class="bi bi-person-check text-primary fs-5 d-block mb-1"></i>
+                                    <strong class="text-white d-block small" style="font-size: 11px;">Human In Loop</strong>
+                                    <span class="text-secondary" style="font-size: 9.5px;">Approval Gate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 02. WHAT MAKES AN AGENT? (WHITE SECTION #F7F8FA) -->
+    <section class="section-white" id="anatomy">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge" style="background: rgba(18, 107, 255, 0.08); border-color: rgba(18, 107, 255, 0.2);">COGNITIVE PILLARS</span>
+                <h2 class="display-5 fw-bold text-dark mb-3">What Makes an Autonomous Agent?</h2>
+                <p class="text-muted fs-6">A chatbot generates words. An AI agent reasons through environmental feedback and performs real work.</p>
+            </div>
+
+            <!-- 4 Circular Cognitive Pillars -->
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="wc-card-white h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle border border-primary" style="width: 60px; height: 60px; background: rgba(18, 107, 255, 0.08);">
+                            <span class="fs-4 text-primary font-monospace fw-bold">01</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">PERCEIVE</h4>
+                        <p class="small text-muted mb-0">Ingest real-time signals: user intent, API errors, webhook payloads, multimodal images, and database updates.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="wc-card-white h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle border border-primary" style="width: 60px; height: 60px; background: rgba(18, 107, 255, 0.08);">
+                            <span class="fs-4 text-primary font-monospace fw-bold">02</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">REASON</h4>
+                        <p class="small text-muted mb-0">Deconstruct broad business objectives into sequenced, verifiable sub-tasks using Tree-of-Thought prompting.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="wc-card-white h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle border border-primary" style="width: 60px; height: 60px; background: rgba(18, 107, 255, 0.08);">
+                            <span class="fs-4 text-primary font-monospace fw-bold">03</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">PLAN</h4>
+                        <p class="small text-muted mb-0">Dynamically evaluate tool options, synthesize fallback branches, and verify permission boundaries before execution.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="wc-card-white h-100 p-4 text-center">
+                        <div class="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle border border-primary" style="width: 60px; height: 60px; background: rgba(18, 107, 255, 0.08);">
+                            <span class="fs-4 text-primary font-monospace fw-bold">04</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">ACT</h4>
+                        <p class="small text-muted mb-0">Execute authenticated REST calls, run sandboxed SQL queries, browse authenticated web interfaces, and record states.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 03. AGENT TYPES (DARK ELEVATED #0A0D12) -->
+    <section class="section-dark-elevated" id="types">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge">DEPLOYED SPECIALIZATIONS</span>
+                <h2 class="display-5 fw-bold text-white mb-3">Enterprise Autonomous Agent Roles</h2>
+                <p class="text-secondary fs-6">Purpose-built agents designed for specific operational leverage across your business stack.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-dark p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small font-monospace text-primary fw-bold">ROLE 01</span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary">DEEP RESEARCH</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">Research & Intelligence Agent</h4>
+                        <p class="small text-secondary mb-3">Autonomously browses web sources, cross-references filings, extracts market signals, and drafts verified executive memos with full citations.</p>
+                        <div class="small font-monospace text-secondary p-2 rounded" style="background: #05070c; font-size: 11px;">
+                            Tools: Headless Chrome · SEC Filings · PubMed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-dark p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small font-monospace text-primary fw-bold">ROLE 02</span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary">COMMERCIAL</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">Sales SDR & Pipeline Agent</h4>
+                        <p class="small text-secondary mb-3">Researches prospective accounts, scores ICP fit, crafts highly contextualized outreach, updates CRM deal stages, and schedules meetings.</p>
+                        <div class="small font-monospace text-secondary p-2 rounded" style="background: #05070c; font-size: 11px;">
+                            Tools: Salesforce · LinkedIn API · Apollo · Gmail
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-dark p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small font-monospace text-primary fw-bold">ROLE 03</span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary">RESOLUTION</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">Support & Diagnostic Agent</h4>
+                        <p class="small text-secondary mb-3">Inspects server logs, queries account history, runs automated diagnostic scripts, processes refunds, and resolves Tier-1 customer issues.</p>
+                        <div class="small font-monospace text-secondary p-2 rounded" style="background: #05070c; font-size: 11px;">
+                            Tools: Zendesk · Stripe API · Datadog · SQL
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-dark p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small font-monospace text-primary fw-bold">ROLE 04</span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary">SUPPLY CHAIN</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">Operations & Logistics Agent</h4>
+                        <p class="small text-secondary mb-3">Monitors SKU velocity across warehouses, computes safety stock levels, generates purchase orders, and alerts freight dispatchers.</p>
+                        <div class="small font-monospace text-secondary p-2 rounded" style="background: #05070c; font-size: 11px;">
+                            Tools: SAP ERP · NetSuite · EDI Gateways · Webhooks
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-dark p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small font-monospace text-primary fw-bold">ROLE 05</span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary">ANALYTICS</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">Data & SQL Query Agent</h4>
+                        <p class="small text-secondary mb-3">Translates plain-English executive questions into optimized read-only SQL, executes queries against Snowflake, and visualizes charts.</p>
+                        <div class="small font-monospace text-secondary p-2 rounded" style="background: #05070c; font-size: 11px;">
+                            Tools: Snowflake · BigQuery · PostgreSQL · Chart.js
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="wc-card-dark p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="small font-monospace text-primary fw-bold">ROLE 06</span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary">LEGACY RPA</span>
+                        </div>
+                        <h4 class="fs-5 fw-bold text-white mb-2">Headless Browser Agent</h4>
+                        <p class="small text-secondary mb-3">Logs into internal web portals without public APIs, navigates complex multi-step forms, extracts tables, and handles 2FA challenges.</p>
+                        <div class="small font-monospace text-secondary p-2 rounded" style="background: #05070c; font-size: 11px;">
+                            Tools: Playwright · Computer Vision OCR · TOTP Auth
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04. SINGLE -> MULTI AGENT (DARK #050607) -->
+    <section class="section-dark" id="orchestration">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge">MULTI-AGENT COLLABORATION</span>
+                <h2 class="display-5 fw-bold text-white mb-3">Hierarchical Multi-Agent Swarms</h2>
+                <p class="text-secondary fs-6">A single agent struggles with complex multi-disciplinary work. We build hierarchical swarms where specialized sub-agents coordinate under a central supervisor.</p>
+            </div>
+
+            <!-- Technical Architecture Flowchart -->
+            <div class="wc-card-dark p-4 p-md-5" style="max-width: 900px; margin: 0 auto; background: #070a10;">
+                <div class="text-center mb-3">
+                    <div class="d-inline-block p-3 rounded border border-primary border-opacity-50" style="background: #0e1e36;">
+                        <span class="badge bg-primary px-3 py-1 font-monospace mb-1">SUPERVISOR ORCHESTRATOR AGENT</span>
+                        <h6 class="text-white mb-0 fw-bold">Goal Breakdown, Tool Permissions & Result Verification</h6>
+                    </div>
+                </div>
+
+                <div class="text-center text-primary mb-3" style="font-size: 16px;">
+                    <i class="bi bi-arrows-split"></i>
+                </div>
+
+                <!-- 3 Sub-Agents Row -->
+                <div class="row g-3 text-center mb-3">
+                    <div class="col-md-4">
+                        <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0b111a;">
+                            <span class="badge bg-info bg-opacity-10 text-info font-monospace small mb-1">RESEARCH SUB-AGENT</span>
+                            <strong class="text-white d-block small">Web & Corpus Mining</strong>
+                            <span class="text-secondary" style="font-size: 10px;">Fetches raw documents</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0b111a;">
+                            <span class="badge bg-success bg-opacity-10 text-success font-monospace small mb-1">EXECUTION SUB-AGENT</span>
+                            <strong class="text-white d-block small">API & Database Writes</strong>
+                            <span class="text-secondary" style="font-size: 10px;">Interacts with CRM & ERP</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #0b111a;">
+                            <span class="badge bg-warning bg-opacity-10 text-warning font-monospace small mb-1">QA & AUDIT SUB-AGENT</span>
+                            <strong class="text-white d-block small">Constraint Checking</strong>
+                            <span class="text-secondary" style="font-size: 10px;">Verifies data consistency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-primary mb-3" style="font-size: 16px;">
+                    <i class="bi bi-arrow-down"></i>
+                </div>
+
+                <!-- Enterprise Systems Endpoints -->
+                <div class="p-2 px-3 rounded border border-secondary border-opacity-25 text-center" style="background: #05070c;">
+                    <span class="small font-monospace text-secondary">ENTERPRISE SYSTEM ENDPOINTS: [Salesforce] · [SAP ERP] · [Snowflake DB] · [AWS S3]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 05. HOW AGENTS WORK (WHITE SECTION #F7F8FA) -->
+    <section class="section-white" id="execution-loop">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge" style="background: rgba(18, 107, 255, 0.08); border-color: rgba(18, 107, 255, 0.2);">EXECUTION RUNTIME</span>
+                <h2 class="display-5 fw-bold text-dark mb-3">How Autonomous Agents Work</h2>
+                <p class="text-muted fs-6">A linear breakdown of the runtime loop executed for every business goal.</p>
+            </div>
+
+            <!-- Horizontal Step Pipeline -->
+            <div class="row g-2 text-center font-monospace">
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #ffffff;">
+                        <span class="text-primary fw-bold">01. UNDERSTAND</span>
+                        <p class="text-muted small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Parse goal, extract parameters & load user permissions.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #ffffff;">
+                        <span class="text-primary fw-bold">02. PLAN</span>
+                        <p class="text-muted small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Sequence tool execution calls and fallback branches.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #ffffff;">
+                        <span class="text-primary fw-bold">03. USE TOOLS</span>
+                        <p class="text-muted small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Call external APIs, SQL queries, or browser clicks.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #ffffff;">
+                        <span class="text-primary fw-bold">04. EXECUTE</span>
+                        <p class="text-muted small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Perform authenticated write operations in sandbox.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #ffffff;">
+                        <span class="text-primary fw-bold">05. VERIFY</span>
+                        <p class="text-muted small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Check response codes and validate business assertions.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6">
+                    <div class="p-3 rounded border border-primary border-opacity-50" style="background: rgba(18, 107, 255, 0.05);">
+                        <span class="text-primary fw-bold">06. IMPROVE</span>
+                        <p class="text-muted small mt-1 mb-0 font-sans" style="font-family: var(--font-body); font-size: 11px;">Update episodic vector memory for subsequent runs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 06. AGENT MEMORY (DARK ELEVATED #0A0D12) -->
+    <section class="section-dark-elevated" id="memory">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <span class="service-badge">STATEFUL PERSISTENCE</span>
+                    <h2 class="display-5 fw-bold text-white mb-3">Enterprise Agent Memory Architecture</h2>
+                    <p class="text-secondary fs-6 mb-4">
+                        Agents without memory repeat mistakes. We equip agents with three tiers of persistent state so they recall customer history, previous tool errors, and corporate standards across sessions.
+                    </p>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #080c14;">
+                            <strong class="text-white d-block">1. In-Context Working Memory</strong>
+                            <span class="small text-secondary">The active scratchpad holding current task steps, tool outputs, and sub-goals.</span>
+                        </div>
+                        <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #080c14;">
+                            <strong class="text-white d-block">2. Long-Term Semantic Memory</strong>
+                            <span class="small text-secondary">Vector embeddings of historical company guidelines, past tickets, and domain policies.</span>
+                        </div>
+                        <div class="p-3 rounded border border-secondary border-opacity-25" style="background: #080c14;">
+                            <strong class="text-white d-block">3. Episodic Tool Memory</strong>
+                            <span class="small text-secondary">Log of past API responses and error recovery scripts for self-healing runs.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="wc-card-dark p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+                            <span class="small font-monospace text-secondary">MEMORY INGESTION PIPELINE</span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary small">PERSISTENT CACHE</span>
+                        </div>
+                        <div class="row g-2 text-center font-monospace small mb-3">
+                            <div class="col-3"><div class="p-2 rounded border border-secondary border-opacity-25" style="background: #05070c;">Conversations</div></div>
+                            <div class="col-3"><div class="p-2 rounded border border-secondary border-opacity-25" style="background: #05070c;">Documents</div></div>
+                            <div class="col-3"><div class="p-2 rounded border border-secondary border-opacity-25" style="background: #05070c;">Database</div></div>
+                            <div class="col-3"><div class="p-2 rounded border border-secondary border-opacity-25" style="background: #05070c;">Actions</div></div>
+                        </div>
+                        <div class="text-center text-primary mb-3"><i class="bi bi-arrow-down fs-4"></i></div>
+                        <div class="p-3 rounded border border-primary border-opacity-50 text-center" style="background: #0e1e36;">
+                            <h5 class="text-white fs-6 fw-bold mb-1">UNIFIED AGENT MEMORY STORE</h5>
+                            <span class="small text-secondary font-monospace" style="font-size: 11px;">Milvus Vector Index + Redis State Cache + PostgreSQL Audit Trail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 07. SAFETY & CONTROL (WHITE SECTION #F7F8FA) -->
+    <section class="section-white" id="safety">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge" style="background: rgba(18, 107, 255, 0.08); border-color: rgba(18, 107, 255, 0.2);">ENTERPRISE GOVERNANCE</span>
+                <h2 class="display-5 fw-bold text-dark mb-3">Safety, Guardrails & Control</h2>
+                <p class="text-muted fs-6">Autonomy without guardrails is dangerous. We enforce mathematical permission limits on every agent.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="wc-card-white p-4 h-100">
+                        <i class="bi bi-shield-lock text-primary fs-4 mb-2 d-block"></i>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">Granular Permissions</h4>
+                        <p class="small text-muted mb-0">Role-based API scopes prevent agents from modifying tables or triggering transactions outside their whitelist.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wc-card-white p-4 h-100">
+                        <i class="bi bi-person-check text-primary fs-4 mb-2 d-block"></i>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">Human Approval Gates</h4>
+                        <p class="small text-muted mb-0">Financial transfers, customer-facing emails, and irreversible state changes require single-click manager approval.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wc-card-white p-4 h-100">
+                        <i class="bi bi-receipt-cutoff text-primary fs-4 mb-2 d-block"></i>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">Cryptographic Audit Logs</h4>
+                        <p class="small text-muted mb-0">Every reasoning step, tool call, and payload is immutably logged for complete compliance and SOC2 auditing.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wc-card-white p-4 h-100">
+                        <i class="bi bi-speedometer2 text-primary fs-4 mb-2 d-block"></i>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">Budget & Token Caps</h4>
+                        <p class="small text-muted mb-0">Hard token consumption limits prevent runaway execution loops, guaranteeing deterministic billing.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wc-card-white p-4 h-100">
+                        <i class="bi bi-bounding-box-circles text-primary fs-4 mb-2 d-block"></i>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">Sandboxed Tool Runtime</h4>
+                        <p class="small text-muted mb-0">Code generation and browser scraping execute in ephemeral, air-gapped Docker containers destroyed upon completion.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="wc-card-white p-4 h-100">
+                        <i class="bi bi-eye text-primary fs-4 mb-2 d-block"></i>
+                        <h4 class="fs-5 fw-bold text-dark mb-2">Real-Time Observability</h4>
+                        <p class="small text-muted mb-0">Live agent dashboard displaying active tasks, execution latencies, tool error rates, and supervisor overrides.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- FINAL CTA BANNER & SCOPING FORM (DARK #050607) -->
+    <section class="section-dark" id="scoping-consultation" style="background: radial-gradient(circle at 50% 30%, #0a1120 0%, #050607 85%);">
+        <div class="container">
+            <div class="text-center mb-5" style="max-width: 800px; margin: 0 auto;">
+                <span class="service-badge">PRODUCTION SCOPING</span>
+                <h2 class="display-5 fw-bold text-white mb-3">Give your software the ability to act.</h2>
+                <p class="text-secondary fs-6" style="max-width: 650px; margin: 0 auto;">Book a technical scoping session with WebConvoy's AI agent architects. We'll outline your agent hierarchy, tool integrations, and safety guardrails.</p>
+            </div>
+
+            <div class="scoping-form-wrapper">
+                <div id="scopingSuccessMsg" class="alert alert-success d-none mb-4" style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #a7f3d0; border-radius: 12px; padding: 18px;">
+                    <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+                    <strong>Consultation Request Received:</strong> An AI Principal Architect will review your technical requirements and reach out within 2 business hours.
+                </div>
+
+                <form id="aiScopingForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Your Full Name *</label>
+                            <input type="text" class="form-control-wc" placeholder="e.g. Elena Rostova" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Corporate Email Address *</label>
+                            <input type="email" class="form-control-wc" placeholder="elena@enterprise.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Company / Organization *</label>
+                            <input type="text" class="form-control-wc" placeholder="Apex Logistics Corp." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Estimated Project Scope</label>
+                            <select class="form-control-wc">
+                                <option value="immediate">Immediate Pilot / PoC (1-4 weeks)</option>
+                                <option value="enterprise">Full Enterprise Deployment (1-3 months)</option>
+                                <option value="advisory">Strategic Discovery & Feasibility Audit</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="small fw-semibold text-light mb-1">Brief Technical Context or Goal</label>
+                            <textarea class="form-control-wc" rows="4" placeholder="Detail your data environment, workflows to automate or models to build..." required></textarea>
+                        </div>
+                        
+                        <!-- HIGH-CONTRAST SECURITY MATH CAPTCHA -->
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Security Verification</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="background: #0d1624; border: 1px solid #2d8cff; color: #38bdf8; font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; padding: 10px 18px; border-radius: 8px; letter-spacing: 2px;">
+                                    2 * 12 = ?
+                                </div>
+                                <input type="number" id="ai_captchaInput" class="form-control-wc" placeholder="Answer" required style="width: 140px;">
+                            </div>
+                            <div id="aiCaptchaError" class="text-danger small mt-1" style="display: none;">
+                                Incorrect calculation. Please enter 24.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button type="submit" class="btn-primary-wc w-100 justify-content-center py-3">
+                                Talk to Our AI Experts <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- CORPORATE FOOTER -->
+    <footer class="appinv-footer" style="background: #04060a; border-top: 1px solid #202630; padding: 70px 0 30px 0; color: #94a3b8;">
+        <div class="container">
+            <div class="row gy-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img src="NEW LOGO- wc.png" alt="WebConvoy" style="height: 38px; width: auto;">
+                    </a>
+                    <p class="small text-muted mb-4" style="line-height: 1.7; max-width: 340px;">
+                        WebConvoy delivers mission-critical software engineering, enterprise AI development, autonomous agent systems, and cloud infrastructure for global industry leaders.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="https://linkedin.com" class="text-white-50 hover-white fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://twitter.com" class="text-white-50 hover-white fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://github.com" class="text-white-50 hover-white fs-5"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">AI Services</h5>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="ai-consulting.html" class="text-secondary text-decoration-none hover-white">AI Consulting</a></li>
+                        <li><a href="ai-development.html" class="text-secondary text-decoration-none hover-white">AI Development</a></li>
+                        <li><a href="ai-automation.html" class="text-secondary text-decoration-none hover-white">AI Automation</a></li>
+                        <li><a href="ai-agents.html" class="text-secondary text-decoration-none hover-white">AI Agents</a></li>
+                        <li><a href="ai-compiler.html" class="text-secondary text-decoration-none hover-white">AI Compilers</a></li>
+                        <li><a href="ai-integration.html" class="text-secondary text-decoration-none hover-white">AI Integration</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Company</h5>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="https://www.webconvoy.com/about-us" class="text-secondary text-decoration-none hover-white">About Us</a></li>
+                        <li><a href="https://www.webconvoy.com/career" class="text-secondary text-decoration-none hover-white">Careers</a></li>
+                        <li><a href="https://www.webconvoy.com/blog" class="text-secondary text-decoration-none hover-white">Engineering Blog</a></li>
+                        <li><a href="ai.html" class="text-secondary text-decoration-none hover-white">Enterprise AI Hub</a></li>
+                        <li><a href="https://www.webconvoy.com/contact-us" class="text-secondary text-decoration-none hover-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Global Headquarters</h5>
+                    <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> Level 14, Tech Boulevard, Sector 62, Noida, India</p>
+                    <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> enterprise@webconvoy.com</p>
+                    <p class="small text-muted mb-0"><i class="bi bi-telephone me-2 text-primary"></i> +91 99901 81414 / +1 (800) 412-9840</p>
+                </div>
+            </div>
+            <div class="border-top border-secondary border-opacity-25 pt-4 text-center small text-white-50">
+                © 2026 WebConvoy Technologies Inc. All rights reserved. Enterprise AI systems engineered with strict deterministic compliance.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form Math Captcha Validation (2 * 12 = 24)
+        const scopingForm = document.getElementById('aiScopingForm');
+        const successAlert = document.getElementById('scopingSuccessMsg');
+        const aiCaptchaInput = document.getElementById('ai_captchaInput');
+        const aiCaptchaError = document.getElementById('aiCaptchaError');
+
+        if (scopingForm) {
+            scopingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (aiCaptchaInput && aiCaptchaError) {
+                    if (parseInt(aiCaptchaInput.value, 10) !== 24) {
+                        aiCaptchaError.style.display = 'block';
+                        return;
+                    } else {
+                        aiCaptchaError.style.display = 'none';
+                    }
+                }
+                if (successAlert) {
+                    successAlert.classList.remove('d-none');
+                    scopingForm.reset();
+                    successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
