@@ -2127,6 +2127,112 @@
             letter-spacing: 0.5px;
         }
 
+    
+        /* -------------------------------------------------------------
+           HORIZONTAL ALWAYS-MOVING AWARDS SLIDER (BELOW HERO)
+           ------------------------------------------------------------- */
+        .hero-awards-horizontal-dock {
+            position: relative;
+            z-index: 2;
+            margin-top: 55px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .awards-dock-label-wrap {
+            flex-shrink: 0;
+        }
+
+        .awards-dock-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(18, 107, 255, 0.14);
+            border: 1px solid rgba(45, 140, 255, 0.35);
+            color: #38bdf8;
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 9px 20px;
+            border-radius: 999px;
+            white-space: nowrap;
+            letter-spacing: 0.4px;
+            box-shadow: 0 0 20px rgba(18, 107, 255, 0.2);
+        }
+
+        .hero-awards-horizontal-wrapper {
+            position: relative;
+            flex: 1;
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 1) 96%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 1) 96%, transparent 100%);
+        }
+
+        .hero-awards-horizontal-track {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: max-content;
+            animation: awardsHorizontalScroll 24s linear infinite;
+            will-change: transform;
+        }
+
+        .hero-awards-horizontal-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes awardsHorizontalScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .hero-award-h-card {
+            position: relative;
+            flex-shrink: 0;
+            width: 250px;
+            background: #0d121c;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hero-award-h-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 215, 0, 0.85);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
+            filter: brightness(1.08);
+        }
+
+        .hero-award-h-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 13px;
+        }
+
+        @media (max-width: 991px) {
+            .hero-awards-horizontal-dock {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+            .hero-award-h-card {
+                width: 210px;
+            }
+        }
+
     </style>
 </head>
 
@@ -2247,46 +2353,52 @@
             </div>
 
                         <!-- DOCKED TRUSTED BY LOGO STRIP (MATCHING REFERENCE INSPIRATION) -->
-            <div class="hero-trusted-dock">
-                <div class="d-flex align-items-center gap-2">
-                    <span class="trusted-by-badge">Trusted by</span>
+                        <!-- HORIZONTAL CONTINUOUS MOVING AWARDS TICKER (REPLACED TRUSTED-BY) -->
+            <div class="hero-awards-horizontal-dock">
+                <div class="awards-dock-label-wrap">
+                    <span class="awards-dock-badge"><i class="bi bi-trophy-fill text-warning me-2"></i>Recognized Excellence</span>
                 </div>
-                <div class="trusted-logos-flex">
-                    <!-- Al Rashid Mall -->
-                    <div class="trusted-logo-item" title="Al Rashid Mall">
-                        <span class="trusted-logo-text"><i class="bi bi-building me-1"></i> AL RASHID MALL</span>
-                    </div>
-                    <!-- Isuzu -->
-                    <div class="trusted-logo-item" title="Isuzu Motors">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Isuzu_logo.svg" alt="Isuzu" class="trusted-logo-unit" style="max-height: 22px;">
-                    </div>
-                    <!-- Expo City Dubai -->
-                    <div class="trusted-logo-item" title="Expo City Dubai">
-                        <span class="trusted-logo-text"><i class="bi bi-sun me-1"></i> EXPO CITY DUBAI</span>
-                    </div>
-                    <!-- Keller Williams (KW) -->
-                    <div class="trusted-logo-item" title="Keller Williams">
-                        <span class="trusted-logo-text fw-bold" style="font-size: 1.25rem; letter-spacing: -1px;">kw</span>
-                    </div>
-                    <!-- Al Tayer -->
-                    <div class="trusted-logo-item" title="Al Tayer Group">
-                        <span class="trusted-logo-text">al tayer <span style="font-family: serif; font-size: 0.9em;">الـطـايـر</span></span>
-                    </div>
-                    <!-- Namshi -->
-                    <div class="trusted-logo-item" title="Namshi">
-                        <span class="trusted-logo-text fw-bold" style="letter-spacing: 2px;">NAMSHI</span>
-                    </div>
-                    <!-- Majid Al Futtaim -->
-                    <div class="trusted-logo-item" title="Majid Al Futtaim">
-                        <span class="trusted-logo-text"><i class="bi bi-shield me-1"></i> MAJID AL FUTTAIM</span>
-                    </div>
-                    <!-- Stripe -->
-                    <div class="trusted-logo-item" title="Stripe">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" class="trusted-logo-unit" style="max-height: 24px;">
-                    </div>
-                    <!-- AWS -->
-                    <div class="trusted-logo-item" title="AWS">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" class="trusted-logo-unit" style="max-height: 22px;">
+                <div class="hero-awards-horizontal-wrapper" id="heroAwardsHorizontal">
+                    <div class="hero-awards-horizontal-track">
+                        <!-- Group 1 -->
+                        <div class="hero-award-h-card" title="Entrepreneur - AI App Development">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur - AI App Development">
+                        </div>
+                        <div class="hero-award-h-card" title="International Business Award - Global Excellence in Business">
+                            <img src="award_intl_business.png" alt="International Business Award - Global Excellence in Business">
+                        </div>
+                        <div class="hero-award-h-card" title="MSME - Government of India Recognized">
+                            <img src="award_msme.png" alt="MSME - Government of India Recognized">
+                        </div>
+                        <div class="hero-award-h-card" title="Entrepreneur - AI App Development">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur - AI App Development">
+                        </div>
+                        <div class="hero-award-h-card" title="International Business Award - Global Excellence in Business">
+                            <img src="award_intl_business.png" alt="International Business Award - Global Excellence in Business">
+                        </div>
+                        <div class="hero-award-h-card" title="MSME - Government of India Recognized">
+                            <img src="award_msme.png" alt="MSME - Government of India Recognized">
+                        </div>
+
+                        <!-- Group 2 (Identical duplicate for continuous 0% -> -50% infinite loop) -->
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur - AI App Development">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_intl_business.png" alt="International Business Award - Global Excellence in Business">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_msme.png" alt="MSME - Government of India Recognized">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur - AI App Development">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_intl_business.png" alt="International Business Award - Global Excellence in Business">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_msme.png" alt="MSME - Government of India Recognized">
+                        </div>
                     </div>
                 </div>
             </div>
