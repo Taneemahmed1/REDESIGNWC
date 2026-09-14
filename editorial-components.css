@@ -1,0 +1,832 @@
+/* ==========================================================================
+   WEBCONVOY AI - MODERN EDITORIAL DESIGN SYSTEM
+   Inspired by clean, non-AI-slop editorial product design:
+   1. Interactive Prompt & Waveform Bento
+   2. Measurable ROI Curve (100% -> 28%) & 2x2 Metric Bento
+   3. 4-Pitfall Enterprise Diagnosis Grid with Optical CV Bounding Box
+   4. High-Density Tech Stats & Heatmap Glow Cards [01, 02, 03]
+   5. Embedded App Interface & Hardware Security Bento
+   ========================================================================== */
+
+/* -------------------------------------------------------------
+   COMMON UTILITIES & FONTS
+   ------------------------------------------------------------- */
+.accent-serif {
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: #93c5fd;
+    letter-spacing: -0.5px;
+}
+
+.text-gradient-blue {
+    background: linear-gradient(135deg, #60a5fa 0%, #126bff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-coral {
+    background: linear-gradient(135deg, #f87171 0%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =============================================================
+   1. COMP-1: INTERACTIVE PROMPT & WAVEFORM BENTO
+   ============================================================= */
+.editorial-prompt-bento-section {
+    padding: 100px 0;
+    background: #05070b;
+    position: relative;
+    overflow: hidden;
+}
+
+.editorial-prompt-bento-section::before {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(18, 107, 255, 0.08) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.epb-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 55px;
+}
+
+.epb-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(18, 107, 255, 0.12);
+    border: 1px solid rgba(45, 140, 255, 0.3);
+    color: #38bdf8;
+    font-family: var(--font-head);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 999px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.epb-title {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.epb-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.epb-grid {
+    display: grid;
+    grid-template-columns: 290px 1fr 290px;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.epb-side-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.epb-card {
+    background: #090d15;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.epb-card:hover {
+    border-color: rgba(45, 140, 255, 0.4);
+    background: #0c121e;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.epb-icon-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #60a5fa;
+    margin-bottom: 16px;
+}
+
+.epb-card-title {
+    font-family: var(--font-head);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.epb-card-desc {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Center Showcase Card */
+.epb-center-card {
+    background: radial-gradient(circle at 50% 60%, rgba(220, 38, 38, 0.16) 0%, rgba(18, 107, 255, 0.08) 50%, transparent 80%), #0c1018;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    padding: 34px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
+
+.epb-prompt-bubble {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.epb-prompt-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+}
+
+.epb-prompt-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #f1f5f9;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.epb-waveform-area {
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.epb-waveform-svg {
+    width: 100%;
+    max-width: 380px;
+    height: 70px;
+    display: block;
+    margin: 0 auto 16px;
+    filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.5));
+}
+
+.epb-mic-btn {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.6);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: epbMicPulse 2.4s infinite ease-in-out;
+}
+
+.epb-mic-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.8);
+}
+
+@keyframes epbMicPulse {
+    0%, 100% {
+        box-shadow: 0 0 18px rgba(239, 68, 68, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 32px rgba(239, 68, 68, 0.85);
+    }
+}
+
+.epb-chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.epb-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+.epb-chip:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =============================================================
+   2. COMP-2: MEASURABLE ROI DROP CURVE & 2x2 METRIC BENTO
+   ============================================================= */
+.editorial-roi-section {
+    padding: 100px 0;
+    background: #05070b;
+    position: relative;
+}
+
+.roi-container-card {
+    background: #080c14;
+    border: 1px solid rgba(18, 107, 255, 0.22);
+    border-radius: 24px;
+    padding: 46px 42px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(18, 107, 255, 0.04);
+}
+
+.roi-grid-wrap {
+    display: grid;
+    grid-template-columns: 1.15fr 1.25fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.roi-curve-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.roi-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.roi-title {
+    font-family: var(--font-head);
+    font-size: clamp(1.85rem, 3vw, 2.4rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+.roi-desc {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.roi-curve-visual {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 22px 20px;
+    position: relative;
+}
+
+.roi-svg-chart {
+    width: 100%;
+    height: 120px;
+    display: block;
+}
+
+.roi-curve-caption {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 12px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* 2x2 Bento Metric Grid */
+.roi-bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.roi-stat-card {
+    background: #0b101a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.roi-stat-card:hover {
+    border-color: rgba(45, 140, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.roi-stat-card.accent-blue {
+    background: linear-gradient(145deg, #126bff 0%, #0d52c7 100%);
+    border-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(18, 107, 255, 0.3);
+}
+
+.roi-stat-card.accent-blue .roi-card-stat,
+.roi-stat-card.accent-blue .roi-card-tag,
+.roi-stat-card.accent-blue .roi-card-icon {
+    color: #ffffff !important;
+}
+
+.roi-card-icon {
+    font-size: 1.7rem;
+    color: #60a5fa;
+    margin-bottom: 14px;
+}
+
+.roi-card-stat {
+    font-family: var(--font-head);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 16px;
+}
+
+.roi-card-tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.roi-stat-card.accent-blue .roi-card-tag {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =============================================================
+   3. COMP-3: 4-PITFALL ENTERPRISE DIAGNOSIS GRID (OPTICAL CV)
+   ============================================================= */
+.editorial-diagnosis-section {
+    padding: 100px 0;
+    background: #07090e;
+    position: relative;
+    overflow: hidden;
+}
+
+.diag-header {
+    margin-bottom: 50px;
+}
+
+.diag-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+}
+
+.diag-title {
+    font-family: var(--font-head);
+    font-size: clamp(2rem, 3.4vw, 2.75rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.diag-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: #94a3b8;
+    max-width: 680px;
+    line-height: 1.6;
+}
+
+.diag-grid-wrap {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* Computer Vision Optical Tracking Box */
+.diag-cv-card {
+    background: radial-gradient(circle at center, rgba(239, 68, 68, 0.08) 0%, transparent 70%), #0c1018;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.diag-cv-viewport {
+    position: relative;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* Target Crosshair Corners */
+.diag-cv-corner {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: #22c55e;
+    border-style: solid;
+}
+.diag-cv-corner.tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.diag-cv-corner.tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.diag-cv-corner.bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.diag-cv-corner.br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+.diag-cv-laser {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #22c55e, transparent);
+    box-shadow: 0 0 10px #22c55e;
+    animation: cvLaserScan 3s infinite linear;
+}
+
+@keyframes cvLaserScan {
+    0% { top: 10%; opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { top: 90%; opacity: 0; }
+}
+
+.diag-cv-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(34, 197, 94, 0.18);
+    border: 1px solid #22c55e;
+    color: #4ade80;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.diag-cv-telemetry {
+    font-family: monospace;
+    font-size: 11px;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 12px 14px;
+    line-height: 1.7;
+}
+
+/* Right 2x2 Pitfall Cards */
+.diag-cards-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.diag-item-card {
+    background: #0a0d15;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.diag-item-card:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+    background: #0d121c;
+    transform: translateY(-2px);
+}
+
+.diag-item-num {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #f87171;
+    margin-bottom: 12px;
+}
+
+.diag-item-title {
+    font-family: var(--font-head);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.diag-item-desc {
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* =============================================================
+   4. COMP-4: HIGH-DENSITY TECH STATS & HEATMAP CARDS [01, 02, 03]
+   ============================================================= */
+.editorial-stats-heatmap-section {
+    padding: 100px 0;
+    background: #05070b;
+    position: relative;
+}
+
+.hd-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    padding-bottom: 50px;
+    margin-bottom: 55px;
+}
+
+.hd-stat-item {
+    padding: 0 35px;
+    border-right: 1px solid rgba(255, 255, 255, 0.09);
+    display: flex;
+    flex-direction: column;
+}
+
+.hd-stat-item:last-child {
+    border-right: none;
+}
+
+.hd-stat-num {
+    font-family: var(--font-head);
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+}
+
+.hd-stat-label {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.45;
+}
+
+/* 3 Heatmap Cards */
+.heatmap-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.heatmap-card {
+    background: #090c13;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 30px 26px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.heatmap-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.heatmap-card.glow-amber {
+    box-shadow: inset 0 -40px 60px -20px rgba(245, 158, 11, 0.22);
+}
+
+.heatmap-card.glow-cyan {
+    box-shadow: inset 0 -40px 60px -20px rgba(14, 165, 233, 0.22);
+}
+
+.heatmap-card.glow-orange {
+    box-shadow: inset 0 -40px 60px -20px rgba(249, 115, 22, 0.22);
+}
+
+.heatmap-pill {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.heatmap-card-title {
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.heatmap-card-desc {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =============================================================
+   5. COMP-5: EMBEDDED APP INTERFACE & HARDWARE SECURITY BENTO
+   ============================================================= */
+.editorial-app-vault-section {
+    padding: 100px 0;
+    background: #06080d;
+    position: relative;
+}
+
+.app-vault-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.vault-app-card {
+    background: linear-gradient(145deg, #126bff 0%, #0a48b3 100%);
+    border-radius: 22px;
+    padding: 38px 34px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(18, 107, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vault-app-meta {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.vault-app-title {
+    font-family: var(--font-head);
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+.vault-app-mockup {
+    background: #0a0e17;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.vault-side-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.vault-glass-card {
+    background: #0a0d15;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.vault-glass-card:hover {
+    border-color: rgba(45, 140, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+/* =============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================= */
+@media (max-width: 991px) {
+    .epb-grid {
+        grid-template-columns: 1fr;
+    }
+    .roi-grid-wrap {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+    .diag-grid-wrap {
+        grid-template-columns: 1fr;
+    }
+    .hd-stats-row {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .hd-stat-item {
+        padding: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+        padding-bottom: 24px;
+    }
+    .heatmap-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .app-vault-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .roi-bento-grid {
+        grid-template-columns: 1fr;
+    }
+    .diag-cards-2x2 {
+        grid-template-columns: 1fr;
+    }
+}
