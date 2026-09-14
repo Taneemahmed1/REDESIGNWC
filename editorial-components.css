@@ -837,7 +837,11 @@
    ============================================================= */
 .poc-bridge-section {
     position: relative;
-    background: #ffffff;
+    background-color: #ffffff;
+    background-image: url('consulting_poc_bridge_bg_blue.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
     color: #0f172a;
     padding: 70px 0 85px;
     overflow: hidden;
@@ -892,7 +896,6 @@
     position: relative;
     width: 100%;
     min-height: 520px;
-    background: url('consulting_poc_bridge_bg_blue.png') no-repeat center right / contain;
 }
 
 .poc-left-content {
@@ -1126,5 +1129,377 @@
         position: static;
         text-align: left;
         margin-top: 20px;
+    }
+}
+
+
+/* =============================================================
+   7. FIND THE WORK WORTH AUTOMATING SECTION (FWWA)
+   ============================================================= */
+.fwwa-section {
+    position: relative;
+    background: #04070d;
+    color: #ffffff;
+    padding: 95px 0 105px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fwwa-section::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(18, 107, 255, 0.12) 0%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.fwwa-layout-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1.3fr 0.85fr;
+    gap: 32px;
+    align-items: center;
+}
+
+/* Left Column */
+.fwwa-left-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.fwwa-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(18, 107, 255, 0.12);
+    border: 1px solid rgba(45, 140, 255, 0.35);
+    color: #38bdf8;
+    font-family: var(--font-head);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 16px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    width: fit-content;
+}
+
+.fwwa-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow: 0 0 8px #38bdf8;
+}
+
+.fwwa-main-title {
+    font-family: var(--font-head);
+    font-size: clamp(2.3rem, 3.8vw, 3.2rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.fwwa-accent-blue {
+    color: #38bdf8;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+.fwwa-main-desc {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* Decision Card */
+.fwwa-decision-card {
+    background: #080c14;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px 22px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-bottom: 28px;
+}
+
+.fwwa-decision-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.fwwa-dec-tag {
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.fwwa-dec-arrow {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    font-size: 12px;
+}
+
+.fwwa-decision-title {
+    font-family: var(--font-head);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.fwwa-comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 12px;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 14px;
+}
+
+.fwwa-comp-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.fwwa-comp-type {
+    font-size: 10.5px;
+    color: #64748b;
+    margin-bottom: 2px;
+}
+
+.fwwa-comp-name {
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.fwwa-comp-name.blue {
+    color: #38bdf8;
+}
+
+.fwwa-comp-detail {
+    font-size: 10.5px;
+    color: #94a3b8;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.fwwa-comp-divider {
+    color: #38bdf8;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fwwa-bottom-breadcrumb {
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+/* Middle Timeline Column */
+.fwwa-timeline-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fwwa-timeline-line {
+    position: absolute;
+    left: 82px;
+    top: 30px;
+    bottom: 95px;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(56, 189, 248, 0.2) 0%, rgba(56, 189, 248, 0.8) 70%, #126bff 100%);
+    z-index: 1;
+}
+
+.fwwa-step-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.fwwa-step-num {
+    font-family: var(--font-head);
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #334155;
+    line-height: 1;
+    width: 50px;
+    flex-shrink: 0;
+    text-align: right;
+    letter-spacing: -1px;
+}
+
+.fwwa-step-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #090d15;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd5e1;
+    font-size: 13px;
+    flex-shrink: 0;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+.fwwa-step-content {
+    flex: 1;
+}
+
+.fwwa-step-title {
+    font-family: var(--font-head);
+    font-size: 12.5px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.fwwa-step-desc {
+    font-family: var(--font-body);
+    font-size: 11px;
+    color: #94a3b8;
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* Step 04 Highlight Card */
+.fwwa-step-row.highlight {
+    align-items: flex-start;
+}
+
+.fwwa-step-row.highlight .fwwa-step-num {
+    color: #38bdf8;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    padding-top: 10px;
+}
+
+.fwwa-step-row.highlight .fwwa-step-icon {
+    background: rgba(18, 107, 255, 0.15);
+    border-color: #126bff;
+    color: #38bdf8;
+    box-shadow: 0 0 16px rgba(18, 107, 255, 0.4);
+    margin-top: 8px;
+}
+
+.fwwa-highlight-card {
+    background: radial-gradient(circle at top left, rgba(18, 107, 255, 0.15) 0%, transparent 70%), #080c14;
+    border: 1px solid rgba(18, 107, 255, 0.5);
+    border-radius: 16px;
+    padding: 20px 22px;
+    box-shadow: 0 0 30px rgba(18, 107, 255, 0.2);
+    width: 100%;
+}
+
+.fwwa-hl-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 14px;
+    margin-top: 14px;
+}
+
+.fwwa-hl-item {
+    font-size: 10.5px;
+    color: #94a3b8;
+    line-height: 1.3;
+}
+
+.fwwa-hl-item span {
+    display: block;
+    color: #38bdf8;
+    font-weight: 700;
+    font-size: 11.5px;
+    margin-bottom: 2px;
+}
+
+/* Right 3D Visual Column */
+.fwwa-visual-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fwwa-3d-img {
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.fwwa-visual-footnote {
+    margin-top: 20px;
+    text-align: right;
+    width: 100%;
+    max-width: 310px;
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1199px) {
+    .fwwa-layout-grid {
+        grid-template-columns: 1fr 1.2fr;
+    }
+    .fwwa-visual-col {
+        grid-column: span 2;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    .fwwa-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .fwwa-visual-col {
+        grid-column: span 1;
+    }
+    .fwwa-hl-metrics {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
     }
 }
