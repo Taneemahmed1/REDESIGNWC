@@ -336,38 +336,100 @@
         .app-hero-section {
             position: relative;
             background: #050607;
-            padding: 110px 0 45px 0;
+            padding: 130px 0 45px 0;
             overflow: hidden;
-            text-align: center;
+            text-align: left;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            min-height: 720px;
+            display: flex;
+            align-items: center;
         }
 
-        .hero-bg-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 50% 28%, rgba(18, 107, 255, 0.18) 0%, rgba(5, 6, 7, 0.96) 70%),
-                radial-gradient(circle at 80% 40%, rgba(45, 140, 255, 0.08) 0%, transparent 50%),
-                linear-gradient(to bottom, transparent 0%, #050607 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero-bg-overlay::after {
-            content: '';
+        .hero-video-bg-container {
             position: absolute;
             inset: 0;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-            background-size: 60px 60px;
-            background-position: center;
-            opacity: 0.55;
-            mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
-            -webkit-mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+        }
+
+        .hero-video-gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(90deg, #050607 0%, rgba(5, 6, 7, 0.95) 36%, rgba(5, 6, 7, 0.72) 58%, rgba(5, 6, 7, 0.15) 80%, rgba(5, 6, 7, 0.5) 100%),
+                linear-gradient(180deg, rgba(5, 6, 7, 0.85) 0%, transparent 20%, transparent 80%, #050607 100%);
+            pointer-events: none;
+        }
+
+        .app-hero-title.text-start {
+            text-align: left !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .app-hero-subtitle.text-start {
+            text-align: left !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        .hero-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #94a3b8;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .live-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulseGlow 2s infinite;
+        }
+
+        .live-pulse-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #38bdf8;
+            box-shadow: 0 0 8px #38bdf8;
+            display: inline-block;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        @media (max-width: 991px) {
+            .app-hero-section {
+                padding: 100px 0 35px 0;
+                min-height: auto;
+            }
+            .hero-video-gradient-overlay {
+                background: linear-gradient(180deg, rgba(5, 6, 7, 0.92) 0%, rgba(5, 6, 7, 0.82) 50%, #050607 100%);
+            }
         }
 
         .app-brand-pill {
@@ -764,30 +826,44 @@
         <!-- 01. INSPIRATION HERO SECTION (MATCHING APPTUNIX REFERENCE) -->
         <!-- 01. INSPIRATION HERO SECTION (MATCHING APPTUNIX REFERENCE) -->
     <section class="app-hero-section" id="hero">
-        <div class="hero-bg-overlay"></div>
-        <div class="container position-relative" style="z-index: 2;">
-            <!-- Eyebrow Pill -->
-            <div>
-                <span class="app-brand-pill">
-                    WebConvoy AI
-                </span>
-            </div>
+        <div class="hero-video-bg-container">
+            <video class="hero-bg-video" autoplay loop muted playsinline>
+                <source src="Robotic_hand_holding_rotating_orb_20260914164651.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-gradient-overlay"></div>
+        </div>
 
-            <!-- Big Sparkle Headline -->
-            <h1 class="app-hero-title">
-                <span class="sparkle-icon">✦✦</span>AI Automation Services
-            </h1>
+        <div class="container position-relative" style="z-index: 3;">
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-lg-8 col-md-11 text-start">
+                    <!-- Eyebrow Pill -->
+                    <div class="mb-3">
+                        <span class="app-brand-pill">
+                            <span class="live-pulse-dot"></span> WebConvoy AI Automation
+                        </span>
+                    </div>
 
-            <!-- Subtitle -->
-            <p class="app-hero-subtitle">
-                Autonomous Operational Pipelines Built for Enterprise Reliability, Policy Compliance, and Drastic Overhead Reduction—engineered to turn repetitive workflows into intelligent, sub-second execution loops.
-            </p>
+                    <!-- Big Sparkle Headline -->
+                    <h1 class="app-hero-title text-start">
+                        <span class="sparkle-icon">✦✦</span>AI Automation Services
+                    </h1>
 
-            <!-- Rounded Pill CTA -->
-            <div>
-                <a href="#scoping-consultation" class="app-hero-cta-btn">
-                    Get Your Free AI Consultation <i class="bi bi-chevron-right ms-1"></i>
-                </a>
+                    <!-- Subtitle -->
+                    <p class="app-hero-subtitle text-start">
+                        Autonomous Operational Pipelines Built for Enterprise Reliability, Policy Compliance, and Drastic Overhead Reduction—engineered to turn repetitive workflows into intelligent, sub-second execution loops.
+                    </p>
+
+                    <!-- Rounded Pill CTA & Highlight -->
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                        <a href="#scoping-consultation" class="app-hero-cta-btn">
+                            Get Your Free AI Consultation <i class="bi bi-chevron-right ms-1"></i>
+                        </a>
+                        <div class="hero-live-badge">
+                            <span class="live-dot"></span>
+                            <span>24/7 Autonomous Loops</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
                         <!-- DOCKED TRUSTED BY LOGO STRIP (MATCHING REFERENCE INSPIRATION) -->
