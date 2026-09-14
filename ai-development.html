@@ -336,38 +336,52 @@
         .app-hero-section {
             position: relative;
             background: #050607;
-            padding: 110px 0 45px 0;
+            padding: 125px 0 45px 0;
             overflow: hidden;
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            min-height: 720px;
+            display: flex;
+            align-items: center;
         }
 
-        .hero-bg-overlay {
+        .hero-video-bg-container {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-bg-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 50% 28%, rgba(18, 107, 255, 0.18) 0%, rgba(5, 6, 7, 0.96) 70%),
-                radial-gradient(circle at 80% 40%, rgba(45, 140, 255, 0.08) 0%, transparent 50%),
-                linear-gradient(to bottom, transparent 0%, #050607 100%);
-            pointer-events: none;
-            z-index: 1;
+            object-fit: cover;
+            object-position: center 60%;
         }
 
-        .hero-bg-overlay::after {
-            content: '';
+        .hero-video-gradient-overlay {
             position: absolute;
             inset: 0;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-            background-size: 60px 60px;
-            background-position: center;
-            opacity: 0.55;
-            mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
-            -webkit-mask-image: radial-gradient(circle at 50% 40%, black 25%, transparent 80%);
+            background: 
+                radial-gradient(circle at 50% 48%, rgba(5, 6, 7, 0.55) 0%, rgba(5, 6, 7, 0.35) 45%, rgba(5, 6, 7, 0.82) 85%, #050607 100%),
+                linear-gradient(180deg, rgba(5, 6, 7, 0.85) 0%, transparent 22%, transparent 78%, #050607 100%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 991px) {
+            .app-hero-section {
+                padding: 100px 0 35px 0;
+                min-height: auto;
+            }
+            .hero-video-gradient-overlay {
+                background: linear-gradient(180deg, rgba(5, 6, 7, 0.9) 0%, rgba(5, 6, 7, 0.75) 50%, #050607 100%);
+            }
         }
 
         .app-brand-pill {
@@ -402,6 +416,7 @@
             max-width: 980px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
         }
 
         .sparkle-icon {
@@ -416,11 +431,12 @@
             position: relative;
             z-index: 2;
             font-size: clamp(1.02rem, 1.35vw, 1.2rem);
-            color: #9ba4b2;
+            color: #e2e8f0;
             max-width: 860px;
             margin: 0 auto 34px auto;
             line-height: 1.7;
             font-weight: 400;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95), 0 0 24px rgba(0, 0, 0, 0.9);
         }
 
         .app-hero-cta-btn {
@@ -764,8 +780,13 @@
         <!-- 01. INSPIRATION HERO SECTION (MATCHING APPTUNIX REFERENCE) -->
         <!-- 01. INSPIRATION HERO SECTION (MATCHING APPTUNIX REFERENCE) -->
     <section class="app-hero-section" id="hero">
-        <div class="hero-bg-overlay"></div>
-        <div class="container position-relative" style="z-index: 2;">
+        <div class="hero-video-bg-container">
+            <video class="hero-bg-video" autoplay loop muted playsinline>
+                <source src="Blue_energy_portal_animation_20260914170119.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-gradient-overlay"></div>
+        </div>
+        <div class="container position-relative" style="z-index: 3;">
             <!-- Eyebrow Pill -->
             <div>
                 <span class="app-brand-pill">
