@@ -1014,6 +1014,22 @@
             box-shadow: 0 0 20px rgba(2, 132, 199, 0.65);
         }
 
+        /* 9. INDIL - TURQUOISE TEAL / CYAN THEME (On-Demand Mobile App) */
+        .stage-theme-indil {
+            background: radial-gradient(circle at 50% 25%, #083344 0%, #041c26 55%, #020d12 100%);
+            border-color: rgba(6, 182, 212, 0.45);
+            box-shadow: 0 14px 45px rgba(6, 182, 212, 0.18);
+        }
+        .stage-theme-indil:hover {
+            border-color: rgba(34, 211, 238, 0.75);
+            box-shadow: 0 24px 65px rgba(6, 182, 212, 0.4);
+        }
+        .stage-theme-indil .stage-sector-num { color: #22d3ee; }
+        .stage-theme-indil .stage-action-btn {
+            background: #06b6d4;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.65);
+        }
+
         /* CUSTOM COMPONENT CARD FOR HDFC & PREMIER & BIOTECH */
         .stage-rich-card {
             background: #070a12;
@@ -1408,6 +1424,7 @@
             <!-- Filter Pills Bar -->
             <div class="portfolio-filter-bar">
                 <button class="port-filter-btn active" data-filter="all">All Projects</button>
+                <button class="port-filter-btn" data-filter="app">Mobile Apps</button>
                 <button class="port-filter-btn" data-filter="tech">Enterprise Tech</button>
                 <button class="port-filter-btn" data-filter="fintech">Fintech</button>
                 <button class="port-filter-btn" data-filter="health">Healthcare</button>
@@ -1420,7 +1437,7 @@
                 <!-- -----------------------------------------------------------
                      1. CLOVER (GREEN STAGE RECTANGLE)
                      ----------------------------------------------------------- -->
-                <div class="stage-rectangle stage-theme-clover" data-category="tech commerce all">
+                <div class="stage-rectangle stage-theme-clover" data-category="app tech commerce all">
                     <div class="stage-top-bar">
                         <span class="stage-sector-num">01 / BUSINESS TECH</span>
                         <span class="stage-live-tag text-white">
@@ -1474,7 +1491,7 @@
                 <!-- -----------------------------------------------------------
                      3. RIZON (SCARLET / CRIMSON THEME RECTANGLE - FINTECH)
                      ----------------------------------------------------------- -->
-                <div class="stage-rectangle stage-theme-rizon" data-category="fintech all">
+                <div class="stage-rectangle stage-theme-rizon" data-category="app fintech all">
                     <div class="stage-top-bar">
                         <span class="stage-sector-num">03 / GLOBAL FINTECH</span>
                         <span class="stage-live-tag text-white">
@@ -1528,7 +1545,7 @@
                 <!-- -----------------------------------------------------------
                      5. HDFC SKY (ELECTRIC SAPPHIRE NAVY RECTANGLE)
                      ----------------------------------------------------------- -->
-                <div class="stage-rectangle stage-theme-hdfc" data-category="fintech all">
+                <div class="stage-rectangle stage-theme-hdfc" data-category="app fintech all">
                     <div class="stage-top-bar">
                         <span class="stage-sector-num">05 / WEALTHTECH & BROKERAGE</span>
                         <span class="stage-live-tag text-white">
@@ -1712,6 +1729,33 @@
                             <span class="stage-sub-pill">Edge Telemetry</span>
                         </div>
                         <a href="#scoping-consultation" class="stage-action-btn" aria-label="View Biotech Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     09. INDIL (TURQUOISE TEAL RECTANGLE - ON-DEMAND DELIVERY APP)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-indil" data-category="app commerce all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">09 / ON-DEMAND MOBILE APP</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 62% Downloads Lift
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="card_indil_app.jpg" alt="INDIL - A seamless delivery experience for everyday shopping & food" class="stage-card-asset-img">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Food & Grocery App</span>
+                            <span class="stage-sub-pill">3.1x Repeat Orders</span>
+                            <span class="stage-sub-pill">Hyperlocal Tracking</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View INDIL Project">
                             <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
