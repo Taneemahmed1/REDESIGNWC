@@ -483,7 +483,7 @@
         .hero-ref-btn-wrap {
             display: flex;
             justify-content: center;
-            margin-bottom: 12px;
+            margin-bottom: 0px;
             position: relative;
             z-index: 10;
         }
@@ -519,12 +519,12 @@
             transform: translateX(4px);
         }
 
-        /* Centered Visual Stage with Hands & Clover */
+        /* Centered Visual Stage with Hands & Clover - Shifted up towards text */
         .hero-ref-visual-stage {
             position: relative;
             width: 100%;
             max-width: 980px;
-            margin: 0 auto;
+            margin: -110px auto 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -649,10 +649,19 @@
             .reference-hero-section {
                 padding: 55px 0 20px 0;
             }
+            .hero-ref-visual-stage {
+                margin: -60px auto 0;
+            }
             .hero-ref-video-frame {
                 aspect-ratio: 16 / 10;
             }
             .nav-links-center { display: none !important; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-ref-visual-stage {
+                margin: -35px auto 0;
+            }
         }
 
         /* -------------------------------------------------------------
