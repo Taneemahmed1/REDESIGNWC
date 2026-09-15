@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portfolio & Production Deployments | WebConvoy</title>
+    <meta name="description" content="Explore WebConvoy's flagship enterprise engineering portfolio—mission-critical fintech engines, Apple enterprise solutions, AI platforms, and omnichannel commerce.">
+    <link rel="icon" type="image/png" href="webconvoy_blue_logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,400;1,600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Editorial Components CSS -->
+    <link rel="stylesheet" href="editorial-components.css">
+
+    <style>
+        :root {
+            --bg-dark: #050608;
+            --bg-darker: #020305;
+            --surface-dark: #080a10;
+            --card-dark: #0b0e17;
+            --electric-blue: #126bff;
+            --cyan-glow: #38bdf8;
+            --text-light: #ffffff;
+            --text-muted: #94a3b8;
+            --text-sub: #cbd5e1;
+            --border-dark: rgba(255, 255, 255, 0.09);
+            --font-head: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Space Grotesk', monospace;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .hover-white:hover { color: #ffffff !important; }
+
+        /* NAVBAR STYLES */
+        .main-navbar-sticky {
+            background: rgba(5, 6, 8, 0.88) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 14px 0;
+            transition: all 0.3s ease;
+        }
+        .navbar-content-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .nav-links-center { display: flex; align-items: center; gap: 28px; }
+        .nav-link-item {
+            color: #cbd5e1 !important;
+            font-family: var(--font-head);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+        .nav-link-item:hover, .nav-link-item.active {
+            color: #38bdf8 !important;
+        }
+        .nav-link-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #38bdf8;
+            box-shadow: 0 0 10px #38bdf8;
+            border-radius: 2px;
+        }
+
+        .nav-item-wrap {
+            position: relative;
+        }
+        .nav-item-wrap:hover .dropdown-floating-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-floating-panel {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            background: #090d16;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 12px;
+            min-width: 290px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            z-index: 1010;
+        }
+        .mega-menu-item {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .mega-menu-item:hover {
+            background: rgba(18, 107, 255, 0.15);
+        }
+        .mega-menu-item strong {
+            display: block;
+            font-size: 13.5px;
+            color: #ffffff;
+            font-family: var(--font-head);
+            margin-bottom: 2px;
+        }
+        .mega-menu-item span {
+            font-size: 11.5px;
+            color: #94a3b8;
+            display: block;
+            line-height: 1.4;
+        }
+
+        .nav-cta-right { display: flex; align-items: center; gap: 16px; }
+        .btn-nav-ai {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            height: 40px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #1ea7fd 0%, #0d6efd 50%, #004fe8 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 20px rgba(13, 110, 253, 0.65), inset 0 1.5px 2px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: aiPillPulseGlow 3s infinite ease-in-out;
+        }
+        @keyframes aiPillPulseGlow {
+            0%, 100% { box-shadow: 0 0 16px rgba(13, 110, 253, 0.6), inset 0 1.5px 2px rgba(255, 255, 255, 0.8); }
+            50% { box-shadow: 0 0 28px rgba(0, 210, 255, 0.9), 0 0 48px rgba(13, 110, 253, 0.5), inset 0 2px 4px #ffffff; }
+        }
+        .ai-sparkles-wrap {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ai-star-main { width: 13px; height: 13px; fill: #ffffff; animation: aiStarTwinkle 2s infinite ease-in-out; }
+        .ai-star-sub { position: absolute; width: 8px; height: 8px; top: 0px; right: 0px; fill: #ffffff; animation: aiStarTwinkle 2s infinite ease-in-out 0.5s; }
+        @keyframes aiStarTwinkle {
+            0%, 100% { transform: scale(0.85); opacity: 0.8; }
+            50% { transform: scale(1.25) rotate(90deg); opacity: 1; }
+        }
+        .btn-appinv-contact {
+            padding: 9px 22px;
+            height: 40px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff !important;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+        .btn-appinv-contact:hover {
+            background: #ffffff;
+            color: #000000 !important;
+            transform: translateY(-2px);
+        }
+
+        /* -------------------------------------------------------------
+           HERO SECTION WITH VIDEO BACKGROUND (MATCHES APPTUNIX REFERENCE)
+           ------------------------------------------------------------- */
+        .app-hero-section {
+            position: relative;
+            background: #050607;
+            padding: 135px 0 45px 0;
+            overflow: hidden;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            min-height: 720px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-video-bg-container {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+        }
+
+        .hero-video-gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(90deg, #050607 0%, rgba(5, 6, 7, 0.96) 38%, rgba(5, 6, 7, 0.72) 60%, rgba(5, 6, 7, 0.15) 82%, rgba(5, 6, 7, 0.45) 100%),
+                linear-gradient(180deg, rgba(5, 6, 7, 0.85) 0%, transparent 20%, transparent 80%, #050607 100%);
+            pointer-events: none;
+        }
+
+        .app-brand-pill {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 22px;
+            border-radius: 999px;
+            background: rgba(18, 107, 255, 0.09);
+            border: 1px solid rgba(45, 140, 255, 0.35);
+            color: #38bdf8;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            box-shadow: 0 0 24px rgba(18, 107, 255, 0.22);
+        }
+
+        .live-pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #38bdf8;
+            box-shadow: 0 0 10px #38bdf8;
+            display: inline-block;
+            animation: pulseGlow 2s infinite;
+        }
+
+        .sparkle-icon {
+            color: #38bdf8;
+            margin-right: 10px;
+            font-size: 0.85em;
+            vertical-align: middle;
+        }
+
+        .app-hero-title {
+            position: relative;
+            z-index: 2;
+            font-family: var(--font-head);
+            font-size: clamp(2.3rem, 4.8vw, 4.2rem);
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            margin-bottom: 22px;
+            text-align: left !important;
+        }
+
+        .app-hero-subtitle {
+            position: relative;
+            z-index: 2;
+            font-family: var(--font-body);
+            font-size: clamp(1rem, 1.25vw, 1.15rem);
+            color: #cbd5e1;
+            line-height: 1.7;
+            max-width: 640px;
+            margin-bottom: 34px;
+            text-align: left !important;
+        }
+
+        .app-hero-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 34px;
+            border-radius: 999px;
+            background: #126bff;
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 15px;
+            font-weight: 700;
+            box-shadow: 0 0 28px rgba(18, 107, 255, 0.55);
+            transition: all 0.3s ease;
+        }
+        .app-hero-cta-btn:hover {
+            background: #0056e0;
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px rgba(18, 107, 255, 0.75);
+        }
+
+        .hero-live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            font-size: 13.5px;
+            font-weight: 500;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.25); }
+        }
+
+        /* AWARDS SLIDER DOCKED AT HERO BOTTOM */
+        .hero-awards-horizontal-dock {
+            position: relative;
+            z-index: 2;
+            margin-top: 55px;
+            padding-top: 26px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .hero-awards-horizontal-wrapper {
+            position: relative;
+            flex: 1;
+            overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 1) 96%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 1) 96%, transparent 100%);
+        }
+
+        .hero-awards-horizontal-track {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            width: max-content;
+            animation: awardsHorizontalScroll 24s linear infinite;
+            will-change: transform;
+        }
+
+        .hero-awards-horizontal-track:hover {
+            animation-play-state: paused;
+        }
+
+        .hero-award-h-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 10px 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 52px;
+            transition: all 0.25s ease;
+        }
+        .hero-award-h-card img {
+            max-height: 28px;
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(1) brightness(1.7);
+            transition: filter 0.25s ease;
+        }
+        .hero-award-h-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            background: rgba(18, 107, 255, 0.08);
+        }
+        .hero-award-h-card:hover img {
+            filter: grayscale(0) brightness(1);
+        }
+
+        @keyframes awardsHorizontalScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @media (max-width: 991px) {
+            .app-hero-section {
+                padding: 105px 0 35px 0;
+                min-height: auto;
+            }
+            .hero-video-gradient-overlay {
+                background: linear-gradient(180deg, rgba(5, 6, 7, 0.94) 0%, rgba(5, 6, 7, 0.85) 50%, #050607 100%);
+            }
+            .nav-links-center { display: none !important; }
+        }
+
+        /* -------------------------------------------------------------
+           PORTFOLIO SECTION & 2-IN-A-ROW RECTANGULAR STAGES
+           ------------------------------------------------------------- */
+        .portfolio-main-section {
+            background: #04060a;
+            padding: 110px 0 130px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .portfolio-header {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 55px;
+        }
+
+        .portfolio-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(18, 107, 255, 0.12);
+            border: 1px solid rgba(45, 140, 255, 0.35);
+            color: #38bdf8;
+            font-family: var(--font-head);
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 999px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .portfolio-title {
+            font-size: clamp(2.3rem, 4vw, 3.4rem);
+            color: #ffffff;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 18px;
+        }
+
+        .portfolio-title em {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            background: linear-gradient(135deg, #ffffff 20%, #93c5fd 60%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .portfolio-subtitle {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            line-height: 1.65;
+            margin: 0 auto;
+        }
+
+        /* Filter Pills */
+        .portfolio-filter-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 60px;
+        }
+
+        .port-filter-btn {
+            padding: 8px 22px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .port-filter-btn:hover, .port-filter-btn.active {
+            background: #126bff;
+            border-color: #126bff;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(18, 107, 255, 0.45);
+        }
+
+        /* 2 IN ONE ROW GRID */
+        .portfolio-grid-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 36px;
+        }
+
+        /* THE COLOR-MATCHED OUTER RECTANGLE STAGE */
+        .stage-rectangle {
+            border-radius: 28px;
+            padding: 38px 34px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+            min-height: 680px;
+        }
+
+        .stage-rectangle:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Stage Header Meta */
+        .stage-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stage-sector-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            letter-spacing: 1.2px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .stage-live-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-family: var(--font-head);
+            font-size: 11.5px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .stage-card-wrapper {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto 0;
+            padding: 10px 0;
+        }
+
+        /* Images for pre-rendered transparent cards */
+        .stage-card-asset-img {
+            width: 100%;
+            max-width: 520px;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55);
+            transition: transform 0.35s ease, filter 0.35s ease;
+        }
+
+        .stage-rectangle:hover .stage-card-asset-img {
+            transform: scale(1.025);
+        }
+
+        /* Stage Bottom Meta */
+        .stage-bottom-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stage-pills-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .stage-sub-pill {
+            font-family: var(--font-body);
+            font-size: 11.5px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+        }
+
+        .stage-action-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stage-rectangle:hover .stage-action-btn {
+            transform: scale(1.1) rotate(45deg);
+        }
+
+        /* -------------------------------------------------------------
+           THEME COLORS PER PROJECT (ACCORDING TO USER'S SPECIFICATION)
+           ------------------------------------------------------------- */
+
+        /* 1. CLOVER - GREEN THEME */
+        .stage-theme-clover {
+            background: radial-gradient(circle at 50% 25%, #0e3b26 0%, #072216 55%, #03100a 100%);
+            border-color: rgba(0, 168, 107, 0.4);
+            box-shadow: 0 14px 45px rgba(0, 168, 107, 0.16);
+        }
+        .stage-theme-clover:hover {
+            border-color: rgba(0, 210, 130, 0.7);
+            box-shadow: 0 24px 65px rgba(0, 168, 107, 0.35);
+        }
+        .stage-theme-clover .stage-sector-num { color: #34d399; }
+        .stage-theme-clover .stage-action-btn {
+            background: #00a86b;
+            box-shadow: 0 0 20px rgba(0, 168, 107, 0.6);
+        }
+
+        /* 2. SUPERIOR DIGITAL - RED THEME (Apple Solutions) */
+        .stage-theme-superior {
+            background: radial-gradient(circle at 50% 25%, #3f0b18 0%, #24050d 55%, #100206 100%);
+            border-color: rgba(225, 29, 72, 0.45);
+            box-shadow: 0 14px 45px rgba(225, 29, 72, 0.2);
+        }
+        .stage-theme-superior:hover {
+            border-color: rgba(244, 63, 94, 0.75);
+            box-shadow: 0 24px 65px rgba(225, 29, 72, 0.4);
+        }
+        .stage-theme-superior .stage-sector-num { color: #fb7185; }
+        .stage-theme-superior .stage-action-btn {
+            background: #e11d48;
+            box-shadow: 0 0 20px rgba(225, 29, 72, 0.65);
+        }
+
+        /* 3. RIZON - SCARLET / CRIMSON BLACK THEME */
+        .stage-theme-rizon {
+            background: radial-gradient(circle at 50% 25%, #320a15 0%, #1c040b 55%, #0a0104 100%);
+            border-color: rgba(239, 68, 68, 0.4);
+            box-shadow: 0 14px 45px rgba(239, 68, 68, 0.18);
+        }
+        .stage-theme-rizon:hover {
+            border-color: rgba(248, 113, 113, 0.7);
+            box-shadow: 0 24px 65px rgba(239, 68, 68, 0.35);
+        }
+        .stage-theme-rizon .stage-sector-num { color: #f87171; }
+        .stage-theme-rizon .stage-action-btn {
+            background: #dc2626;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+        }
+
+        /* 4. AVIGNON CLINIC - WARM CHAMPAGNE / GOLD THEME */
+        .stage-theme-avignon {
+            background: radial-gradient(circle at 50% 25%, #382618 0%, #20140c 55%, #0e0804 100%);
+            border-color: rgba(217, 168, 107, 0.4);
+            box-shadow: 0 14px 45px rgba(217, 168, 107, 0.16);
+        }
+        .stage-theme-avignon:hover {
+            border-color: rgba(245, 197, 126, 0.7);
+            box-shadow: 0 24px 65px rgba(217, 168, 107, 0.35);
+        }
+        .stage-theme-avignon .stage-sector-num { color: #fcd34d; }
+        .stage-theme-avignon .stage-action-btn {
+            background: #b4864e;
+            box-shadow: 0 0 20px rgba(180, 134, 78, 0.6);
+        }
+
+        /* 5. HDFC SKY - ELECTRIC SAPPHIRE / NAVY THEME */
+        .stage-theme-hdfc {
+            background: radial-gradient(circle at 50% 25%, #0e2f69 0%, #081a3c 55%, #030a17 100%);
+            border-color: rgba(18, 107, 255, 0.45);
+            box-shadow: 0 14px 45px rgba(18, 107, 255, 0.2);
+        }
+        .stage-theme-hdfc:hover {
+            border-color: rgba(56, 189, 248, 0.75);
+            box-shadow: 0 24px 65px rgba(18, 107, 255, 0.4);
+        }
+        .stage-theme-hdfc .stage-sector-num { color: #60a5fa; }
+        .stage-theme-hdfc .stage-action-btn {
+            background: #126bff;
+            box-shadow: 0 0 20px rgba(18, 107, 255, 0.65);
+        }
+
+        /* 6. BBB LONDON - ROSE CLAY / TERRACOTTA THEME */
+        .stage-theme-bbb {
+            background: radial-gradient(circle at 50% 25%, #3a1d22 0%, #221013 55%, #100608 100%);
+            border-color: rgba(184, 115, 125, 0.4);
+            box-shadow: 0 14px 45px rgba(184, 115, 125, 0.16);
+        }
+        .stage-theme-bbb:hover {
+            border-color: rgba(244, 143, 177, 0.7);
+            box-shadow: 0 24px 65px rgba(184, 115, 125, 0.35);
+        }
+        .stage-theme-bbb .stage-sector-num { color: #f472b6; }
+        .stage-theme-bbb .stage-action-btn {
+            background: #a8785a;
+            box-shadow: 0 0 20px rgba(168, 120, 90, 0.6);
+        }
+
+        /* 7. PREMIER HEALTHCARE - OCEAN CYAN / TEAL THEME */
+        .stage-theme-premier {
+            background: radial-gradient(circle at 50% 25%, #093c4c 0%, #04212a 55%, #010e13 100%);
+            border-color: rgba(6, 182, 212, 0.42);
+            box-shadow: 0 14px 45px rgba(6, 182, 212, 0.2);
+        }
+        .stage-theme-premier:hover {
+            border-color: rgba(34, 211, 238, 0.75);
+            box-shadow: 0 24px 65px rgba(6, 182, 212, 0.4);
+        }
+        .stage-theme-premier .stage-sector-num { color: #22d3ee; }
+        .stage-theme-premier .stage-action-btn {
+            background: #0891b2;
+            box-shadow: 0 0 20px rgba(8, 145, 178, 0.65);
+        }
+
+        /* 8. BIOTECH INNOVATIONS - NEON AZURE / COBALT THEME */
+        .stage-theme-biotech {
+            background: radial-gradient(circle at 50% 25%, #0a3563 0%, #051c37 55%, #020c1a 100%);
+            border-color: rgba(56, 189, 248, 0.42);
+            box-shadow: 0 14px 45px rgba(56, 189, 248, 0.2);
+        }
+        .stage-theme-biotech:hover {
+            border-color: rgba(125, 211, 252, 0.75);
+            box-shadow: 0 24px 65px rgba(56, 189, 248, 0.4);
+        }
+        .stage-theme-biotech .stage-sector-num { color: #38bdf8; }
+        .stage-theme-biotech .stage-action-btn {
+            background: #0284c7;
+            box-shadow: 0 0 20px rgba(2, 132, 199, 0.65);
+        }
+
+        /* CUSTOM COMPONENT CARD FOR HDFC & PREMIER & BIOTECH */
+        .stage-rich-card {
+            background: #070a12;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 28px;
+            width: 100%;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .rich-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .rich-brand-logo {
+            max-height: 26px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .rich-card-title {
+            font-family: var(--font-head);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .rich-card-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 14px 18px;
+        }
+
+        .rich-stat-val {
+            font-family: var(--font-head);
+            font-size: 1.55rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .rich-stat-sub {
+            font-size: 11.5px;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        .rich-mockup-frame {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #030508;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rich-mockup-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .stage-rectangle:hover .rich-mockup-frame img {
+            transform: scale(1.05);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 991px) {
+            .portfolio-grid-2col {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .stage-rectangle {
+                padding: 28px 22px;
+                min-height: auto;
+            }
+        }
+
+        /* SCOPING FORM */
+        .scoping-section-dark {
+            background: #030508;
+            padding: 100px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .scoping-form-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #070b14;
+            border: 1px solid var(--border-dark);
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+        .form-control-wc {
+            width: 100%;
+            background: #04070d;
+            border: 1px solid var(--border-dark);
+            border-radius: 10px;
+            padding: 13px 18px;
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 14.5px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .form-control-wc:focus {
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 3px rgba(18, 107, 255, 0.2);
+        }
+        .btn-primary-wc {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 34px;
+            border-radius: 10px;
+            background: #126bff;
+            color: #ffffff;
+            font-family: var(--font-head);
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .btn-primary-wc:hover {
+            background: #0056e0;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         STICKY NAVIGATION BAR
+         ========================================================================== -->
+    <nav class="main-navbar-sticky" id="mainNavbar">
+        <div class="navbar-content-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                <img src="NEW LOGO- wc.png" alt="WebConvoy" style="height: 38px; width: auto;">
+            </a>
+
+            <!-- Central Navigation Links -->
+            <div class="nav-links-center">
+                <div class="nav-item-wrap">
+                    <a href="index.html#services-orbit-section" class="nav-link-item">Services</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="index.html#industries-showcase" class="nav-link-item">Industries</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="portfolio.html" class="nav-link-item active">Portfolio</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="ai.html" class="nav-link-item">AI Overview</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="#" class="nav-link-item">AI Services <i class="bi bi-chevron-down ms-1" style="font-size: 11px;"></i></a>
+                    <div class="dropdown-floating-panel">
+                        <a href="ai-consulting.html" class="mega-menu-item">
+                            <strong>AI Consulting</strong>
+                            <span>Strategic mapping, feasibility & enterprise roadmaps</span>
+                        </a>
+                        <a href="ai-development.html" class="mega-menu-item">
+                            <strong>AI Development</strong>
+                            <span>Custom LLMs, RAG & full-stack AI products</span>
+                        </a>
+                        <a href="ai-automation.html" class="mega-menu-item">
+                            <strong>AI Automation</strong>
+                            <span>Cognitive operations & document intelligence</span>
+                        </a>
+                        <a href="ai-agents.html" class="mega-menu-item">
+                            <strong>AI Agent Development</strong>
+                            <span>Autonomous multi-agent orchestration & tool use</span>
+                        </a>
+                        <a href="ai-compiler.html" class="mega-menu-item">
+                            <strong>AI Compiler Engineering</strong>
+                            <span>Inference optimization, TensorRT & CUDA kernels</span>
+                        </a>
+                        <a href="ai-integration.html" class="mega-menu-item">
+                            <strong>AI Integration</strong>
+                            <span>Connecting legacy ERP, CRM & APIs to AI</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right CTAs -->
+            <div class="nav-cta-right">
+                <a href="ai.html" class="btn-nav-ai" title="Dedicated Enterprise AI Solutions">
+                    <span class="ai-badge-text">AI</span>
+                    <span class="ai-sparkles-wrap">
+                        <svg class="ai-star-main" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                        <svg class="ai-star-sub" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                    </span>
+                </a>
+
+                <a href="#scoping-consultation" class="btn-appinv-contact">
+                    <i class="bi bi-calendar-event"></i> Book Discovery
+                </a>
+
+                <!-- Mobile Toggler -->
+                <button class="navbar-toggler d-lg-none" type="button" id="menuToggle" style="border: none; background: transparent;">
+                    <span class="custom-toggler-icon" style="color: #fff; font-size: 26px;">&#9776;</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ==========================================================================
+         01. HERO SECTION (REFERENCE VIDEO BACKGROUND & APPTUNIX LAYOUT)
+         ========================================================================== -->
+    <section class="app-hero-section" id="hero">
+        <div class="hero-video-bg-container">
+            <video class="hero-bg-video" autoplay loop muted playsinline>
+                <source src="portfolio_hero_video.mp4" type="video/mp4">
+                <source src="Fingers_approaching_glowing_clov…_20260915111845.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-gradient-overlay"></div>
+        </div>
+
+        <div class="container position-relative" style="z-index: 3;">
+            <div class="row align-items-center">
+                <div class="col-xl-7 col-lg-8 col-md-11 text-start">
+                    <!-- Eyebrow Pill -->
+                    <div class="mb-3">
+                        <span class="app-brand-pill">
+                            <span class="live-pulse-dot"></span> WebConvoy Production Portfolio
+                        </span>
+                    </div>
+
+                    <!-- Big Sparkle Headline -->
+                    <h1 class="app-hero-title text-start">
+                        <span class="sparkle-icon">✦✦</span>Proven Products. Real-World Scale.
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="app-hero-subtitle text-start">
+                        Explore our flagship digital engineering and enterprise AI deployments across fintech, healthcare, Apple ecosystem solutions, and global omnichannel commerce.
+                    </p>
+
+                    <!-- Rounded Pill CTA & Highlight -->
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                        <a href="#featured-portfolio" class="app-hero-cta-btn">
+                            Explore Featured Works <i class="bi bi-chevron-right ms-1"></i>
+                        </a>
+                        <div class="hero-live-badge">
+                            <span class="live-dot"></span>
+                            <span>50+ Production Deployments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DOCKED AWARDS HORIZONTAL MOVING SLIDER -->
+            <div class="hero-awards-horizontal-dock">
+                <div class="hero-awards-horizontal-wrapper">
+                    <div class="hero-awards-horizontal-track">
+                        <!-- Group 1 -->
+                        <div class="hero-award-h-card" title="Entrepreneur - AI & Digital Engineering">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur Award">
+                        </div>
+                        <div class="hero-award-h-card" title="International Business Award">
+                            <img src="award_intl_business.png" alt="International Business Award">
+                        </div>
+                        <div class="hero-award-h-card" title="MSME - Government of India Recognized">
+                            <img src="award_msme.png" alt="MSME Government of India">
+                        </div>
+                        <div class="hero-award-h-card" title="Entrepreneur - AI & Digital Engineering">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur Award">
+                        </div>
+                        <div class="hero-award-h-card" title="International Business Award">
+                            <img src="award_intl_business.png" alt="International Business Award">
+                        </div>
+                        <div class="hero-award-h-card" title="MSME - Government of India Recognized">
+                            <img src="award_msme.png" alt="MSME Government of India">
+                        </div>
+
+                        <!-- Group 2 for seamless infinite loop -->
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur Award">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_intl_business.png" alt="International Business Award">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_msme.png" alt="MSME Government of India">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur Award">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_intl_business.png" alt="International Business Award">
+                        </div>
+                        <div class="hero-award-h-card" aria-hidden="true">
+                            <img src="award_msme.png" alt="MSME Government of India">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         02. PORTFOLIO SHOWCASE: 2 IN ONE ROW COLOR-MATCHED STAGE RECTANGLES
+         ========================================================================== -->
+    <section class="portfolio-main-section" id="featured-portfolio">
+        <div class="container">
+            <div class="portfolio-header">
+                <span class="portfolio-tag"><i class="bi bi-grid-3x3-gap-fill"></i> PRODUCTION SHOWCASE</span>
+                <h2 class="portfolio-title">Engineered for industry leaders, <em>tailored for impact</em></h2>
+                <p class="portfolio-subtitle">
+                    Each engagement represents our commitment to mathematical precision, bulletproof architecture, and measurable ROI. Filter by vertical or explore the full client portfolio below.
+                </p>
+            </div>
+
+            <!-- Filter Pills Bar -->
+            <div class="portfolio-filter-bar">
+                <button class="port-filter-btn active" data-filter="all">All Projects</button>
+                <button class="port-filter-btn" data-filter="tech">Enterprise Tech</button>
+                <button class="port-filter-btn" data-filter="fintech">Fintech</button>
+                <button class="port-filter-btn" data-filter="health">Healthcare</button>
+                <button class="port-filter-btn" data-filter="commerce">E-Commerce</button>
+            </div>
+
+            <!-- 2-IN-A-ROW RECTANGLE GRID -->
+            <div class="portfolio-grid-2col" id="portfolioCardsGrid">
+
+                <!-- -----------------------------------------------------------
+                     1. CLOVER (GREEN STAGE RECTANGLE)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-clover" data-category="tech commerce all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">01 / BUSINESS TECH</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> Global POS Platform
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="card_clover_transparent.png" alt="Clover Business Technology" class="stage-card-asset-img">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Omnichannel POS</span>
+                            <span class="stage-sub-pill">Inventory Cloud</span>
+                            <span class="stage-sub-pill">Real-time Telemetry</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View Clover Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     2. SUPERIOR DIGITAL (RED STAGE RECTANGLE - APPLE SOLUTIONS)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-superior" data-category="tech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">02 / ENTERPRISE APPLE</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 150K+ Devices Active
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="card_superior_apple.png" alt="Superior Digital Apple Business Solutions" class="stage-card-asset-img">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Apple MDM Deploy</span>
+                            <span class="stage-sub-pill">Zero-Touch Provision</span>
+                            <span class="stage-sub-pill">Security Vault</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View Superior Digital Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     3. RIZON (SCARLET / CRIMSON THEME RECTANGLE - FINTECH)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-rizon" data-category="fintech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">03 / GLOBAL FINTECH</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 122+ Countries
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="card_rizon_transparent.png" alt="RIZON Dollar Banking Platform" class="stage-card-asset-img">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">USD Global Accounts</span>
+                            <span class="stage-sub-pill">Sub-Second FX</span>
+                            <span class="stage-sub-pill">Mastercard Rails</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View RIZON Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     4. AVIGNON CLINIC (WARM CHAMPAGNE / GOLD RECTANGLE)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-avignon" data-category="health all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">04 / AESTHETICS & WELLNESS</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> Luxury Healthcare
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="card_avignon_clinic.png" alt="Avignon Aesthetic Clinic" class="stage-card-asset-img">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Personalized Triage</span>
+                            <span class="stage-sub-pill">Telemedicine RAG</span>
+                            <span class="stage-sub-pill">EHR Compliance</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View Avignon Clinic Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     5. HDFC SKY (ELECTRIC SAPPHIRE NAVY RECTANGLE)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-hdfc" data-category="fintech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">05 / WEALTHTECH & BROKERAGE</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> ₹20 Flat Brokerage
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <div class="stage-rich-card">
+                            <div class="rich-card-header">
+                                <div class="d-flex align-items-center gap-2">
+                                    <img src="hdfcskylogo.png" alt="HDFC SKY" class="rich-brand-logo">
+                                    <span style="font-size: 11.5px; color: #94a3b8; font-family: var(--font-head); border-left: 1px solid rgba(255,255,255,0.15); padding-left: 8px;">by HDFC Securities</span>
+                                </div>
+                                <span class="badge bg-primary bg-opacity-25 text-info px-3 py-1 text-uppercase" style="letter-spacing: 1px; font-size: 10.5px; border: 1px solid rgba(56, 189, 248, 0.3);">
+                                    FinTech Core
+                                </span>
+                            </div>
+
+                            <h3 class="rich-card-title">
+                                High-frequency trading platform built for <span style="color: #38bdf8;">modern investors.</span>
+                            </h3>
+
+                            <div class="rich-card-stats">
+                                <div>
+                                    <div class="rich-stat-val" style="color: #38bdf8;">₹20</div>
+                                    <div class="rich-stat-sub">Equity delivery & intraday execution</div>
+                                </div>
+                                <div>
+                                    <div class="rich-stat-val" style="color: #38bdf8;">4,000+</div>
+                                    <div class="rich-stat-sub">Mutual funds with algorithmic discovery</div>
+                                </div>
+                            </div>
+
+                            <div class="rich-mockup-frame">
+                                <img src="hdfcskybg.png" alt="HDFC SKY Platform Interface">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">NIFTY 50 Streams</span>
+                            <span class="stage-sub-pill">Microsecond Routing</span>
+                            <span class="stage-sub-pill">Stock Screener</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View HDFC SKY Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     6. BBB LONDON (WARM ROSE CLAY / TERRACOTTA RECTANGLE)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-bbb" data-category="commerce all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">06 / BEAUTY & ECOMMERCE</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> Headless Shopify Plus
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="card_bbb_london.png" alt="BBB London Beauty & Commerce" class="stage-card-asset-img">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Global Multi-Currency</span>
+                            <span class="stage-sub-pill">Salon Booking Engine</span>
+                            <span class="stage-sub-pill">92% Conversion Lift</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View BBB London Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     7. PREMIER (OCEAN CYAN TEAL RECTANGLE - HEALTHCARE TECH)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-premier" data-category="health tech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">07 / HEALTHCARE INTELLIGENCE</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 4,400+ Hospitals
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <div class="stage-rich-card">
+                            <div class="rich-card-header">
+                                <img src="premier_logo.png" alt="PREMIER" class="rich-brand-logo">
+                                <span class="badge bg-info bg-opacity-25 text-info px-3 py-1 text-uppercase" style="letter-spacing: 1px; font-size: 10.5px; border: 1px solid rgba(6, 182, 212, 0.4);">
+                                    Clinical Ops
+                                </span>
+                            </div>
+
+                            <h3 class="rich-card-title">
+                                Smarter healthcare operations through technology <span style="color: #22d3ee;">and predictive data.</span>
+                            </h3>
+
+                            <div class="rich-card-stats">
+                                <div>
+                                    <div class="rich-stat-val" style="color: #22d3ee;">$2.4B</div>
+                                    <div class="rich-stat-sub">Annual supply chain spend tracked</div>
+                                </div>
+                                <div>
+                                    <div class="rich-stat-val" style="color: #22d3ee;">$186M</div>
+                                    <div class="rich-stat-sub">Verified enterprise clinical savings</div>
+                                </div>
+                            </div>
+
+                            <div class="rich-mockup-frame">
+                                <img src="premier_bg.jpg" alt="Premier Healthcare Platform">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Supply Chain AI</span>
+                            <span class="stage-sub-pill">Clinical Outcomes RAG</span>
+                            <span class="stage-sub-pill">HIPAA Isolation</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View Premier Healthcare Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     8. BIOTECH INNOVATIONS (NEON AZURE COBALT RECTANGLE)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-biotech" data-category="health tech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">08 / BIOTECH & DIAGNOSTICS</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> Real-Time Telemetry
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <div class="stage-rich-card">
+                            <div class="rich-card-header">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-diagram-3-fill text-info fs-5"></i>
+                                    <strong style="color: #ffffff; font-family: var(--font-head); font-size: 15px;">BIOTECH INNOVATIONS</strong>
+                                </div>
+                                <span class="badge bg-primary bg-opacity-25 text-info px-3 py-1 text-uppercase" style="letter-spacing: 1px; font-size: 10.5px; border: 1px solid rgba(56, 189, 248, 0.3);">
+                                    Genomic AI
+                                </span>
+                            </div>
+
+                            <h3 class="rich-card-title">
+                                Real-time patient cellular analysis & <span style="color: #38bdf8;">genomic data streams.</span>
+                            </h3>
+
+                            <div class="rich-card-stats">
+                                <div>
+                                    <div class="rich-stat-val" style="color: #38bdf8;">99.4%</div>
+                                    <div class="rich-stat-sub">Sequence mutation accuracy score</div>
+                                </div>
+                                <div>
+                                    <div class="rich-stat-val" style="color: #38bdf8;">&lt; 50ms</div>
+                                    <div class="rich-stat-sub">Edge neural inference velocity</div>
+                                </div>
+                            </div>
+
+                            <div class="rich-mockup-frame">
+                                <img src="product_skintelligent.jpg" alt="Biotech Patient Data Stream Interface">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Cellular Analysis</span>
+                            <span class="stage-sub-pill">Genomic Sequences</span>
+                            <span class="stage-sub-pill">Edge Telemetry</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View Biotech Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         03. CONSULTATION & SCOPING FORM (MATCHING ENTERPRISE PAGES)
+         ========================================================================== -->
+    <section class="scoping-section-dark" id="scoping-consultation">
+        <div class="container">
+            <div class="scoping-form-wrapper">
+                <div class="text-center mb-4">
+                    <span class="app-brand-pill mb-2">
+                        <span class="live-pulse-dot"></span> Next Steps
+                    </span>
+                    <h2 class="text-white fw-bold mb-2" style="font-family: var(--font-head); font-size: clamp(1.9rem, 3.5vw, 2.5rem);">
+                        Discuss Your Production Roadmap
+                    </h2>
+                    <p class="text-muted small mb-0" style="max-width: 580px; margin: 0 auto; line-height: 1.6;">
+                        Direct access to principal digital architects and AI engineers. Strict NDA protection. 100% IP ownership.
+                    </p>
+                </div>
+
+                <div id="scopingSuccessMsg" class="alert alert-success d-none mb-4" role="alert" style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #a7f3d0;">
+                    <i class="bi bi-check-circle-fill me-2 fs-5"></i>
+                    <strong>Consultation Request Received:</strong> A Principal Architect will review your requirements and reach out within 2 business hours.
+                </div>
+
+                <form id="portfolioScopingForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Your Full Name *</label>
+                            <input type="text" class="form-control-wc" placeholder="e.g. David Miller" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Corporate Email Address *</label>
+                            <input type="email" class="form-control-wc" placeholder="david@enterprise.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Company / Organization *</label>
+                            <input type="text" class="form-control-wc" placeholder="Global Logistics Corp." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Project Scope / Engagement</label>
+                            <select class="form-control-wc">
+                                <option value="immediate">14-Day Rapid Working PoC</option>
+                                <option value="enterprise">Full Enterprise Production Build</option>
+                                <option value="advisory">Architecture Audit & Technical Scoping</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="small fw-semibold text-light mb-1">Project Vision & Technical Context</label>
+                            <textarea class="form-control-wc" rows="4" placeholder="Describe the application, scale requirements, user base, or automation needs..." required></textarea>
+                        </div>
+                        
+                        <!-- HIGH-CONTRAST SECURITY MATH CAPTCHA -->
+                        <div class="col-md-6">
+                            <label class="small fw-semibold text-light mb-1">Security Verification</label>
+                            <div class="d-flex align-items-center gap-3">
+                                <div style="background: #0d1624; border: 1px solid #2d8cff; color: #38bdf8; font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; padding: 10px 18px; border-radius: 8px; letter-spacing: 2px;">
+                                    7 + 8 = ?
+                                </div>
+                                <input type="number" id="port_captchaInput" class="form-control-wc" placeholder="Answer" required style="width: 140px;">
+                            </div>
+                            <div id="portCaptchaError" class="text-danger small mt-1" style="display: none;">
+                                Incorrect calculation. Please enter 15.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button type="submit" class="btn-primary-wc w-100 justify-content-center py-3">
+                                Submit Project Inquiry <i class="bi bi-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         04. CORPORATE FOOTER
+         ========================================================================== -->
+    <footer class="appinv-footer" style="background: #04060a; border-top: 1px solid #202630; padding: 70px 0 30px 0; color: #94a3b8;">
+        <div class="container">
+            <div class="row gy-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img src="NEW LOGO- wc.png" alt="WebConvoy" style="height: 38px; width: auto;">
+                    </a>
+                    <p class="small text-muted mb-4" style="line-height: 1.7; max-width: 340px;">
+                        WebConvoy delivers mission-critical software engineering, enterprise AI architectures, Apple solutions, and resilient cloud systems for global industry leaders.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="https://linkedin.com" class="text-white-50 hover-white fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://twitter.com" class="text-white-50 hover-white fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://github.com" class="text-white-50 hover-white fs-5"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">AI Services</h5>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="ai-consulting.html" class="text-secondary text-decoration-none hover-white">AI Consulting</a></li>
+                        <li><a href="ai-development.html" class="text-secondary text-decoration-none hover-white">AI Development</a></li>
+                        <li><a href="ai-automation.html" class="text-secondary text-decoration-none hover-white">AI Automation</a></li>
+                        <li><a href="ai-agents.html" class="text-secondary text-decoration-none hover-white">AI Agents</a></li>
+                        <li><a href="ai-compiler.html" class="text-secondary text-decoration-none hover-white">AI Compilers</a></li>
+                        <li><a href="ai-integration.html" class="text-secondary text-decoration-none hover-white">AI Integration</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Company</h5>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="https://www.webconvoy.com/about-us" class="text-secondary text-decoration-none hover-white">About Us</a></li>
+                        <li><a href="portfolio.html" class="text-secondary text-decoration-none hover-white">Client Portfolio</a></li>
+                        <li><a href="https://www.webconvoy.com/career" class="text-secondary text-decoration-none hover-white">Careers</a></li>
+                        <li><a href="ai.html" class="text-secondary text-decoration-none hover-white">Enterprise AI Hub</a></li>
+                        <li><a href="https://www.webconvoy.com/contact-us" class="text-secondary text-decoration-none hover-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Global Headquarters</h5>
+                    <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> Level 14, Tech Boulevard, Sector 62, Noida, India</p>
+                    <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> enterprise@webconvoy.com</p>
+                    <p class="small text-muted mb-0"><i class="bi bi-telephone me-2 text-primary"></i> +91 99901 81414 / +1 (800) 412-9840</p>
+                </div>
+            </div>
+            <div class="border-top border-secondary border-opacity-25 pt-4 text-center small text-white-50">
+                © 2026 WebConvoy Technologies Inc. All rights reserved. Enterprise software & AI solutions engineered with deterministic precision.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Client-side Interactive Filter & Captcha Script -->
+    <script>
+        // Category Filter Logic
+        const filterBtns = document.querySelectorAll('.port-filter-btn');
+        const stageCards = document.querySelectorAll('.stage-rectangle');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                stageCards.forEach(card => {
+                    const categories = card.getAttribute('data-category') || '';
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Form Math Captcha Validation (7 + 8 = 15)
+        const scopingForm = document.getElementById('portfolioScopingForm');
+        const successAlert = document.getElementById('scopingSuccessMsg');
+        const captchaInput = document.getElementById('port_captchaInput');
+        const captchaError = document.getElementById('portCaptchaError');
+
+        if (scopingForm) {
+            scopingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (captchaInput && captchaError) {
+                    if (parseInt(captchaInput.value, 10) !== 15) {
+                        captchaError.style.display = 'block';
+                        return;
+                    } else {
+                        captchaError.style.display = 'none';
+                    }
+                }
+                if (successAlert) {
+                    successAlert.classList.remove('d-none');
+                    scopingForm.reset();
+                    successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
