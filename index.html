@@ -8495,73 +8495,138 @@
             margin-bottom: 24px;
         }
 
-        /* Let's Talk Button on Contact Section (Matching User Reference) */
+        /* Let's Talk Button on Contact Section - Sleek Design with Dynamic Hover Fill Gradient */
         .pipe-lets-talk-btn {
+            position: relative;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 14px;
-            background: #FFFFFF;
-            color: #1E293B !important;
+            padding: 14px 34px;
+            border-radius: 9999px;
             text-decoration: none !important;
-            padding: 18px 42px;
-            border-radius: 26px;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: clamp(26px, 2.8vw, 38px);
-            font-weight: 500;
-            letter-spacing: -0.025em;
-            line-height: 1.1;
-            box-shadow: 0 14px 38px rgba(0, 0, 0, 0.4), 0 3px 8px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.85);
-            margin-top: 6px;
-            margin-bottom: 28px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+            margin-top: 8px;
+            margin-bottom: 24px;
             overflow: hidden;
             cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .pipe-lets-talk-phone {
-            display: inline-block;
-            font-size: 1.15em;
-            line-height: 1;
-            transform-origin: center;
-            transition: transform 0.3s ease;
-            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+        /* The Fill Gradient Layer on Hover */
+        .pipe-lets-talk-bg-gradient {
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, #1ea7fd 0%, #0d6efd 50%, #004fe8 100%);
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1;
         }
 
+        /* Diagonal Light Shimmer Sweep */
+        .pipe-lets-talk-btn::after {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -80%;
+            width: 45%;
+            height: 220%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transform: rotate(25deg);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .pipe-lets-talk-content {
+            position: relative;
+            z-index: 3;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: #ffffff;
+            font-family: 'Montserrat', 'Inter', sans-serif;
+            font-size: 15.5px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+
+        .pipe-lets-talk-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #38bdf8;
+            font-size: 13.5px;
+            transition: all 0.35s ease;
+        }
+
+        .pipe-lets-talk-arrow {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        /* Hover States with Glowing Aura and Gradient Fill */
         .pipe-lets-talk-btn:hover {
-            transform: translateY(-4px) scale(1.02);
-            background: #FFFFFF;
-            color: #0F172A !important;
-            box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.35);
-            border-color: #38BDF8;
+            transform: translateY(-3px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 16px 38px rgba(13, 110, 253, 0.55), 0 0 30px rgba(30, 167, 253, 0.45);
         }
 
-        .pipe-lets-talk-btn:hover .pipe-lets-talk-phone {
-            transform: scale(1.15) rotate(-12deg);
-            animation: phoneHandsetWobble 0.6s ease-in-out infinite alternate;
+        .pipe-lets-talk-btn:hover .pipe-lets-talk-bg-gradient {
+            opacity: 1;
+            transform: scale(1);
         }
 
-        @keyframes phoneHandsetWobble {
-            0% {
-                transform: scale(1.15) rotate(-12deg);
-            }
-            100% {
-                transform: scale(1.15) rotate(12deg);
-            }
+        .pipe-lets-talk-btn:hover::after {
+            opacity: 1;
+            animation: ctaLightSweep 1.6s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pipe-lets-talk-btn:hover .pipe-lets-talk-icon-wrap {
+            background: #ffffff;
+            color: #0052cc;
+            transform: scale(1.08) rotate(-12deg);
+        }
+
+        .pipe-lets-talk-btn:hover .pipe-lets-talk-arrow {
+            transform: translateX(4px);
+            color: #ffffff;
         }
 
         .pipe-lets-talk-btn:active {
             transform: translateY(-1px) scale(0.99);
         }
 
+        @keyframes ctaLightSweep {
+            0% {
+                left: -80%;
+            }
+            40% {
+                left: 140%;
+            }
+            100% {
+                left: 140%;
+            }
+        }
+
         @media (max-width: 768px) {
             .pipe-lets-talk-btn {
-                padding: 14px 28px;
-                font-size: 25px;
-                border-radius: 20px;
+                padding: 12px 28px;
                 margin-bottom: 20px;
+            }
+            .pipe-lets-talk-content {
+                font-size: 14.5px;
             }
         }
 
@@ -11907,8 +11972,14 @@
                     </p>
 
                     <a href="tel:+911203112916" class="pipe-lets-talk-btn" id="pipeLetsTalkBtn" title="Call WebConvoy at +91 120 311 2916">
-                        <span class="pipe-lets-talk-text">Let's Talk</span>
-                        <span class="pipe-lets-talk-phone" aria-hidden="true">📞</span>
+                        <span class="pipe-lets-talk-bg-gradient"></span>
+                        <span class="pipe-lets-talk-content">
+                            <span class="pipe-lets-talk-icon-wrap">
+                                <i class="bi bi-telephone-fill"></i>
+                            </span>
+                            <span class="pipe-lets-talk-text">Let’s Talk</span>
+                            <i class="bi bi-arrow-right pipe-lets-talk-arrow"></i>
+                        </span>
                     </a>
                 </div>
 
