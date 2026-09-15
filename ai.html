@@ -250,6 +250,231 @@
             transform: translateX(-50%) translateY(8px);
         }
 
+        .dropdown-floating-panel::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+        }
+
+        /* Services Horizontal Mega-Dropdown */
+        .dropdown-services-panel {
+            width: 860px !important;
+            max-width: 92vw;
+            display: flex !important;
+            flex-direction: column;
+            gap: 14px;
+            padding: 24px 28px 20px !important;
+            border-radius: 22px !important;
+            background: rgba(8, 14, 26, 0.97) !important;
+            backdrop-filter: blur(30px) !important;
+            -webkit-backdrop-filter: blur(30px) !important;
+            border: 1px solid rgba(0, 102, 255, 0.3) !important;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 102, 255, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+            left: 50% !important;
+            transform: translateX(-40%) translateY(12px) !important;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .nav-item-wrap:hover .dropdown-services-panel {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateX(-40%) translateY(0) !important;
+        }
+
+        .services-dropdown-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .services-title-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .services-code-tag {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px 10px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.25) 0%, rgba(2, 132, 199, 0.35) 100%);
+            border: 1px solid rgba(0, 140, 255, 0.4);
+            color: #38bdf8;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            box-shadow: 0 0 12px rgba(0, 102, 255, 0.3);
+        }
+
+        .services-title-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 0.2px;
+        }
+
+        .services-all-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #38bdf8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12.5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .services-all-link:hover {
+            color: #ffffff;
+            background: rgba(0, 102, 255, 0.2);
+            transform: translateX(2px);
+        }
+
+        /* 4 Horizontal Columns Grid */
+        .services-horizontal-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-flow: column;
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px 14px;
+        }
+
+        .service-h-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #f1f5f9;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-h-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #0066ff, #38bdf8);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .service-h-card:hover {
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.18) 0%, rgba(2, 132, 199, 0.09) 100%);
+            border-color: rgba(0, 102, 255, 0.45);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 102, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .service-h-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-h-chevron {
+            font-size: 19px;
+            font-weight: 700;
+            line-height: 1;
+            color: #0087d2;
+            transition: transform 0.25s ease, color 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .service-h-card:hover .service-h-chevron {
+            transform: translateX(3px);
+            color: #38bdf8;
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+        }
+
+        .service-h-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.35;
+            color: #f1f5f9;
+            transition: color 0.2s ease;
+        }
+
+        .service-h-card:hover .service-h-name {
+            color: #ffffff;
+        }
+
+        .services-dropdown-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            background: linear-gradient(90deg, rgba(0, 102, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+            border: 1px solid rgba(0, 102, 255, 0.15);
+            border-radius: 12px;
+            margin-top: 4px;
+        }
+
+        .services-footer-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .ai-mini-sparkle {
+            color: #38bdf8;
+        }
+
+        .services-footer-ai-link {
+            color: #38bdf8;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .services-footer-ai-link:hover {
+            color: #ffffff;
+            transform: translateX(2px);
+        }
+
+        @media (max-width: 1200px) {
+            .dropdown-services-panel {
+                width: 720px !important;
+                transform: translateX(-50%) translateY(12px) !important;
+            }
+            .nav-item-wrap:hover .dropdown-services-panel {
+                transform: translateX(-50%) translateY(0) !important;
+            }
+            .services-horizontal-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-flow: row;
+                grid-template-rows: auto;
+            }
+        }
+
         .mega-menu-item {
             display: block;
             padding: 10px 14px;
@@ -2249,7 +2474,62 @@
             <!-- Central Navigation Links -->
             <div class="nav-links-center">
                 <div class="nav-item-wrap">
-                    <a href="index.html#services-orbit-section" class="nav-link-item">Services</a>
+                    <a href="index.html#services-orbit-section" class="nav-link-item">Services <i class="bi bi-chevron-down nav-caret"></i></a>
+                    <div class="dropdown-floating-panel dropdown-services-panel">
+                        <div class="services-dropdown-header">
+                            <div class="services-title-badge">
+                                <span class="services-code-tag">&lt;/&gt;</span>
+                                <h4 class="services-title-text">Services</h4>
+                            </div>
+                            <a href="index.html#services-orbit-section" class="services-all-link">
+                                <span>Explore Interactive Showcase</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="services-horizontal-grid">
+                            <a href="https://www.webconvoy.com/Ios-app-development" class="service-h-card">
+                                <span class="service-h-chevron">&rsaquo;</span>
+                                <span class="service-h-name">iOS App Development</span>
+                            </a>
+                            <a href="https://www.webconvoy.com/Android-app-development" class="service-h-card">
+                                <span class="service-h-chevron">&rsaquo;</span>
+                                <span class="service-h-name">Android App Development</span>
+                            </a>
+                            <a href="https://www.webconvoy.com/software-development-service" class="service-h-card">
+                                <span class="service-h-chevron">&rsaquo;</span>
+                                <span class="service-h-name">Software Development</span>
+                            </a>
+                            <a href="https://www.webconvoy.com/web-app-development" class="service-h-card">
+                                <span class="service-h-chevron">&rsaquo;</span>
+                                <span class="service-h-name">Web App Development</span>
+                            </a>
+                            <a href="https://www.webconvoy.com/web-development" class="service-h-card">
+                                <span class="service-h-chevron">&rsaquo;</span>
+                                <span class="service-h-name">Web Development</span>
+                            </a>
+                            <a href="https://www.webconvoy.com/blockchain-development" class="service-h-card">
+                                <span class="service-h-chevron">&rsaquo;</span>
+                                <span class="service-h-name">Blockchain Development</span>
+                            </a>
+                            <a href="https://www.webconvoy.com/hire-flutter-developers" class="service-h-card">
+                                <span class="service-h-chevron">&rsaquo;</span>
+                                <span class="service-h-name">Hire Flutter Developers</span>
+                            </a>
+                            <a href="https://www.webconvoy.com/Mobile-Application-Developement" class="service-h-card">
+                                <span class="service-h-chevron">&rsaquo;</span>
+                                <span class="service-h-name">Mobile Application Development</span>
+                            </a>
+                        </div>
+                        <div class="services-dropdown-footer">
+                            <div class="services-footer-left">
+                                <span class="ai-mini-sparkle">✦</span>
+                                <span>Looking for AI Agents & Custom LLM Engineering?</span>
+                            </div>
+                            <a href="ai.html" class="services-footer-ai-link">
+                                Explore AI Services <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-item-wrap">
                     <a href="index.html#industries-showcase" class="nav-link-item">Industries</a>
