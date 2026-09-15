@@ -259,20 +259,20 @@
             height: 20px;
         }
 
-        /* Services Horizontal Mega-Dropdown */
+        /* Services Mega-Dropdown (Matching Screenshot 1) */
         .dropdown-services-panel {
-            width: 860px !important;
-            max-width: 92vw;
+            width: 980px !important;
+            max-width: 95vw;
             display: flex !important;
             flex-direction: column;
-            gap: 14px;
-            padding: 24px 28px 20px !important;
-            border-radius: 22px !important;
-            background: rgba(8, 14, 26, 0.97) !important;
+            gap: 16px;
+            padding: 24px 28px 18px !important;
+            border-radius: 20px !important;
+            background: rgba(8, 14, 26, 0.98) !important;
             backdrop-filter: blur(30px) !important;
             -webkit-backdrop-filter: blur(30px) !important;
             border: 1px solid rgba(0, 102, 255, 0.3) !important;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 102, 255, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85), 0 0 35px rgba(0, 102, 255, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
             left: 50% !important;
             transform: translateX(-40%) translateY(12px) !important;
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -284,194 +284,141 @@
             transform: translateX(-40%) translateY(0) !important;
         }
 
-        .services-dropdown-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .services-title-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .services-code-tag {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4px 10px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.25) 0%, rgba(2, 132, 199, 0.35) 100%);
-            border: 1px solid rgba(0, 140, 255, 0.4);
-            color: #38bdf8;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            box-shadow: 0 0 12px rgba(0, 102, 255, 0.3);
-        }
-
-        .services-title-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
-            margin: 0;
-            letter-spacing: 0.2px;
-        }
-
-        .services-all-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #38bdf8;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12.5px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        .services-all-link:hover {
-            color: #ffffff;
-            background: rgba(0, 102, 255, 0.2);
-            transform: translateX(2px);
-        }
-
-        /* 4 Horizontal Columns Grid */
-        .services-horizontal-grid {
+        .services-mega-columns {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-flow: column;
-            grid-template-rows: repeat(2, 1fr);
-            gap: 10px 14px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
         }
 
-        .service-h-card {
+        .services-mega-col {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 11px 14px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: #f1f5f9;
-            background: rgba(255, 255, 255, 0.025);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
+            flex-direction: column;
         }
 
-        .service-h-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(180deg, #0066ff, #38bdf8);
-            opacity: 0;
-            transition: opacity 0.25s ease;
-        }
-
-        .service-h-card:hover {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.18) 0%, rgba(2, 132, 199, 0.09) 100%);
-            border-color: rgba(0, 102, 255, 0.45);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 102, 255, 0.2);
-            color: #ffffff;
-        }
-
-        .service-h-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-h-chevron {
-            font-size: 19px;
-            font-weight: 700;
-            line-height: 1;
-            color: #0087d2;
-            transition: transform 0.25s ease, color 0.25s ease;
-            flex-shrink: 0;
-        }
-
-        .service-h-card:hover .service-h-chevron {
-            transform: translateX(3px);
-            color: #38bdf8;
-            text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
-        }
-
-        .service-h-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            line-height: 1.35;
-            color: #f1f5f9;
-            transition: color 0.2s ease;
-        }
-
-        .service-h-card:hover .service-h-name {
-            color: #ffffff;
-        }
-
-        .services-dropdown-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 16px;
-            background: linear-gradient(90deg, rgba(0, 102, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-            border: 1px solid rgba(0, 102, 255, 0.15);
-            border-radius: 12px;
-            margin-top: 4px;
-        }
-
-        .services-footer-left {
+        .services-col-title {
             display: flex;
             align-items: center;
             gap: 8px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 12px;
             font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #94a3b8;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            text-transform: uppercase;
         }
 
-        .ai-mini-sparkle {
-            color: #38bdf8;
-        }
-
-        .services-footer-ai-link {
-            color: #38bdf8;
-            font-size: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
+        .services-col-icon {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            justify-content: center;
+            color: #38bdf8;
+            font-size: 13px;
+        }
+
+        .services-col-links {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .services-item-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            font-weight: 500;
             transition: all 0.2s ease;
         }
 
-        .services-footer-ai-link:hover {
-            color: #ffffff;
+        .services-item-link:hover {
+            background: rgba(0, 102, 255, 0.14);
+            color: #38bdf8;
+            padding-left: 14px;
+        }
+
+        .services-item-link.highlight-staffing {
+            background: rgba(0, 102, 255, 0.08);
+            border: 1px solid rgba(0, 102, 255, 0.25);
+            font-weight: 600;
+        }
+
+        .services-item-link.highlight-staffing:hover {
+            background: rgba(0, 102, 255, 0.22);
+            border-color: #38bdf8;
+        }
+
+        .item-badge-plus {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.35);
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .services-item-link:hover .item-badge-plus {
+            color: #38bdf8;
             transform: translateX(2px);
+        }
+
+        .services-bottom-cta-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 12px 18px;
+            background: linear-gradient(135deg, rgba(254, 243, 199, 0.08) 0%, rgba(254, 249, 195, 0.03) 100%);
+            border: 1px solid rgba(253, 230, 138, 0.2);
+            border-radius: 12px;
+            margin-top: 6px;
+        }
+
+        .services-bottom-cta-text {
+            color: #f1f5f9;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+        }
+
+        .services-bottom-cta-btn {
+            background: #1a62ff;
+            color: #ffffff !important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 9px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(26, 98, 255, 0.4);
+            flex-shrink: 0;
+        }
+
+        .services-bottom-cta-btn:hover {
+            background: #0052e0;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(26, 98, 255, 0.6);
+            color: #ffffff !important;
         }
 
         @media (max-width: 1200px) {
             .dropdown-services-panel {
-                width: 720px !important;
+                width: 820px !important;
                 transform: translateX(-50%) translateY(12px) !important;
             }
             .nav-item-wrap:hover .dropdown-services-panel {
                 transform: translateX(-50%) translateY(0) !important;
             }
-            .services-horizontal-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-auto-flow: row;
-                grid-template-rows: auto;
+            .services-mega-columns {
+                gap: 16px;
             }
         }
 
@@ -2476,57 +2423,125 @@
                 <div class="nav-item-wrap">
                     <a href="index.html#services-orbit-section" class="nav-link-item">Services <i class="bi bi-chevron-down nav-caret"></i></a>
                     <div class="dropdown-floating-panel dropdown-services-panel">
-                        <div class="services-dropdown-header">
-                            <div class="services-title-badge">
-                                <span class="services-code-tag">&lt;/&gt;</span>
-                                <h4 class="services-title-text">Services</h4>
+                        <!-- Top 3 Categories Columns Matching Screenshot 1 -->
+                        <div class="services-mega-columns">
+                            <!-- Column 1: Development -->
+                            <div class="services-mega-col">
+                                <div class="services-col-title">
+                                    <span class="services-col-icon">&lt;/&gt;</span>
+                                    <span>DEVELOPMENT</span>
+                                </div>
+                                <div class="services-col-links">
+                                    <a href="https://www.webconvoy.com/product-design" class="services-item-link">
+                                        <span>Product Design</span>
+                                        <span class="item-badge-plus">+</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/Mobile-Application-Developement" class="services-item-link">
+                                        <span>Application Development</span>
+                                        <span class="item-badge-plus">+</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/software-development-service" class="services-item-link">
+                                        <span>Software Development</span>
+                                        <span class="item-badge-plus">+</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/qa-testing" class="services-item-link">
+                                        <span>QA and Testing</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/devops" class="services-item-link">
+                                        <span>DevOps</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/product-management" class="services-item-link">
+                                        <span>Product Management</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                </div>
                             </div>
-                            <a href="index.html#services-orbit-section" class="services-all-link">
-                                <span>Explore Interactive Showcase</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="services-horizontal-grid">
-                            <a href="https://www.webconvoy.com/Ios-app-development" class="service-h-card">
-                                <span class="service-h-chevron">&rsaquo;</span>
-                                <span class="service-h-name">iOS App Development</span>
-                            </a>
-                            <a href="https://www.webconvoy.com/Android-app-development" class="service-h-card">
-                                <span class="service-h-chevron">&rsaquo;</span>
-                                <span class="service-h-name">Android App Development</span>
-                            </a>
-                            <a href="https://www.webconvoy.com/software-development-service" class="service-h-card">
-                                <span class="service-h-chevron">&rsaquo;</span>
-                                <span class="service-h-name">Software Development</span>
-                            </a>
-                            <a href="https://www.webconvoy.com/web-app-development" class="service-h-card">
-                                <span class="service-h-chevron">&rsaquo;</span>
-                                <span class="service-h-name">Web App Development</span>
-                            </a>
-                            <a href="https://www.webconvoy.com/web-development" class="service-h-card">
-                                <span class="service-h-chevron">&rsaquo;</span>
-                                <span class="service-h-name">Web Development</span>
-                            </a>
-                            <a href="https://www.webconvoy.com/blockchain-development" class="service-h-card">
-                                <span class="service-h-chevron">&rsaquo;</span>
-                                <span class="service-h-name">Blockchain Development</span>
-                            </a>
-                            <a href="https://www.webconvoy.com/hire-flutter-developers" class="service-h-card">
-                                <span class="service-h-chevron">&rsaquo;</span>
-                                <span class="service-h-name">Hire Flutter Developers</span>
-                            </a>
-                            <a href="https://www.webconvoy.com/Mobile-Application-Developement" class="service-h-card">
-                                <span class="service-h-chevron">&rsaquo;</span>
-                                <span class="service-h-name">Mobile Application Development</span>
-                            </a>
-                        </div>
-                        <div class="services-dropdown-footer">
-                            <div class="services-footer-left">
-                                <span class="ai-mini-sparkle">✦</span>
-                                <span>Looking for AI Agents & Custom LLM Engineering?</span>
+
+                            <!-- Column 2: Digital Transformation -->
+                            <div class="services-mega-col">
+                                <div class="services-col-title">
+                                    <span class="services-col-icon"><i class="bi bi-gear-wide-connected"></i></span>
+                                    <span>DIGITAL TRANSFORMATION</span>
+                                </div>
+                                <div class="services-col-links">
+                                    <a href="https://www.webconvoy.com/blockchain-development" class="services-item-link">
+                                        <span>Blockchain</span>
+                                        <span class="item-badge-plus">+</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/cloud-computing" class="services-item-link">
+                                        <span>Cloud</span>
+                                        <span class="item-badge-plus">+</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/cybersecurity" class="services-item-link">
+                                        <span>Cybersecurity</span>
+                                        <span class="item-badge-plus">+</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/iot-development" class="services-item-link">
+                                        <span>IoT</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/ar-vr-development" class="services-item-link">
+                                        <span>AR/VR</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/legacy-modernization" class="services-item-link">
+                                        <span>Legacy Application Modernization</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                </div>
                             </div>
-                            <a href="ai.html" class="services-footer-ai-link">
-                                Explore AI Services <i class="bi bi-arrow-right"></i>
+
+                            <!-- Column 3: Consulting Services & Staffing -->
+                            <div class="services-mega-col">
+                                <div class="services-col-title">
+                                    <span class="services-col-icon"><i class="bi bi-display"></i></span>
+                                    <span>CONSULTING SERVICES</span>
+                                </div>
+                                <div class="services-col-links">
+                                    <a href="https://www.webconvoy.com/it-consulting" class="services-item-link">
+                                        <span>IT Consulting</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/software-consulting" class="services-item-link">
+                                        <span>Software Consulting</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/fintech-consulting" class="services-item-link">
+                                        <span>FinTech Consulting</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/get-developer" class="services-item-link highlight-staffing">
+                                        <span>Staffing &amp; Augmentation</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                </div>
+
+                                <div class="services-col-title mt-3">
+                                    <span class="services-col-icon"><i class="bi bi-database"></i></span>
+                                    <span>DATA SERVICES</span>
+                                </div>
+                                <div class="services-col-links">
+                                    <a href="https://www.webconvoy.com/big-data" class="services-item-link">
+                                        <span>Big Data</span>
+                                        <span class="item-badge-plus">›</span>
+                                    </a>
+                                    <a href="https://www.webconvoy.com/data-analytics" class="services-item-link">
+                                        <span>Data Analytics</span>
+                                        <span class="item-badge-plus">+</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Banner Matching Screenshot 1 -->
+                        <div class="services-bottom-cta-banner">
+                            <div class="services-bottom-cta-text">
+                                Didn't find what you're looking for? Let us know your needs, and we'll tailor a solution just for you.
+                            </div>
+                            <a href="https://calendly.com/gaurav_webconvoy/gaurav-singh" target="_blank" rel="noopener" class="services-bottom-cta-btn">
+                                Schedule Free Consultations
                             </a>
                         </div>
                     </div>
@@ -2591,8 +2606,12 @@
                 </a>
 
                 <!-- Mobile Toggler -->
-                <button class="navbar-toggler d-lg-none" type="button" id="menuToggle" style="border: none; background: transparent;">
-                    <span class="custom-toggler-icon" style="color: #fff; font-size: 26px;">&#9776;</span>
+                <button class="navbar-toggler d-lg-none" type="button" id="menuToggle" style="border: none; background: transparent; padding: 6px; display: inline-flex; align-items: center; justify-content: center;" aria-label="Toggle navigation">
+                    <svg class="custom-toggler-icon" width="30" height="24" viewBox="0 0 30 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                        <line x1="1" y1="3" x2="29" y2="3" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="1" y1="12" x2="29" y2="12" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="1" y1="21" x2="29" y2="21" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
                 </button>
             </div>
         </div>

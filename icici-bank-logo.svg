@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" fill="none">
+  <!-- ICICI Bank Emblem -->
+  <g id="icici-emblem">
+    <!-- Outer orange curve / swoop -->
+    <path d="M52 14 C74 14 92 31 92 53 C92 75 74 92 52 92 C32 92 16 78 12 59 C10 49 14 42 22 42 C29 42 32 48 34 54 C36 65 43 73 53 73 C65 73 73 63 73 53 C73 42 64 33 52 33 C45 33 39 37 36 42 L25 35 C31 22 41 14 52 14 Z" fill="#F37023"/>
+    <!-- Inner maroon/orange sphere dot -->
+    <circle cx="52" cy="53" r="11" fill="#B02A30"/>
+  </g>
+  <!-- ICICI Bank Wordmark -->
+  <text x="110" y="66" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="44" font-weight="900" fill="#B02A30" letter-spacing="1">ICICI</text>
+  <text x="245" y="66" font-family="'Montserrat', 'Arial', sans-serif" font-size="44" font-weight="700" fill="#F37023" letter-spacing="0.5">Bank</text>
+</svg>
