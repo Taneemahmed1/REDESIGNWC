@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | WebConvoy - Engineering the Future of Enterprise IT & AI</title>
+    <meta name="description" content="WebConvoy is a global enterprise software and AI engineering collective. Discover our leadership, team structure, engineering culture, and technical capabilities.">
+    <link rel="canonical" href="https://www.webconvoy.com/about-us" />
+    <link rel="icon" href="https://webconvoy.com/public/websitenew/image/faviconion-web.png" type="image/x-icon">
+
+    <!-- Google Fonts & Bootstrap Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* -------------------------------------------------------------
+           DESIGN TOKENS & SYSTEM
+           ------------------------------------------------------------- */
+        :root {
+            /* Dark Theme Tokens */
+            --bg-dark-1: #050608;
+            --bg-dark-2: #080b12;
+            --bg-dark-card: #0d121c;
+            --border-dark: rgba(255, 255, 255, 0.08);
+            --border-dark-hover: rgba(56, 189, 248, 0.35);
+            --text-dark-primary: #ffffff;
+            --text-dark-secondary: #94a3b8;
+            --text-dark-muted: #64748b;
+
+            /* Light Theme Tokens */
+            --bg-light-1: #ffffff;
+            --bg-light-2: #f8fafc;
+            --bg-light-card: #ffffff;
+            --border-light: #e2e8f0;
+            --border-light-hover: #0284c7;
+            --text-light-primary: #090d16;
+            --text-light-secondary: #475569;
+            --text-light-muted: #64748b;
+
+            /* Universal Accents */
+            --primary-blue: #0d6efd;
+            --electric-blue: #2d8cff;
+            --cyan-accent: #0284c7;
+            --font-head: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark-1);
+            color: var(--text-dark-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* -------------------------------------------------------------
+           NAVBAR (PRESERVED WEBCONVOY ENTERPRISE HEADER)
+           ------------------------------------------------------------- */
+        .main-navbar-sticky {
+            background: rgba(5, 6, 8, 0.92) !important;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border-dark);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 14px 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-content-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-links-center {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-link-item {
+            color: #cbd5e1 !important;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+
+        .nav-link-item:hover, .nav-link-item.active {
+            color: #ffffff !important;
+        }
+
+        .nav-link-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--electric-blue);
+            border-radius: 2px;
+            box-shadow: 0 0 8px var(--electric-blue);
+        }
+
+        .nav-cta-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-nav-ai {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 18px;
+            height: 38px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #1ea7fd 0%, #0d6efd 50%, #004fe8 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 16px rgba(13, 110, 253, 0.45);
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav-ai:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 24px rgba(13, 110, 253, 0.8);
+        }
+
+        .btn-appinv-contact {
+            padding: 8px 20px;
+            height: 38px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff !important;
+            font-family: var(--font-head);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-appinv-contact:hover {
+            background: #ffffff;
+            color: #000000 !important;
+            transform: translateY(-1px);
+        }
+
+        .nav-item-wrap { position: relative; }
+        .dropdown-floating-panel {
+            position: absolute;
+            top: calc(100% + 14px);
+            left: -120px;
+            width: 320px;
+            background: rgba(10, 14, 23, 0.96);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-dark);
+            border-radius: 12px;
+            padding: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: all 0.25s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+
+        .nav-item-wrap:hover .dropdown-floating-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mega-menu-item {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .mega-menu-item strong {
+            display: block;
+            color: #ffffff;
+            font-size: 13.5px;
+            font-weight: 600;
+        }
+
+        .mega-menu-item span {
+            display: block;
+            color: #94a3b8;
+            font-size: 11.5px;
+            margin-top: 2px;
+        }
+
+        .mega-menu-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* -------------------------------------------------------------
+           SHARED REUSABLE COMPONENTS
+           ------------------------------------------------------------- */
+        .section-eyebrow-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .section-eyebrow-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #0284c7;
+            margin-bottom: 12px;
+        }
+
+        .section-title-dark {
+            color: #ffffff;
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            line-height: 1.18;
+            margin-bottom: 14px;
+        }
+
+        .section-title-light {
+            color: var(--text-light-primary);
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            line-height: 1.18;
+            margin-bottom: 14px;
+        }
+
+        .section-subtitle-dark {
+            color: var(--text-dark-secondary);
+            font-size: 1.05rem;
+            line-height: 1.65;
+            max-width: 680px;
+        }
+
+        .section-subtitle-light {
+            color: var(--text-light-secondary);
+            font-size: 1.05rem;
+            line-height: 1.65;
+            max-width: 680px;
+        }
+
+        .btn-pill-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #000000 !important;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-pill-dark:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-pill-dark-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-dark);
+            color: #ffffff !important;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-pill-dark-outline:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-pill-light {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 999px;
+            background: #090d16;
+            color: #ffffff !important;
+            font-family: var(--font-head);
+            font-size: 13.5px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-pill-light:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+        }
+
+        /* -------------------------------------------------------------
+           00. HERO SECTION (DARK // SLEEK & MINIMALIST)
+           ------------------------------------------------------------- */
+        .section-hero {
+            background: #050608;
+            padding: 120px 0 80px 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .hero-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .hero-title {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 18px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+            color: #94a3b8;
+            line-height: 1.6;
+            max-width: 740px;
+            margin-bottom: 32px;
+        }
+
+        .hero-stats-dock {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-dark);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .hero-stat-box .num {
+            font-family: var(--font-head);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .hero-stat-box .num span {
+            color: #38bdf8;
+        }
+
+        .hero-stat-box .label {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* -------------------------------------------------------------
+           01. SECTION: WHO WE ARE (LIGHT)
+           ------------------------------------------------------------- */
+        .section-who-we-are {
+            background: #ffffff;
+            color: var(--text-light-primary);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        .manifesto-box {
+            padding: 36px;
+            background: #f8fafc;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .manifesto-heading {
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .manifesto-body {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .pillar-card-light {
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid var(--border-light);
+            background: #ffffff;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .pillar-card-light:hover {
+            border-color: #0284c7;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .pillar-num {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: #0284c7;
+            margin-bottom: 10px;
+        }
+
+        .pillar-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .pillar-desc {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* -------------------------------------------------------------
+           02. SECTION: LEADERSHIP (DARK // VISION. EXPERIENCE. EXECUTION)
+           ------------------------------------------------------------- */
+        .section-leadership {
+            background: #080b12;
+            color: #ffffff;
+            padding: 110px 0;
+            border-bottom: 1px solid var(--border-dark);
+            position: relative;
+        }
+
+        .leader-card-frame {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: #0d121c;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(18, 107, 255, 0.15);
+        }
+
+        .leader-card-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .leader-card-frame:hover img {
+            transform: scale(1.02);
+        }
+
+        .leader-info-badge {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px;
+            background: linear-gradient(180deg, transparent 0%, rgba(5, 7, 12, 0.85) 40%, rgba(5, 7, 12, 0.98) 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .leader-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .leader-role {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: #38bdf8;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .leadership-quote-box {
+            padding: 30px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-dark);
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .quote-text {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #f1f5f9;
+            line-height: 1.65;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .quote-author {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .exec-pillar-item {
+            display: flex;
+            gap: 16px;
+            padding: 16px 0;
+            border-top: 1px solid var(--border-dark);
+        }
+
+        .exec-pillar-tag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: #38bdf8;
+            min-width: 90px;
+        }
+
+        .exec-pillar-content strong {
+            display: block;
+            color: #ffffff;
+            font-size: 14.5px;
+            margin-bottom: 4px;
+        }
+
+        .exec-pillar-content p {
+            color: #94a3b8;
+            font-size: 13.5px;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* -------------------------------------------------------------
+           03. SECTION: OUR TEAM & STRUCTURE (LIGHT)
+           ------------------------------------------------------------- */
+        .section-team {
+            background: #f8fafc;
+            color: var(--text-light-primary);
+            padding: 110px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .team-photo-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            height: 100%;
+        }
+
+        .team-photo-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .team-photo-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .team-photo-content {
+            padding: 24px;
+            background: #ffffff;
+        }
+
+        .team-badge-tag {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 700;
+            color: #0284c7;
+            background: #e0f2fe;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .team-photo-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .team-photo-desc {
+            font-size: 13.5px;
+            color: #64748b;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* Functional Structure Guild Grid */
+        .guild-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 22px;
+            transition: all 0.25s ease;
+            height: 100%;
+        }
+
+        .guild-card:hover {
+            border-color: #0284c7;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .guild-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #f0f9ff;
+            color: #0284c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+
+        .guild-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .guild-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* -------------------------------------------------------------
+           04. SECTION: TECHNICAL CAPABILITIES (DARK)
+           ------------------------------------------------------------- */
+        .section-capabilities {
+            background: #06080d;
+            color: #ffffff;
+            padding: 110px 0;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .cap-card {
+            padding: 28px;
+            border-radius: 14px;
+            background: #0d121c;
+            border: 1px solid var(--border-dark);
+            height: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cap-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .cap-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .cap-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-dark);
+            color: #38bdf8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .cap-card:hover .cap-icon {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: #38bdf8;
+            color: #ffffff;
+        }
+
+        .cap-mono-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: #64748b;
+        }
+
+        .cap-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .cap-desc {
+            font-size: 13.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .cap-stack {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: #38bdf8;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* -------------------------------------------------------------
+           05. SECTION: GLOBAL IMPACT & AWARDS (LIGHT)
+           ------------------------------------------------------------- */
+        .section-impact-awards {
+            background: #ffffff;
+            color: var(--text-light-primary);
+            padding: 110px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .award-card-clean {
+            padding: 28px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .award-card-clean:hover {
+            border-color: #0284c7;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .award-img-box {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .award-img-box img {
+            max-height: 80px;
+            max-width: 140px;
+            object-fit: contain;
+        }
+
+        .award-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .award-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .global-hubs-grid {
+            margin-top: 45px;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+        }
+
+        .hub-box {
+            padding: 12px 16px;
+        }
+
+        .hub-flag {
+            font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .hub-role {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            color: #64748b;
+        }
+
+        /* -------------------------------------------------------------
+           06. SECTION: CALL TO ACTION & FOOTER (DARK)
+           ------------------------------------------------------------- */
+        .section-cta {
+            background: #050608;
+            color: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .cta-box-minimal {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer-enterprise {
+            background: #030406;
+            padding: 70px 0 35px 0;
+            color: #94a3b8;
+            font-size: 13.5px;
+        }
+
+        .footer-enterprise h6 {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-enterprise a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-enterprise a:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 991px) {
+            .nav-links-center { display: none; }
+            .hero-stats-dock { grid-template-columns: repeat(2, 1fr); }
+            .leader-card-frame { margin-bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- =============================================================
+         NAVBAR (PRESERVED WEBCONVOY HEADER)
+         ============================================================= -->
+    <nav class="main-navbar-sticky">
+        <div class="navbar-content-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="navbar-brand">
+                <img src="NEW LOGO- wc.png" alt="WebConvoy Logo" style="height: 38px; width: auto; object-fit: contain;">
+            </a>
+
+            <!-- Central Navigation Links -->
+            <div class="nav-links-center">
+                <div class="nav-item-wrap">
+                    <a href="index.html#services-orbit-section" class="nav-link-item">Services</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="index.html#industries-showcase" class="nav-link-item">Industries</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="portfolio.html" class="nav-link-item">Portfolio</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="ai.html" class="nav-link-item">AI Overview</a>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="#" class="nav-link-item">AI Services <i class="bi bi-chevron-down ms-1" style="font-size: 11px;"></i></a>
+                    <div class="dropdown-floating-panel">
+                        <a href="ai-consulting.html" class="mega-menu-item">
+                            <strong>AI Consulting</strong>
+                            <span>Roadmapping & feasibility analysis</span>
+                        </a>
+                        <a href="ai-development.html" class="mega-menu-item">
+                            <strong>AI Development</strong>
+                            <span>Custom LLMs & intelligent apps</span>
+                        </a>
+                        <a href="ai-automation.html" class="mega-menu-item">
+                            <strong>AI Automation</strong>
+                            <span>Workflow & process automation</span>
+                        </a>
+                        <a href="ai-agents.html" class="mega-menu-item">
+                            <strong>AI Agent Systems</strong>
+                            <span>Autonomous multi-agent swarms</span>
+                        </a>
+                        <a href="ai-compiler.html" class="mega-menu-item">
+                            <strong>AI Compiler Engineering</strong>
+                            <span>TensorRT & kernel optimization</span>
+                        </a>
+                        <a href="ai-integration.html" class="mega-menu-item">
+                            <strong>AI Integration</strong>
+                            <span>Connecting ERP, CRM & databases</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item-wrap">
+                    <a href="about-us.html" class="nav-link-item active">About Us</a>
+                </div>
+            </div>
+
+            <!-- Right CTAs -->
+            <div class="nav-cta-right">
+                <a href="ai.html" class="btn-nav-ai" title="Enterprise AI Engineering">
+                    <span>AI Solutions</span>
+                    <i class="bi bi-stars"></i>
+                </a>
+                <a href="index.html#contact-section" class="btn-appinv-contact">
+                    <i class="bi bi-calendar-check"></i> Book Consultation
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =============================================================
+         00. HERO SECTION (DARK // CRISP, SHARP, MINIMALIST)
+         ============================================================= -->
+    <section class="section-hero">
+        <div class="hero-grid-bg"></div>
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="section-eyebrow-dark">
+                        <i class="bi bi-terminal-fill"></i> WebConvoy // About Us
+                    </div>
+                    <h1 class="hero-title">
+                        Architecting Software Systems That Scale Without Friction.
+                    </h1>
+                    <p class="hero-subtitle">
+                        An engineering collective delivering mission-critical digital products, cloud platforms, and enterprise intelligence for category leaders worldwide.
+                    </p>
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <a href="#leadership" class="btn-pill-dark">
+                            Meet Leadership & Team <i class="bi bi-arrow-down-short ms-1" style="font-size: 18px;"></i>
+                        </a>
+                        <a href="#capabilities" class="btn-pill-dark-outline">
+                            Our Capabilities <i class="bi bi-chevron-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architectural Specs Strip -->
+            <div class="hero-stats-dock">
+                <div class="hero-stat-box">
+                    <div class="num">10<span>+</span></div>
+                    <div class="label">Years in Engineering</div>
+                </div>
+                <div class="hero-stat-box">
+                    <div class="num">550<span>+</span></div>
+                    <div class="label">Delivered Projects</div>
+                </div>
+                <div class="hero-stat-box">
+                    <div class="num">10<span>+</span></div>
+                    <div class="label">Countries Served</div>
+                </div>
+                <div class="hero-stat-box">
+                    <div class="num">99.4<span>%</span></div>
+                    <div class="label">On-Time Milestones</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         01. SECTION: WHO WE ARE (LIGHT)
+         ============================================================= -->
+    <section class="section-who-we-are" id="who-we-are">
+        <div class="container">
+            <div class="row align-items-end justify-content-between mb-5">
+                <div class="col-lg-8">
+                    <div class="section-eyebrow-light">
+                        // 01. PHILOSOPHY
+                    </div>
+                    <h2 class="section-title-light">
+                        Disciplined Engineering. Uncompromising Quality.
+                    </h2>
+                    <p class="section-subtitle-light">
+                        We partner with ambitious enterprises and high-growth innovators to turn complex business requirements into high-throughput software architectures.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="portfolio.html" class="btn-pill-light">
+                        View Shipped Work <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="pillar-card-light">
+                        <div class="pillar-num">01 / CAPABILITY</div>
+                        <h3 class="pillar-title">High-Velocity Engineering</h3>
+                        <p class="pillar-desc">
+                            We build end-to-end web, mobile, and cloud software systems designed for rapid iteration, clean technical architecture, and long-term maintainability.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pillar-card-light">
+                        <div class="pillar-num">02 / INFRASTRUCTURE</div>
+                        <h3 class="pillar-title">Resilient Distributed Cloud</h3>
+                        <p class="pillar-desc">
+                            Fault-tolerant, zero-downtime microservices and cloud infrastructure deployed across AWS, GCP, and Kubernetes with enterprise-grade security.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="pillar-card-light">
+                        <div class="pillar-num">03 / INTELLIGENCE</div>
+                        <h3 class="pillar-title">Applied AI & Automation</h3>
+                        <p class="pillar-desc">
+                            Real-world autonomous agents, intelligent document processing pipelines, and proprietary model fine-tuning that unlock measurable operational gains.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         02. SECTION: LEADERSHIP (DARK // VISION. EXPERIENCE. EXECUTION)
+         ============================================================= -->
+    <section class="section-leadership" id="leadership">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Left: Leader Portrait Card with 3D W Backdrop -->
+                <div class="col-lg-5">
+                    <div class="leader-card-frame">
+                        <img src="webconvoy_leadership_ceo.jpg" alt="WebConvoy Leadership - Vision, Experience, Execution">
+                        <div class="leader-info-badge">
+                            <div class="leader-name">WebConvoy Leadership</div>
+                            <div class="leader-role">Vision. Experience. Execution.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Executive Manifesto & Operational Pillars -->
+                <div class="col-lg-7">
+                    <div class="section-eyebrow-dark">
+                        <i class="bi bi-shield-shaded"></i> // 02. LEADERSHIP
+                    </div>
+                    <h2 class="section-title-dark">
+                        Vision. Experience. Execution.
+                    </h2>
+                    
+                    <div class="leadership-quote-box">
+                        <p class="quote-text">
+                            "Software excellence isn't an accident of code. It is the deliberate consequence of clear architectural standards, disciplined engineering, and an uncompromising commitment to our clients' commercial outcomes."
+                        </p>
+                        <span class="quote-author">— Executive Mandate, WebConvoy</span>
+                    </div>
+
+                    <div class="exec-pillars-list">
+                        <div class="exec-pillar-item">
+                            <div class="exec-pillar-tag">VISION</div>
+                            <div class="exec-pillar-content">
+                                <strong>Long-Horizon Architectural Design</strong>
+                                <p>Anticipating technical inflection points to build software platforms that adapt effortlessly as our clients scale across global markets.</p>
+                            </div>
+                        </div>
+
+                        <div class="exec-pillar-item">
+                            <div class="exec-pillar-tag">EXPERIENCE</div>
+                            <div class="exec-pillar-content">
+                                <strong>Over a Decade of Industry Leadership</strong>
+                                <p>Proven experience directing multi-disciplinary engineering guilds across North America, the UK, Europe, the Middle East, and Asia.</p>
+                            </div>
+                        </div>
+
+                        <div class="exec-pillar-item">
+                            <div class="exec-pillar-tag">EXECUTION</div>
+                            <div class="exec-pillar-content">
+                                <strong>Zero-Fluff, High-Precision Delivery</strong>
+                                <p>Direct engineering oversight, rigorous code reviews, automated quality benchmarks, and transparent milestone tracking.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         03. SECTION: OUR TEAM & STRUCTURE (LIGHT)
+         ============================================================= -->
+    <section class="section-team" id="team">
+        <div class="container">
+            <div class="row align-items-end justify-content-between mb-5">
+                <div class="col-lg-8">
+                    <div class="section-eyebrow-light">
+                        // 03. TEAM & STRUCTURE
+                    </div>
+                    <h2 class="section-title-light">
+                        Our Team & Engineering Culture
+                    </h2>
+                    <p class="section-subtitle-light">
+                        A multidisciplinary collective of senior software engineers, system architects, and technical leaders united by craft and camaraderie.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <span class="team-badge-tag">100+ Engineers & Architects</span>
+                </div>
+            </div>
+
+            <!-- Real Photography Gallery Cards -->
+            <div class="row g-4 mb-5">
+                <!-- Photo 1: Annual Team Retreat -->
+                <div class="col-lg-6">
+                    <div class="team-photo-card">
+                        <img src="webconvoy_team_retreat.jpg" alt="WebConvoy Annual Team Retreat in the Mountains">
+                        <div class="team-photo-content">
+                            <span class="team-badge-tag">Annual Engineering Summit</span>
+                            <h3 class="team-photo-title">The Engineering Core</h3>
+                            <p class="team-photo-desc">
+                                Bringing our distributed guilds together for strategic roadmap alignment, technical workshops, and milestone celebrations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo 2: Outdoor River Workation -->
+                <div class="col-lg-6">
+                    <div class="team-photo-card">
+                        <img src="webconvoy_team_workation.jpg" alt="WebConvoy Riverside Deep Work Engineering Session">
+                        <div class="team-photo-content">
+                            <span class="team-badge-tag">Deep Work & Sprints</span>
+                            <h3 class="team-photo-title">High-Focus Collaboration</h3>
+                            <p class="team-photo-desc">
+                                Immersive workation sessions where architectural blueprints, code reviews, and complex problem-solving happen in natural surroundings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Functional Guilds Structure -->
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="guild-card">
+                        <div class="guild-icon"><i class="bi bi-hdd-network"></i></div>
+                        <h4 class="guild-title">Systems & Cloud</h4>
+                        <p class="guild-desc">Kubernetes orchestration, AWS/GCP architecture, CI/CD automation, and high-availability database clusters.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="guild-card">
+                        <div class="guild-icon"><i class="bi bi-window-split"></i></div>
+                        <h4 class="guild-title">Full-Stack & Mobile</h4>
+                        <p class="guild-desc">Enterprise web applications in Next.js/React and high-performance native iOS, Android, and Flutter mobile apps.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="guild-card">
+                        <div class="guild-icon"><i class="bi bi-cpu"></i></div>
+                        <h4 class="guild-title">Applied AI & Data</h4>
+                        <p class="guild-desc">Autonomous multi-agent systems, document intelligence pipelines, and proprietary RAG implementations.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="guild-card">
+                        <div class="guild-icon"><i class="bi bi-patch-check"></i></div>
+                        <h4 class="guild-title">QA & Reliability</h4>
+                        <p class="guild-desc">Automated end-to-end testing, zero-trust vulnerability scanning, and proactive 24/7 site reliability monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         04. SECTION: TECHNICAL CAPABILITIES (DARK)
+         ============================================================= -->
+    <section class="section-capabilities" id="capabilities">
+        <div class="container">
+            <div class="row align-items-end justify-content-between mb-5">
+                <div class="col-lg-8">
+                    <div class="section-eyebrow-dark">
+                        <i class="bi bi-gear-wide-connected"></i> // 04. CAPABILITIES
+                    </div>
+                    <h2 class="section-title-dark">
+                        Technical Capabilities & Stacks
+                    </h2>
+                    <p class="section-subtitle-dark">
+                        Production-grade architectures engineered for performance, security, and enterprise maintainability.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="index.html#services-orbit-section" class="btn-pill-dark-outline">
+                        All Services <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Cap 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cap-card">
+                        <div>
+                            <div class="cap-header">
+                                <div class="cap-icon"><i class="bi bi-cloud-check"></i></div>
+                                <span class="cap-mono-tag">01 // CLOUD</span>
+                            </div>
+                            <h3 class="cap-title">Cloud Native Infrastructure</h3>
+                            <p class="cap-desc">Elastic, multi-region serverless and containerized microservices engineered for high throughput and zero downtime.</p>
+                        </div>
+                        <div class="cap-stack">AWS • GCP • Azure • Docker • K8s • Terraform</div>
+                    </div>
+                </div>
+
+                <!-- Cap 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cap-card">
+                        <div>
+                            <div class="cap-header">
+                                <div class="cap-icon"><i class="bi bi-robot"></i></div>
+                                <span class="cap-mono-tag">02 // AI</span>
+                            </div>
+                            <h3 class="cap-title">Autonomous AI & Agents</h3>
+                            <p class="cap-desc">Production-grade LLM architectures, function-calling agent swarms, and vector retrieval pipelines for automated workflows.</p>
+                        </div>
+                        <div class="cap-stack">Python • LangChain • TensorRT • Llama • OpenAI</div>
+                    </div>
+                </div>
+
+                <!-- Cap 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cap-card">
+                        <div>
+                            <div class="cap-header">
+                                <div class="cap-icon"><i class="bi bi-code-slash"></i></div>
+                                <span class="cap-mono-tag">03 // WEB</span>
+                            </div>
+                            <h3 class="cap-title">Enterprise Web Platforms</h3>
+                            <p class="cap-desc">High-speed, scalable web applications with server-side rendering, sub-second latency, and intuitive design systems.</p>
+                        </div>
+                        <div class="cap-stack">Next.js • React • TypeScript • Node.js • Go</div>
+                    </div>
+                </div>
+
+                <!-- Cap 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cap-card">
+                        <div>
+                            <div class="cap-header">
+                                <div class="cap-icon"><i class="bi bi-phone"></i></div>
+                                <span class="cap-mono-tag">04 // MOBILE</span>
+                            </div>
+                            <h3 class="cap-title">Cross-Platform & Native Apps</h3>
+                            <p class="cap-desc">Fluid iOS and Android experiences built with native performance, offline synchronization, and secure storage.</p>
+                        </div>
+                        <div class="cap-stack">Flutter • Swift • Kotlin • React Native • Firebase</div>
+                    </div>
+                </div>
+
+                <!-- Cap 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cap-card">
+                        <div>
+                            <div class="cap-header">
+                                <div class="cap-icon"><i class="bi bi-database"></i></div>
+                                <span class="cap-mono-tag">05 // DATA</span>
+                            </div>
+                            <h3 class="cap-title">High-Load APIs & Databases</h3>
+                            <p class="cap-desc">Distributed relational and non-relational database design, memory caching layers, and high-concurrency API gateways.</p>
+                        </div>
+                        <div class="cap-stack">PostgreSQL • MongoDB • Redis • GraphQL • Kafka</div>
+                    </div>
+                </div>
+
+                <!-- Cap 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="cap-card">
+                        <div>
+                            <div class="cap-header">
+                                <div class="cap-icon"><i class="bi bi-shield-lock"></i></div>
+                                <span class="cap-mono-tag">06 // SECURITY</span>
+                            </div>
+                            <h3 class="cap-title">Security & Compliance</h3>
+                            <p class="cap-desc">Zero-trust architecture, automated vulnerability scanning, end-to-end data encryption, and regulatory compliance standards.</p>
+                        </div>
+                        <div class="cap-stack">SOC2 • ISO 27001 • HIPAA • OWASP Top 10</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         05. SECTION: GLOBAL REACH & AWARDS (LIGHT)
+         ============================================================= -->
+    <section class="section-impact-awards" id="impact">
+        <div class="container">
+            <div class="row align-items-end justify-content-between mb-5">
+                <div class="col-lg-8">
+                    <div class="section-eyebrow-light">
+                        // 05. RECOGNITION & REACH
+                    </div>
+                    <h2 class="section-title-light">
+                        Verified Industry Recognition & Global Hubs
+                    </h2>
+                    <p class="section-subtitle-light">
+                        Recognized by industry bodies for digital excellence, entrepreneurial growth, and high-standard enterprise software engineering.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Awards Showcase -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="award-card-clean">
+                        <div class="award-img-box">
+                            <img src="award_intl_business.png" alt="International Business Award">
+                        </div>
+                        <h3 class="award-title">International Business Award</h3>
+                        <p class="award-desc">Recognized for outstanding achievements in global digital solutions and enterprise engineering delivery.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="award-card-clean">
+                        <div class="award-img-box">
+                            <img src="award_msme.png" alt="MSME National Award">
+                        </div>
+                        <h3 class="award-title">MSME National Excellence</h3>
+                        <p class="award-desc">Awarded for premier tech contribution, technical employment generation, and digital transformation services.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="award-card-clean">
+                        <div class="award-img-box">
+                            <img src="award_entrepreneur.png" alt="Entrepreneur of the Year Award">
+                        </div>
+                        <h3 class="award-title">Entrepreneur Excellence</h3>
+                        <p class="award-desc">Honored for sustainable tech growth, visionary leadership, and client-first product innovation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Footprint Strip -->
+            <div class="global-hubs-grid">
+                <div class="row g-3 text-start">
+                    <div class="col-lg-3 col-6">
+                        <div class="hub-box">
+                            <div class="hub-flag"><i class="bi bi-geo-alt-fill text-primary"></i> United States & Canada</div>
+                            <div class="hub-role">Client Solutions & Architecture</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="hub-box">
+                            <div class="hub-flag"><i class="bi bi-geo-alt-fill text-primary"></i> United Kingdom</div>
+                            <div class="hub-role">FinTech & Enterprise Relations</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="hub-box">
+                            <div class="hub-flag"><i class="bi bi-geo-alt-fill text-primary"></i> United Arab Emirates</div>
+                            <div class="hub-role">Middle East Digital Transformation</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="hub-box">
+                            <div class="hub-flag"><i class="bi bi-geo-alt-fill text-primary"></i> India</div>
+                            <div class="hub-role">Global Core Engineering & AI Lab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         06. SECTION: CALL TO ACTION (DARK)
+         ============================================================= -->
+    <section class="section-cta" id="contact">
+        <div class="container">
+            <div class="cta-box-minimal">
+                <div class="section-eyebrow-dark">
+                    // READY TO COLLABORATE
+                </div>
+                <h2 class="cta-title">
+                    Let's Build Software That Powers Your Next Stage.
+                </h2>
+                <p class="cta-subtitle">
+                    Schedule a technical discovery session with our system architects to discuss your technical challenges, architecture roadmap, and milestone timelines.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="index.html#contact-section" class="btn-pill-dark">
+                        Schedule Discovery Call <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                    <a href="portfolio.html" class="btn-pill-dark-outline">
+                        Explore Case Studies <i class="bi bi-folder2-open ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         FOOTER (PRESERVED WEBCONVOY GLOBAL FOOTER)
+         ============================================================= -->
+    <footer class="footer-enterprise">
+        <div class="container">
+            <div class="row g-4 pb-5 border-bottom border-secondary border-opacity-10">
+                <div class="col-lg-4 col-md-6">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <img src="NEW LOGO- wc.png" alt="WebConvoy Logo" style="height: 36px; width: auto;">
+                    </a>
+                    <p class="text-secondary small mb-3 pe-lg-4" style="line-height: 1.6;">
+                        WebConvoy is an enterprise software engineering and applied AI agency. We deliver high-throughput digital platforms, distributed cloud infrastructure, and intelligent automation systems worldwide.
+                    </p>
+                    <div class="d-flex gap-3 text-secondary">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener"><i class="bi bi-twitter-x fs-5"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener"><i class="bi bi-github fs-5"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-6">
+                    <h6>Navigation</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="ai.html">AI Solutions</a></li>
+                        <li><a href="index.html#contact-section">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-6">
+                    <h6>AI Services</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+                        <li><a href="ai-consulting.html">AI Consulting</a></li>
+                        <li><a href="ai-development.html">AI Development</a></li>
+                        <li><a href="ai-automation.html">AI Automation</a></li>
+                        <li><a href="ai-agents.html">AI Agent Systems</a></li>
+                        <li><a href="ai-compiler.html">AI Compiler Engineering</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h6>Global Locations</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-2 mb-0 text-secondary">
+                        <li><i class="bi bi-geo-alt me-1 text-primary"></i> USA • New York & California</li>
+                        <li><i class="bi bi-geo-alt me-1 text-primary"></i> UK • London</li>
+                        <li><i class="bi bi-geo-alt me-1 text-primary"></i> UAE • Dubai</li>
+                        <li><i class="bi bi-geo-alt me-1 text-primary"></i> India • Global Tech Hub</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-secondary">
+                <div>© 2026 WebConvoy Technologies. All rights reserved.</div>
+                <div class="d-flex gap-4">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
