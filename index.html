@@ -2017,6 +2017,103 @@
             transform: translateX(2px);
         }
 
+        /* ==========================================================================
+           SERVICES MEGA MENU FLYOUT SUB-DROPDOWNS (MATCHING REFERENCE SCREENSHOT)
+           ========================================================================== */
+        .services-flyout-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .services-flyout-trigger {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+
+        /* Active highlight state matching user's screenshot */
+        .services-flyout-wrapper.open > .services-flyout-trigger,
+        .services-flyout-wrapper:hover > .services-flyout-trigger {
+            background: #e8f0fe !important;
+            color: #1a73e8 !important;
+            border-radius: 8px;
+            padding-left: 14px;
+        }
+
+        .services-flyout-wrapper.open > .services-flyout-trigger .item-badge-plus,
+        .services-flyout-wrapper:hover > .services-flyout-trigger .item-badge-plus {
+            color: #1a73e8 !important;
+            font-weight: 700;
+            font-size: 16px;
+            transform: none !important;
+        }
+
+        /* Floating flyout card matching user's screenshot */
+        .services-flyout-card {
+            position: absolute;
+            left: calc(100% + 14px);
+            top: -6px;
+            min-width: 215px;
+            background: #ffffff !important;
+            border-radius: 14px !important;
+            padding: 10px 18px !important;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+            border: 1px solid rgba(226, 232, 240, 0.9) !important;
+            z-index: 150 !important;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(6px);
+            transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s ease;
+            pointer-events: none;
+        }
+
+        /* Open on hover or when toggled via click */
+        .services-flyout-wrapper.open > .services-flyout-card,
+        .services-flyout-wrapper:hover > .services-flyout-card {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            pointer-events: auto !important;
+        }
+
+        .services-flyout-link {
+            display: block;
+            padding: 7px 0;
+            color: #0f172a !important;
+            font-family: 'Inter', sans-serif;
+            font-size: 13.5px;
+            font-weight: 500;
+            text-decoration: none !important;
+            transition: all 0.15s ease;
+            line-height: 1.4;
+        }
+
+        .services-flyout-link:hover {
+            color: #1a73e8 !important;
+            padding-left: 4px;
+        }
+
+        .services-flyout-divider {
+            border-top: 1px dashed #cbd5e1 !important;
+            margin: 4px 0 !important;
+            width: 100%;
+        }
+
+        @media (max-width: 991px) {
+            .services-flyout-card {
+                position: static !important;
+                left: auto !important;
+                top: auto !important;
+                margin: 8px 0 8px 12px !important;
+                transform: none !important;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important;
+            }
+        }
+
         .services-bottom-cta-banner {
             display: flex;
             align-items: center;
@@ -10847,21 +10944,40 @@
                                     <span>DEVELOPMENT</span>
                                 </div>
                                 <div class="services-col-links">
-                                    <a href="https://www.webconvoy.com/product-design" class="services-item-link">
-                                        <span>Product Design</span>
-                                        <span class="item-badge-plus">+</span>
-                                    </a>
+                                    <!-- Product Design with Flyout Sub-menu matching reference -->
+                                    <div class="services-flyout-wrapper">
+                                        <div class="services-item-link services-flyout-trigger" data-flyout="product-design" role="button" tabindex="0">
+                                            <span>Product Design</span>
+                                            <span class="item-badge-plus">+</span>
+                                        </div>
+                                        <div class="services-flyout-card" id="flyout-product-design">
+                                            <a href="https://www.webconvoy.com/ui-ux-design" class="services-flyout-link">UI/UX</a>
+                                            <div class="services-flyout-divider"></div>
+                                            <a href="https://www.webconvoy.com/product-design" class="services-flyout-link">Mobile-First Design</a>
+                                        </div>
+                                    </div>
+
                                     <a href="https://www.webconvoy.com/Mobile-Application-Developement" class="services-item-link">
                                         <span>Application Development</span>
-                                        <span class="item-badge-plus">+</span>
                                     </a>
-                                    <a href="https://www.webconvoy.com/software-development-service" class="services-item-link">
-                                        <span>Software Development</span>
-                                        <span class="item-badge-plus">+</span>
-                                    </a>
+
+                                    <!-- Software Development with Flyout Sub-menu matching reference -->
+                                    <div class="services-flyout-wrapper">
+                                        <div class="services-item-link services-flyout-trigger" data-flyout="software-dev" role="button" tabindex="0">
+                                            <span>Software Development</span>
+                                            <span class="item-badge-plus">+</span>
+                                        </div>
+                                        <div class="services-flyout-card" id="flyout-software-dev">
+                                            <a href="https://www.webconvoy.com/Mobile-Application-Developement" class="services-flyout-link">Mobile App Development</a>
+                                            <div class="services-flyout-divider"></div>
+                                            <a href="https://www.webconvoy.com/Ios-app-development" class="services-flyout-link">iOS App Development</a>
+                                            <div class="services-flyout-divider"></div>
+                                            <a href="https://www.webconvoy.com/web-development" class="services-flyout-link">Web Development</a>
+                                        </div>
+                                    </div>
+
                                     <a href="https://www.webconvoy.com/devops" class="services-item-link">
                                         <span>DevOps</span>
-                                        <span class="item-badge-plus">›</span>
                                     </a>
                                 </div>
                             </div>
@@ -10875,23 +10991,18 @@
                                 <div class="services-col-links">
                                     <a href="https://www.webconvoy.com/blockchain-development" class="services-item-link">
                                         <span>Blockchain</span>
-                                        <span class="item-badge-plus">+</span>
                                     </a>
                                     <a href="https://www.webconvoy.com/cloud-computing" class="services-item-link">
                                         <span>Cloud</span>
-                                        <span class="item-badge-plus">+</span>
                                     </a>
                                     <a href="https://www.webconvoy.com/cybersecurity" class="services-item-link">
                                         <span>Cybersecurity</span>
-                                        <span class="item-badge-plus">+</span>
                                     </a>
                                     <a href="https://www.webconvoy.com/iot-development" class="services-item-link">
                                         <span>IoT</span>
-                                        <span class="item-badge-plus">›</span>
                                     </a>
                                     <a href="https://www.webconvoy.com/ar-vr-development" class="services-item-link">
                                         <span>AR/VR</span>
-                                        <span class="item-badge-plus">›</span>
                                     </a>
                                 </div>
                             </div>
@@ -10905,15 +11016,12 @@
                                 <div class="services-col-links">
                                     <a href="https://www.webconvoy.com/software-consulting" class="services-item-link">
                                         <span>Software Consulting</span>
-                                        <span class="item-badge-plus">›</span>
                                     </a>
                                     <a href="https://www.webconvoy.com/fintech-consulting" class="services-item-link">
                                         <span>FinTech Consulting</span>
-                                        <span class="item-badge-plus">›</span>
                                     </a>
                                     <a href="https://www.webconvoy.com/get-developer" class="services-item-link highlight-staffing">
                                         <span>Staffing &amp; Augmentation</span>
-                                        <span class="item-badge-plus">›</span>
                                     </a>
                                 </div>
                             </div>
@@ -14071,6 +14179,46 @@
                     });
                 }
             }
+
+            // Services Mega Menu Flyout Sub-menu click toggler
+            document.querySelectorAll('.services-flyout-trigger').forEach(trigger => {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const wrapper = this.closest('.services-flyout-wrapper');
+                    const isOpen = wrapper.classList.contains('open');
+
+                    // Close all other flyouts
+                    document.querySelectorAll('.services-flyout-wrapper').forEach(w => {
+                        if (w !== wrapper) {
+                            w.classList.remove('open');
+                            const plus = w.querySelector('.item-badge-plus');
+                            if (plus) plus.textContent = '+';
+                        }
+                    });
+
+                    if (isOpen) {
+                        wrapper.classList.remove('open');
+                        const plus = wrapper.querySelector('.item-badge-plus');
+                        if (plus) plus.textContent = '+';
+                    } else {
+                        wrapper.classList.add('open');
+                        const plus = wrapper.querySelector('.item-badge-plus');
+                        if (plus) plus.textContent = '–';
+                    }
+                });
+            });
+
+            // Close flyout when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!e.target.closest('.services-flyout-wrapper')) {
+                    document.querySelectorAll('.services-flyout-wrapper').forEach(w => {
+                        w.classList.remove('open');
+                        const plus = w.querySelector('.item-badge-plus');
+                        if (plus) plus.textContent = '+';
+                    });
+                }
+            });
 
             ScrollTrigger.refresh();
         });
