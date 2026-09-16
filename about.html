@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | WebConvoy - Engineering the Future of Enterprise IT & AI</title>
-    <meta name="description" content="WebConvoy is a global enterprise software and AI engineering collective. Discover our leadership, team structure, engineering culture, and technical capabilities.">
+    <meta name="description" content="Learn about WebConvoy - a global IT & AI solutions leader delivering innovative digital experiences, cloud architecture, product engineering, and AI automation.">
     <link rel="canonical" href="https://www.webconvoy.com/about-us" />
     <link rel="icon" href="https://webconvoy.com/public/websitenew/image/faviconion-web.png" type="image/x-icon">
 
@@ -14,37 +14,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="editorial-components.css">
 
     <style>
-        /* -------------------------------------------------------------
-           DESIGN TOKENS & SYSTEM
-           ------------------------------------------------------------- */
         :root {
-            /* Dark Theme Tokens */
-            --bg-dark-1: #050608;
-            --bg-dark-2: #080b12;
-            --bg-dark-card: #0d121c;
+            --bg-dark: #050607;
+            --surface-dark: #080b11;
+            --surface-card: #0c111a;
+            --surface-elevated: #111724;
             --border-dark: rgba(255, 255, 255, 0.08);
-            --border-dark-hover: rgba(56, 189, 248, 0.35);
-            --text-dark-primary: #ffffff;
-            --text-dark-secondary: #94a3b8;
-            --text-dark-muted: #64748b;
-
-            /* Light Theme Tokens */
-            --bg-light-1: #ffffff;
-            --bg-light-2: #f8fafc;
-            --bg-light-card: #ffffff;
-            --border-light: #e2e8f0;
-            --border-light-hover: #0284c7;
-            --text-light-primary: #090d16;
-            --text-light-secondary: #475569;
-            --text-light-muted: #64748b;
-
-            /* Universal Accents */
-            --primary-blue: #0d6efd;
+            --border-accent: rgba(45, 140, 255, 0.35);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary-blue: #126bff;
             --electric-blue: #2d8cff;
-            --cyan-accent: #0284c7;
-            --font-head: 'Montserrat', sans-serif;
+            --cyan-accent: #38bdf8;
+            --glow-blue: rgba(18, 107, 255, 0.25);
+            --font-head: 'Montserrat', 'Inter', sans-serif;
             --font-body: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
@@ -55,32 +41,28 @@
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             font-family: var(--font-body);
-            background-color: var(--bg-dark-1);
-            color: var(--text-dark-primary);
-            line-height: 1.6;
             overflow-x: hidden;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-head);
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.025em;
         }
 
         /* -------------------------------------------------------------
-           NAVBAR (PRESERVED WEBCONVOY ENTERPRISE HEADER)
+           NAVBAR (PRESERVED WEBCONVOY MASTER DESIGN)
            ------------------------------------------------------------- */
         .main-navbar-sticky {
-            background: rgba(5, 6, 8, 0.92) !important;
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            background: rgba(5, 6, 7, 0.88) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-dark);
             position: sticky;
             top: 0;
@@ -107,7 +89,7 @@
         .nav-link-item {
             color: #cbd5e1 !important;
             font-family: var(--font-head);
-            font-size: 13.5px;
+            font-size: 14px;
             font-weight: 600;
             text-decoration: none;
             transition: color 0.25s ease;
@@ -141,35 +123,55 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 7px 18px;
-            height: 38px;
+            padding: 8px 20px;
+            height: 40px;
             border-radius: 999px;
             background: linear-gradient(135deg, #1ea7fd 0%, #0d6efd 50%, #004fe8 100%);
             color: #ffffff !important;
             text-decoration: none;
             font-family: var(--font-head);
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 800;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 0 16px rgba(13, 110, 253, 0.45);
-            transition: all 0.3s ease;
+            letter-spacing: 0.6px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 20px rgba(13, 110, 253, 0.65), inset 0 1.5px 2px rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: aiPillPulseGlow 3s infinite ease-in-out;
         }
 
-        .btn-nav-ai:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 0 24px rgba(13, 110, 253, 0.8);
+        @keyframes aiPillPulseGlow {
+            0%, 100% { box-shadow: 0 0 16px rgba(13, 110, 253, 0.6), inset 0 1.5px 2px rgba(255, 255, 255, 0.8); }
+            50% { box-shadow: 0 0 28px rgba(0, 210, 255, 0.9), 0 0 48px rgba(13, 110, 253, 0.5), inset 0 2px 4px #ffffff; }
+        }
+
+        .ai-sparkles-wrap {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ai-star-main { width: 13px; height: 13px; fill: #ffffff; animation: aiStarTwinkle 2s infinite ease-in-out; }
+        .ai-star-sub { position: absolute; width: 8px; height: 8px; top: 0px; right: 0px; fill: #ffffff; animation: aiStarTwinkle 2s infinite ease-in-out 0.5s; }
+
+        @keyframes aiStarTwinkle {
+            0%, 100% { transform: scale(0.85); opacity: 0.8; }
+            50% { transform: scale(1.25) rotate(90deg); opacity: 1; }
         }
 
         .btn-appinv-contact {
-            padding: 8px 20px;
-            height: 38px;
+            padding: 9px 22px;
+            height: 40px;
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: #ffffff !important;
             font-family: var(--font-head);
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -181,777 +183,913 @@
         .btn-appinv-contact:hover {
             background: #ffffff;
             color: #000000 !important;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
         .nav-item-wrap { position: relative; }
         .dropdown-floating-panel {
             position: absolute;
-            top: calc(100% + 14px);
-            left: -120px;
-            width: 320px;
-            background: rgba(10, 14, 23, 0.96);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-dark);
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            background: #0f141c;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(8px);
-            transition: all 0.25s ease;
+            min-width: 270px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
         }
 
         .nav-item-wrap:hover .dropdown-floating-panel {
             opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(8px);
         }
 
         .mega-menu-item {
             display: block;
             padding: 10px 14px;
             border-radius: 8px;
+            color: #e2e8f0;
             text-decoration: none;
             transition: background 0.2s ease;
         }
 
-        .mega-menu-item strong {
-            display: block;
+        .mega-menu-item:hover { background: rgba(18, 107, 255, 0.15); color: #38bdf8; }
+        .mega-menu-item strong { display: block; font-size: 13.5px; color: #ffffff; }
+        .mega-menu-item span { font-size: 11.5px; color: #94a3b8; }
+
+        /* -------------------------------------------------------------
+           SHARED SECTION TYPOGRAPHY & BADGES
+           ------------------------------------------------------------- */
+        .section-eyebrow {
+            font-family: var(--font-head);
+            font-size: 12.5px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--cyan-accent);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+            font-weight: 800;
             color: #ffffff;
-            font-size: 13.5px;
+            line-height: 1.18;
+            margin-bottom: 18px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.68;
+            font-weight: 400;
+        }
+
+        /* Pill CTA Buttons */
+        .btn-pill-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 26px;
+            border-radius: 999px;
+            background: rgba(10, 16, 26, 0.85);
+            border: 1px solid rgba(45, 140, 255, 0.45);
+            color: #ffffff !important;
+            text-decoration: none;
+            font-family: var(--font-head);
+            font-size: 14px;
             font-weight: 600;
+            box-shadow: 0 4px 18px rgba(18, 107, 255, 0.18);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .mega-menu-item span {
-            display: block;
-            color: #94a3b8;
-            font-size: 11.5px;
-            margin-top: 2px;
+        .btn-pill-action i {
+            transition: transform 0.25s ease;
         }
 
-        .mega-menu-item:hover {
-            background: rgba(255, 255, 255, 0.05);
+        .btn-pill-action:hover {
+            background: rgba(18, 107, 255, 0.2);
+            border-color: var(--cyan-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.28);
+        }
+
+        .btn-pill-action:hover i {
+            transform: translateX(4px);
         }
 
         /* -------------------------------------------------------------
-           SHARED REUSABLE COMPONENTS
+           00. HERO SECTION (WITH AI AUTOMATION VIDEO BACKGROUND)
            ------------------------------------------------------------- */
-        .section-eyebrow-dark {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-mono);
-            font-size: 11.5px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #38bdf8;
-            margin-bottom: 12px;
-        }
-
-        .section-eyebrow-light {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-mono);
-            font-size: 11.5px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: #0284c7;
-            margin-bottom: 12px;
-        }
-
-        .section-title-dark {
-            color: #ffffff;
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
-            line-height: 1.18;
-            margin-bottom: 14px;
-        }
-
-        .section-title-light {
-            color: var(--text-light-primary);
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
-            line-height: 1.18;
-            margin-bottom: 14px;
-        }
-
-        .section-subtitle-dark {
-            color: var(--text-dark-secondary);
-            font-size: 1.05rem;
-            line-height: 1.65;
-            max-width: 680px;
-        }
-
-        .section-subtitle-light {
-            color: var(--text-light-secondary);
-            font-size: 1.05rem;
-            line-height: 1.65;
-            max-width: 680px;
-        }
-
-        .btn-pill-dark {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 24px;
-            border-radius: 999px;
-            background: #ffffff;
-            color: #000000 !important;
-            font-family: var(--font-head);
-            font-size: 13.5px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-
-        .btn-pill-dark:hover {
-            background: #e2e8f0;
-            transform: translateY(-2px);
-        }
-
-        .btn-pill-dark-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 24px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-dark);
-            color: #ffffff !important;
-            font-family: var(--font-head);
-            font-size: 13.5px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-
-        .btn-pill-dark-outline:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
-        }
-
-        .btn-pill-light {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 24px;
-            border-radius: 999px;
-            background: #090d16;
-            color: #ffffff !important;
-            font-family: var(--font-head);
-            font-size: 13.5px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-
-        .btn-pill-light:hover {
-            background: #1e293b;
-            transform: translateY(-2px);
-        }
-
-        /* -------------------------------------------------------------
-           00. HERO SECTION (DARK // SLEEK & MINIMALIST)
-           ------------------------------------------------------------- */
-        .section-hero {
-            background: #050608;
-            padding: 120px 0 80px 0;
+        .app-hero-section {
             position: relative;
+            background: #050607;
+            padding: 140px 0 70px 0;
             overflow: hidden;
+            text-align: left;
             border-bottom: 1px solid var(--border-dark);
+            min-height: 720px;
+            display: flex;
+            align-items: center;
         }
 
-        .hero-grid-bg {
+        .hero-video-bg-container {
             position: absolute;
             inset: 0;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
             pointer-events: none;
         }
 
-        .hero-title {
-            font-size: clamp(2.4rem, 5vw, 4rem);
-            font-weight: 800;
-            color: #ffffff;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 18px;
+        .hero-bg-video {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.05rem, 1.35vw, 1.25rem);
-            color: #94a3b8;
-            line-height: 1.6;
-            max-width: 740px;
-            margin-bottom: 32px;
+        .hero-video-gradient-overlay {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(90deg, #050607 0%, rgba(5, 6, 7, 0.95) 38%, rgba(5, 6, 7, 0.75) 60%, rgba(5, 6, 7, 0.2) 80%, rgba(5, 6, 7, 0.6) 100%),
+                linear-gradient(180deg, rgba(5, 6, 7, 0.85) 0%, transparent 25%, transparent 75%, #050607 100%);
+            pointer-events: none;
         }
 
-        .hero-stats-dock {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-dark);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .hero-stat-box .num {
-            font-family: var(--font-head);
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #ffffff;
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .hero-stat-box .num span {
-            color: #38bdf8;
-        }
-
-        .hero-stat-box .label {
-            font-family: var(--font-mono);
-            font-size: 11.5px;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* -------------------------------------------------------------
-           01. SECTION: WHO WE ARE (LIGHT)
-           ------------------------------------------------------------- */
-        .section-who-we-are {
-            background: #ffffff;
-            color: var(--text-light-primary);
-            padding: 100px 0;
-            border-bottom: 1px solid var(--border-light);
+        .app-brand-pill {
             position: relative;
-        }
-
-        .manifesto-box {
-            padding: 36px;
-            background: #f8fafc;
-            border-radius: 16px;
-            border: 1px solid var(--border-light);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .manifesto-heading {
-            font-size: 1.65rem;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 20px;
+            border-radius: 999px;
+            background: rgba(18, 107, 255, 0.09);
+            border: 1px solid rgba(45, 140, 255, 0.35);
+            color: #38bdf8;
+            font-family: var(--font-head);
+            font-size: 13px;
             font-weight: 700;
-            color: #0f172a;
-            line-height: 1.3;
-            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            margin-bottom: 22px;
+            box-shadow: 0 0 24px rgba(18, 107, 255, 0.22);
         }
 
-        .manifesto-body {
-            font-size: 15px;
-            color: #475569;
-            line-height: 1.7;
-            margin-bottom: 24px;
+        .live-pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #38bdf8;
+            box-shadow: 0 0 8px #38bdf8;
+            display: inline-block;
+            animation: pulseGlow 2s infinite;
         }
 
-        .pillar-card-light {
-            padding: 28px;
-            border-radius: 14px;
-            border: 1px solid var(--border-light);
-            background: #ffffff;
-            transition: all 0.3s ease;
-            height: 100%;
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.25); }
         }
 
-        .pillar-card-light:hover {
-            border-color: #0284c7;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            transform: translateY(-2px);
+        .app-hero-title {
+            position: relative;
+            z-index: 2;
+            font-family: var(--font-head);
+            font-size: clamp(2.4rem, 5.2vw, 4.3rem);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.14;
+            letter-spacing: -0.02em;
+            margin-bottom: 22px;
         }
 
-        .pillar-num {
+        .sparkle-icon {
+            color: #38bdf8;
+            margin-right: 8px;
+            display: inline-block;
+            font-size: 0.88em;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));
+        }
+
+        .app-hero-subtitle {
+            position: relative;
+            z-index: 2;
+            font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+            color: #9ba4b2;
+            line-height: 1.72;
+            margin-bottom: 34px;
+        }
+
+        /* Hero Quick Tags Dock */
+        .hero-tags-dock {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
             font-family: var(--font-mono);
             font-size: 12px;
-            font-weight: 700;
-            color: #0284c7;
-            margin-bottom: 10px;
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6px 14px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .pillar-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 10px;
-        }
-
-        .pillar-desc {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.6;
-            margin: 0;
-        }
+        .hero-tag i { color: var(--cyan-accent); font-size: 11px; }
 
         /* -------------------------------------------------------------
-           02. SECTION: LEADERSHIP (DARK // VISION. EXPERIENCE. EXECUTION)
+           01. WHO WE ARE SECTION (IMAGE 1 SPEC)
            ------------------------------------------------------------- */
-        .section-leadership {
-            background: #080b12;
-            color: #ffffff;
-            padding: 110px 0;
-            border-bottom: 1px solid var(--border-dark);
+        .section-who-we-are {
             position: relative;
+            padding: 110px 0;
+            background: #050607;
+            border-bottom: 1px solid var(--border-dark);
+            overflow: hidden;
         }
 
-        .leader-card-frame {
+        .section-who-we-are::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(18, 107, 255, 0.08) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .who-image-card {
             position: relative;
             border-radius: 20px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            background: #0d121c;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(18, 107, 255, 0.15);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(18, 107, 255, 0.12);
+            background: #0c111a;
+            transition: all 0.4s ease;
         }
 
-        .leader-card-frame img {
+        .who-image-card:hover {
+            border-color: rgba(56, 189, 248, 0.35);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 50px rgba(18, 107, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .who-image-card img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 480px;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .leader-card-frame:hover img {
-            transform: scale(1.02);
+        .who-image-card:hover img {
+            transform: scale(1.03);
         }
 
-        .leader-info-badge {
+        .who-badge-overlay {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            background: rgba(8, 11, 17, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            padding: 16px 22px;
+            text-align: right;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            max-width: 220px;
+        }
+
+        .who-badge-overlay .badge-text-top {
+            font-family: var(--font-head);
+            font-size: 15px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.25;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .who-badge-overlay .badge-text-sub {
+            font-family: var(--font-head);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--cyan-accent);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .who-image-bottom-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 24px;
+            background: linear-gradient(180deg, transparent 0%, rgba(5, 6, 7, 0.9) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hq-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 5px 14px;
+            border-radius: 999px;
+        }
+
+        /* -------------------------------------------------------------
+           02. OUR IMPACT IN NUMBERS SECTION (IMAGE 2 SPEC)
+           ------------------------------------------------------------- */
+        .section-impact {
+            position: relative;
+            padding: 110px 0;
+            background: #06090e;
+            border-bottom: 1px solid var(--border-dark);
+            overflow: hidden;
+        }
+
+        .impact-bg-globe {
+            position: absolute;
+            top: 0;
+            right: -8%;
+            width: 65%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.85;
+            background-image: url('about_globe_earth.jpg');
+            background-position: center right;
+            background-repeat: no-repeat;
+            background-size: cover;
+            mask-image: radial-gradient(circle at 60% 50%, black 30%, rgba(0,0,0,0.5) 60%, transparent 80%);
+            -webkit-mask-image: radial-gradient(circle at 60% 50%, black 30%, rgba(0,0,0,0.5) 60%, transparent 80%);
+        }
+
+        .impact-bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, #06090e 0%, #06090e 38%, rgba(6, 9, 14, 0.82) 65%, rgba(6, 9, 14, 0.3) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .impact-tagline-top {
+            font-family: var(--font-head);
+            font-size: 15px;
+            color: #cbd5e1;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        @media (max-width: 991px) {
+            .impact-tagline-top {
+                justify-content: flex-start;
+                margin-top: 15px;
+            }
+            .impact-bg-globe {
+                opacity: 0.35;
+                width: 100%;
+                right: 0;
+            }
+        }
+
+        .impact-stats-dock {
+            position: relative;
+            z-index: 3;
+            margin-top: 65px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.09);
+        }
+
+        .stat-item {
+            padding: 10px 24px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item:first-child {
+            padding-left: 0;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        @media (max-width: 767px) {
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding: 16px 0;
+            }
+            .stat-item:last-child { border-bottom: none; }
+        }
+
+        .stat-number {
+            font-family: var(--font-head);
+            font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+            font-weight: 800;
+            color: #2d8cff;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+            text-shadow: 0 0 25px rgba(45, 140, 255, 0.35);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #cbd5e1;
+            letter-spacing: 0.2px;
+        }
+
+        /* -------------------------------------------------------------
+           03. WHAT WE BUILD WITH SECTION (IMAGE 3 SPEC)
+           ------------------------------------------------------------- */
+        .section-what-we-build {
+            position: relative;
+            padding: 110px 0;
+            background: #050607;
+            border-bottom: 1px solid var(--border-dark);
+            overflow: hidden;
+        }
+
+        .section-what-we-build::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .tech-capability-card {
+            background: rgba(12, 17, 26, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            padding: 24px 22px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        .tech-capability-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(45, 140, 255, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tech-capability-card:hover {
+            border-color: rgba(45, 140, 255, 0.45);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(18, 107, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .tech-capability-card:hover::before {
+            opacity: 1;
+        }
+
+        .tech-icon-box {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: 12px;
+            background: rgba(18, 107, 255, 0.08);
+            border: 1px solid rgba(45, 140, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tech-capability-card:hover .tech-icon-box {
+            background: rgba(45, 140, 255, 0.2);
+            border-color: var(--cyan-accent);
+            color: #ffffff;
+            box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+            transform: scale(1.06);
+        }
+
+        .tech-card-title {
+            font-family: var(--font-head);
+            font-size: 15.5px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin: 0;
+            line-height: 1.35;
+            position: relative;
+            z-index: 2;
+            transition: color 0.25s ease;
+        }
+
+        .tech-capability-card:hover .tech-card-title {
+            color: #ffffff;
+        }
+
+        /* -------------------------------------------------------------
+           04. OUR PEOPLE SECTION (IMAGE 4 SPEC)
+           ------------------------------------------------------------- */
+        .section-our-people {
+            position: relative;
+            padding: 110px 0;
+            background: #06080d;
+            border-bottom: 1px solid var(--border-dark);
+            overflow: hidden;
+        }
+
+        .people-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #0b0f16;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .people-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(18, 107, 255, 0.18);
+            transform: translateY(-4px);
+        }
+
+        .people-card-tall {
+            height: 520px;
+        }
+
+        .people-card-short {
+            height: 246px;
+        }
+
+        .people-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .people-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .people-card-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(5, 7, 12, 0.65) 70%, rgba(5, 7, 12, 0.95) 100%);
+            pointer-events: none;
+        }
+
+        .people-card-content {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             padding: 24px;
-            background: linear-gradient(180deg, transparent 0%, rgba(5, 7, 12, 0.85) 40%, rgba(5, 7, 12, 0.98) 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 2;
         }
 
-        .leader-name {
-            font-size: 1.35rem;
+        .people-title {
+            font-family: var(--font-head);
+            font-size: 1.3rem;
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 4px;
         }
 
-        .leader-role {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            color: #38bdf8;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .leadership-quote-box {
-            padding: 30px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-dark);
-            margin-bottom: 28px;
-            position: relative;
-        }
-
-        .quote-text {
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: #f1f5f9;
-            line-height: 1.65;
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-
-        .quote-author {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            color: #94a3b8;
-        }
-
-        .exec-pillar-item {
-            display: flex;
-            gap: 16px;
-            padding: 16px 0;
-            border-top: 1px solid var(--border-dark);
-        }
-
-        .exec-pillar-tag {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            font-weight: 700;
-            color: #38bdf8;
-            min-width: 90px;
-        }
-
-        .exec-pillar-content strong {
-            display: block;
-            color: #ffffff;
-            font-size: 14.5px;
-            margin-bottom: 4px;
-        }
-
-        .exec-pillar-content p {
-            color: #94a3b8;
+        .people-desc {
             font-size: 13.5px;
-            line-height: 1.55;
-            margin: 0;
+            color: #cbd5e1;
+            margin-bottom: 0;
+            font-weight: 400;
         }
 
         /* -------------------------------------------------------------
-           03. SECTION: OUR TEAM & STRUCTURE (LIGHT)
+           05. GLOBAL PRESENCE SECTION (IMAGE 5 SPEC)
            ------------------------------------------------------------- */
-        .section-team {
-            background: #f8fafc;
-            color: var(--text-light-primary);
-            padding: 110px 0;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .team-photo-card {
+        .section-global-presence {
             position: relative;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            background: #ffffff;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            height: 100%;
-        }
-
-        .team-photo-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .team-photo-card:hover img {
-            transform: scale(1.03);
-        }
-
-        .team-photo-content {
-            padding: 24px;
-            background: #ffffff;
-        }
-
-        .team-badge-tag {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 11px;
-            font-weight: 700;
-            color: #0284c7;
-            background: #e0f2fe;
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .team-photo-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 8px;
-        }
-
-        .team-photo-desc {
-            font-size: 13.5px;
-            color: #64748b;
-            line-height: 1.55;
-            margin: 0;
-        }
-
-        /* Functional Structure Guild Grid */
-        .guild-card {
-            background: #ffffff;
-            border: 1px solid var(--border-light);
-            border-radius: 14px;
-            padding: 22px;
-            transition: all 0.25s ease;
-            height: 100%;
-        }
-
-        .guild-card:hover {
-            border-color: #0284c7;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-        }
-
-        .guild-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: #f0f9ff;
-            color: #0284c7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            margin-bottom: 14px;
-        }
-
-        .guild-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 6px;
-        }
-
-        .guild-desc {
-            font-size: 13px;
-            color: #64748b;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* -------------------------------------------------------------
-           04. SECTION: TECHNICAL CAPABILITIES (DARK)
-           ------------------------------------------------------------- */
-        .section-capabilities {
-            background: #06080d;
-            color: #ffffff;
             padding: 110px 0;
+            background: #050607;
             border-bottom: 1px solid var(--border-dark);
+            overflow: hidden;
         }
 
-        .cap-card {
-            padding: 28px;
-            border-radius: 14px;
-            background: #0d121c;
-            border: 1px solid var(--border-dark);
-            height: 100%;
-            transition: all 0.3s ease;
+        .map-frame {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            background: #040508;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .map-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Pulsing Radar Beacons on World Map */
+        .radar-beacon {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .radar-beacon-canada { top: 29%; left: 19%; }
+        .radar-beacon-uae { top: 44%; left: 62.5%; }
+        .radar-beacon-india { top: 45%; left: 70.5%; }
+
+        .beacon-core {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00e5ff;
+            box-shadow: 0 0 14px #00e5ff;
+        }
+
+        .beacon-wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0, 229, 255, 0.8);
+            animation: radarPing 2.5s infinite cubic-bezier(0, 0.2, 0.8, 1);
+        }
+
+        @keyframes radarPing {
+            0% { width: 10px; height: 10px; opacity: 1; }
+            100% { width: 50px; height: 50px; opacity: 0; }
+        }
+
+        .location-item {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .cap-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-
-        .cap-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px;
+            border-radius: 16px;
+            background: rgba(12, 17, 26, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             margin-bottom: 16px;
+            transition: all 0.3s ease;
         }
 
-        .cap-icon {
+        .location-item:hover {
+            background: rgba(18, 107, 255, 0.08);
+            border-color: rgba(45, 140, 255, 0.35);
+            transform: translateX(6px);
+        }
+
+        .location-icon-box {
             width: 44px;
             height: 44px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-dark);
-            color: #38bdf8;
+            min-width: 44px;
+            border-radius: 12px;
+            background: rgba(18, 107, 255, 0.12);
+            border: 1px solid rgba(45, 140, 255, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #38bdf8;
             font-size: 20px;
         }
 
-        .cap-card:hover .cap-icon {
-            background: rgba(56, 189, 248, 0.15);
-            border-color: #38bdf8;
-            color: #ffffff;
-        }
-
-        .cap-mono-tag {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            color: #64748b;
-        }
-
-        .cap-title {
-            font-size: 1.15rem;
+        .location-country {
+            font-family: var(--font-head);
+            font-size: 18px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 2px;
         }
 
-        .cap-desc {
+        .location-role {
             font-size: 13.5px;
             color: #94a3b8;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .cap-stack {
-            font-family: var(--font-mono);
-            font-size: 11px;
-            color: #38bdf8;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        /* -------------------------------------------------------------
-           05. SECTION: GLOBAL IMPACT & AWARDS (LIGHT)
-           ------------------------------------------------------------- */
-        .section-impact-awards {
-            background: #ffffff;
-            color: var(--text-light-primary);
-            padding: 110px 0;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .award-card-clean {
-            padding: 28px;
-            background: #ffffff;
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            text-align: center;
-            height: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .award-card-clean:hover {
-            border-color: #0284c7;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-            transform: translateY(-2px);
-        }
-
-        .award-img-box {
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-        }
-
-        .award-img-box img {
-            max-height: 80px;
-            max-width: 140px;
-            object-fit: contain;
-        }
-
-        .award-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 6px;
-        }
-
-        .award-desc {
-            font-size: 13px;
-            color: #64748b;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .global-hubs-grid {
-            margin-top: 45px;
-            padding: 30px;
-            background: #f8fafc;
-            border-radius: 16px;
-            border: 1px solid var(--border-light);
-        }
-
-        .hub-box {
-            padding: 12px 16px;
-        }
-
-        .hub-flag {
-            font-size: 13px;
-            font-weight: 700;
-            color: #0f172a;
-            display: flex;
-            align-items: center;
-            gap: 8px;
             margin-bottom: 4px;
+            font-weight: 500;
         }
 
-        .hub-role {
-            font-family: var(--font-mono);
-            font-size: 11.5px;
+        .location-detail {
+            font-size: 12px;
             color: #64748b;
+            font-family: var(--font-mono);
         }
 
         /* -------------------------------------------------------------
-           06. SECTION: CALL TO ACTION & FOOTER (DARK)
+           FOOTER (UNIFIED WEBCONVOY ENTERPRISE FOOTER)
            ------------------------------------------------------------- */
-        .section-cta {
-            background: #050608;
-            color: #ffffff;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            border-bottom: 1px solid var(--border-dark);
-        }
-
-        .cta-box-minimal {
-            max-width: 780px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: clamp(2.2rem, 4vw, 3.2rem);
-            font-weight: 800;
-            color: #ffffff;
-            line-height: 1.15;
-            margin-bottom: 16px;
-        }
-
-        .cta-subtitle {
-            font-size: 1.15rem;
-            color: #94a3b8;
-            margin-bottom: 32px;
-            line-height: 1.6;
-        }
-
-        /* Footer */
         .footer-enterprise {
             background: #030406;
-            padding: 70px 0 35px 0;
+            border-top: 1px solid var(--border-dark);
+            padding: 80px 0 35px 0;
             color: #94a3b8;
-            font-size: 13.5px;
         }
 
-        .footer-enterprise h6 {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-enterprise a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-enterprise a:hover {
-            color: #ffffff;
-        }
+        .hover-white:hover { color: #ffffff !important; }
 
         @media (max-width: 991px) {
             .nav-links-center { display: none; }
-            .hero-stats-dock { grid-template-columns: repeat(2, 1fr); }
-            .leader-card-frame { margin-bottom: 30px; }
+            .people-card-tall { height: 380px; }
+            .who-image-card img { height: 360px; }
         }
+    
+        /* -------------------------------------------------------------
+           ALTERNATING DARK & LIGHT THEME OVERRIDES (BLACK & WHITE RHYTHM)
+           ------------------------------------------------------------- */
+        /* Section 01: Who We Are (LIGHT) */
+        .section-who-we-are {
+            background: #ffffff !important;
+            border-bottom: 1px solid #e2e8f0 !important;
+        }
+        .section-who-we-are::before {
+            background: radial-gradient(circle, rgba(18, 107, 255, 0.04) 0%, transparent 70%) !important;
+        }
+        .section-who-we-are .section-eyebrow {
+            color: #0284c7 !important;
+        }
+        .section-who-we-are .section-title {
+            color: #090d16 !important;
+        }
+        .section-who-we-are .section-subtitle {
+            color: #475569 !important;
+        }
+        .section-who-we-are .btn-pill-action {
+            background: #090d16 !important;
+            color: #ffffff !important;
+            border-color: #090d16 !important;
+        }
+        .section-who-we-are .btn-pill-action:hover {
+            background: #1e293b !important;
+            border-color: #1e293b !important;
+            color: #ffffff !important;
+        }
+        .who-image-card {
+            background: #f1f5f9 !important;
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        /* Section 03: What We Build With (LIGHT) */
+        .section-what-we-build {
+            background: #f8fafc !important;
+            border-top: 1px solid #e2e8f0 !important;
+            border-bottom: 1px solid #e2e8f0 !important;
+        }
+        .section-what-we-build .section-eyebrow {
+            color: #0284c7 !important;
+        }
+        .section-what-we-build .section-title {
+            color: #090d16 !important;
+        }
+        .section-what-we-build .section-subtitle {
+            color: #475569 !important;
+        }
+        .section-what-we-build .btn-pill-action {
+            background: #090d16 !important;
+            color: #ffffff !important;
+            border-color: #090d16 !important;
+        }
+        .section-what-we-build .btn-pill-action:hover {
+            background: #1e293b !important;
+            border-color: #1e293b !important;
+            color: #ffffff !important;
+        }
+        .tech-capability-card {
+            background: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+        }
+        .tech-capability-card:hover {
+            border-color: #0284c7 !important;
+            box-shadow: 0 12px 30px rgba(2, 132, 199, 0.12) !important;
+            transform: translateY(-3px) !important;
+        }
+        .tech-icon-box {
+            background: #f0f9ff !important;
+            border: 1px solid #bae6fd !important;
+            color: #0284c7 !important;
+        }
+        .tech-capability-card:hover .tech-icon-box {
+            background: #0284c7 !important;
+            border-color: #0284c7 !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 16px rgba(2, 132, 199, 0.4) !important;
+        }
+        .tech-card-title {
+            color: #0f172a !important;
+        }
+        .tech-capability-card:hover .tech-card-title {
+            color: #0284c7 !important;
+        }
+
+        /* Section 05: Global Presence (LIGHT) */
+        .section-global-presence {
+            background: #ffffff !important;
+            border-top: 1px solid #e2e8f0 !important;
+        }
+        .section-global-presence .section-eyebrow {
+            color: #0284c7 !important;
+        }
+        .section-global-presence .section-title {
+            color: #090d16 !important;
+        }
+        .section-global-presence .section-subtitle {
+            color: #475569 !important;
+        }
+        .location-item {
+            background: #ffffff !important;
+            border: 1px solid #e2e8f0 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+        }
+        .location-item:hover {
+            background: #f0f9ff !important;
+            border-color: #0284c7 !important;
+            transform: translateX(6px) !important;
+        }
+        .location-icon-box {
+            background: #f0f9ff !important;
+            border: 1px solid #bae6fd !important;
+            color: #0284c7 !important;
+        }
+        .location-country {
+            color: #0f172a !important;
+        }
+        .location-role {
+            color: #475569 !important;
+        }
+        .location-detail {
+            color: #64748b !important;
+        }
+
     </style>
 </head>
 <body>
 
     <!-- =============================================================
-         NAVBAR (PRESERVED WEBCONVOY HEADER)
+         00. TOP NAVIGATION BAR (PRESERVED WEBCONVOY HEADER)
          ============================================================= -->
     <nav class="main-navbar-sticky">
         <div class="navbar-content-container">
             <!-- Brand Logo -->
             <a href="index.html" class="navbar-brand">
-                <img src="NEW LOGO- wc.png" alt="WebConvoy Logo" style="height: 38px; width: auto; object-fit: contain;">
+                <img src="NEW LOGO- wc.png" alt="WebConvoy AI Logo" style="height: 40px; width: auto; object-fit: contain;">
             </a>
 
             <!-- Central Navigation Links -->
@@ -973,27 +1111,27 @@
                     <div class="dropdown-floating-panel">
                         <a href="ai-consulting.html" class="mega-menu-item">
                             <strong>AI Consulting</strong>
-                            <span>Roadmapping & feasibility analysis</span>
+                            <span>Strategic mapping, feasibility & enterprise roadmaps</span>
                         </a>
                         <a href="ai-development.html" class="mega-menu-item">
                             <strong>AI Development</strong>
-                            <span>Custom LLMs & intelligent apps</span>
+                            <span>Custom LLMs, RAG & full-stack AI products</span>
                         </a>
                         <a href="ai-automation.html" class="mega-menu-item">
                             <strong>AI Automation</strong>
-                            <span>Workflow & process automation</span>
+                            <span>Cognitive operations & document intelligence</span>
                         </a>
                         <a href="ai-agents.html" class="mega-menu-item">
-                            <strong>AI Agent Systems</strong>
-                            <span>Autonomous multi-agent swarms</span>
+                            <strong>AI Agent Development</strong>
+                            <span>Autonomous multi-agent orchestration & tool use</span>
                         </a>
                         <a href="ai-compiler.html" class="mega-menu-item">
                             <strong>AI Compiler Engineering</strong>
-                            <span>TensorRT & kernel optimization</span>
+                            <span>Inference optimization, TensorRT & CUDA kernels</span>
                         </a>
                         <a href="ai-integration.html" class="mega-menu-item">
                             <strong>AI Integration</strong>
-                            <span>Connecting ERP, CRM & databases</span>
+                            <span>Connecting legacy ERP, CRM & APIs to AI</span>
                         </a>
                     </div>
                 </div>
@@ -1004,63 +1142,80 @@
 
             <!-- Right CTAs -->
             <div class="nav-cta-right">
-                <a href="ai.html" class="btn-nav-ai" title="Enterprise AI Engineering">
-                    <span>AI Solutions</span>
-                    <i class="bi bi-stars"></i>
+                <!-- AI Active Pill Button -->
+                <a href="ai.html" class="btn-nav-ai active" title="Dedicated Enterprise AI Solutions">
+                    <span class="ai-badge-text">AI</span>
+                    <span class="ai-sparkles-wrap">
+                        <svg class="ai-star-main" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                        <svg class="ai-star-sub" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                    </span>
                 </a>
+
                 <a href="index.html#contact-section" class="btn-appinv-contact">
-                    <i class="bi bi-calendar-check"></i> Book Consultation
+                    <i class="bi bi-calendar-event"></i> Book Discovery
                 </a>
+
+                <!-- Mobile Toggler -->
+                <button class="navbar-toggler d-lg-none" type="button" id="menuToggle" style="border: none; background: transparent;">
+                    <span class="custom-toggler-icon" style="color: #fff; font-size: 26px;">&#9776;</span>
+                </button>
             </div>
         </div>
     </nav>
 
 
     <!-- =============================================================
-         00. HERO SECTION (DARK // CRISP, SHARP, MINIMALIST)
+         00. HERO SECTION (WITH AI AUTOMATION VIDEO BACKGROUND)
          ============================================================= -->
-    <section class="section-hero">
-        <div class="hero-grid-bg"></div>
-        <div class="container position-relative" style="z-index: 2;">
-            <div class="row">
-                <div class="col-lg-10">
-                    <div class="section-eyebrow-dark">
-                        <i class="bi bi-terminal-fill"></i> WebConvoy // About Us
-                    </div>
-                    <h1 class="hero-title">
-                        Architecting Software Systems That Scale Without Friction.
-                    </h1>
-                    <p class="hero-subtitle">
-                        An engineering collective delivering mission-critical digital products, cloud platforms, and enterprise intelligence for category leaders worldwide.
-                    </p>
-                    <div class="d-flex flex-wrap align-items-center gap-3">
-                        <a href="#leadership" class="btn-pill-dark">
-                            Meet Leadership & Team <i class="bi bi-arrow-down-short ms-1" style="font-size: 18px;"></i>
-                        </a>
-                        <a href="#capabilities" class="btn-pill-dark-outline">
-                            Our Capabilities <i class="bi bi-chevron-right ms-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <section class="app-hero-section" id="hero">
+        <div class="hero-video-bg-container">
+            <video class="hero-bg-video" autoplay loop muted playsinline>
+                <source src="Robotic_hand_holding_rotating_orb_20260914164651.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-gradient-overlay"></div>
+        </div>
 
-            <!-- Architectural Specs Strip -->
-            <div class="hero-stats-dock">
-                <div class="hero-stat-box">
-                    <div class="num">10<span>+</span></div>
-                    <div class="label">Years in Engineering</div>
-                </div>
-                <div class="hero-stat-box">
-                    <div class="num">550<span>+</span></div>
-                    <div class="label">Delivered Projects</div>
-                </div>
-                <div class="hero-stat-box">
-                    <div class="num">10<span>+</span></div>
-                    <div class="label">Countries Served</div>
-                </div>
-                <div class="hero-stat-box">
-                    <div class="num">99.4<span>%</span></div>
-                    <div class="label">On-Time Milestones</div>
+        <div class="container position-relative" style="z-index: 3;">
+            <div class="row align-items-center">
+                <div class="col-xl-8 col-lg-9 col-md-11 text-start">
+                    <!-- Eyebrow Pill -->
+                    <div class="mb-3">
+                        <span class="app-brand-pill">
+                            <span class="live-pulse-dot"></span> WebConvoy Global • About Our Story
+                        </span>
+                    </div>
+
+                    <!-- Big Sparkle Headline -->
+                    <h1 class="app-hero-title text-start">
+                        <span class="sparkle-icon">✦✦</span>Architecting the Future of Enterprise IT & AI
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="app-hero-subtitle text-start">
+                        Engineering scalable digital platforms, enterprise cloud infrastructure, and autonomous AI systems for forward-thinking market leaders worldwide.
+                    </p>
+
+                    <!-- Rounded Pill CTAs -->
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                        <a href="#who-we-are" class="btn-pill-action">
+                            Explore Our Story <i class="bi bi-arrow-down-short ms-1" style="font-size: 18px;"></i>
+                        </a>
+                        <a href="#what-we-build" class="btn-pill-action" style="background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.15);">
+                            What We Build <i class="bi bi-chevron-right ms-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights Dock -->
+                    <div class="hero-tags-dock">
+                        <span class="hero-tag"><i class="bi bi-check-circle-fill"></i> ISO-Certified Engineering</span>
+                        <span class="hero-tag"><i class="bi bi-globe2"></i> 4 Global Hubs</span>
+                        <span class="hero-tag"><i class="bi bi-cpu-fill"></i> Enterprise AI Specialization</span>
+                        <span class="hero-tag"><i class="bi bi-trophy-fill"></i> Multi-Award Winning Team</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1068,118 +1223,115 @@
 
 
     <!-- =============================================================
-         01. SECTION: WHO WE ARE (LIGHT)
+         01. OUR STORY - WHO WE ARE (MATCHES USER IMAGE 1)
          ============================================================= -->
     <section class="section-who-we-are" id="who-we-are">
         <div class="container">
-            <div class="row align-items-end justify-content-between mb-5">
-                <div class="col-lg-8">
-                    <div class="section-eyebrow-light">
-                        // 01. PHILOSOPHY
-                    </div>
-                    <h2 class="section-title-light">
-                        Disciplined Engineering. Uncompromising Quality.
-                    </h2>
-                    <p class="section-subtitle-light">
-                        We partner with ambitious enterprises and high-growth innovators to turn complex business requirements into high-throughput software architectures.
-                    </p>
-                </div>
-                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                    <a href="portfolio.html" class="btn-pill-light">
-                        View Shipped Work <i class="bi bi-arrow-right ms-1"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="pillar-card-light">
-                        <div class="pillar-num">01 / CAPABILITY</div>
-                        <h3 class="pillar-title">High-Velocity Engineering</h3>
-                        <p class="pillar-desc">
-                            We build end-to-end web, mobile, and cloud software systems designed for rapid iteration, clean technical architecture, and long-term maintainability.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="pillar-card-light">
-                        <div class="pillar-num">02 / INFRASTRUCTURE</div>
-                        <h3 class="pillar-title">Resilient Distributed Cloud</h3>
-                        <p class="pillar-desc">
-                            Fault-tolerant, zero-downtime microservices and cloud infrastructure deployed across AWS, GCP, and Kubernetes with enterprise-grade security.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="pillar-card-light">
-                        <div class="pillar-num">03 / INTELLIGENCE</div>
-                        <h3 class="pillar-title">Applied AI & Automation</h3>
-                        <p class="pillar-desc">
-                            Real-world autonomous agents, intelligent document processing pipelines, and proprietary model fine-tuning that unlock measurable operational gains.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- =============================================================
-         02. SECTION: LEADERSHIP (DARK // VISION. EXPERIENCE. EXECUTION)
-         ============================================================= -->
-    <section class="section-leadership" id="leadership">
-        <div class="container">
             <div class="row align-items-center g-5">
-                <!-- Left: Leader Portrait Card with 3D W Backdrop -->
-                <div class="col-lg-5">
-                    <div class="leader-card-frame">
-                        <img src="webconvoy_leadership_ceo.jpg" alt="WebConvoy Leadership - Vision, Experience, Execution">
-                        <div class="leader-info-badge">
-                            <div class="leader-name">WebConvoy Leadership</div>
-                            <div class="leader-role">Vision. Experience. Execution.</div>
-                        </div>
+                <!-- Left Content Column -->
+                <div class="col-lg-6">
+                    <span class="section-eyebrow">OUR STORY</span>
+                    <h2 class="section-title">Who We Are</h2>
+                    <p class="section-subtitle mb-4">
+                        A global IT solutions company committed to building innovative, scalable and meaningful digital experiences. We combine technology, people and purpose to help businesses grow in a rapidly changing world.
+                    </p>
+                    <div class="pt-2">
+                        <a href="index.html#services-orbit-section" class="btn-pill-action">
+                            Learn More <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right: Executive Manifesto & Operational Pillars -->
+                <!-- Right Visual Column (Using specified image copy.png HQ building) -->
+                <div class="col-lg-6">
+                    <div class="who-image-card">
+                        <img src="image copy.png" alt="WebConvoy Global Headquarters Glass Building">
+                        
+                        <!-- Floating Glass Badge: BETTER PRODUCTS BRIGHTER PEOPLE (as in mockup) -->
+                        <div class="who-badge-overlay">
+                            <div class="badge-text-top">BETTER PRODUCTS</div>
+                            <div class="badge-text-sub">BRIGHTER PEOPLE</div>
+                        </div>
+
+                        <!-- Bottom Strip with HQ tag -->
+                        <div class="who-image-bottom-strip">
+                            <span class="hq-pill">
+                                <i class="bi bi-building-fill-check text-primary"></i> Global Innovation Center
+                            </span>
+                            <span class="text-white-50 small font-monospace">WebConvoy HQ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         02. GLOBAL SCALE - OUR IMPACT IN NUMBERS (MATCHES USER IMAGE 2)
+         ============================================================= -->
+    <section class="section-impact" id="impact">
+        <!-- Glowing Space Earth Visual -->
+        <div class="impact-bg-globe"></div>
+        <div class="impact-bg-overlay"></div>
+
+        <div class="container position-relative" style="z-index: 3;">
+            <div class="row align-items-end justify-content-between mb-4">
                 <div class="col-lg-7">
-                    <div class="section-eyebrow-dark">
-                        <i class="bi bi-shield-shaded"></i> // 02. LEADERSHIP
+                    <span class="section-eyebrow">GLOBAL SCALE</span>
+                    <h2 class="section-title mb-2">Our Impact In Numbers</h2>
+                    <p class="section-subtitle mb-0" style="color: #cbd5e1; font-weight: 500;">
+                        Real partnerships. Real products. Real progress.
+                    </p>
+                </div>
+                <div class="col-lg-5 text-lg-end">
+                    <div class="impact-tagline-top">
+                        <span>Building a more connected world through technology.</span>
+                        <span style="font-size: 20px;">🌐</span>
                     </div>
-                    <h2 class="section-title-dark">
-                        Vision. Experience. Execution.
-                    </h2>
-                    
-                    <div class="leadership-quote-box">
-                        <p class="quote-text">
-                            "Software excellence isn't an accident of code. It is the deliberate consequence of clear architectural standards, disciplined engineering, and an uncompromising commitment to our clients' commercial outcomes."
-                        </p>
-                        <span class="quote-author">— Executive Mandate, WebConvoy</span>
+                </div>
+            </div>
+
+            <!-- 4 Metrics Dock -->
+            <div class="impact-stats-dock">
+                <div class="row g-4 text-start">
+                    <!-- Metric 1: 550+ Projects Delivered -->
+                    <div class="col-lg-3 col-md-6 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">
+                                <span class="counter" data-target="550">0</span>+
+                            </div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
                     </div>
 
-                    <div class="exec-pillars-list">
-                        <div class="exec-pillar-item">
-                            <div class="exec-pillar-tag">VISION</div>
-                            <div class="exec-pillar-content">
-                                <strong>Long-Horizon Architectural Design</strong>
-                                <p>Anticipating technical inflection points to build software platforms that adapt effortlessly as our clients scale across global markets.</p>
+                    <!-- Metric 2: 10+ Countries Consulted -->
+                    <div class="col-lg-3 col-md-6 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">
+                                <span class="counter" data-target="10">0</span>+
                             </div>
+                            <div class="stat-label">Countries Consulted</div>
                         </div>
+                    </div>
 
-                        <div class="exec-pillar-item">
-                            <div class="exec-pillar-tag">EXPERIENCE</div>
-                            <div class="exec-pillar-content">
-                                <strong>Over a Decade of Industry Leadership</strong>
-                                <p>Proven experience directing multi-disciplinary engineering guilds across North America, the UK, Europe, the Middle East, and Asia.</p>
+                    <!-- Metric 3: 4 Global Presence -->
+                    <div class="col-lg-3 col-md-6 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">
+                                <span class="counter" data-target="4">0</span>
                             </div>
+                            <div class="stat-label">Global Presence</div>
                         </div>
+                    </div>
 
-                        <div class="exec-pillar-item">
-                            <div class="exec-pillar-tag">EXECUTION</div>
-                            <div class="exec-pillar-content">
-                                <strong>Zero-Fluff, High-Precision Delivery</strong>
-                                <p>Direct engineering oversight, rigorous code reviews, automated quality benchmarks, and transparent milestone tracking.</p>
+                    <!-- Metric 4: 100+ Team Members -->
+                    <div class="col-lg-3 col-md-6 col-6">
+                        <div class="stat-item">
+                            <div class="stat-number">
+                                <span class="counter" data-target="100">0</span>+
                             </div>
+                            <div class="stat-label">Team Members</div>
                         </div>
                     </div>
                 </div>
@@ -1189,87 +1341,105 @@
 
 
     <!-- =============================================================
-         03. SECTION: OUR TEAM & STRUCTURE (LIGHT)
+         03. OUR EXPERTISE - WHAT WE BUILD WITH (MATCHES USER IMAGE 3)
          ============================================================= -->
-    <section class="section-team" id="team">
+    <section class="section-what-we-build" id="what-we-build">
         <div class="container">
             <div class="row align-items-end justify-content-between mb-5">
                 <div class="col-lg-8">
-                    <div class="section-eyebrow-light">
-                        // 03. TEAM & STRUCTURE
-                    </div>
-                    <h2 class="section-title-light">
-                        Our Team & Engineering Culture
-                    </h2>
-                    <p class="section-subtitle-light">
-                        A multidisciplinary collective of senior software engineers, system architects, and technical leaders united by craft and camaraderie.
+                    <span class="section-eyebrow">OUR EXPERTISE</span>
+                    <h2 class="section-title mb-2">What We Build With</h2>
+                    <p class="section-subtitle mb-0">
+                        Technology capabilities for what's next.
                     </p>
                 </div>
                 <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                    <span class="team-badge-tag">100+ Engineers & Architects</span>
+                    <a href="index.html#services-orbit-section" class="btn-pill-action">
+                        View All Services <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Real Photography Gallery Cards -->
-            <div class="row g-4 mb-5">
-                <!-- Photo 1: Annual Team Retreat -->
-                <div class="col-lg-6">
-                    <div class="team-photo-card">
-                        <img src="webconvoy_team_retreat.jpg" alt="WebConvoy Annual Team Retreat in the Mountains">
-                        <div class="team-photo-content">
-                            <span class="team-badge-tag">Annual Engineering Summit</span>
-                            <h3 class="team-photo-title">The Engineering Core</h3>
-                            <p class="team-photo-desc">
-                                Bringing our distributed guilds together for strategic roadmap alignment, technical workshops, and milestone celebrations.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Photo 2: Outdoor River Workation -->
-                <div class="col-lg-6">
-                    <div class="team-photo-card">
-                        <img src="webconvoy_team_workation.jpg" alt="WebConvoy Riverside Deep Work Engineering Session">
-                        <div class="team-photo-content">
-                            <span class="team-badge-tag">Deep Work & Sprints</span>
-                            <h3 class="team-photo-title">High-Focus Collaboration</h3>
-                            <p class="team-photo-desc">
-                                Immersive workation sessions where architectural blueprints, code reviews, and complex problem-solving happen in natural surroundings.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4 Functional Guilds Structure -->
+            <!-- 8 Capability Grid Cards (2 rows of 4) -->
             <div class="row g-4">
+                <!-- Card 1: AI & Machine Learning -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="guild-card">
-                        <div class="guild-icon"><i class="bi bi-hdd-network"></i></div>
-                        <h4 class="guild-title">Systems & Cloud</h4>
-                        <p class="guild-desc">Kubernetes orchestration, AWS/GCP architecture, CI/CD automation, and high-availability database clusters.</p>
-                    </div>
+                    <a href="ai.html" class="tech-capability-card">
+                        <div class="tech-icon-box">
+                            <i class="bi bi-cpu"></i>
+                        </div>
+                        <h3 class="tech-card-title">AI & Machine Learning</h3>
+                    </a>
                 </div>
+
+                <!-- Card 2: Cloud Solutions -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="guild-card">
-                        <div class="guild-icon"><i class="bi bi-window-split"></i></div>
-                        <h4 class="guild-title">Full-Stack & Mobile</h4>
-                        <p class="guild-desc">Enterprise web applications in Next.js/React and high-performance native iOS, Android, and Flutter mobile apps.</p>
-                    </div>
+                    <a href="index.html#services-orbit-section" class="tech-capability-card">
+                        <div class="tech-icon-box">
+                            <i class="bi bi-cloud-arrow-up"></i>
+                        </div>
+                        <h3 class="tech-card-title">Cloud Solutions</h3>
+                    </a>
                 </div>
+
+                <!-- Card 3: Product Engineering -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="guild-card">
-                        <div class="guild-icon"><i class="bi bi-cpu"></i></div>
-                        <h4 class="guild-title">Applied AI & Data</h4>
-                        <p class="guild-desc">Autonomous multi-agent systems, document intelligence pipelines, and proprietary RAG implementations.</p>
-                    </div>
+                    <a href="portfolio.html" class="tech-capability-card">
+                        <div class="tech-icon-box">
+                            <i class="bi bi-box"></i>
+                        </div>
+                        <h3 class="tech-card-title">Product Engineering</h3>
+                    </a>
                 </div>
+
+                <!-- Card 4: Web Development -->
                 <div class="col-lg-3 col-md-6">
-                    <div class="guild-card">
-                        <div class="guild-icon"><i class="bi bi-patch-check"></i></div>
-                        <h4 class="guild-title">QA & Reliability</h4>
-                        <p class="guild-desc">Automated end-to-end testing, zero-trust vulnerability scanning, and proactive 24/7 site reliability monitoring.</p>
-                    </div>
+                    <a href="index.html#services-orbit-section" class="tech-capability-card">
+                        <div class="tech-icon-box">
+                            <i class="bi bi-window-sidebar"></i>
+                        </div>
+                        <h3 class="tech-card-title">Web Development</h3>
+                    </a>
+                </div>
+
+                <!-- Card 5: Mobile App Development -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html#services-orbit-section" class="tech-capability-card">
+                        <div class="tech-icon-box">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h3 class="tech-card-title">Mobile App Development</h3>
+                    </a>
+                </div>
+
+                <!-- Card 6: Cybersecurity -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html#services-orbit-section" class="tech-capability-card">
+                        <div class="tech-icon-box">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3 class="tech-card-title">Cybersecurity</h3>
+                    </a>
+                </div>
+
+                <!-- Card 7: Fintech Solutions -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="index.html#industries-showcase" class="tech-capability-card">
+                        <div class="tech-icon-box">
+                            <i class="bi bi-database"></i>
+                        </div>
+                        <h3 class="tech-card-title">Fintech Solutions</h3>
+                    </a>
+                </div>
+
+                <!-- Card 8: Automation & Integration -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="ai-automation.html" class="tech-capability-card">
+                        <div class="tech-icon-box">
+                            <i class="bi bi-link-45deg"></i>
+                        </div>
+                        <h3 class="tech-card-title">Automation & Integration</h3>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1277,117 +1447,61 @@
 
 
     <!-- =============================================================
-         04. SECTION: TECHNICAL CAPABILITIES (DARK)
+         04. LEADERSHIP - OUR PEOPLE (MATCHES USER IMAGE 4)
          ============================================================= -->
-    <section class="section-capabilities" id="capabilities">
+    <section class="section-our-people" id="people">
         <div class="container">
             <div class="row align-items-end justify-content-between mb-5">
                 <div class="col-lg-8">
-                    <div class="section-eyebrow-dark">
-                        <i class="bi bi-gear-wide-connected"></i> // 04. CAPABILITIES
-                    </div>
-                    <h2 class="section-title-dark">
-                        Technical Capabilities & Stacks
-                    </h2>
-                    <p class="section-subtitle-dark">
-                        Production-grade architectures engineered for performance, security, and enterprise maintainability.
+                    <span class="section-eyebrow">LEADERSHIP</span>
+                    <h2 class="section-title mb-2">Our People</h2>
+                    <p class="section-subtitle mb-0">
+                        Great technology is built by great people.
                     </p>
                 </div>
                 <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                    <a href="index.html#services-orbit-section" class="btn-pill-dark-outline">
-                        All Services <i class="bi bi-arrow-right ms-1"></i>
+                    <a href="index.html#contact-section" class="btn-pill-action">
+                        Meet Our Team <i class="bi bi-arrow-right ms-1"></i>
                     </a>
                 </div>
             </div>
 
+            <!-- Asymmetric 3-Card Grid Layout -->
             <div class="row g-4">
-                <!-- Cap 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="cap-card">
-                        <div>
-                            <div class="cap-header">
-                                <div class="cap-icon"><i class="bi bi-cloud-check"></i></div>
-                                <span class="cap-mono-tag">01 // CLOUD</span>
-                            </div>
-                            <h3 class="cap-title">Cloud Native Infrastructure</h3>
-                            <p class="cap-desc">Elastic, multi-region serverless and containerized microservices engineered for high throughput and zero downtime.</p>
+                <!-- Left Tall Card: Leadership -->
+                <div class="col-lg-6">
+                    <div class="people-card people-card-tall">
+                        <img src="webconvoy_leadership_ceo.jpg" alt="WebConvoy Executive Leadership">
+                        <div class="people-card-gradient"></div>
+                        <div class="people-card-content">
+                            <h3 class="people-title">Leadership</h3>
+                            <p class="people-desc">Vision. Experience. Execution.</p>
                         </div>
-                        <div class="cap-stack">AWS • GCP • Azure • Docker • K8s • Terraform</div>
                     </div>
                 </div>
 
-                <!-- Cap 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="cap-card">
-                        <div>
-                            <div class="cap-header">
-                                <div class="cap-icon"><i class="bi bi-robot"></i></div>
-                                <span class="cap-mono-tag">02 // AI</span>
+                <!-- Right Column: 2 Stacked Cards -->
+                <div class="col-lg-6">
+                    <div class="d-flex flex-column gap-4">
+                        <!-- Top Card: Our Team -->
+                        <div class="people-card people-card-short">
+                            <img src="webconvoy_team_retreat.jpg" alt="WebConvoy Engineering and Product Team">
+                            <div class="people-card-gradient"></div>
+                            <div class="people-card-content">
+                                <h3 class="people-title">Our Team</h3>
+                                <p class="people-desc">A diverse team, a shared purpose.</p>
                             </div>
-                            <h3 class="cap-title">Autonomous AI & Agents</h3>
-                            <p class="cap-desc">Production-grade LLM architectures, function-calling agent swarms, and vector retrieval pipelines for automated workflows.</p>
                         </div>
-                        <div class="cap-stack">Python • LangChain • TensorRT • Llama • OpenAI</div>
-                    </div>
-                </div>
 
-                <!-- Cap 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="cap-card">
-                        <div>
-                            <div class="cap-header">
-                                <div class="cap-icon"><i class="bi bi-code-slash"></i></div>
-                                <span class="cap-mono-tag">03 // WEB</span>
+                        <!-- Bottom Card: Our Culture -->
+                        <div class="people-card people-card-short">
+                            <img src="webconvoy_team_workation.jpg" alt="WebConvoy Company Culture and Collaboration">
+                            <div class="people-card-gradient"></div>
+                            <div class="people-card-content">
+                                <h3 class="people-title">Our Culture</h3>
+                                <p class="people-desc">Learn. Build. Grow. Together.</p>
                             </div>
-                            <h3 class="cap-title">Enterprise Web Platforms</h3>
-                            <p class="cap-desc">High-speed, scalable web applications with server-side rendering, sub-second latency, and intuitive design systems.</p>
                         </div>
-                        <div class="cap-stack">Next.js • React • TypeScript • Node.js • Go</div>
-                    </div>
-                </div>
-
-                <!-- Cap 4 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="cap-card">
-                        <div>
-                            <div class="cap-header">
-                                <div class="cap-icon"><i class="bi bi-phone"></i></div>
-                                <span class="cap-mono-tag">04 // MOBILE</span>
-                            </div>
-                            <h3 class="cap-title">Cross-Platform & Native Apps</h3>
-                            <p class="cap-desc">Fluid iOS and Android experiences built with native performance, offline synchronization, and secure storage.</p>
-                        </div>
-                        <div class="cap-stack">Flutter • Swift • Kotlin • React Native • Firebase</div>
-                    </div>
-                </div>
-
-                <!-- Cap 5 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="cap-card">
-                        <div>
-                            <div class="cap-header">
-                                <div class="cap-icon"><i class="bi bi-database"></i></div>
-                                <span class="cap-mono-tag">05 // DATA</span>
-                            </div>
-                            <h3 class="cap-title">High-Load APIs & Databases</h3>
-                            <p class="cap-desc">Distributed relational and non-relational database design, memory caching layers, and high-concurrency API gateways.</p>
-                        </div>
-                        <div class="cap-stack">PostgreSQL • MongoDB • Redis • GraphQL • Kafka</div>
-                    </div>
-                </div>
-
-                <!-- Cap 6 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="cap-card">
-                        <div>
-                            <div class="cap-header">
-                                <div class="cap-icon"><i class="bi bi-shield-lock"></i></div>
-                                <span class="cap-mono-tag">06 // SECURITY</span>
-                            </div>
-                            <h3 class="cap-title">Security & Compliance</h3>
-                            <p class="cap-desc">Zero-trust architecture, automated vulnerability scanning, end-to-end data encryption, and regulatory compliance standards.</p>
-                        </div>
-                        <div class="cap-stack">SOC2 • ISO 27001 • HIPAA • OWASP Top 10</div>
                     </div>
                 </div>
             </div>
@@ -1396,112 +1510,91 @@
 
 
     <!-- =============================================================
-         05. SECTION: GLOBAL REACH & AWARDS (LIGHT)
+         05. AROUND THE WORLD - GLOBAL PRESENCE (MATCHES USER IMAGE 5)
          ============================================================= -->
-    <section class="section-impact-awards" id="impact">
+    <section class="section-global-presence" id="global-presence">
         <div class="container">
-            <div class="row align-items-end justify-content-between mb-5">
+            <div class="row mb-5">
                 <div class="col-lg-8">
-                    <div class="section-eyebrow-light">
-                        // 05. RECOGNITION & REACH
-                    </div>
-                    <h2 class="section-title-light">
-                        Verified Industry Recognition & Global Hubs
-                    </h2>
-                    <p class="section-subtitle-light">
-                        Recognized by industry bodies for digital excellence, entrepreneurial growth, and high-standard enterprise software engineering.
+                    <span class="section-eyebrow">AROUND THE WORLD</span>
+                    <h2 class="section-title mb-2">Global Presence</h2>
+                    <p class="section-subtitle">
+                        Building impact across borders.
                     </p>
                 </div>
             </div>
 
-            <!-- Awards Showcase -->
-            <div class="row g-4 mb-5">
-                <div class="col-lg-4 col-md-6">
-                    <div class="award-card-clean">
-                        <div class="award-img-box">
-                            <img src="award_intl_business.png" alt="International Business Award">
+            <div class="row align-items-center g-5">
+                <!-- Left Side: Interactive Dot Matrix World Map -->
+                <div class="col-lg-7">
+                    <div class="map-frame">
+                        <img src="about_global_map.jpg" alt="WebConvoy Global Office Locations Map">
+                        
+                        <!-- Pulsing Beacon Overlays -->
+                        <div class="radar-beacon radar-beacon-canada" title="Canada Regional Office">
+                            <div class="beacon-core"></div>
+                            <div class="beacon-wave"></div>
                         </div>
-                        <h3 class="award-title">International Business Award</h3>
-                        <p class="award-desc">Recognized for outstanding achievements in global digital solutions and enterprise engineering delivery.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="award-card-clean">
-                        <div class="award-img-box">
-                            <img src="award_msme.png" alt="MSME National Award">
+                        <div class="radar-beacon radar-beacon-uae" title="UAE Regional Office">
+                            <div class="beacon-core"></div>
+                            <div class="beacon-wave"></div>
                         </div>
-                        <h3 class="award-title">MSME National Excellence</h3>
-                        <p class="award-desc">Awarded for premier tech contribution, technical employment generation, and digital transformation services.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="award-card-clean">
-                        <div class="award-img-box">
-                            <img src="award_entrepreneur.png" alt="Entrepreneur of the Year Award">
-                        </div>
-                        <h3 class="award-title">Entrepreneur Excellence</h3>
-                        <p class="award-desc">Honored for sustainable tech growth, visionary leadership, and client-first product innovation.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Global Footprint Strip -->
-            <div class="global-hubs-grid">
-                <div class="row g-3 text-start">
-                    <div class="col-lg-3 col-6">
-                        <div class="hub-box">
-                            <div class="hub-flag"><i class="bi bi-geo-alt-fill text-primary"></i> United States & Canada</div>
-                            <div class="hub-role">Client Solutions & Architecture</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="hub-box">
-                            <div class="hub-flag"><i class="bi bi-geo-alt-fill text-primary"></i> United Kingdom</div>
-                            <div class="hub-role">FinTech & Enterprise Relations</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="hub-box">
-                            <div class="hub-flag"><i class="bi bi-geo-alt-fill text-primary"></i> United Arab Emirates</div>
-                            <div class="hub-role">Middle East Digital Transformation</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-6">
-                        <div class="hub-box">
-                            <div class="hub-flag"><i class="bi bi-geo-alt-fill text-primary"></i> India</div>
-                            <div class="hub-role">Global Core Engineering & AI Lab</div>
+                        <div class="radar-beacon radar-beacon-india" title="India Global Headquarters">
+                            <div class="beacon-core"></div>
+                            <div class="beacon-wave"></div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
+                <!-- Right Side: Location List -->
+                <div class="col-lg-5">
+                    <!-- Location 1: India HQ -->
+                    <div class="location-item">
+                        <div class="location-icon-box">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div>
+                            <div class="location-country">India</div>
+                            <div class="location-role">Headquarters</div>
+                            <div class="location-detail">Level 14, Tech Boulevard, Sector 62, Noida</div>
+                        </div>
+                    </div>
 
-    <!-- =============================================================
-         06. SECTION: CALL TO ACTION (DARK)
-         ============================================================= -->
-    <section class="section-cta" id="contact">
-        <div class="container">
-            <div class="cta-box-minimal">
-                <div class="section-eyebrow-dark">
-                    // READY TO COLLABORATE
-                </div>
-                <h2 class="cta-title">
-                    Let's Build Software That Powers Your Next Stage.
-                </h2>
-                <p class="cta-subtitle">
-                    Schedule a technical discovery session with our system architects to discuss your technical challenges, architecture roadmap, and milestone timelines.
-                </p>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <a href="index.html#contact-section" class="btn-pill-dark">
-                        Schedule Discovery Call <i class="bi bi-arrow-right ms-1"></i>
-                    </a>
-                    <a href="portfolio.html" class="btn-pill-dark-outline">
-                        Explore Case Studies <i class="bi bi-folder2-open ms-1"></i>
-                    </a>
+                    <!-- Location 2: Canada Regional Office -->
+                    <div class="location-item">
+                        <div class="location-icon-box">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div>
+                            <div class="location-country">Canada</div>
+                            <div class="location-role">Regional Office</div>
+                            <div class="location-detail">Toronto Financial & Innovation District</div>
+                        </div>
+                    </div>
+
+                    <!-- Location 3: UAE Regional Office -->
+                    <div class="location-item">
+                        <div class="location-icon-box">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div>
+                            <div class="location-country">UAE</div>
+                            <div class="location-role">Regional Office</div>
+                            <div class="location-detail">Dubai Internet City, Building 3</div>
+                        </div>
+                    </div>
+
+                    <!-- Location 4: 10+ Countries Consulted -->
+                    <div class="location-item">
+                        <div class="location-icon-box">
+                            <i class="bi bi-globe-americas"></i>
+                        </div>
+                        <div>
+                            <div class="location-country">10+</div>
+                            <div class="location-role">Countries Consulted</div>
+                            <div class="location-detail">USA, UK, Australia, Singapore, Saudi Arabia, etc.</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1509,70 +1602,100 @@
 
 
     <!-- =============================================================
-         FOOTER (PRESERVED WEBCONVOY GLOBAL FOOTER)
+         06. FOOTER (UNIFIED WEBCONVOY ENTERPRISE FOOTER)
          ============================================================= -->
     <footer class="footer-enterprise">
         <div class="container">
-            <div class="row g-4 pb-5 border-bottom border-secondary border-opacity-10">
+            <div class="row g-5 mb-5">
                 <div class="col-lg-4 col-md-6">
-                    <a href="index.html" class="d-inline-block mb-3">
-                        <img src="NEW LOGO- wc.png" alt="WebConvoy Logo" style="height: 36px; width: auto;">
-                    </a>
-                    <p class="text-secondary small mb-3 pe-lg-4" style="line-height: 1.6;">
-                        WebConvoy is an enterprise software engineering and applied AI agency. We deliver high-throughput digital platforms, distributed cloud infrastructure, and intelligent automation systems worldwide.
+                    <img src="NEW LOGO- wc.png" alt="WebConvoy Enterprise" style="height: 42px; width: auto;" class="mb-3">
+                    <p class="small text-muted mb-4" style="max-width: 320px; line-height: 1.7;">
+                        Enterprise digital transformation, full-stack product engineering, and AI automation systems built for global enterprises.
                     </p>
-                    <div class="d-flex gap-3 text-secondary">
-                        <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="bi bi-linkedin fs-5"></i></a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener"><i class="bi bi-twitter-x fs-5"></i></a>
-                        <a href="https://github.com" target="_blank" rel="noopener"><i class="bi bi-github fs-5"></i></a>
+                    <div class="d-flex gap-3">
+                        <a href="https://linkedin.com" class="text-white-50 hover-white fs-5"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://twitter.com" class="text-white-50 hover-white fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://github.com" class="text-white-50 hover-white fs-5"><i class="bi bi-github"></i></a>
                     </div>
                 </div>
-
-                <div class="col-lg-2 col-6">
-                    <h6>Navigation</h6>
-                    <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="ai.html">AI Solutions</a></li>
-                        <li><a href="index.html#contact-section">Contact Us</a></li>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">AI Services</h5>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="ai-consulting.html" class="text-secondary text-decoration-none hover-white">AI Consulting</a></li>
+                        <li><a href="ai-development.html" class="text-secondary text-decoration-none hover-white">AI Development</a></li>
+                        <li><a href="ai-automation.html" class="text-secondary text-decoration-none hover-white">AI Automation</a></li>
+                        <li><a href="ai-agents.html" class="text-secondary text-decoration-none hover-white">AI Agents</a></li>
+                        <li><a href="ai-compiler.html" class="text-secondary text-decoration-none hover-white">AI Compilers</a></li>
+                        <li><a href="ai-integration.html" class="text-secondary text-decoration-none hover-white">AI Integration</a></li>
                     </ul>
                 </div>
-
-                <div class="col-lg-3 col-6">
-                    <h6>AI Services</h6>
-                    <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
-                        <li><a href="ai-consulting.html">AI Consulting</a></li>
-                        <li><a href="ai-development.html">AI Development</a></li>
-                        <li><a href="ai-automation.html">AI Automation</a></li>
-                        <li><a href="ai-agents.html">AI Agent Systems</a></li>
-                        <li><a href="ai-compiler.html">AI Compiler Engineering</a></li>
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Company</h5>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="about-us.html" class="text-secondary text-decoration-none hover-white">About Us</a></li>
+                        <li><a href="portfolio.html" class="text-secondary text-decoration-none hover-white">Portfolio</a></li>
+                        <li><a href="ai.html" class="text-secondary text-decoration-none hover-white">Enterprise AI Hub</a></li>
+                        <li><a href="https://www.webconvoy.com/career" class="text-secondary text-decoration-none hover-white">Careers</a></li>
+                        <li><a href="index.html#contact-section" class="text-secondary text-decoration-none hover-white">Contact Us</a></li>
                     </ul>
                 </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h6>Global Locations</h6>
-                    <ul class="list-unstyled small d-flex flex-column gap-2 mb-0 text-secondary">
-                        <li><i class="bi bi-geo-alt me-1 text-primary"></i> USA • New York & California</li>
-                        <li><i class="bi bi-geo-alt me-1 text-primary"></i> UK • London</li>
-                        <li><i class="bi bi-geo-alt me-1 text-primary"></i> UAE • Dubai</li>
-                        <li><i class="bi bi-geo-alt me-1 text-primary"></i> India • Global Tech Hub</li>
-                    </ul>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white fw-bold mb-3 small text-uppercase" style="letter-spacing: 1px;">Global Headquarters</h5>
+                    <p class="small text-muted mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> Level 14, Tech Boulevard, Sector 62, Noida, India</p>
+                    <p class="small text-muted mb-2"><i class="bi bi-envelope me-2 text-primary"></i> enterprise@webconvoy.com</p>
+                    <p class="small text-muted mb-0"><i class="bi bi-telephone me-2 text-primary"></i> +91 99901 81414 / +1 (800) 412-9840</p>
                 </div>
             </div>
-
-            <div class="pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-secondary">
-                <div>© 2026 WebConvoy Technologies. All rights reserved.</div>
-                <div class="d-flex gap-4">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Security</a>
-                </div>
+            <div class="border-top border-secondary border-opacity-25 pt-4 text-center small text-white-50">
+                © 2026 WebConvoy Technologies Inc. All rights reserved. Enterprise AI systems engineered with strict deterministic compliance.
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Animated Number Counters Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+            let hasAnimated = false;
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 1800; // ms
+                    const stepTime = 20;
+                    const steps = duration / stepTime;
+                    const increment = target / steps;
+                    let current = 0;
+
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.innerText = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.innerText = Math.ceil(current);
+                        }
+                    }, stepTime);
+                });
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasAnimated) {
+                        hasAnimated = true;
+                        animateCounters();
+                    }
+                });
+            }, { threshold: 0.25 });
+
+            const statsSection = document.querySelector('.section-impact');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    </script>
 </body>
 </html>
