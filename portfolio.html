@@ -977,6 +977,193 @@
             box-shadow: 0 0 20px rgba(6, 182, 212, 0.65);
         }
 
+        /* 10. TNIE - CRIMSON / DEEP MAROON THEME (News & Media Mobile App) */
+        .stage-theme-tnie {
+            background: radial-gradient(circle at 50% 25%, #380a0a 0%, #1f0505 55%, #0d0202 100%);
+            border-color: rgba(239, 68, 68, 0.45);
+            box-shadow: 0 14px 45px rgba(239, 68, 68, 0.18);
+        }
+        .stage-theme-tnie:hover {
+            border-color: rgba(248, 113, 113, 0.75);
+            box-shadow: 0 24px 65px rgba(239, 68, 68, 0.4);
+        }
+        .stage-theme-tnie .stage-sector-num { color: #f87171; }
+        .stage-theme-tnie .stage-action-btn {
+            background: #ef4444;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.65);
+        }
+
+        /* 11. IRCTC - DEEP SAFFRON / RAILWAYS NAVY (Transit & Ticketing App) */
+        .stage-theme-irctc {
+            background: radial-gradient(circle at 50% 25%, #2a1505 0%, #140b03 55%, #0a0602 100%);
+            border-color: rgba(249, 115, 22, 0.45);
+            box-shadow: 0 14px 45px rgba(249, 115, 22, 0.18);
+        }
+        .stage-theme-irctc:hover {
+            border-color: rgba(251, 146, 60, 0.75);
+            box-shadow: 0 24px 65px rgba(249, 115, 22, 0.4);
+        }
+        .stage-theme-irctc .stage-sector-num { color: #fb923c; }
+        .stage-theme-irctc .stage-action-btn {
+            background: #f97316;
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.65);
+        }
+
+        /* 12. XPRESSCURE - FOREST EMERALD / MEDICAL TEAL (Healthcare & Telemedicine App) */
+        .stage-theme-xpresscure {
+            background: radial-gradient(circle at 50% 25%, #042f2e 0%, #021a19 55%, #010d0d 100%);
+            border-color: rgba(16, 185, 129, 0.45);
+            box-shadow: 0 14px 45px rgba(16, 185, 129, 0.18);
+        }
+        .stage-theme-xpresscure:hover {
+            border-color: rgba(52, 211, 153, 0.75);
+            box-shadow: 0 24px 65px rgba(16, 185, 129, 0.4);
+        }
+        .stage-theme-xpresscure .stage-sector-num { color: #34d399; }
+        .stage-theme-xpresscure .stage-action-btn {
+            background: #10b981;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.65);
+        }
+
+        /* 13. BODIA - GOLDEN AMBER / HONEY WARM (Curated Food Delivery App) */
+        .stage-theme-bodia {
+            background: radial-gradient(circle at 50% 25%, #332004 0%, #1c1102 55%, #0d0801 100%);
+            border-color: rgba(245, 158, 11, 0.45);
+            box-shadow: 0 14px 45px rgba(245, 158, 11, 0.18);
+        }
+        .stage-theme-bodia:hover {
+            border-color: rgba(251, 191, 36, 0.75);
+            box-shadow: 0 24px 65px rgba(245, 158, 11, 0.4);
+        }
+        .stage-theme-bodia .stage-sector-num { color: #fbbf24; }
+        .stage-theme-bodia .stage-action-btn {
+            background: #f59e0b;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.65);
+        }
+
+        /* 14. BIBLE GPT - COBALT ELECTRIC / AI BLUE (Generative AI Mobile App) */
+        .stage-theme-biblegpt {
+            background: radial-gradient(circle at 50% 25%, #0c1a40 0%, #060e24 55%, #030713 100%);
+            border-color: rgba(59, 130, 246, 0.45);
+            box-shadow: 0 14px 45px rgba(59, 130, 246, 0.18);
+        }
+        .stage-theme-biblegpt:hover {
+            border-color: rgba(96, 165, 250, 0.75);
+            box-shadow: 0 24px 65px rgba(59, 130, 246, 0.4);
+        }
+        .stage-theme-biblegpt .stage-sector-num { color: #60a5fa; }
+        .stage-theme-biblegpt .stage-action-btn {
+            background: #3b82f6;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.65);
+        }
+
+        /* Professional Mobile Drawer Overlay for Portfolio */
+        .mobile-menu-overlay {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            height: 100dvh !important;
+            background: rgba(4, 7, 14, 0.98) !important;
+            backdrop-filter: blur(25px) !important;
+            -webkit-backdrop-filter: blur(25px) !important;
+            z-index: 999999 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            transform: translateX(100%) !important;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+
+        .mobile-menu-overlay.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+            transform: translateX(0) !important;
+        }
+
+        .mobile-menu-overlay .menu-header {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 16px 20px !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            flex-shrink: 0 !important;
+            background: rgba(8, 12, 22, 0.92) !important;
+        }
+
+        .mobile-menu-overlay .menu-close {
+            width: 42px !important;
+            height: 42px !important;
+            border-radius: 50% !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            color: #ffffff !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            cursor: pointer !important;
+            padding: 0 !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .mobile-menu-overlay .menu-close:hover {
+            background: rgba(255, 255, 255, 0.2) !important;
+            transform: scale(1.08) !important;
+        }
+
+        .mobile-menu-overlay ul {
+            list-style: none !important;
+            padding: 20px 20px 10px !important;
+            margin: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+        }
+
+        .mobile-menu-overlay ul li a.nav-link {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 13px 16px !important;
+            border-radius: 12px !important;
+            color: #f1f5f9 !important;
+            font-family: var(--font-head) !important;
+            font-size: 15.5px !important;
+            font-weight: 600 !important;
+            text-decoration: none !important;
+            background: rgba(255, 255, 255, 0.04) !important;
+            border: 1px solid rgba(255, 255, 255, 0.07) !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .mobile-menu-overlay ul li a.nav-link:hover,
+        .mobile-menu-overlay ul li a.nav-link:active {
+            background: rgba(0, 102, 255, 0.18) !important;
+            border-color: rgba(56, 189, 248, 0.35) !important;
+            color: #38bdf8 !important;
+        }
+
+        .mobile-menu-overlay .btn-hire {
+            margin: 14px 20px 32px !important;
+            padding: 14px 22px !important;
+            background: linear-gradient(135deg, #0066ff, #00d2ff) !important;
+            color: #ffffff !important;
+            font-family: var(--font-head) !important;
+            font-size: 15px !important;
+            font-weight: 700 !important;
+            border-radius: 999px !important;
+            text-align: center !important;
+            text-decoration: none !important;
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4) !important;
+            display: block !important;
+        }
+
         /* CUSTOM COMPONENT CARD FOR HDFC & PREMIER & BIOTECH */
         .stage-rich-card {
             background: #070a12;
@@ -1331,10 +1518,33 @@
         </div>
     </nav>
 
+    <!-- Mobile Fullscreen Menu -->
+    <div class="mobile-menu-overlay d-lg-none" id="mobileMenu">
+        <!-- Top Navbar Section -->
+        <div class="menu-header">
+            <a class="navbar-brand" href="index.html">
+                <img src="nav_logo_white.png" alt="Logo" style="height: 40px; width: auto; object-fit: contain;">
+            </a>
+            <button class="menu-close" id="closeMenu" aria-label="Close navigation menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
 
-    <!-- ==========================================================================
-         01. HERO SECTION (MATCHES EXACT REFERENCE COMPOSITION)
-         ========================================================================== -->
+        <!-- Navigation List -->
+        <ul>
+            <li><a class="nav-link" href="ai.html" style="color: #38bdf8; font-weight: 700;">✨ Enterprise AI Solutions</a></li>
+            <li><a class="nav-link" href="index.html#services-orbit-section">Services</a></li>
+            <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+            <li><a class="nav-link" href="index.html#industries-showcase">Industries</a></li>
+            <li><a class="nav-link" href="#scoping-consultation">Contact Us</a></li>
+        </ul>
+
+        <!-- Bottom Button -->
+        <a href="#scoping-consultation" class="btn btn-hire">Schedule Free Consultation</a>
+    </div>
     <section class="reference-hero-section" id="hero">
         <div class="container position-relative text-center" style="z-index: 5;">
             
@@ -1780,6 +1990,141 @@
                     </div>
                 </div>
 
+                <!-- -----------------------------------------------------------
+                     10. THE NEW INDIAN EXPRESS (CRIMSON RECTANGLE - NEWS MOBILE APP)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-tnie" data-category="app tech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">10 / NEWS &amp; MEDIA MOBILE APP</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 50K+ Downloads &bull; 4.4★
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="portfolio_app_tnie.jpg" alt="The New Indian Express - News that moves India" class="stage-card-asset-img" style="border-radius: 20px; width: 100%; object-fit: cover;">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Live News Feed</span>
+                            <span class="stage-sub-pill">ePaper Reader</span>
+                            <span class="stage-sub-pill">Push Alerts</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View TNIE Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     11. IRCTC RAIL CONNECT (DEEP SAFFRON RECTANGLE - TRANSIT APP)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-irctc" data-category="app fintech tech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">11 / TRANSIT &amp; TICKETING APP</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 77K+ Ratings &bull; 10K+ Downloads
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="portfolio_app_irctc.jpg" alt="IRCTC Rail Connect - Official Mobile App" class="stage-card-asset-img" style="border-radius: 20px; width: 100%; object-fit: cover;">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Train Booking</span>
+                            <span class="stage-sub-pill">PNR Status</span>
+                            <span class="stage-sub-pill">Instant Payment</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View IRCTC Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     12. XPRESSCURE DOCTOR MITRA (EMERALD RECTANGLE - TELEMEDICINE APP)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-xpresscure" data-category="app health tech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">12 / HEALTHCARE &amp; TELEMEDICINE</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 10K+ Downloads &bull; 4.3★
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="portfolio_app_xpresscure.jpg" alt="XpressCure Doctor Mitra - Healthcare Made Simple" class="stage-card-asset-img" style="border-radius: 20px; width: 100%; object-fit: cover;">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">eClinic Workflow</span>
+                            <span class="stage-sub-pill">Video Consults</span>
+                            <span class="stage-sub-pill">Digital Rx</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View XpressCure Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     13. BODIA (GOLDEN AMBER RECTANGLE - FOOD DELIVERY APP)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-bodia" data-category="app commerce all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">13 / CURATED FOOD DELIVERY</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 50K+ Downloads &bull; 3.4★
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="portfolio_app_bodia.jpg" alt="Bodia - Curated Food Delivery" class="stage-card-asset-img" style="border-radius: 20px; width: 100%; object-fit: cover;">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Local Eateries</span>
+                            <span class="stage-sub-pill">Real-time GPS</span>
+                            <span class="stage-sub-pill">Instant Checkout</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View Bodia Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- -----------------------------------------------------------
+                     14. BIBLE GPT (AI COBALT RECTANGLE - GENERATIVE AI APP)
+                     ----------------------------------------------------------- -->
+                <div class="stage-rectangle stage-theme-biblegpt" data-category="app tech all">
+                    <div class="stage-top-bar">
+                        <span class="stage-sector-num">14 / GENERATIVE AI MOBILE APP</span>
+                        <span class="stage-live-tag text-white">
+                            <span class="live-dot"></span> 10K+ Downloads &bull; 4.6★
+                        </span>
+                    </div>
+
+                    <div class="stage-card-wrapper">
+                        <img src="portfolio_app_biblegpt.jpg" alt="Bible GPT - Bible with AI Chat" class="stage-card-asset-img" style="border-radius: 20px; width: 100%; object-fit: cover;">
+                    </div>
+
+                    <div class="stage-bottom-bar">
+                        <div class="stage-pills-row">
+                            <span class="stage-sub-pill">Custom LLM Chat</span>
+                            <span class="stage-sub-pill">Contextual Search</span>
+                            <span class="stage-sub-pill">Daily Verses</span>
+                        </div>
+                        <a href="#scoping-consultation" class="stage-action-btn" aria-label="View Bible GPT Project">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1963,6 +2308,49 @@
                     scopingForm.reset();
                     successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
+            });
+        }
+
+        // Mobile Drawer Overlay Toggle
+        const portMenuToggle = document.getElementById('menuToggle');
+        const portMobileMenu = document.getElementById('mobileMenu');
+        const portCloseMenu = document.getElementById('closeMenu');
+
+        function openPortNav() {
+            if (portMobileMenu) {
+                portMobileMenu.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closePortNav() {
+            if (portMobileMenu) {
+                portMobileMenu.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (portMenuToggle) {
+            portMenuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (portMobileMenu && portMobileMenu.classList.contains('show')) {
+                    closePortNav();
+                } else {
+                    openPortNav();
+                }
+            });
+        }
+
+        if (portCloseMenu) {
+            portCloseMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closePortNav();
+            });
+        }
+
+        if (portMobileMenu) {
+            portMobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closePortNav);
             });
         }
     </script>
