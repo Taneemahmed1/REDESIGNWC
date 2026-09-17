@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | WebConvoy - From an Ambitious Beginning to a Global Technology Partner</title>
     <meta name="description" content="Founded in 2019, WebConvoy helps startups, growing businesses, and enterprises transform ideas into scalable digital products through AI, mobile applications, SaaS platforms, cloud solutions, and dedicated technology teams.">
     <link rel="canonical" href="https://www.webconvoy.com/about-us" />
-    <link rel="icon" href="https://webconvoy.com/public/websitenew/image/faviconion-web.png" type="image/x-icon">
+    
 
     <!-- Google Fonts & Bootstrap Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -663,7 +665,7 @@
 
         .impact-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
             margin-top: 45px;
         }
@@ -1167,78 +1169,7 @@
         /* -------------------------------------------------------------
            11. AWARDS SHOWCASE (DARK // CINEMATIC & CONTINUOUS TICKER)
            ------------------------------------------------------------- */
-        #award-showcase-cinematic {
-            position: relative;
-            min-height: 520px;
-            background: url('AWARDSECTIONBG.png') no-repeat center center;
-            background-size: cover;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 85px 20px;
-            border-top: 1px solid var(--border-dark);
-            border-bottom: 1px solid var(--border-dark);
-        }
-
-        #award-showcase-cinematic::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(5, 7, 12, 0.75);
-            z-index: 1;
-        }
-
-        .award-content-wrapper {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .award-text-container {
-            margin-bottom: 30px;
-            min-height: 90px;
-        }
-
-        .award-text-container h3 {
-            font-family: var(--font-head);
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #38bdf8;
-            margin-bottom: 8px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .award-text-container h2 {
-            font-family: var(--font-head);
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-            font-weight: 800;
-            color: #ffffff;
-            margin: 0;
-        }
-
-        .award-badge-container {
-            position: relative;
-            display: inline-block;
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .award-badge-container img {
-            max-width: 280px;
-            height: auto;
-            filter: drop-shadow(0 15px 35px rgba(255, 255, 255, 0.15));
-        }
-
-        .awards-continuous-strip {
-            margin-top: 40px;
-            overflow: hidden;
-            width: 100%;
-            mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
-            -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
-        }
+        
 
         .awards-continuous-track {
             display: flex;
@@ -1443,14 +1374,7 @@
             transform: scale(1.04);
         }
 
-        .cta-blend-gradient-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, #090e18 0%, rgba(9, 14, 24, 0.7) 20%, rgba(9, 14, 24, 0) 65%),
-                        linear-gradient(0deg, #090e18 0%, rgba(9, 14, 24, 0) 30%),
-                        linear-gradient(180deg, rgba(9, 14, 24, 0.35) 0%, rgba(9, 14, 24, 0) 25%);
-            pointer-events: none;
-        }
+        /* Blend overlay removed */
 
         @media (max-width: 991px) {
             .cta-image-col {
@@ -1800,7 +1724,7 @@
     <nav class="main-navbar-sticky">
         <div class="navbar-content-container">
             <a href="index.html" class="navbar-brand">
-                <img src="NEW LOGO- wc.png" alt="WebConvoy Logo" style="height: 38px; width: auto; object-fit: contain;">
+                <img src="nav_logo_white.png" alt="WebConvoy Logo" style="height: 38px; width: auto; object-fit: contain;">
             </a>
 
             <div class="nav-links-center">
@@ -1893,9 +1817,6 @@
                         <a href="index.html#contact-section" class="btn-pill-primary">
                             Start a Project <i class="bi bi-arrow-right ms-1"></i>
                         </a>
-                        <a href="#journey" class="btn-pill-outline-dark">
-                            Explore Our Journey <i class="bi bi-compass ms-1"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -1911,7 +1832,7 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <div class="section-eyebrow-light">
-                        // 01. WHO WE ARE
+                        WHO WE ARE
                     </div>
                     <h2 class="section-title-light">
                         Technology Built Around Real Business Goals
@@ -1957,7 +1878,7 @@
             <div class="row justify-content-between align-items-end mb-4">
                 <div class="col-lg-8">
                     <div class="section-eyebrow-dark">
-                        <i class="bi bi-clock-history"></i> // 02. OUR JOURNEY
+                        <i class="bi bi-clock-history"></i> OUR JOURNEY
                     </div>
                     <h2 class="section-title-dark">
                         Our Journey: From a Small Team to Global Delivery
@@ -2044,7 +1965,7 @@
                 <!-- Right: Vision Message -->
                 <div class="col-lg-7">
                     <div class="section-eyebrow-light">
-                        // 03. LEADERSHIP & VISION
+                        LEADERSHIP & VISION
                     </div>
                     <h2 class="section-title-light">
                         A Message From Our Founder
@@ -2074,7 +1995,7 @@
             <div class="row justify-content-between align-items-end mb-5">
                 <div class="col-lg-8">
                     <div class="section-eyebrow-dark">
-                        <i class="bi bi-cpu-fill"></i> // 04. CAPABILITIES
+                        <i class="bi bi-cpu-fill"></i> CAPABILITIES
                     </div>
                     <h2 class="section-title-dark">
                         Capabilities Designed for What’s Next
@@ -2175,7 +2096,7 @@
             <div class="row justify-content-between align-items-end mb-4">
                 <div class="col-lg-8">
                     <div class="section-eyebrow-light">
-                        // 05. VERIFIED GROWTH
+                        VERIFIED GROWTH
                     </div>
                     <h2 class="section-title-light">
                         Our Growth, Measured by Impact
@@ -2190,26 +2111,22 @@
                 <div class="impact-stat-card">
                     <div class="impact-number"><span class="counter" data-target="8">8</span><span>+</span></div>
                     <p class="impact-label">Years of Experience</p>
+                    <p class="impact-subtext" style="font-size: 13px; color: #64748b; margin-top: 8px; line-height: 1.5;">Over 8 years navigating evolving digital landscapes.</p>
                 </div>
                 <div class="impact-stat-card">
                     <div class="impact-number"><span class="counter" data-target="200">200</span><span>+</span></div>
                     <p class="impact-label">Projects Delivered</p>
-                </div>
-                <div class="impact-stat-card">
-                    <div class="impact-number"><span class="counter" data-target="25">25</span><span>+</span></div>
-                    <p class="impact-label">Happy Clients</p>
+                    <p class="impact-subtext" style="font-size: 13px; color: #64748b; margin-top: 8px; line-height: 1.5;">End-to-end transformation executed with engineering excellence.</p>
                 </div>
                 <div class="impact-stat-card">
                     <div class="impact-number"><span class="counter" data-target="5">5</span><span>+</span></div>
                     <p class="impact-label">Countries Consulted</p>
+                    <p class="impact-subtext" style="font-size: 13px; color: #64748b; margin-top: 8px; line-height: 1.5;">Global market footprint delivering localized innovation at scale.</p>
                 </div>
                 <div class="impact-stat-card">
                     <div class="impact-number"><span class="counter" data-target="50">50</span><span>+</span></div>
                     <p class="impact-label">Technology Experts</p>
-                </div>
-                <div class="impact-stat-card">
-                    <div class="impact-number"><span class="counter" data-target="10">10</span><span>+</span></div>
-                    <p class="impact-label">Industries Served</p>
+                    <p class="impact-subtext" style="font-size: 13px; color: #64748b; margin-top: 8px; line-height: 1.5;">Future-proof solutions driven by dedicated tech innovators.</p>
                 </div>
             </div>
         </div>
@@ -2224,7 +2141,7 @@
             <div class="row justify-content-between align-items-end mb-4">
                 <div class="col-lg-8">
                     <div class="section-eyebrow-dark">
-                        <i class="bi bi-briefcase-fill"></i> // 06. SECTORS
+                        <i class="bi bi-briefcase-fill"></i> SECTORS
                     </div>
                     <h2 class="section-title-dark">
                         Industry Experience That Strengthens Every Solution
@@ -2289,7 +2206,7 @@
             <div class="row justify-content-between align-items-end mb-5">
                 <div class="col-lg-8">
                     <div class="section-eyebrow-light">
-                        // 07. GUIDING PRINCIPLES
+                        GUIDING PRINCIPLES
                     </div>
                     <h2 class="section-title-light">
                         What Guides Us
@@ -2384,12 +2301,12 @@
                         </div>
                     </div>
                     <!-- Item 2 -->
-                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_02.jpg', 'Offsite', 'Mountain Retreat & Strategy Session')">
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_02.jpg', 'Summit', 'Executive Leadership Summit')">
                         <img src="assets/gallery/gallery_02.jpg" alt="Mountain Retreat & Strategy Session" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
-                            <span class="gallery-card-tag">Offsite</span>
-                            <h4 class="gallery-card-title">Mountain Retreat & Strategy</h4>
+                            <span class="gallery-card-tag">Summit</span>
+                            <h4 class="gallery-card-title">Executive Leadership Summit</h4>
                         </div>
                     </div>
                     <!-- Item 3 -->
@@ -2411,12 +2328,12 @@
                         </div>
                     </div>
                     <!-- Item 5 -->
-                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_05.jpg', 'Hackathon', 'Tech Sprint & Innovation Session')">
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_05.jpg', 'Award Recognition', 'National Icon Award & Media Recognition')">
                         <img src="assets/gallery/gallery_05.jpg" alt="Tech Sprint & Innovation Session" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
-                            <span class="gallery-card-tag">Hackathon</span>
-                            <h4 class="gallery-card-title">Tech Sprint & Innovation Session</h4>
+                            <span class="gallery-card-tag">Award Recognition</span>
+                            <h4 class="gallery-card-title">National Icon Award & Recognition</h4>
                         </div>
                     </div>
                     <!-- Item 6: Team Retreat -->
@@ -2438,12 +2355,12 @@
                             <h4 class="gallery-card-title">Annual Milestone Party</h4>
                         </div>
                     </div>
-                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_02.jpg', 'Offsite', 'Mountain Retreat & Strategy Session')">
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_02.jpg', 'Summit', 'Executive Leadership Summit')">
                         <img src="assets/gallery/gallery_02.jpg" alt="Mountain Retreat & Strategy Session" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
-                            <span class="gallery-card-tag">Offsite</span>
-                            <h4 class="gallery-card-title">Mountain Retreat & Strategy</h4>
+                            <span class="gallery-card-tag">Summit</span>
+                            <h4 class="gallery-card-title">Executive Leadership Summit</h4>
                         </div>
                     </div>
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_03.jpg', 'Culture', 'Team Bonding & Social Gathering')">
@@ -2462,12 +2379,12 @@
                             <h4 class="gallery-card-title">Engineering Leadership Summit</h4>
                         </div>
                     </div>
-                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_05.jpg', 'Hackathon', 'Tech Sprint & Innovation Session')">
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_05.jpg', 'Award Recognition', 'National Icon Award & Media Recognition')">
                         <img src="assets/gallery/gallery_05.jpg" alt="Tech Sprint & Innovation Session" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
-                            <span class="gallery-card-tag">Hackathon</span>
-                            <h4 class="gallery-card-title">Tech Sprint & Innovation Session</h4>
+                            <span class="gallery-card-tag">Award Recognition</span>
+                            <h4 class="gallery-card-title">National Icon Award & Recognition</h4>
                         </div>
                     </div>
                     <div class="gallery-card" onclick="openGalleryLightbox('webconvoy_team_retreat.jpg', 'Summit', 'WebConvoy Annual Engineering Retreat')">
@@ -2666,42 +2583,7 @@
     </section>
 
 
-    <!-- =============================================================
-         11. AWARDS SHOWCASE (DARK // CINEMATIC & CONTINUOUS TICKER)
-         ============================================================= -->
-    <section id="award-showcase-cinematic">
-        <div class="award-content-wrapper">
-            <div class="award-text-container">
-                <h3 id="award-company-name">GoodFirms</h3>
-                <h2 id="award-title-typing">Top Mobile App Developers UK</h2>
-            </div>
-
-            <div class="award-display-zone">
-                <div class="award-badge-container" id="award-badge-stage">
-                    <img src="https://www.webconvoy.com/public/websitenew/image/goodfirms-badge.png" alt="Award" id="current-award-img">
-                </div>
-            </div>
-
-            <!-- Continuous Moving Awards Ribbon -->
-            <div class="awards-continuous-strip">
-                <div class="awards-continuous-track">
-                    <div class="award-ticker-item"><img src="award_entrepreneur.png" alt="Entrepreneur Award"></div>
-                    <div class="award-ticker-item"><img src="award_intl_business.png" alt="International Business Award"></div>
-                    <div class="award-ticker-item"><img src="award_msme.png" alt="MSME Award"></div>
-                    <div class="award-ticker-item"><img src="award_entrepreneur.png" alt="Entrepreneur Award"></div>
-                    <div class="award-ticker-item"><img src="award_intl_business.png" alt="International Business Award"></div>
-                    <div class="award-ticker-item"><img src="award_msme.png" alt="MSME Award"></div>
-                    <!-- Duplicate for infinite loop -->
-                    <div class="award-ticker-item"><img src="award_entrepreneur.png" alt="Entrepreneur Award"></div>
-                    <div class="award-ticker-item"><img src="award_intl_business.png" alt="International Business Award"></div>
-                    <div class="award-ticker-item"><img src="award_msme.png" alt="MSME Award"></div>
-                    <div class="award-ticker-item"><img src="award_entrepreneur.png" alt="Entrepreneur Award"></div>
-                    <div class="award-ticker-item"><img src="award_intl_business.png" alt="International Business Award"></div>
-                    <div class="award-ticker-item"><img src="award_msme.png" alt="MSME Award"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
 
     <!-- =============================================================
@@ -2806,7 +2688,7 @@
                     <!-- Left: Content -->
                     <div class="col-lg-7 p-4 p-md-5 text-start">
                         <div class="section-eyebrow-dark mb-3">
-                            <i class="bi bi-lightning-charge-fill text-primary"></i> // LET'S COLLABORATE
+                            <i class="bi bi-lightning-charge-fill text-primary"></i> LET'S COLLABORATE
                         </div>
                         <h2 class="cta-title text-start mb-3">
                             Let’s Build Something That Creates Real Impact
@@ -2828,7 +2710,7 @@
                     <div class="col-lg-5 position-relative cta-image-col">
                         <div class="cta-blend-container">
                             <img src="webconvoy_cta_presentation.jpg" alt="WebConvoy Tech Presentation & Automation Expo" class="cta-blend-img">
-                            <div class="cta-blend-gradient-overlay"></div>
+                            
                         </div>
                     </div>
                 </div>
