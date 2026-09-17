@@ -737,11 +737,12 @@
             transform: scale(1.2);
         }
 
-        /* AWARDS SLIDER DOCKED IN STRIP */
+        /* PORTFOLIO CLIENT PROJECTS LOGO TICKER */
         .portfolio-awards-strip {
             background: #000000;
             padding: 24px 0 28px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             overflow: hidden;
         }
 
@@ -756,9 +757,9 @@
         .hero-awards-horizontal-track {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 20px;
             width: max-content;
-            animation: awardsHorizontalScroll 24s linear infinite;
+            animation: projectsHorizontalScroll 35s linear infinite;
             will-change: transform;
         }
 
@@ -769,30 +770,44 @@
         .hero-award-h-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 10px 22px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            height: 52px;
-            transition: all 0.25s ease;
-        }
-        .hero-award-h-card img {
-            max-height: 28px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(1) brightness(1.7);
-            transition: filter 0.25s ease;
-        }
-        .hero-award-h-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            background: rgba(18, 107, 255, 0.08);
-        }
-        .hero-award-h-card:hover img {
-            filter: grayscale(0) brightness(1);
+            height: 56px;
+            min-width: 140px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(8px);
         }
 
-        @keyframes awardsHorizontalScroll {
+        .hero-award-h-card img {
+            max-height: 32px;
+            max-width: 130px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.88;
+            transition: all 0.25s ease;
+        }
+
+        .hero-award-h-card img.project-icon-rounded {
+            border-radius: 6px;
+            max-height: 36px;
+        }
+
+        .hero-award-h-card:hover {
+            border-color: rgba(56, 189, 248, 0.45);
+            background: rgba(18, 107, 255, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+
+        .hero-award-h-card:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        @keyframes projectsHorizontalScroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
@@ -2886,51 +2901,76 @@
         </div>
     </section>
 
-    <!-- Social Proof Awards Strip -->
+    <!-- Social Proof Client Projects Strip -->
     <div class="portfolio-awards-strip">
         <div class="hero-awards-horizontal-wrapper">
             <div class="hero-awards-horizontal-track">
-                <!-- Group 1 -->
-                <div class="hero-award-h-card" title="Entrepreneur - AI & Digital Engineering">
-                    <img src="award_entrepreneur.png" alt="Entrepreneur Award">
+                <!-- Group 1: Featured Portfolio Client Projects -->
+                <div class="hero-award-h-card" title="The New Indian Express">
+                    <img src="project_logo_tnie.webp" alt="The New Indian Express" class="project-icon-rounded">
                 </div>
-                <div class="hero-award-h-card" title="International Business Award">
-                    <img src="award_intl_business.png" alt="International Business Award">
+                <div class="hero-award-h-card" title="XpressCure Healthcare">
+                    <img src="project_logo_xpresscure.webp" alt="XpressCure Healthcare" class="project-icon-rounded">
                 </div>
-                <div class="hero-award-h-card" title="MSME - Government of India Recognized">
-                    <img src="award_msme.png" alt="MSME Government of India">
+                <div class="hero-award-h-card" title="Bible GPT AI Platform">
+                    <img src="project_logo_biblegpt.webp" alt="Bible GPT" class="project-icon-rounded">
                 </div>
-                <div class="hero-award-h-card" title="Entrepreneur - AI & Digital Engineering">
-                    <img src="award_entrepreneur.png" alt="Entrepreneur Award">
+                <div class="hero-award-h-card" title="Superior Digital">
+                    <img src="project_logo_superior.png" alt="Superior Digital">
                 </div>
-                <div class="hero-award-h-card" title="International Business Award">
-                    <img src="award_intl_business.png" alt="International Business Award">
+                <div class="hero-award-h-card" title="HDFC Sky Trading Platform">
+                    <img src="hdfcskylogo.png" alt="HDFC Sky">
                 </div>
-                <div class="hero-award-h-card" title="MSME - Government of India Recognized">
-                    <img src="award_msme.png" alt="MSME Government of India">
+                <div class="hero-award-h-card" title="Clover Network">
+                    <img src="clover_logo.png" alt="Clover">
+                </div>
+                <div class="hero-award-h-card" title="Rizon Blockchain">
+                    <img src="rizon_logo.png" alt="Rizon">
+                </div>
+                <div class="hero-award-h-card" title="Premier Mobile Systems">
+                    <img src="premier_logo.png" alt="Premier">
+                </div>
+                <div class="hero-award-h-card" title="Poker9Club Gaming">
+                    <img src="logo_poker9club.png" alt="Poker9Club" class="project-icon-rounded">
+                </div>
+                <div class="hero-award-h-card" title="Avignon Clinic">
+                    <img src="avignon_logo.png" alt="Avignon Clinic">
                 </div>
 
-                <!-- Group 2 for seamless infinite loop -->
-                <div class="hero-award-h-card" aria-hidden="true">
-                    <img src="award_entrepreneur.png" alt="Entrepreneur Award">
+                <!-- Group 2: Seamless Infinite Loop -->
+                <div class="hero-award-h-card" aria-hidden="true" title="The New Indian Express">
+                    <img src="project_logo_tnie.webp" alt="The New Indian Express" class="project-icon-rounded">
                 </div>
-                <div class="hero-award-h-card" aria-hidden="true">
-                    <img src="award_intl_business.png" alt="International Business Award">
+                <div class="hero-award-h-card" aria-hidden="true" title="XpressCure Healthcare">
+                    <img src="project_logo_xpresscure.webp" alt="XpressCure Healthcare" class="project-icon-rounded">
                 </div>
-                <div class="hero-award-h-card" aria-hidden="true">
-                    <img src="award_msme.png" alt="MSME Government of India">
+                <div class="hero-award-h-card" aria-hidden="true" title="Bible GPT AI Platform">
+                    <img src="project_logo_biblegpt.webp" alt="Bible GPT" class="project-icon-rounded">
                 </div>
-                <div class="hero-award-h-card" aria-hidden="true">
-                    <img src="award_entrepreneur.png" alt="Entrepreneur Award">
+                <div class="hero-award-h-card" aria-hidden="true" title="Superior Digital">
+                    <img src="project_logo_superior.png" alt="Superior Digital">
                 </div>
-                <div class="hero-award-h-card" aria-hidden="true">
-                    <img src="award_intl_business.png" alt="International Business Award">
+                <div class="hero-award-h-card" aria-hidden="true" title="HDFC Sky Trading Platform">
+                    <img src="hdfcskylogo.png" alt="HDFC Sky">
                 </div>
-                <div class="hero-award-h-card" aria-hidden="true">
-                    <img src="award_msme.png" alt="MSME Government of India">
+                <div class="hero-award-h-card" aria-hidden="true" title="Clover Network">
+                    <img src="clover_logo.png" alt="Clover">
+                </div>
+                <div class="hero-award-h-card" aria-hidden="true" title="Rizon Blockchain">
+                    <img src="rizon_logo.png" alt="Rizon">
+                </div>
+                <div class="hero-award-h-card" aria-hidden="true" title="Premier Mobile Systems">
+                    <img src="premier_logo.png" alt="Premier">
+                </div>
+                <div class="hero-award-h-card" aria-hidden="true" title="Poker9Club Gaming">
+                    <img src="logo_poker9club.png" alt="Poker9Club" class="project-icon-rounded">
+                </div>
+                <div class="hero-award-h-card" aria-hidden="true" title="Avignon Clinic">
+                    <img src="avignon_logo.png" alt="Avignon Clinic">
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
