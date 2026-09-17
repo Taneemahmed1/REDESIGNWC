@@ -434,17 +434,19 @@
 
         .who-image-card {
             position: relative;
-            border-radius: 20px;
+            border-radius: 22px;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-            background: #f8fafc;
+            box-shadow: 0 25px 55px rgba(0, 0, 0, 0.12);
+            background: #0d131f;
+            width: 100%;
         }
 
         .who-image-card img {
             width: 100%;
-            height: 460px;
-            object-fit: cover;
+            height: auto;
+            max-height: none;
+            object-fit: contain;
             display: block;
             transition: transform 0.5s ease;
         }
@@ -573,18 +575,23 @@
 
         .founder-card-frame {
             position: relative;
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            border: 1px solid #e2e8f0;
-            background: #0c1018;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(2, 132, 199, 0.25);
+            background: linear-gradient(145deg, #020b18 0%, #08162d 100%);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 35px rgba(2, 132, 199, 0.15);
         }
 
         .founder-card-frame img {
             width: 100%;
             height: auto;
             display: block;
-            object-fit: cover;
+            object-fit: contain;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .founder-card-frame:hover img {
+            transform: scale(1.02);
         }
 
         .founder-quote-box {
@@ -1474,6 +1481,297 @@
             .ai-testi-queue-col { grid-template-columns: repeat(3, 1fr); min-height: 180px; }
             .ai-testi-bottom-bar { flex-direction: column; gap: 20px; }
         }
+    
+        /* -------------------------------------------------------------
+           PHOTO GALLERY SECTION (DARK // AUTO-MOVING & SCROLLING)
+           ------------------------------------------------------------- */
+        .section-people-culture {
+            background: #06080d;
+            color: #ffffff;
+            padding: 110px 0 100px;
+            border-bottom: 1px solid var(--border-dark);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-pill-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 999px;
+            color: #38bdf8;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            font-family: var(--font-mono);
+            margin-bottom: 14px;
+        }
+
+        .gallery-meta-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 18px;
+            background: #0d1424;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 999px;
+            color: #94a3b8;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .gallery-meta-tag i {
+            color: #38bdf8;
+        }
+
+        .gallery-marquee-wrap {
+            position: relative;
+            width: 100%;
+            margin-top: 45px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            overflow: hidden;
+        }
+
+        /* Edge fade gradients */
+        .gallery-marquee-wrap::before,
+        .gallery-marquee-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 140px;
+            z-index: 5;
+            pointer-events: none;
+        }
+        .gallery-marquee-wrap::before {
+            left: 0;
+            background: linear-gradient(90deg, #06080d 0%, rgba(6, 8, 13, 0) 100%);
+        }
+        .gallery-marquee-wrap::after {
+            right: 0;
+            background: linear-gradient(270deg, #06080d 0%, rgba(6, 8, 13, 0) 100%);
+        }
+
+        .gallery-marquee-row {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .gallery-marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-shrink: 0;
+            will-change: transform;
+        }
+
+        .marquee-move-left {
+            animation: galleryScrollLeft 48s linear infinite;
+        }
+
+        .marquee-move-right {
+            animation: galleryScrollRight 48s linear infinite;
+        }
+
+        .gallery-marquee-row:hover .gallery-marquee-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes galleryScrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes galleryScrollRight {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .gallery-card {
+            position: relative;
+            flex-shrink: 0;
+            width: 360px;
+            height: 250px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #0c1018;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 25px rgba(56, 189, 248, 0.25);
+            z-index: 2;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 24px 18px 14px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(6, 8, 13, 0.88) 60%, #06080d 100%);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0.92;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-card-overlay {
+            opacity: 1;
+        }
+
+        .gallery-card-tag {
+            font-family: var(--font-mono);
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .gallery-card-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            line-height: 1.35;
+        }
+
+        .gallery-card-zoom-icon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            opacity: 0;
+            transform: scale(0.85);
+            transition: all 0.25s ease;
+        }
+
+        .gallery-card:hover .gallery-card-zoom-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Lightbox Modal */
+        .gallery-lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.95);
+            backdrop-filter: blur(18px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 30px;
+        }
+        .gallery-lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .gallery-lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 32px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            line-height: 1;
+        }
+        .gallery-lightbox-close:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: scale(1.05);
+        }
+        .gallery-lightbox-content {
+            max-width: 90vw;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .gallery-lightbox-content img {
+            max-width: 100%;
+            max-height: 76vh;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
+            object-fit: contain;
+        }
+        .gallery-lightbox-caption {
+            margin-top: 16px;
+            text-align: center;
+        }
+        .gallery-lightbox-caption span {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .gallery-lightbox-caption h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -1725,7 +2023,7 @@
                 <!-- Left: Founder Portrait -->
                 <div class="col-lg-5">
                     <div class="founder-card-frame">
-                        <img src="webconvoy_leadership_ceo.jpg" alt="Gaurav Singh - Founder & Director, WebConvoy Private Limited">
+                        <img src="webconvoy_gaurav_singh_founder.png" alt="Gaurav Singh - Founder & Director, WebConvoy Private Limited">
                     </div>
                 </div>
 
@@ -2032,48 +2330,248 @@
 
 
     <!-- =============================================================
-         9. PEOPLE & CULTURE SECTION (DARK // REAL PHOTOGRAPHS)
+         9. OUR STORIES // PHOTO GALLERY & TEAM CULTURE (DARK // AUTO-MOVING)
          ============================================================= -->
     <section class="section-people-culture" id="people">
         <div class="container">
-            <div class="row justify-content-between align-items-end mb-5">
-                <div class="col-lg-8">
+            <div class="row justify-content-between align-items-end mb-4">
+                <div class="col-lg-7">
                     <div class="section-eyebrow-dark">
-                        <i class="bi bi-people"></i> // 08. TEAM & CULTURE
+                        <span class="gallery-pill-badge"><i class="bi bi-camera-fill me-1"></i> Our Stories</span>
                     </div>
-                    <h2 class="section-title-dark">
-                        Our People & Engineering Culture
+                    <h2 class="section-title-dark" style="font-size: 2.8rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px;">
+                        Photo Gallery
                     </h2>
-                    <p class="section-subtitle-dark">
-                        Great technology is built by great people. Meet the collective driving digital innovation at WebConvoy.
+                    <p class="section-subtitle-dark" style="font-size: 1.05rem; margin-bottom: 0;">
+                        Captured moments from our offsites, tech hackathons, riverside workations, and celebration milestones.
                     </p>
                 </div>
-                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                    <span class="timeline-year" style="font-size: 13px;">100+ Team Members</span>
+                <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+                    <div class="gallery-controls-wrap">
+                        <span class="gallery-meta-tag"><i class="bi bi-people-fill me-1"></i> 100+ Engineers</span>
+                        <span class="gallery-meta-tag"><i class="bi bi-geo-alt-fill me-1"></i> Offsites & Summits</span>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="row g-4">
-                <!-- Card 1: Annual Team Retreat -->
-                <div class="col-lg-6">
-                    <div class="culture-photo-card">
-                        <img src="webconvoy_team_retreat.jpg" alt="WebConvoy Annual Team Retreat in Hills">
-                        <div class="culture-content">
-                            <span class="culture-tag">ANNUAL ENGINEERING SUMMIT</span>
-                            <h3 class="culture-title">Our Team</h3>
-                            <p class="culture-desc">A diverse team united by shared purpose, high standards of craft, and team celebration.</p>
+        <!-- Auto-Moving & Scrolling Photo Marquee (Edge-to-Edge) -->
+        <div class="gallery-marquee-wrap">
+            <!-- Row 1: Leftward Auto Scroll -->
+            <div class="gallery-marquee-row">
+                <div class="gallery-marquee-track marquee-move-left">
+                    <!-- Item 1 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_01.jpg', 'Celebration', 'WebConvoy Annual Milestone Party')">
+                        <img src="assets/gallery/gallery_01.jpg" alt="WebConvoy Annual Celebration" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Celebration</span>
+                            <h4 class="gallery-card-title">Annual Milestone Party</h4>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_02.jpg', 'Offsite', 'Mountain Retreat & Strategy Session')">
+                        <img src="assets/gallery/gallery_02.jpg" alt="Mountain Retreat & Strategy Session" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Offsite</span>
+                            <h4 class="gallery-card-title">Mountain Retreat & Strategy</h4>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_03.jpg', 'Culture', 'Team Bonding & Social Gathering')">
+                        <img src="assets/gallery/gallery_03.jpg" alt="Team Bonding & Social Gathering" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Culture</span>
+                            <h4 class="gallery-card-title">Team Bonding & Social</h4>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_04.jpg', 'Summit', 'Engineering Leadership Summit')">
+                        <img src="assets/gallery/gallery_04.jpg" alt="Engineering Leadership Summit" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Summit</span>
+                            <h4 class="gallery-card-title">Engineering Leadership Summit</h4>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_05.jpg', 'Hackathon', 'Tech Sprint & Innovation Session')">
+                        <img src="assets/gallery/gallery_05.jpg" alt="Tech Sprint & Innovation Session" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Hackathon</span>
+                            <h4 class="gallery-card-title">Tech Sprint & Innovation Session</h4>
+                        </div>
+                    </div>
+                    <!-- Item 6: Team Retreat -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('webconvoy_team_retreat.jpg', 'Summit', 'WebConvoy Annual Engineering Retreat')">
+                        <img src="webconvoy_team_retreat.jpg" alt="WebConvoy Annual Engineering Retreat" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Summit</span>
+                            <h4 class="gallery-card-title">Annual Engineering Retreat</h4>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE FOR INFINITE SEAMLESS LOOP -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_01.jpg', 'Celebration', 'WebConvoy Annual Milestone Party')">
+                        <img src="assets/gallery/gallery_01.jpg" alt="WebConvoy Annual Celebration" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Celebration</span>
+                            <h4 class="gallery-card-title">Annual Milestone Party</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_02.jpg', 'Offsite', 'Mountain Retreat & Strategy Session')">
+                        <img src="assets/gallery/gallery_02.jpg" alt="Mountain Retreat & Strategy Session" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Offsite</span>
+                            <h4 class="gallery-card-title">Mountain Retreat & Strategy</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_03.jpg', 'Culture', 'Team Bonding & Social Gathering')">
+                        <img src="assets/gallery/gallery_03.jpg" alt="Team Bonding & Social Gathering" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Culture</span>
+                            <h4 class="gallery-card-title">Team Bonding & Social</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_04.jpg', 'Summit', 'Engineering Leadership Summit')">
+                        <img src="assets/gallery/gallery_04.jpg" alt="Engineering Leadership Summit" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Summit</span>
+                            <h4 class="gallery-card-title">Engineering Leadership Summit</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_05.jpg', 'Hackathon', 'Tech Sprint & Innovation Session')">
+                        <img src="assets/gallery/gallery_05.jpg" alt="Tech Sprint & Innovation Session" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Hackathon</span>
+                            <h4 class="gallery-card-title">Tech Sprint & Innovation Session</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('webconvoy_team_retreat.jpg', 'Summit', 'WebConvoy Annual Engineering Retreat')">
+                        <img src="webconvoy_team_retreat.jpg" alt="WebConvoy Annual Engineering Retreat" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Summit</span>
+                            <h4 class="gallery-card-title">Annual Engineering Retreat</h4>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Card 2: Riverside Workation Sprint (Upright) -->
-                <div class="col-lg-6">
-                    <div class="culture-photo-card">
-                        <img src="webconvoy_team_workation.jpg" alt="WebConvoy Riverside Deep Work Engineering Session">
-                        <div class="culture-content">
-                            <span class="culture-tag">OFFSITE DEEP WORK SPRINTS</span>
-                            <h3 class="culture-title">Our Culture</h3>
-                            <p class="culture-desc">Learn. Build. Grow. Together. High-focus collaboration sessions in inspiring natural settings.</p>
+            <!-- Row 2: Rightward Auto Scroll -->
+            <div class="gallery-marquee-row">
+                <div class="gallery-marquee-track marquee-move-right">
+                    <!-- Item 7 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_06.jpg', 'Collaboration', 'WebConvoy Workspace Synergy & Focus')">
+                        <img src="assets/gallery/gallery_06.jpg" alt="WebConvoy Workspace Collaboration" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Collaboration</span>
+                            <h4 class="gallery-card-title">Workspace Synergy & Focus</h4>
+                        </div>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_07.jpg', 'Expedition', 'Company Expedition & Leisure')">
+                        <img src="assets/gallery/gallery_07.jpg" alt="Company Expedition & Leisure" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Expedition</span>
+                            <h4 class="gallery-card-title">Company Expedition & Leisure</h4>
+                        </div>
+                    </div>
+                    <!-- Item 9 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_08.jpg', 'Community', 'Casual Discussions & Teambuilding')">
+                        <img src="assets/gallery/gallery_08.jpg" alt="Casual Discussions & Teambuilding" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Community</span>
+                            <h4 class="gallery-card-title">Casual Discussions & Teambuilding</h4>
+                        </div>
+                    </div>
+                    <!-- Item 10 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_09.jpg', 'All-Hands', 'Annual WebConvoy Collective Gathering')">
+                        <img src="assets/gallery/gallery_09.jpg" alt="Annual WebConvoy Collective Gathering" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">All-Hands</span>
+                            <h4 class="gallery-card-title">Collective Gathering & Awards</h4>
+                        </div>
+                    </div>
+                    <!-- Item 11 -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_10.jpg', 'Celebration', 'Festival Celebration & Fellowship')">
+                        <img src="assets/gallery/gallery_10.jpg" alt="Festival Celebration & Fellowship" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Celebration</span>
+                            <h4 class="gallery-card-title">Festival Celebration & Fellowship</h4>
+                        </div>
+                    </div>
+                    <!-- Item 12: Riverside Workation -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('webconvoy_team_workation.jpg', 'Workation', 'Riverside Workation & Deep Work Sprint')">
+                        <img src="webconvoy_team_workation.jpg" alt="Riverside Workation & Deep Work Sprint" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Workation</span>
+                            <h4 class="gallery-card-title">Riverside Deep Work Sprint</h4>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE FOR INFINITE SEAMLESS LOOP -->
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_06.jpg', 'Collaboration', 'WebConvoy Workspace Synergy & Focus')">
+                        <img src="assets/gallery/gallery_06.jpg" alt="WebConvoy Workspace Collaboration" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Collaboration</span>
+                            <h4 class="gallery-card-title">Workspace Synergy & Focus</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_07.jpg', 'Expedition', 'Company Expedition & Leisure')">
+                        <img src="assets/gallery/gallery_07.jpg" alt="Company Expedition & Leisure" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Expedition</span>
+                            <h4 class="gallery-card-title">Company Expedition & Leisure</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_08.jpg', 'Community', 'Casual Discussions & Teambuilding')">
+                        <img src="assets/gallery/gallery_08.jpg" alt="Casual Discussions & Teambuilding" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Community</span>
+                            <h4 class="gallery-card-title">Casual Discussions & Teambuilding</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_09.jpg', 'All-Hands', 'Annual WebConvoy Collective Gathering')">
+                        <img src="assets/gallery/gallery_09.jpg" alt="Annual WebConvoy Collective Gathering" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">All-Hands</span>
+                            <h4 class="gallery-card-title">Collective Gathering & Awards</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_10.jpg', 'Celebration', 'Festival Celebration & Fellowship')">
+                        <img src="assets/gallery/gallery_10.jpg" alt="Festival Celebration & Fellowship" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Celebration</span>
+                            <h4 class="gallery-card-title">Festival Celebration & Fellowship</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-card" onclick="openGalleryLightbox('webconvoy_team_workation.jpg', 'Workation', 'Riverside Workation & Deep Work Sprint')">
+                        <img src="webconvoy_team_workation.jpg" alt="Riverside Workation & Deep Work Sprint" loading="lazy">
+                        <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+                        <div class="gallery-card-overlay">
+                            <span class="gallery-card-tag">Workation</span>
+                            <h4 class="gallery-card-title">Riverside Deep Work Sprint</h4>
                         </div>
                     </div>
                 </div>
@@ -2602,5 +3100,48 @@
             }
         }
     </script>
+
+    <!-- Gallery Lightbox Modal -->
+    <div class="gallery-lightbox-modal" id="galleryLightbox" onclick="closeGalleryLightbox(event)">
+        <button class="gallery-lightbox-close" onclick="closeGalleryLightbox()" aria-label="Close Preview">&times;</button>
+        <div class="gallery-lightbox-content" onclick="event.stopPropagation()">
+            <img id="galleryLightboxImg" src="" alt="WebConvoy Team Moment">
+            <div class="gallery-lightbox-caption">
+                <span id="galleryLightboxTag"></span>
+                <h4 id="galleryLightboxTitle"></h4>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function openGalleryLightbox(imgSrc, tag, title) {
+        var modal = document.getElementById('galleryLightbox');
+        var img = document.getElementById('galleryLightboxImg');
+        var tagEl = document.getElementById('galleryLightboxTag');
+        var titleEl = document.getElementById('galleryLightboxTitle');
+        if (modal && img) {
+            img.src = imgSrc;
+            if (tagEl) tagEl.textContent = tag || '';
+            if (titleEl) titleEl.textContent = title || '';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeGalleryLightbox(e) {
+        var modal = document.getElementById('galleryLightbox');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeGalleryLightbox();
+        }
+    });
+    </script>
+
 </body>
 </html>
