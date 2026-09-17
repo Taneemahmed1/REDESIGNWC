@@ -932,6 +932,117 @@
             }
         }
 
+    
+        /* ==========================================================================
+           COLLAPSIBLE AI SERVICES ACCORDION IN MOBILE HAMBURGER MENU
+           ========================================================================== */
+        .mobile-menu-item-group {
+            border-radius: 14px !important;
+            background: rgba(14, 24, 48, 0.45) !important;
+            border: 1px solid rgba(56, 189, 248, 0.22) !important;
+            overflow: hidden !important;
+            margin: 4px 0 8px !important;
+            transition: all 0.25s ease !important;
+        }
+
+        .mobile-group-header {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            padding: 13px 16px !important;
+            cursor: pointer !important;
+            user-select: none !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+        }
+
+        .mobile-group-label {
+            font-family: var(--font-head) !important;
+            font-size: 15px !important;
+            font-weight: 700 !important;
+            color: #38bdf8 !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+        }
+
+        .mobile-group-arrow {
+            color: #38bdf8 !important;
+            font-size: 13px !important;
+            transition: transform 0.25s ease !important;
+        }
+
+        .mobile-menu-item-group.open .mobile-group-arrow {
+            transform: rotate(180deg) !important;
+        }
+
+        .mobile-submenu-panel {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 6px !important;
+            padding: 8px 10px 12px 10px !important;
+            border-top: 1px solid rgba(56, 189, 248, 0.12) !important;
+        }
+
+        .mobile-menu-item-group:not(.open) .mobile-submenu-panel {
+            display: none !important;
+        }
+
+        .mobile-sub-link {
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            padding: 9px 12px !important;
+            border-radius: 10px !important;
+            color: #cbd5e1 !important;
+            text-decoration: none !important;
+            background: rgba(255, 255, 255, 0.02) !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .mobile-sub-link:hover,
+        .mobile-sub-link:active {
+            background: rgba(0, 102, 255, 0.2) !important;
+            border-color: rgba(56, 189, 248, 0.4) !important;
+            color: #ffffff !important;
+            transform: translateX(3px) !important;
+        }
+
+        .mobile-sub-link i {
+            font-size: 18px !important;
+            width: 26px !important;
+            text-align: center !important;
+            flex-shrink: 0 !important;
+        }
+
+        .mobile-sub-link div {
+            display: flex !important;
+            flex-direction: column !important;
+            line-height: 1.25 !important;
+        }
+
+        .mobile-sub-link strong {
+            font-family: var(--font-head) !important;
+            font-size: 13.5px !important;
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+
+        .mobile-sub-link span {
+            font-size: 11px !important;
+            color: #94a3b8 !important;
+            margin-top: 2px !important;
+        }
+
+        .mobile-sub-link.highlight-overview {
+            background: rgba(18, 107, 255, 0.14) !important;
+            border-color: rgba(56, 189, 248, 0.3) !important;
+        }
+
+        .mobile-sub-link.highlight-overview strong {
+            color: #38bdf8 !important;
+        }
+
     </style>
     <link rel="stylesheet" href="editorial-components.css">
 </head>
@@ -1033,7 +1144,66 @@
 
         <!-- Navigation List -->
         <ul>
-            <li><a class="nav-link" href="ai.html" style="color: #38bdf8; font-weight: 700;">✨ Enterprise AI Solutions</a></li>
+                        <!-- Expandable AI Services Group with all 6 Subpages -->
+            <li class="mobile-menu-item-group open" id="mobileAiGroup">
+                <div class="mobile-group-header" onclick="toggleMobileAiMenu(event)">
+                    <span class="mobile-group-label">
+                        <i class="bi bi-cpu"></i> AI Services
+                    </span>
+                    <i class="bi bi-chevron-down mobile-group-arrow"></i>
+                </div>
+                <div class="mobile-submenu-panel" id="mobileAiSubmenu">
+                    <a href="ai.html" class="mobile-sub-link highlight-overview">
+                        <i class="bi bi-stars"></i>
+                        <div>
+                            <strong>AI Overview</strong>
+                            <span>Enterprise Architecture &amp; Solutions</span>
+                        </div>
+                    </a>
+                    <a href="ai-consulting.html" class="mobile-sub-link">
+                        <i class="bi bi-compass" style="color: #38bdf8;"></i>
+                        <div>
+                            <strong>AI Consulting</strong>
+                            <span>Roadmaps &amp; Strategy</span>
+                        </div>
+                    </a>
+                    <a href="ai-development.html" class="mobile-sub-link">
+                        <i class="bi bi-cpu" style="color: #818cf8;"></i>
+                        <div>
+                            <strong>AI Development</strong>
+                            <span>LLMs &amp; RAG Systems</span>
+                        </div>
+                    </a>
+                    <a href="ai-automation.html" class="mobile-sub-link">
+                        <i class="bi bi-gear-wide-connected" style="color: #34d399;"></i>
+                        <div>
+                            <strong>AI Automation</strong>
+                            <span>Cognitive Ops &amp; OCR</span>
+                        </div>
+                    </a>
+                    <a href="ai-agents.html" class="mobile-sub-link">
+                        <i class="bi bi-robot" style="color: #f472b6;"></i>
+                        <div>
+                            <strong>AI Agents</strong>
+                            <span>Autonomous Workflows</span>
+                        </div>
+                    </a>
+                    <a href="ai-compiler.html" class="mobile-sub-link">
+                        <i class="bi bi-lightning-charge" style="color: #fbbf24;"></i>
+                        <div>
+                            <strong>AI Compilers</strong>
+                            <span>Tensor Optimization</span>
+                        </div>
+                    </a>
+                    <a href="ai-integration.html" class="mobile-sub-link">
+                        <i class="bi bi-diagram-3" style="color: #c084fc;"></i>
+                        <div>
+                            <strong>AI Integration</strong>
+                            <span>APIs &amp; Connectors</span>
+                        </div>
+                    </a>
+                </div>
+            </li>
             <li><a class="nav-link" href="index.html#services-orbit-section">Services</a></li>
             <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
             <li><a class="nav-link" href="about-us.html">About Us</a></li>
@@ -1964,6 +2134,19 @@
                     document.body.style.overflow = '';
                 });
             });
+        }
+
+    
+        // Toggle Mobile AI Services Accordion Group
+        function toggleMobileAiMenu(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const group = document.getElementById('mobileAiGroup');
+            if (group) {
+                group.classList.toggle('open');
+            }
         }
 
     </script>
