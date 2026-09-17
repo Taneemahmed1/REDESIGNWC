@@ -1547,8 +1547,8 @@
         .gallery-card {
             position: relative;
             flex-shrink: 0;
-            width: 360px;
-            height: 250px;
+            width: 375px;
+            height: 275px;
             border-radius: 18px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1569,12 +1569,19 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 5%;
+            transform-origin: center top;
             display: block;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        .gallery-card.focus-top img,
+        .gallery-card img.focus-top {
+            object-position: center top !important;
+        }
+
         .gallery-card:hover img {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
         .gallery-card-overlay {
@@ -2302,7 +2309,7 @@
                     </div>
                     <!-- Item 2 -->
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_02.jpg', 'Summit', 'Executive Leadership Summit')">
-                        <img src="assets/gallery/gallery_02.jpg" alt="Mountain Retreat & Strategy Session" loading="lazy">
+                        <img src="assets/gallery/gallery_02.jpg" class="focus-top" alt="Mountain Retreat & Strategy Session" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Summit</span>
@@ -2311,7 +2318,7 @@
                     </div>
                     <!-- Item 3 -->
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_03.jpg', 'Culture', 'Team Bonding & Social Gathering')">
-                        <img src="assets/gallery/gallery_03.jpg" alt="Team Bonding & Social Gathering" loading="lazy">
+                        <img src="assets/gallery/gallery_03.jpg" class="focus-top" alt="Team Bonding & Social Gathering" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Culture</span>
@@ -2320,7 +2327,7 @@
                     </div>
                     <!-- Item 4 -->
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_04.jpg', 'Summit', 'Engineering Leadership Summit')">
-                        <img src="assets/gallery/gallery_04.jpg" alt="Engineering Leadership Summit" loading="lazy">
+                        <img src="assets/gallery/gallery_04.jpg" class="focus-top" alt="Engineering Leadership Summit" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Summit</span>
@@ -2356,7 +2363,7 @@
                         </div>
                     </div>
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_02.jpg', 'Summit', 'Executive Leadership Summit')">
-                        <img src="assets/gallery/gallery_02.jpg" alt="Mountain Retreat & Strategy Session" loading="lazy">
+                        <img src="assets/gallery/gallery_02.jpg" class="focus-top" alt="Mountain Retreat & Strategy Session" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Summit</span>
@@ -2364,7 +2371,7 @@
                         </div>
                     </div>
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_03.jpg', 'Culture', 'Team Bonding & Social Gathering')">
-                        <img src="assets/gallery/gallery_03.jpg" alt="Team Bonding & Social Gathering" loading="lazy">
+                        <img src="assets/gallery/gallery_03.jpg" class="focus-top" alt="Team Bonding & Social Gathering" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Culture</span>
@@ -2372,7 +2379,7 @@
                         </div>
                     </div>
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_04.jpg', 'Summit', 'Engineering Leadership Summit')">
-                        <img src="assets/gallery/gallery_04.jpg" alt="Engineering Leadership Summit" loading="lazy">
+                        <img src="assets/gallery/gallery_04.jpg" class="focus-top" alt="Engineering Leadership Summit" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Summit</span>
@@ -2412,7 +2419,7 @@
                     </div>
                     <!-- Item 8 -->
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_07.jpg', 'Expedition', 'Company Expedition & Leisure')">
-                        <img src="assets/gallery/gallery_07.jpg" alt="Company Expedition & Leisure" loading="lazy">
+                        <img src="assets/gallery/gallery_07.jpg" class="focus-top" alt="Company Expedition & Leisure" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Expedition</span>
@@ -2421,7 +2428,7 @@
                     </div>
                     <!-- Item 9 -->
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_08.jpg', 'Community', 'Casual Discussions & Teambuilding')">
-                        <img src="assets/gallery/gallery_08.jpg" alt="Casual Discussions & Teambuilding" loading="lazy">
+                        <img src="assets/gallery/gallery_08.jpg" class="focus-top" alt="Casual Discussions & Teambuilding" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Community</span>
@@ -2439,7 +2446,7 @@
                     </div>
                     <!-- Item 11 -->
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_10.jpg', 'Celebration', 'Festival Celebration & Fellowship')">
-                        <img src="assets/gallery/gallery_10.jpg" alt="Festival Celebration & Fellowship" loading="lazy">
+                        <img src="assets/gallery/gallery_10.jpg" class="focus-top" alt="Festival Celebration & Fellowship" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Celebration</span>
@@ -2466,7 +2473,7 @@
                         </div>
                     </div>
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_07.jpg', 'Expedition', 'Company Expedition & Leisure')">
-                        <img src="assets/gallery/gallery_07.jpg" alt="Company Expedition & Leisure" loading="lazy">
+                        <img src="assets/gallery/gallery_07.jpg" class="focus-top" alt="Company Expedition & Leisure" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Expedition</span>
@@ -2474,7 +2481,7 @@
                         </div>
                     </div>
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_08.jpg', 'Community', 'Casual Discussions & Teambuilding')">
-                        <img src="assets/gallery/gallery_08.jpg" alt="Casual Discussions & Teambuilding" loading="lazy">
+                        <img src="assets/gallery/gallery_08.jpg" class="focus-top" alt="Casual Discussions & Teambuilding" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Community</span>
@@ -2490,7 +2497,7 @@
                         </div>
                     </div>
                     <div class="gallery-card" onclick="openGalleryLightbox('assets/gallery/gallery_10.jpg', 'Celebration', 'Festival Celebration & Fellowship')">
-                        <img src="assets/gallery/gallery_10.jpg" alt="Festival Celebration & Fellowship" loading="lazy">
+                        <img src="assets/gallery/gallery_10.jpg" class="focus-top" alt="Festival Celebration & Fellowship" loading="lazy">
                         <div class="gallery-card-zoom-icon"><i class="bi bi-arrows-fullscreen"></i></div>
                         <div class="gallery-card-overlay">
                             <span class="gallery-card-tag">Celebration</span>
