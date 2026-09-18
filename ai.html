@@ -290,6 +290,7 @@
            HORIZONTAL AI SERVICES DROPDOWN (PREMIUM GLASS DOCK)
            ========================================================================== */
         .dropdown-ai-horizontal-panel {
+            top: calc(100% + 14px) !important;
             left: 50% !important;
             transform: translateX(-50%) translateY(12px) !important;
             width: max-content !important;
@@ -303,6 +304,15 @@
             padding: 16px 20px !important;
             box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(0, 102, 255, 0.25) !important;
             z-index: 1050 !important;
+        }
+
+        .dropdown-ai-horizontal-panel::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 22px;
         }
 
         .nav-item-wrap:hover .dropdown-ai-horizontal-panel {
@@ -5041,7 +5051,7 @@
                         "WebConvoy transformed our raw customer support transcripts into an autonomous agent swarm that resolves 82% of inquiries without agent intervention. Their engineering rigor is unmatched."
                     </p>
                     <div class="testi-author-box-dark">
-                        <img src="ytb2.png" alt="Marco Perez" class="testi-avatar-dark">
+                        <img src="client_marco_perez.jpg" alt="Marco Perez" class="testi-avatar-dark">
                         <div>
                             <div class="testi-name-dark">Marco Perez</div>
                             <div class="testi-role-dark">Co-Founder, Tech Catalyst</div>
@@ -5057,7 +5067,7 @@
                         "The custom predictive pricing models delivered by WebConvoy gave our marketplace a measurable 14% lift in margins within the first 60 days. They build for enterprise production, not just flashy demos."
                     </p>
                     <div class="testi-author-box-dark">
-                        <img src="ytb3.png" alt="Elena Rostova" class="testi-avatar-dark">
+                        <img src="client_elena_rostova.jpg" alt="Elena Rostova" class="testi-avatar-dark">
                         <div>
                             <div class="testi-name-dark">Elena Rostova</div>
                             <div class="testi-role-dark">VP of Product Engineering</div>
@@ -5093,69 +5103,172 @@
                 <div class="tag-dark">Common Questions</div>
                 <h2 class="head-dark">Frequently Asked Questions</h2>
                 <p class="desc-dark">
-                    Clear answers on costs, timelines, data ownership, model integration, and post-launch maintenance.
+                    Everything you need to know about our custom AI engineering services, models, integrations, and deployment process.
                 </p>
             </div>
 
             <div class="faq-accordion-wrap">
+                <!-- 1 -->
                 <div class="faq-card-item active">
                     <button class="faq-question-btn">
-                        <span>1. What is the typical cost and timeline for an AI development project?</span>
+                        <span>1. What AI development services does WebConvoy offer?</span>
                         <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer-panel" style="display: block;">
-                        Project scope dictates cost. A rapid 14-day Proof of Concept (PoC) typically starts at a fixed milestone price, while full-scale custom LLM or agent development runs over 2 to 4 months depending on data readiness and infrastructure needs.
+                        WebConvoy provides end-to-end AI development services, including AI agents, generative AI applications, chatbots, voice assistants, workflow automation, recommendation systems, predictive analytics, and custom machine-learning solutions.
                     </div>
                 </div>
 
+                <!-- 2 -->
                 <div class="faq-card-item">
                     <button class="faq-question-btn">
-                        <span>2. Will we own 100% of the custom source code and model weights?</span>
+                        <span>2. Can you develop a custom AI solution for our business?</span>
                         <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer-panel">
-                        Yes, 100%. Upon milestone completion and final payment, all custom source code, fine-tuned weights, vectorized pipelines, and architecture assets are legally transferred to your company.
+                        Yes. We design AI solutions around your specific business processes, data, users, and objectives. Our team can handle everything from initial consultation and prototyping to development, deployment, and ongoing support.
                     </div>
                 </div>
 
+                <!-- 3 -->
                 <div class="faq-card-item">
                     <button class="faq-question-btn">
-                        <span>3. How do you ensure our sensitive business data remains private?</span>
+                        <span>3. What is an AI agent, and how can it help my business?</span>
                         <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer-panel">
-                        We deploy under zero-retention architectures. We build models within your air-gapped private VPC or on-premises servers, guaranteeing that proprietary datasets are never fed back into public model training sets.
+                        An AI agent is an intelligent system that can understand requests, make decisions, complete tasks, and interact with business tools. It can automate activities such as lead qualification, customer support, appointment scheduling, reporting, document processing, and follow-ups.
                     </div>
                 </div>
 
+                <!-- 4 -->
                 <div class="faq-card-item">
                     <button class="faq-question-btn">
-                        <span>4. Can you integrate AI models into our existing legacy CRM or ERP?</span>
+                        <span>4. Can you integrate AI into our existing website, mobile app, CRM, or ERP?</span>
                         <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer-panel">
-                        Yes. We build secure REST, GraphQL, and webhook microservices that seamlessly link AI reasoning into SAP, Salesforce, Oracle, HubSpot, custom SQL databases, and internal dashboards without disrupting operations.
+                        Yes. We can integrate AI capabilities into existing websites, mobile applications, SaaS platforms, CRM systems, ERP software, and internal business tools through secure APIs and custom integrations.
                     </div>
                 </div>
 
+                <!-- 5 -->
                 <div class="faq-card-item">
                     <button class="faq-question-btn">
-                        <span>5. Do you provide ongoing maintenance and model drift retraining?</span>
+                        <span>5. Which AI models and technologies do you work with?</span>
                         <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer-panel">
-                        Yes. We offer continuous MLOps support packages including telemetry monitoring, latency benchmarking, automated drift retraining, and 24x7 infrastructure uptime SLAs.
+                        Our team works with leading AI technologies, including OpenAI, Gemini, Claude, Llama, LangChain, vector databases, Retrieval-Augmented Generation (RAG), speech-to-text, text-to-speech, and custom machine-learning models.
                     </div>
                 </div>
 
+                <!-- 6 -->
                 <div class="faq-card-item">
                     <button class="faq-question-btn">
-                        <span>6. What foundation models and frameworks do you build with?</span>
+                        <span>6. Do you develop AI chatbots and virtual assistants?</span>
                         <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
                     </button>
                     <div class="faq-answer-panel">
-                        We engineer with OpenAI GPT-4o, Anthropic Claude 3.5, Meta Llama 3.1, PyTorch, TensorFlow, vLLM, LangChain, LlamaIndex, Pinecone, and Qdrant across AWS, Azure, and GCP.
+                        Yes. We build intelligent chatbots and virtual assistants for websites, WhatsApp, mobile applications, customer-support portals, and internal company systems. They can answer questions, capture leads, schedule meetings, and connect users with the right team.
                     </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="faq-card-item">
+                    <button class="faq-question-btn">
+                        <span>7. Can an AI chatbot be trained using our business data?</span>
+                        <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer-panel">
+                        Yes. We can create a secure, knowledge-based AI assistant using your documents, FAQs, policies, product information, website content, and internal databases. This allows it to provide answers based on your approved business information.
+                    </div>
+                </div>
+
+                <!-- Expandable FAQs (8 to 14) -->
+                <div id="moreFaqsWrap" style="display: none;">
+                    <!-- 8 -->
+                    <div class="faq-card-item" style="margin-top: 14px;">
+                        <button class="faq-question-btn">
+                            <span>8. What is a RAG-based AI solution?</span>
+                            <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            Retrieval-Augmented Generation, or RAG, enables an AI system to retrieve relevant information from your business knowledge base before generating an answer. This improves accuracy and helps reduce incorrect or unrelated responses.
+                        </div>
+                    </div>
+
+                    <!-- 9 -->
+                    <div class="faq-card-item">
+                        <button class="faq-question-btn">
+                            <span>9. Can you automate our sales and customer-support processes?</span>
+                            <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            Yes. We can automate lead capture, lead qualification, personalized outreach, email responses, meeting scheduling, customer queries, ticket classification, follow-ups, and sales reporting.
+                        </div>
+                    </div>
+
+                    <!-- 10 -->
+                    <div class="faq-card-item">
+                        <button class="faq-question-btn">
+                            <span>10. Is our business data secure when using AI?</span>
+                            <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            Data security is an important part of our development process. Depending on your requirements, we can implement encryption, role-based access, secure APIs, private databases, activity logs, data-retention controls, and restricted access to sensitive information.
+                        </div>
+                    </div>
+
+                    <!-- 11 -->
+                    <div class="faq-card-item">
+                        <button class="faq-question-btn">
+                            <span>11. Can you build multilingual AI solutions?</span>
+                            <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            Yes. We can develop AI applications that understand and respond in multiple languages. This can help businesses support customers and employees across different regions and markets.
+                        </div>
+                    </div>
+
+                    <!-- 12 -->
+                    <div class="faq-card-item">
+                        <button class="faq-question-btn">
+                            <span>12. Do you provide AI solutions for small businesses and startups?</span>
+                            <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            Yes. We work with startups, SMEs, and established enterprises. We can begin with a focused MVP or proof of concept and scale the solution as your business grows.
+                        </div>
+                    </div>
+
+                    <!-- 13 -->
+                    <div class="faq-card-item">
+                        <button class="faq-question-btn">
+                            <span>13. How long does it take to develop an AI solution?</span>
+                            <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            The timeline depends on the scope, integrations, data availability, and complexity of the project. A proof of concept may take a few weeks, while a complete production-ready AI platform may require several months. We provide a detailed timeline after reviewing your requirements.
+                        </div>
+                    </div>
+
+                    <!-- 14 -->
+                    <div class="faq-card-item">
+                        <button class="faq-question-btn">
+                            <span>14. How much does custom AI development cost?</span>
+                            <div class="faq-icon-arrow"><i class="bi bi-chevron-down"></i></div>
+                        </button>
+                        <div class="faq-answer-panel">
+                            The cost depends on the required features, AI models, integrations, infrastructure, data processing, and security requirements. After an initial consultation, we provide a transparent proposal with the estimated cost, timeline, and deliverables.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <button id="btnToggleMoreFaqs" class="btn-pill-outline-dark" onclick="toggleMoreFaqs()" style="cursor: pointer; background: rgba(56, 189, 248, 0.08); border-color: rgba(56, 189, 248, 0.28); color: #38bdf8 !important;">
+                        <span>View More FAQs (7 More)</span> <i class="bi bi-chevron-down ms-1"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -5700,6 +5813,19 @@
                 }
             });
         });
+
+        function toggleMoreFaqs() {
+            const wrap = document.getElementById('moreFaqsWrap');
+            const btn = document.getElementById('btnToggleMoreFaqs');
+            if (!wrap || !btn) return;
+            if (wrap.style.display === 'none' || wrap.style.display === '') {
+                wrap.style.display = 'block';
+                btn.innerHTML = '<span>Show Less FAQs</span> <i class="bi bi-chevron-up ms-1"></i>';
+            } else {
+                wrap.style.display = 'none';
+                btn.innerHTML = '<span>View More FAQs (7 More)</span> <i class="bi bi-chevron-down ms-1"></i>';
+            }
+        }
 
         // Scoping Form Submission & Math Captcha Validation (2 * 12 = 24)
         const scopingForm = document.getElementById('aiScopingForm');
