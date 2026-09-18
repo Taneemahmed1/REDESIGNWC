@@ -13892,44 +13892,58 @@
             ];
 
             let currentAwardIndex = 0;
+            let awardTypingTimer = null;
+            let awardRotateTimer = null;
             const companyEl = document.getElementById('award-company-name');
             const titleEl = document.getElementById('award-title-typing');
             const badgeImg = document.getElementById('current-award-img');
 
             const typeAwardText = (company, title) => {
                 if (!companyEl || !titleEl) return;
-                companyEl.innerHTML = company;
-                titleEl.innerHTML = "";
+                if (awardTypingTimer) {
+                    clearInterval(awardTypingTimer);
+                    awardTypingTimer = null;
+                }
+                companyEl.textContent = company;
+                titleEl.textContent = "";
                 let i = 0;
-                const typing = setInterval(() => {
+                awardTypingTimer = setInterval(() => {
                     if (i < title.length) {
-                        titleEl.innerHTML += title.charAt(i);
+                        titleEl.textContent = title.substring(0, i + 1);
                         i++;
                     } else {
-                        clearInterval(typing);
+                        clearInterval(awardTypingTimer);
+                        awardTypingTimer = null;
                     }
-                }, 50);
+                }, 40);
             };
 
             const rotateAward = () => {
+                if (document.hidden) return;
                 currentAwardIndex = (currentAwardIndex + 1) % awards.length;
                 const award = awards[currentAwardIndex];
 
                 // Animate Out
-                gsap.to(".award-badge-container", {
-                    opacity: 0, scale: 0.8, duration: 0.5, onComplete: () => {
-                        badgeImg.src = award.img;
-                        typeAwardText(award.company, award.title);
-                        // Animate In
-                        gsap.to(".award-badge-container", { opacity: 1, scale: 1, duration: 0.5 });
-                    }
-                });
+                if (badgeImg && typeof gsap !== 'undefined') {
+                    gsap.to(".award-badge-container", {
+                        opacity: 0, scale: 0.85, duration: 0.4, onComplete: () => {
+                            badgeImg.src = award.img;
+                            typeAwardText(award.company, award.title);
+                            // Animate In
+                            gsap.to(".award-badge-container", { opacity: 1, scale: 1, duration: 0.4 });
+                        }
+                    });
+                } else {
+                    if (badgeImg) badgeImg.src = award.img;
+                    typeAwardText(award.company, award.title);
+                }
             };
 
             // Initialize
             if (companyEl && titleEl) {
                 typeAwardText(awards[0].company, awards[0].title);
-                setInterval(rotateAward, 4000); // 4s cycle for better reading time
+                if (awardRotateTimer) clearInterval(awardRotateTimer);
+                awardRotateTimer = setInterval(rotateAward, 4500);
             }
 
             // --- SECTION 2: INTERACTIVE SERVICES ORBIT CONTROLLER ---

@@ -138,6 +138,7 @@
             position: relative;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             padding: 7px 18px;
             height: 38px;
@@ -145,13 +146,148 @@
             background: linear-gradient(135deg, #1ea7fd 0%, #0d6efd 50%, #004fe8 100%);
             color: #ffffff !important;
             text-decoration: none;
-            font-family: var(--font-head);
-            font-size: 13px;
+            font-family: 'Montserrat', var(--font-head), sans-serif;
+            font-size: 13.5px;
             font-weight: 800;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 0 16px rgba(13, 110, 253, 0.45);
-            transition: all 0.3s ease;
+            font-style: italic;
+            letter-spacing: 0.6px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            box-shadow:
+                0 0 16px rgba(13, 110, 253, 0.55),
+                0 4px 12px rgba(0, 50, 180, 0.3),
+                inset 0 1.5px 2px rgba(255, 255, 255, 0.75),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: aiPillPulseGlow 3s infinite ease-in-out;
+            z-index: 2;
+        }
+
+        /* Ambient Aura Pulsing Glow */
+        @keyframes aiPillPulseGlow {
+            0%, 100% {
+                box-shadow:
+                    0 0 14px rgba(13, 110, 253, 0.55),
+                    0 4px 12px rgba(0, 50, 180, 0.3),
+                    inset 0 1.5px 2px rgba(255, 255, 255, 0.75),
+                    inset 0 -2px 4px rgba(0, 0, 0, 0.25);
+                border-color: rgba(255, 255, 255, 0.45);
+            }
+            50% {
+                box-shadow:
+                    0 0 24px rgba(30, 167, 253, 0.9),
+                    0 0 40px rgba(13, 110, 253, 0.45),
+                    0 4px 14px rgba(0, 50, 180, 0.35),
+                    inset 0 2px 3px rgba(255, 255, 255, 0.95),
+                    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+                border-color: rgba(255, 255, 255, 0.85);
+            }
+        }
+
+        /* Continuous Diagonal Shimmer Light Sweep */
+        .btn-nav-ai::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -80%;
+            width: 50%;
+            height: 220%;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.65) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: rotate(25deg);
+            animation: aiShimmerSweep 3.6s infinite cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+
+        @keyframes aiShimmerSweep {
+            0% { left: -80%; }
+            30% { left: 140%; }
+            100% { left: 140%; }
+        }
+
+        .btn-nav-ai:hover {
+            transform: translateY(-2px) scale(1.07);
+            color: #ffffff !important;
+            box-shadow:
+                0 0 28px rgba(30, 167, 253, 0.95),
+                0 0 50px rgba(13, 110, 253, 0.5),
+                0 6px 18px rgba(0, 0, 0, 0.35),
+                inset 0 2px 3px #ffffff;
+            border-color: #ffffff;
+        }
+
+        .ai-badge-text {
+            display: inline-block !important;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            font-style: italic;
+            line-height: 1;
+            color: #ffffff !important;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Sparkles Container & Dynamic Twinkle Animation */
+        .ai-sparkles-wrap {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .ai-star-main {
+            position: absolute;
+            width: 13px;
+            height: 13px;
+            bottom: 0px;
+            left: 0px;
+            fill: #ffffff;
+            filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.95));
+            animation: aiStarTwinkleMain 1.9s infinite ease-in-out;
+            transform-origin: center center;
+        }
+
+        .ai-star-sub {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            top: 0px;
+            right: 0px;
+            fill: #ffffff;
+            filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.9));
+            animation: aiStarTwinkleSub 1.9s infinite ease-in-out 0.45s;
+            transform-origin: center center;
+        }
+
+        @keyframes aiStarTwinkleMain {
+            0%, 100% {
+                transform: scale(0.85) rotate(0deg);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.3) rotate(18deg);
+                opacity: 1;
+                filter: drop-shadow(0 0 6px rgba(255, 255, 255, 1));
+            }
+        }
+
+        @keyframes aiStarTwinkleSub {
+            0%, 100% {
+                transform: scale(0.75) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.35) rotate(-18deg);
+                opacity: 1;
+                filter: drop-shadow(0 0 4px rgba(255, 255, 255, 1));
+            }
         }
 
         .btn-appinv-contact {
@@ -2151,8 +2287,13 @@
             .team-image-caption-pill { flex-direction: column !important; align-items: flex-start !important; gap: 4px !important; }
             .gallery-card { width: 250px !important; height: 185px !important; }
             .cta-image-col { min-height: 240px !important; }
-            .nav-cta-right .btn-nav-ai span { display: none !important; }
-            .nav-cta-right .btn-nav-ai { padding: 8px 12px !important; }
+            .nav-cta-right .btn-nav-ai {
+                padding: 6px 14px !important;
+                display: inline-flex !important;
+            }
+            .nav-cta-right .btn-nav-ai span.ai-badge-text {
+                display: inline-block !important;
+            }
         }
 
     
@@ -2194,13 +2335,29 @@
                 object-fit: contain !important;
             }
             .btn-nav-ai {
-                padding: 6px 12px !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 6px 14px !important;
                 height: 34px !important;
-                font-size: 12px !important;
+                border-radius: 999px !important;
                 gap: 6px !important;
+                flex-shrink: 0 !important;
             }
             .btn-nav-ai span.ai-badge-text {
+                display: inline-block !important;
                 font-size: 12px !important;
+                font-weight: 800 !important;
+                line-height: 1 !important;
+                color: #ffffff !important;
+            }
+            .btn-nav-ai .ai-sparkles-wrap {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 16px !important;
+                height: 16px !important;
+                flex-shrink: 0 !important;
             }
             .nav-cta-right {
                 display: flex !important;
@@ -2414,9 +2571,16 @@
             </div>
 
             <div class="nav-cta-right">
-                <a href="ai.html" class="btn-nav-ai" title="Enterprise AI Engineering">
-                    <span>AI Solutions</span>
-                    <i class="bi bi-stars"></i>
+                <a href="ai.html" class="btn-nav-ai" title="Enterprise AI Solutions & Innovations">
+                    <span class="ai-badge-text">AI</span>
+                    <span class="ai-sparkles-wrap">
+                        <svg class="ai-star-main" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                        <svg class="ai-star-sub" viewBox="0 0 24 24">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                    </span>
                 </a>
                 <a href="index.html#contact-section" class="btn-appinv-contact">
                     <i class="bi bi-calendar-check"></i> Book Consultation
@@ -3653,26 +3817,34 @@
         ];
 
         let currentAwardIndex = 0;
+        let awardTypingTimer = null;
+        let awardRotateTimer = null;
         const companyEl = document.getElementById('award-company-name');
         const titleEl = document.getElementById('award-title-typing');
         const badgeImg = document.getElementById('current-award-img');
 
         const typeAwardText = (company, title) => {
             if (!companyEl || !titleEl) return;
-            companyEl.innerHTML = company;
-            titleEl.innerHTML = "";
+            if (awardTypingTimer) {
+                clearInterval(awardTypingTimer);
+                awardTypingTimer = null;
+            }
+            companyEl.textContent = company;
+            titleEl.textContent = "";
             let i = 0;
-            const typing = setInterval(() => {
+            awardTypingTimer = setInterval(() => {
                 if (i < title.length) {
-                    titleEl.innerHTML += title.charAt(i);
+                    titleEl.textContent = title.substring(0, i + 1);
                     i++;
                 } else {
-                    clearInterval(typing);
+                    clearInterval(awardTypingTimer);
+                    awardTypingTimer = null;
                 }
-            }, 45);
+            }, 40);
         };
 
         const rotateAward = () => {
+            if (document.hidden) return;
             currentAwardIndex = (currentAwardIndex + 1) % awards.length;
             const award = awards[currentAwardIndex];
             if (badgeImg && typeof gsap !== 'undefined') {
@@ -3683,12 +3855,16 @@
                         gsap.to(".award-badge-container", { opacity: 1, scale: 1, duration: 0.4 });
                     }
                 });
+            } else {
+                if (badgeImg) badgeImg.src = award.img;
+                typeAwardText(award.company, award.title);
             }
         };
 
         if (companyEl && titleEl) {
             typeAwardText(awards[0].company, awards[0].title);
-            setInterval(rotateAward, 4200);
+            if (awardRotateTimer) clearInterval(awardRotateTimer);
+            awardRotateTimer = setInterval(rotateAward, 4500);
         }
 
         // 3. Client Reviews Controller
