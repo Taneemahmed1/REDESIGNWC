@@ -154,39 +154,121 @@
             transition: all 0.25s ease;
         }
         .btn-appinv-contact:hover { background: #ffffff; color: #000000 !important; transform: translateY(-2px); }
-        .nav-item-wrap { position: relative; }
-        .dropdown-floating-panel {
+                .nav-item-wrap { position: relative; }
+
+        /* ==========================================================================
+           HORIZONTAL AI SERVICES DROPDOWN (PREMIUM GLASS DOCK)
+           ========================================================================== */
+        .dropdown-ai-horizontal-panel {
+            position: absolute !important;
+            top: calc(100% + 14px) !important;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(12px) !important;
+            width: max-content !important;
+            min-width: 820px !important;
+            max-width: 95vw !important;
+            background: rgba(6, 11, 24, 0.96) !important;
+            backdrop-filter: blur(28px) !important;
+            -webkit-backdrop-filter: blur(28px) !important;
+            border: 1px solid rgba(56, 189, 248, 0.28) !important;
+            border-radius: 20px !important;
+            padding: 16px 20px !important;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(0, 102, 255, 0.25) !important;
+            z-index: 1050 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .dropdown-ai-horizontal-panel::before {
+            content: '';
             position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(15px);
-            background: #0f141c;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 12px;
-            min-width: 270px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 100;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 22px;
         }
-        .nav-item-wrap:hover .dropdown-floating-panel {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(8px);
+
+        .nav-item-wrap:hover .dropdown-ai-horizontal-panel {
+            transform: translateX(-50%) translateY(0) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
         }
-        .mega-menu-item {
-            display: block;
-            padding: 10px 14px;
-            border-radius: 8px;
-            color: #e2e8f0;
-            text-decoration: none;
-            transition: background 0.2s ease;
+
+        .ai-dropdown-horizontal-grid {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: stretch !important;
+            justify-content: space-between !important;
+            gap: 12px !important;
         }
-        .mega-menu-item:hover { background: rgba(18, 107, 255, 0.15); color: #38bdf8; }
-        .mega-menu-item strong { display: block; font-size: 13.5px; color: #ffffff; }
-        .mega-menu-item span { font-size: 11.5px; color: #94a3b8; }
+
+        .ai-nav-card {
+            flex: 1 1 0 !important;
+            min-width: 125px !important;
+            max-width: 155px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 10px !important;
+            padding: 14px 14px 16px !important;
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.07) !important;
+            border-radius: 14px !important;
+            text-decoration: none !important;
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .ai-nav-card:hover {
+            background: rgba(0, 102, 255, 0.16) !important;
+            border-color: rgba(56, 189, 248, 0.45) !important;
+            transform: translateY(-3px) !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 102, 255, 0.25) !important;
+        }
+
+        .ai-nav-card-icon {
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 10px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 17px !important;
+            transition: all 0.25s ease !important;
+        }
+
+        .ai-nav-card:hover .ai-nav-card-icon {
+            transform: scale(1.1) !important;
+        }
+
+        .ai-nav-card-title {
+            color: #ffffff !important;
+            font-family: var(--font-head, 'Montserrat', sans-serif) !important;
+            font-size: 13.5px !important;
+            font-weight: 700 !important;
+            line-height: 1.25 !important;
+            margin: 0 !important;
+        }
+
+        .ai-nav-card-desc {
+            color: #94a3b8 !important;
+            font-size: 11px !important;
+            line-height: 1.35 !important;
+            margin: 0 !important;
+            font-weight: 400 !important;
+        }
+
+        .ai-nav-card:hover .ai-nav-card-title {
+            color: #38bdf8 !important;
+        }
+
+        @media (max-width: 1024px) {
+            .dropdown-ai-horizontal-panel {
+                min-width: 90vw !important;
+            }
+        }
 
         /* COMPONENTS & BUTTONS */
         .service-badge {
@@ -999,33 +1081,54 @@
                 <div class="nav-item-wrap">
                     <a href="ai.html" class="nav-link-item">AI Overview</a>
                 </div>
+                                <!-- AI Services Horizontal Dropdown -->
                 <div class="nav-item-wrap">
-                    <a href="#" class="nav-link-item">AI Services <i class="bi bi-chevron-down ms-1" style="font-size: 11px;"></i></a>
-                    <div class="dropdown-floating-panel">
-                        <a href="ai-consulting.html" class="mega-menu-item">
-                            <strong>AI Consulting</strong>
-                            <span>Strategic mapping, feasibility & enterprise roadmaps</span>
-                        </a>
-                        <a href="ai-development.html" class="mega-menu-item">
-                            <strong>AI Development</strong>
-                            <span>Custom LLMs, RAG & full-stack AI products</span>
-                        </a>
-                        <a href="ai-automation.html" class="mega-menu-item">
-                            <strong>AI Automation</strong>
-                            <span>Cognitive operations & document intelligence</span>
-                        </a>
-                        <a href="ai-agents.html" class="mega-menu-item">
-                            <strong>AI Agent Development</strong>
-                            <span>Autonomous multi-agent orchestration & tool use</span>
-                        </a>
-                        <a href="ai-compiler.html" class="mega-menu-item">
-                            <strong>AI Compiler Engineering</strong>
-                            <span>Inference optimization, TensorRT & CUDA kernels</span>
-                        </a>
-                        <a href="ai-integration.html" class="mega-menu-item">
-                            <strong>AI Integration</strong>
-                            <span>Connecting legacy ERP, CRM & APIs to AI</span>
-                        </a>
+                    <a href="ai.html" class="nav-link-item">AI Services <i class="bi bi-chevron-down nav-caret ms-1" style="font-size: 11px;"></i></a>
+                    <div class="dropdown-floating-panel dropdown-ai-horizontal-panel">
+                        <div class="ai-dropdown-horizontal-grid">
+                            <a href="ai-consulting.html" class="ai-nav-card">
+                                <div class="ai-nav-card-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
+                                    <i class="bi bi-compass"></i>
+                                </div>
+                                <div class="ai-nav-card-title">AI Consulting</div>
+                                <div class="ai-nav-card-desc">Roadmaps &amp; Strategy</div>
+                            </a>
+                            <a href="ai-development.html" class="ai-nav-card">
+                                <div class="ai-nav-card-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">
+                                    <i class="bi bi-cpu"></i>
+                                </div>
+                                <div class="ai-nav-card-title">AI Development</div>
+                                <div class="ai-nav-card-desc">LLMs &amp; RAG Systems</div>
+                            </a>
+                            <a href="ai-automation.html" class="ai-nav-card">
+                                <div class="ai-nav-card-icon" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">
+                                    <i class="bi bi-gear-wide-connected"></i>
+                                </div>
+                                <div class="ai-nav-card-title">AI Automation</div>
+                                <div class="ai-nav-card-desc">Cognitive Ops &amp; OCR</div>
+                            </a>
+                            <a href="ai-agents.html" class="ai-nav-card">
+                                <div class="ai-nav-card-icon" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">
+                                    <i class="bi bi-robot"></i>
+                                </div>
+                                <div class="ai-nav-card-title">AI Agents</div>
+                                <div class="ai-nav-card-desc">Autonomous Workflows</div>
+                            </a>
+                            <a href="ai-compiler.html" class="ai-nav-card">
+                                <div class="ai-nav-card-icon" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">
+                                    <i class="bi bi-lightning-charge"></i>
+                                </div>
+                                <div class="ai-nav-card-title">AI Compilers</div>
+                                <div class="ai-nav-card-desc">Tensor Optimization</div>
+                            </a>
+                            <a href="ai-integration.html" class="ai-nav-card">
+                                <div class="ai-nav-card-icon" style="background: rgba(168, 85, 247, 0.15); color: #c084fc;">
+                                    <i class="bi bi-diagram-3"></i>
+                                </div>
+                                <div class="ai-nav-card-title">AI Integration</div>
+                                <div class="ai-nav-card-desc">APIs &amp; Connectors</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
