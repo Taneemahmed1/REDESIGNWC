@@ -817,6 +817,190 @@
         }
 
         /* -------------------------------------------------------------
+           8.5 OUR TEAM SECTION (DARK // 50-50: TEXT & WHOLE IMAGE)
+           ------------------------------------------------------------- */
+        .section-our-team {
+            background: #070a10;
+            color: #ffffff;
+            padding: 115px 0 110px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .section-our-team::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: 15%;
+            width: 650px;
+            height: 650px;
+            background: radial-gradient(circle, rgba(0, 118, 255, 0.09) 0%, rgba(2, 6, 14, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .team-eyebrow {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: inline-flex;
+            align-items: center;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.22);
+            padding: 6px 14px;
+            border-radius: 999px;
+        }
+
+        .team-title {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 3.2vw, 2.9rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .team-title span {
+            background: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .team-lead-text {
+            font-size: 16px;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .team-sub-text {
+            font-size: 14.5px;
+            color: #64748b;
+            line-height: 1.65;
+            margin-bottom: 28px;
+        }
+
+        .team-features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 34px;
+        }
+
+        .team-feature-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            padding: 18px 20px;
+            transition: all 0.25s ease;
+        }
+
+        .team-feature-card:hover {
+            background: rgba(0, 102, 255, 0.06);
+            border-color: rgba(56, 189, 248, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .team-feat-icon {
+            font-size: 20px;
+            color: #38bdf8;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .team-feat-title {
+            font-family: var(--font-head);
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .team-feat-desc {
+            font-size: 12.5px;
+            color: #94a3b8;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        .team-image-frame {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            background: #0d121c;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 35px rgba(0, 102, 255, 0.12);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            width: 100%;
+        }
+
+        .team-image-frame:hover {
+            border-color: rgba(56, 189, 248, 0.55);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 45px rgba(0, 102, 255, 0.22);
+            transform: translateY(-3px);
+        }
+
+        .team-image-frame img {
+            width: 100%;
+            height: auto;
+            max-height: 560px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .team-image-frame:hover img {
+            transform: scale(1.02);
+        }
+
+        .team-image-caption-pill {
+            position: absolute;
+            bottom: 18px;
+            left: 18px;
+            right: 18px;
+            background: rgba(8, 12, 20, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+            font-size: 13px;
+            z-index: 2;
+        }
+
+        .team-caption-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .team-caption-left i {
+            color: #38bdf8;
+            font-size: 15px;
+        }
+
+        .team-caption-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        /* -------------------------------------------------------------
            9. PEOPLE & CULTURE SECTION (DARK)
            ------------------------------------------------------------- */
         .section-people-culture {
@@ -1843,6 +2027,9 @@
             .ai-testi-queue-col { grid-template-columns: 1fr !important; min-height: auto !important; }
             .ai-testi-bottom-bar { flex-direction: column !important; gap: 20px !important; }
             .cta-image-col { min-height: 320px !important; }
+            .team-features-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+            .team-image-frame { margin-top: 24px !important; }
+            .team-image-frame img { max-height: 440px !important; }
         }
 
         @media (max-width: 768px) {
@@ -1857,6 +2044,9 @@
             .who-we-are-card { padding: 26px 20px !important; border-radius: 20px !important; }
             .who-image-card { height: auto !important; min-height: 260px !important; max-height: 380px !important; margin-top: 24px !important; }
             .who-image-card img { height: 100% !important; max-height: 380px !important; object-fit: cover !important; }
+
+            .section-our-team { padding: 75px 0 65px !important; }
+            .team-title { font-size: clamp(1.8rem, 6.5vw, 2.3rem) !important; }
 
             .section-people-culture { padding: 75px 0 65px !important; }
             .gallery-card { width: 290px !important; height: 215px !important; }
@@ -1883,6 +2073,7 @@
         @media (max-width: 480px) {
             .impact-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
             .industries-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+            .team-image-caption-pill { flex-direction: column !important; align-items: flex-start !important; gap: 4px !important; }
             .gallery-card { width: 250px !important; height: 185px !important; }
             .cta-image-col { min-height: 240px !important; }
             .nav-cta-right .btn-nav-ai span { display: none !important; }
@@ -2703,6 +2894,82 @@
                             <li><i class="bi bi-check-circle-fill"></i> Long-term client partnerships</li>
                             <li><i class="bi bi-check-circle-fill"></i> Continuous learning and improvement</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =============================================================
+         8.5 OUR TEAM SECTION (DARK // 50-50: LEFT CONTENT, RIGHT WHOLE IMAGE)
+         ============================================================= -->
+    <section class="section-our-team" id="our-team">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="row align-items-center g-5">
+                <!-- Left Side: 50% Text Content -->
+                <div class="col-lg-6">
+                    <div class="team-eyebrow">
+                        <i class="bi bi-people-fill me-2"></i> OUR TEAM &amp; CULTURE
+                    </div>
+
+                    <h2 class="team-title">
+                        The Minds Behind <span>WebConvoy</span>
+                    </h2>
+
+                    <p class="team-lead-text">
+                        At WebConvoy, exceptional digital products aren’t created by algorithms alone—they are engineered by passionate developers, architects, and designers working collaboratively every day.
+                    </p>
+
+                    <p class="team-sub-text">
+                        Our innovation floor in Sector 63, Noida brings together multidisciplinary minds across Artificial Intelligence, full-stack engineering, cloud architecture, and product design. We thrive on open collaboration, flat hierarchy, and taking end-to-end ownership of every challenge we tackle for clients across the globe.
+                    </p>
+
+                    <!-- Feature Pillars Grid -->
+                    <div class="team-features-grid">
+                        <div class="team-feature-card">
+                            <i class="bi bi-code-slash team-feat-icon"></i>
+                            <h4 class="team-feat-title">100% In-House Engineering</h4>
+                            <p class="team-feat-desc">Every line of code and AI model is built in-house with rigorous peer reviews and clean architecture.</p>
+                        </div>
+                        <div class="team-feature-card">
+                            <i class="bi bi-cpu-fill team-feat-icon"></i>
+                            <h4 class="team-feat-title">R&amp;D &amp; AI Innovation</h4>
+                            <p class="team-feat-desc">Dedicated weekly innovation sprints exploring generative AI, autonomous agents, and compiler optimizations.</p>
+                        </div>
+                        <div class="team-feature-card">
+                            <i class="bi bi-shield-check team-feat-icon"></i>
+                            <h4 class="team-feat-title">Radical Ownership</h4>
+                            <p class="team-feat-desc">Engineers communicate directly, think like product founders, and focus on real business outcomes.</p>
+                        </div>
+                        <div class="team-feature-card">
+                            <i class="bi bi-globe2 team-feat-icon"></i>
+                            <h4 class="team-feat-title">Global Delivery Standard</h4>
+                            <p class="team-feat-desc">Delivering enterprise reliability and high-speed execution for partners in the USA, UK, UAE, and Canada.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <a href="index.html#contact-section" class="btn-pill-primary">
+                            Work With Our Team <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                        <a href="#people" class="btn-pill-outline-dark">
+                            View Moments &amp; Life <i class="bi bi-arrow-down ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Just Whole Image -->
+                <div class="col-lg-6">
+                    <div class="team-image-frame">
+                        <img src="webconvoy_team_office.jpg" alt="WebConvoy Team Working at Noida Innovation Center" loading="lazy">
+                        <div class="team-image-caption-pill">
+                            <div class="team-caption-left">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>WebConvoy Innovation Floor • Noida HQ</span>
+                            </div>
+                            <span class="team-caption-tag">50+ Engineers &amp; Builders</span>
+                        </div>
                     </div>
                 </div>
             </div>
